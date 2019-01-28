@@ -5,6 +5,7 @@
 set -eu
 
 readonly workspace=$(dirname $0)
+mkdir -p ${workspace}/.sdk
 readonly outdir=$(dirname $0)/.sdk
 readonly greeter_protos_dir=${workspace}
 readonly proto_tools=${HOME}/.nuget/packages/grpc.tools/1.16.0/tools/macosx_x64
