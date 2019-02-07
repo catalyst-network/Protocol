@@ -24,3 +24,5 @@ From Google - https://developers.google.com/protocol-buffers/docs/overview
 > -   are 20 to 100 times faster
 > -   are less ambiguous
 > -   generate data access classes that are easier to use programmatically
+
+The biggest bennefit though to Catalyst Network is interoperbility. Protobuffs are implemented in a varaity of languages and allow us to quickly generate code for you to interact and build upon the Catalyst Network! No more figuring out some obscure language or having to learn snowflaked schemas.
