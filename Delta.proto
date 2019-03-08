@@ -19,48 +19,28 @@
 
 syntax = "proto3";
 
-package Catalyst.Protocol.IPPN;
+option java_multiple_files = true;
 
-message PeerProtocol {
-    
-    message PingRequest {
-        string ping = 1;
-    }
+package Catalyst.Protocol.Delta;
 
-    message PongResponse {
-        string pong = 1;
-    }
-    
-    message ACK {
-        bytes ack = 1;
-    }
-    
-    message NACK {
-        bytes nack = 1;
-    }
-
-    message PeerInfoRequest {
-        string ping = 1;
-    }
-
-    message PeerInfoResponse {
-        string pong = 1;
-    }
-
-    message PeerNeighborsRequest {
-        string ping = 1;
-    }
-
-    message PeerNeighborsResponse {
-        string pong = 1;
-    }
-
-    message ChallengeRequest {
-        sint64 nonce = 1;
-    }
-
-    message ChallengeResponse {
-        string signedNonce = 1;
-        string publicKey = 2;
-    }
+/**
+ * Delta
+ *
+ * version:
+ * MerkleRoot:
+ * MerklePoda: proof of delegated authority for active wokers
+ * TimeStamp:
+ * STEntries:
+ * CFEntries:
+ * CBEntries: one per active worker
+ */
+ message Delta {
+	uint32 version = 0 [default = 2]; 
+	bytes PreviousDelta = 1;
+	bytes MerkleRoot = 2;
+	bytes MerklePoda = 3;
+	uint32 TimeStamp = 4;
+	repeated STTransactionEntry STEntries = 6;
+	repeated CFTransactionEntry CFEntries = 7;
+	repeated CoinbaseEntry CBEntries = 8;
 }
