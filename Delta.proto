@@ -35,7 +35,7 @@ package Catalyst.Protocol.Delta;
  * CBEntries: one per active worker
  */
  message Delta {
-	uint32 version = 0 [default = 2]; 
+	uint32 version = 0; 
 	bytes PreviousDelta = 1;
 	bytes MerkleRoot = 2;
 	bytes MerklePoda = 3;
