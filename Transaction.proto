@@ -81,7 +81,7 @@ message TransactionSignature {
 
 /**
  * EntryRangeProof
- * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, 2^n-1 is upper range of proof.
+ * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of proof.
  * V: m * 32 bytes, value commitment
  * A: 32 bytes, bit commitment
  * S: 32 bytes, per bit blinding factor commitment
