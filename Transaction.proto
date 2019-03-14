@@ -81,17 +81,18 @@ message TransactionSignature {
 
 /**
  * EntryRangeProof
- *
- * V:
- * A:
- * T1:
- * T2:
- * TAU:
- * MU:
- * L:
- * R:
- * APrime0:
- * BPrime0:
+ * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of proof.
+ * V: m * 32 bytes, value commitment
+ * A: 32 bytes, bit commitment
+ * S: 32 bytes, per bit blinding factor commitment
+ * T1: 32 bytes, poly commitment
+ * T2: 32 bytes, poly commitment
+ * TAU: 32 bytes, proof of share
+ * MU: 32 bytes, proof of share
+ * L: k * 32 bytes, aggregated vector polynomial
+ * R: k * 32 bytes, aggregated vector polynomial
+ * APrime0: 32 bytes
+ * BPrime0: 32 bytes
  */
 message EntryRangeProof {
     repeated bytes V = 1;
