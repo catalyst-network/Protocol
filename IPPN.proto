@@ -48,11 +48,12 @@ message PeerProtocol {
     }
 
     message PeerNeighborsRequest {
-        string ping = 1;
+        bytes correlationID = 1;
     }
 
     message PeerNeighborsResponse {
-        string pong = 1;
+        bytes correlationID = 1;
+        repeated bytes peerID = 2;
     }
 
     message ChallengeRequest {
