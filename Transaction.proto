@@ -1,0 +1,122 @@
+/**
+* Copyright (c) 2019 Catalyst Network
+*
+* This file is part of Catalyst.Network.Protocol.Protobuffs <https://github.com/catalyst-network/protocol-protobuffs>
+*
+* Catalyst.Network.Protocol.Protobuffs is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 2 of the License, or
+* (at your option) any later version.
+* 
+* Catalyst.Network.Protocol.Protobuffs is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with Catalyst.Network.Protocol.Protobuffs If not, see <https://www.gnu.org/licenses/>.
+*/
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package Catalyst.Protocol.Transaction;
+
+/**
+ * Transaction
+ *
+ * Version: 1 for non-confidential transaction, 2 for confidential transaction
+ * TimeStamp:
+ * TransactionFees: 8 bytes, clear text, fees * 10^12 - always positive
+ * LockTime: 32 bits
+ * STEntries: 0 field for confidential transaction
+ * CFEntries: 0 field for standard transaction
+ * Signature:
+ * EntryRangeProof: 0 field for standard transaction
+ */
+message Transaction {
+    uint32 Version = 1 [default = 1];
+    uint64 TimeStamp = 2;
+    uint64 TransactionFees = 3;
+    uint64 LockTime = 4;
+    repeated STTransactionEntry STEntries = 5;
+    repeated CFTransactionEntry CFEntries = 6;
+    message TransactionSignature Signature = 7; 
+    repeated message EntryRangeProof = 8;
+}
+
+/**
+ * STTransactionEntry
+ *
+ * PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
+ * Amount: max 8 bytes (positive or negative)
+ */
+message STTransactionEntry {
+    bytes PubKey = 1;
+    sint64 Amount = 2;
+}
+ 
+/**
+ * CFTransactionEntry
+ *
+ * PubKey: 32 bytes, account address derived from the public key
+ * PedersenCommitment: 32bytes
+ */
+message CFTransactionEntry { 
+    bytes PubKey = 1;
+    bytes CommPedersenCommitmentitment = 2;
+}
+
+/**
+ * TransactionSignature
+ *
+ * Signature: 32 bytes, 1 aggregated signature per transaction  (e: signature; B: schnorr component)
+ * Challenge: 32 bytes
+ */
+message TransactionSignature {
+    bytes Signature = 1;
+    bytes Challenge = 2;
+}
+
+/**
+ * EntryRangeProof
+ * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of proof.
+ * V: m * 32 bytes, value commitment
+ * A: 32 bytes, bit commitment
+ * S: 32 bytes, per bit blinding factor commitment
+ * T1: 32 bytes, poly commitment
+ * T2: 32 bytes, poly commitment
+ * TAU: 32 bytes, proof of share
+ * MU: 32 bytes, proof of share
+ * L: k * 32 bytes, aggregated vector polynomial
+ * R: k * 32 bytes, aggregated vector polynomial
+ * APrime0: 32 bytes
+ * BPrime0: 32 bytes
+ */
+message EntryRangeProof {
+    repeated bytes V = 1;
+    bytes A = 2;
+    bytes S = 3;
+    bytes T1 = 4;
+    bytes T2 = 5;
+    bytes TAU = 6;
+    bytes MU = 7;
+    repeated bytes L = 8;
+    repeated bytes R = 9;
+    bytes aprime0 = 10;
+    bytes bprime0 = 11;
+    bytes t = 12;
+} 
+
+/**
+ * CoinbaseEntry
+ *
+ * Version: For now only one verison. Workers would be paid in plain tx.
+ * Amount: max 8 bytes (positive or negative).
+ */
+message CoinbaseEntry {
+    uint32 Version = 1 [default = 1];
+    bytes Pubkey = 2;
+    uint64 Amount = 3;
+}
