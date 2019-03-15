@@ -36,14 +36,14 @@ package Catalyst.Protocol.Transaction;
  * EntryRangeProof: 0 field for standard transaction
  */
 message Transaction {
-    uint32 Version = 1 [default = 1];
+    uint32 Version = 1;
     uint64 TimeStamp = 2;
     uint64 TransactionFees = 3;
     uint64 LockTime = 4;
     repeated STTransactionEntry STEntries = 5;
     repeated CFTransactionEntry CFEntries = 6;
-    message TransactionSignature Signature = 7; 
-    repeated message EntryRangeProof = 8;
+    TransactionSignature Signature = 7; 
+    repeated EntryRangeProof EntryRangeProofs = 8;
 }
 
 /**
@@ -116,7 +116,7 @@ message EntryRangeProof {
  * Amount: max 8 bytes (positive or negative).
  */
 message CoinbaseEntry {
-    uint32 Version = 1 [default = 1];
+    uint32 Version = 1;
     bytes Pubkey = 2;
     uint64 Amount = 3;
 }

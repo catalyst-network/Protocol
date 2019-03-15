@@ -21,6 +21,8 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
+import "Transaction.proto";
+
 package Catalyst.Protocol.Delta;
 
 /**
@@ -35,12 +37,12 @@ package Catalyst.Protocol.Delta;
  * CBEntries: one per active worker
  */
  message Delta {
-	uint32 version = 0; 
-	bytes PreviousDelta = 1;
-	bytes MerkleRoot = 2;
-	bytes MerklePoda = 3;
-	uint32 TimeStamp = 4;
-	repeated STTransactionEntry STEntries = 6;
-	repeated CFTransactionEntry CFEntries = 7;
-	repeated CoinbaseEntry CBEntries = 8;
+	uint32 version = 1; 
+	bytes PreviousDelta = 2;
+	bytes MerkleRoot = 3;
+	bytes MerklePoda = 4;
+	uint32 TimeStamp = 5;
+	repeated Transaction.STTransactionEntry STEntries = 6;
+	repeated Transaction.CFTransactionEntry CFEntries = 7;
+	repeated Transaction.CoinbaseEntry CBEntries = 8;
 }
