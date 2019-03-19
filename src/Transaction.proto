@@ -71,13 +71,13 @@ message CFTransactionEntry {
 /**
  * TransactionSignature
  *
- * 1 aggregated signature per transaction  (s: signature; e: challenge),
- * Signature: 32 bytes, 
- * Challenge: 32 bytes
+ * 1 aggregated signature per transaction  (s: SchnorrSignature; B: SchnorrComponent),
+ * SchnorrSignature: 32 bytes, 
+ * SchnorrComponent: 32 bytes
  */
 message TransactionSignature {
-    bytes Signature = 1;
-    bytes Challenge = 2;
+    bytes SchnorrSignature = 1;
+    bytes SchnorrComponent = 2;
 }
 
 /**
