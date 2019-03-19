@@ -82,18 +82,19 @@ message TransactionSignature {
 
 /**
  * EntryRangeProof
+ * BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
  * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
- * V: m * 32 bytes, value commitment
- * A: 32 bytes, bit commitment
- * S: 32 bytes, per bit blinding factor commitment
- * T1: 32 bytes, poly commitment
- * T2: 32 bytes, poly commitment
- * TAU: 32 bytes, proof of share
- * MU: 32 bytes, proof of share
- * L: k * 32 bytes, aggregated vector polynomial
- * R: k * 32 bytes, aggregated vector polynomial
- * APrime0: 32 bytes
- * BPrime0: 32 bytes
+ * V: m * 32 bytes, value commitment (eq. 36) 
+ * A: 32 bytes, bit commitment (eq. 48)
+ * S: 32 bytes, per bit blinding factor commitment (eq. 48)
+ * T1: 32 bytes, poly commitment (eq. 54)
+ * T2: 32 bytes, poly commitment (eq. 54)
+ * TAU: 32 bytes, proof of share (eq. 63)
+ * MU: 32 bytes, proof of share (eq. 63)
+ * L: k * 32 bytes, aggregated vector polynomial (eq. 63)
+ * R: k * 32 bytes, aggregated vector polynomial (eq. 63)
+ * APrime0: 32 bytes (eq. 63)
+ * BPrime0: 32 bytes (eq. 63)
  */
 message EntryRangeProof {
     repeated bytes V = 1;
