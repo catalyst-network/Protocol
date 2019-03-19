@@ -31,9 +31,9 @@ package Catalyst.Protocol.Transaction;
  * TransactionFees: 8 bytes, clear text, fees * 10^12 - always positive
  * LockTime: 32 bits
  * STEntries: 0 field for confidential transaction
- * CFEntries: 0 field for standard transaction
- * Signature:
- * EntryRangeProof: 0 field for standard transaction
+ * CFEntries: 0 field for non-confidential transaction
+ * Signature: 64 bytes
+ * EntryRangeProof: 0 field for non-confidential transaction
  */
 message Transaction {
     uint32 Version = 1;
@@ -61,17 +61,18 @@ message STTransactionEntry {
  * CFTransactionEntry
  *
  * PubKey: 32 bytes, account address derived from the public key
- * PedersenCommitment: 32bytes
+ * PedersenCommitment: 32 bytes
  */
 message CFTransactionEntry { 
     bytes PubKey = 1;
-    bytes CommPedersenCommitmentitment = 2;
+    bytes PedersenCommit = 2;
 }
 
 /**
  * TransactionSignature
  *
- * Signature: 32 bytes, 1 aggregated signature per transaction  (e: signature; B: schnorr component)
+ * 1 aggregated signature per transaction  (s: signature; e: challenge),
+ * Signature: 32 bytes, 
  * Challenge: 32 bytes
  */
 message TransactionSignature {
@@ -81,7 +82,7 @@ message TransactionSignature {
 
 /**
  * EntryRangeProof
- * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of proof.
+ * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
  * V: m * 32 bytes, value commitment
  * A: 32 bytes, bit commitment
  * S: 32 bytes, per bit blinding factor commitment
@@ -104,8 +105,8 @@ message EntryRangeProof {
     bytes MU = 7;
     repeated bytes L = 8;
     repeated bytes R = 9;
-    bytes aprime0 = 10;
-    bytes bprime0 = 11;
+    bytes APrime0 = 10;
+    bytes BPrime0 = 11;
     bytes t = 12;
 } 
 
@@ -113,7 +114,7 @@ message EntryRangeProof {
  * CoinbaseEntry
  *
  * Version: For now only one verison. Workers would be paid in plain tx.
- * Amount: max 8 bytes (positive or negative).
+ * Amount: max 8 bytes (always positive).
  */
 message CoinbaseEntry {
     uint32 Version = 1;
