@@ -119,6 +119,6 @@ message EntryRangeProof {
  */
 message CoinbaseEntry {
     uint32 Version = 1;
-    bytes Pubkey = 2;
+    bytes PubKey = 2;
     uint64 Amount = 3;
 }
