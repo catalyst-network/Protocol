@@ -23,14 +23,6 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Rpc.Node;
 
-message PingRequest {
-    bool ping = 1;
-}
-
-message PongResponse {
-    bool pong = 2;
-}
-
 message VersionRequest {
     bool query = 1;
 }
