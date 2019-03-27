@@ -23,14 +23,6 @@ package Catalyst.Protocol.IPPN;
 
 message PeerProtocol {
 
-    message ACK {
-        bytes ack = 1;
-    }
-    
-    message NACK {
-        bytes nack = 1;
-    }
-
     message PeerInfoRequest {
         string ping = 1;
     }
@@ -48,11 +40,11 @@ message PeerProtocol {
         repeated bytes peerIds = 2;
     }
 
-    message ChallengeRequest {
-        string nonce = 1;
+    message PingRequest {
+        bytes nonce = 1;
     }
 
-    message ChallengeResponse {
-        string signedNonce = 1;
+    message PingResponse {
+        bytes nonce = 1;
     }
 }
