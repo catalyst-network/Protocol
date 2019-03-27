@@ -41,7 +41,7 @@ message PeerProtocol {
     }
 
     message PingRequest {
-        bytes nonce = 1;
+        bytes correlationId = 1;
     }
 
     message PingResponse {
