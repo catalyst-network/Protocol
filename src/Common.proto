@@ -19,40 +19,19 @@
 
 syntax = "proto3";
 
-package Catalyst.Protocol.IPPN;
+package Catalyst.Protocol.Common;
 
-message PeerProtocol {
+message PeerId {
+    int32 clientId = 1;
+    int32 clientVersion = 2; 
+    string ip = 3;
+    string port = 4;
+    string publicKey = 5;
+}
 
-    message ACK {
-        bytes ack = 1;
-    }
-    
-    message NACK {
-        bytes nack = 1;
-    }
-
-    message PeerInfoRequest {
-        string ping = 1;
-    }
-
-    message PeerInfoResponse {
-        string pong = 1;
-    }
-
-    message PeerNeighborsRequest {
-        bytes correlationId = 1;
-    }
-
-    message PeerNeighborsResponse {
-        bytes correlationId = 1;
-        repeated bytes peerIds = 2;
-    }
-
-    message ChallengeRequest {
-        string nonce = 1;
-    }
-
-    message ChallengeResponse {
-        string signedNonce = 1;
-    }
+message AnySigned {
+    PeerId peerId = 1;
+    bytes signature = 2;
+    string type_url = 3;
+    bytes value = 4;
 }
