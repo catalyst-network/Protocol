@@ -22,8 +22,11 @@ syntax = "proto3";
 package Catalyst.Protocol.Common;
 
 message PeerId {
-    string publicKey = 1;
-    string ipv6 = 2;
+    int32 clientId = 1;
+    int32 clientVersion = 2; 
+    string ip = 3;
+    string port = 4;
+    string publicKey = 5;
 }
 
 message AnySigned {
