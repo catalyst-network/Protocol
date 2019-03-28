@@ -4,7 +4,7 @@ The Catalyst Network protocol is defined using the Protobuffs seralisation forma
 
 ### Build Status
 
-[![Build Status](https://dev.azure.com/AtlasCityIO/protobuffs protocol sdk csharp/_apis/build/status/protocol-protobuffs%20-%20generate%20C%23%20files?branchName=develop)](https://dev.azure.com/AtlasCityIO/protobuffs protocol sdk csharp/_build/latest?definitionId=8&branchName=develop)
+[![Build Status](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_apis/build/status/protocol-protobuffs%20-%20generate%20C%23%20files?branchName=develop)](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_build/latest?definitionId=8&branchName=develop)
 
 ## What's a Protobuff?
 
