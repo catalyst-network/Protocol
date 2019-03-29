@@ -21,12 +21,16 @@ syntax = "proto3";
 
 package Catalyst.Protocol.Common;
 
+/**
+* Total size of the PeerId should be 42 bytes as specified in
+* https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
+*/
 message PeerId {
-    int32 clientId = 1;
-    int32 clientVersion = 2; 
-    string ip = 3;
-    int32 port = 4;
-    bytes publicKey = 5;
+    bytes clientId = 1; //2 bytes
+    bytes clientVersion = 2; //2 bytes
+    bytes ip = 3; //16 bytes
+    bytes port = 4; //2 bytes
+    bytes publicKey = 5; //20 bytes
 }
 
 message AnySigned {
