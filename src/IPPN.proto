@@ -39,9 +39,7 @@ message PeerNeighborsResponse {
 }
 
 message PingRequest {
-    bytes correlationId = 1;
-}
+ }
 
 message PingResponse {
-    bytes correlationId = 1;
 }
