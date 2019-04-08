@@ -1,2 +1,3 @@
 .sdk
 protoc.exe
+.idea/*

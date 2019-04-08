@@ -208,7 +208,7 @@ message GetMempoolResponse {
 }
 
 message SignMessageRequest {
-    bool query = 1;
+    string query = 1;
 }
 
 message SignMessageResponse {
