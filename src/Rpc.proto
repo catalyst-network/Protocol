@@ -209,7 +209,7 @@ message GetMempoolResponse {
 
 message SignMessageRequest {
     bytes message = 1;
-    optional string keyId = 2;
+    string keyId = 2;
 }
 
 message SignMessageResponse {
