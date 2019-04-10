@@ -208,11 +208,14 @@ message GetMempoolResponse {
 }
 
 message SignMessageRequest {
-    bool query = 1;
+    bytes message = 1;
+    string keyId = 2;
 }
 
 message SignMessageResponse {
-    string query = 1;
+    bytes signature = 1;
+    bytes publicKey = 2;
+    bytes originalMessage = 3;
 }
 
 message VerifyMessageRequest {
