@@ -208,7 +208,8 @@ message GetMempoolResponse {
 }
 
 message SignMessageRequest {
-    bytes query = 1;
+    bytes message = 1;
+    optional string keyId = 2;
 }
 
 message SignMessageResponse {
