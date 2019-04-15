@@ -42,7 +42,7 @@ package Catalyst.Protocol.Delta;
 	bytes MerkleRoot = 3;
 	bytes MerklePoda = 4;
 	uint32 TimeStamp = 5;
-	repeated STTransactionEntry STEntries = 6;
-	repeated CFTransactionEntry CFEntries = 7;
-	repeated CoinbaseEntry CBEntries = 8;
+	repeated Transaction.STTransactionEntry STEntries = 6;
+	repeated Transaction.CFTransactionEntry CFEntries = 7;
+	repeated Transaction.CoinbaseEntry CBEntries = 8;
 }
