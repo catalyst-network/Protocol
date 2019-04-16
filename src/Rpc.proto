@@ -219,11 +219,13 @@ message SignMessageResponse {
 }
 
 message VerifyMessageRequest {
-    bool query = 1;
+    bytes signature = 1;
+    bytes publicKey = 2;
+    bytes message = 3;
 }
 
 message VerifyMessageResponse {
-    string query = 1;
+    bool isSignedByKey = 1;
 }
 
 message ServiceStatusRequest {
