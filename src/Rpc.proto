@@ -23,6 +23,8 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Rpc.Node;
 
+import "Common.proto";
+
 message VersionRequest {
     bool query = 1;
 }
@@ -167,12 +169,10 @@ message AddNodeResponse {
     string query = 1;
 }
 
-message GetPeerListRequest {
-    bool query = 1;
-}
+message GetPeerListRequest { }
 
 message GetPeerListResponse {
-    string query = 1;
+    repeated Common.PeerId Peers = 1;
 }
 
 message GetPeerInfoRequest {
