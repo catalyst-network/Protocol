@@ -240,3 +240,8 @@ message AddFileToDfsRequest {
 	bytes fileBytes = 1;
 	string node = 2;
 }
+
+message AddFileToDfsResponse {
+	bytes responseCode = 1;
+	repeated string fileHashes = 2;
+}
