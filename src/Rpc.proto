@@ -242,16 +242,16 @@ message AddFileToDfsRequest {
 	string node = 3;
 }
 
+message AddFileToDfsResponse {
+	bytes responseCode = 1;
+	repeated string fileHashes = 2;
+}
+
 message TransferFileBytesRequest {
 	uint32 chunkId = 1;
 	bytes chunkBytes = 2;
 }
 
 message TransferFileBytesResponse {
-	byte responseCode = 1;
-}
-
-message AddFileToDfsResponse {
 	bytes responseCode = 1;
-	repeated string fileHashes = 2;
 }
