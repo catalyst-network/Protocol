@@ -238,13 +238,12 @@ message ServiceStatusResponse {
 
 message AddFileToDfsRequest {
 	uint64 fileSize = 1;
-	string fileHash = 2;
+	string fileName = 2;
 	string node = 3;
 }
 
 message AddFileToDfsResponse {
 	bytes responseCode = 1;
-	repeated string fileHashes = 2;
 }
 
 message TransferFileBytesRequest {
