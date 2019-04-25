@@ -235,3 +235,8 @@ message ServiceStatusRequest {
 message ServiceStatusResponse {
     string query = 1;
 }
+
+message AddFileToDfsRequest {
+	bytes fileBytes = 1;
+	string node = 2;
+}
