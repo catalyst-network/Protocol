@@ -237,8 +237,18 @@ message ServiceStatusResponse {
 }
 
 message AddFileToDfsRequest {
-	bytes fileBytes = 1;
-	string node = 2;
+	uint64 fileSize = 1;
+	string fileHash = 2;
+	string node = 3;
+}
+
+message TransferFileBytesRequest {
+	uint32 chunkId = 1;
+	bytes chunkBytes = 2;
+}
+
+message TransferFileBytesResponse {
+	byte responseCode = 1;
 }
 
 message AddFileToDfsResponse {
