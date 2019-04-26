@@ -249,6 +249,7 @@ message AddFileToDfsResponse {
 message TransferFileBytesRequest {
 	uint32 chunkId = 1;
 	bytes chunkBytes = 2;
+	bytes correlationFileName = 3;
 }
 
 message TransferFileBytesResponse {
