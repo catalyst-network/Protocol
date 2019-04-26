@@ -204,7 +204,7 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    map<string, string> info = 1;
+    repeated string mempool = 1;
 }
 
 message SignMessageRequest {
