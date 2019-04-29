@@ -244,6 +244,7 @@ message AddFileToDfsRequest {
 
 message AddFileToDfsResponse {
 	bytes responseCode = 1;
+	string dfsHash = 2;
 }
 
 message TransferFileBytesRequest {
