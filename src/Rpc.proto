@@ -204,7 +204,7 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    map<string, string> info = 1;
+    repeated string mempool = 1;
 }
 
 message SignMessageRequest {
@@ -234,6 +234,7 @@ message ServiceStatusRequest {
 
 message ServiceStatusResponse {
     string query = 1;
+<<<<<<< HEAD
 }
 
 message AddFileToDfsRequest {
@@ -256,3 +257,6 @@ message TransferFileBytesRequest {
 message TransferFileBytesResponse {
 	bytes responseCode = 1;
 }
+=======
+}
+>>>>>>> develop
