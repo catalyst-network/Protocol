@@ -256,3 +256,12 @@ message TransferFileBytesRequest {
 message TransferFileBytesResponse {
 	bytes responseCode = 1;
 }
+
+message RemovePeerRequest {
+	bytes peerIp = 1;
+	bytes publicKey = 2;
+}
+
+message RemovePeerResponse {
+	bool deleted = 1;
+}
