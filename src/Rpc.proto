@@ -256,3 +256,9 @@ message TransferFileBytesRequest {
 message TransferFileBytesResponse {
 	bytes responseCode = 1;
 }
+
+message GetPeerCountRequest { }
+
+message GetPeerCountResponse {
+	int32 peerCount = 1;
+}
