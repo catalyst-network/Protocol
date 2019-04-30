@@ -234,7 +234,6 @@ message ServiceStatusRequest {
 
 message ServiceStatusResponse {
     string query = 1;
-<<<<<<< HEAD
 }
 
 message AddFileToDfsRequest {
@@ -257,6 +256,3 @@ message TransferFileBytesRequest {
 message TransferFileBytesResponse {
 	bytes responseCode = 1;
 }
-=======
-}
->>>>>>> develop
