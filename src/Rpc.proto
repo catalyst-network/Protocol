@@ -263,5 +263,5 @@ message RemovePeerRequest {
 }
 
 message RemovePeerResponse {
-	bool deleted = 1;
+	uint32 deletedCount = 1;
 }
