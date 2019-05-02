@@ -257,6 +257,15 @@ message TransferFileBytesResponse {
 	bytes responseCode = 1;
 }
 
+message RemovePeerRequest {
+	bytes peerIp = 1;
+	bytes publicKey = 2;
+}
+
+message RemovePeerResponse {
+	uint32 deletedCount = 1;
+}
+
 message GetPeerCountRequest { }
 
 message GetPeerCountResponse {
