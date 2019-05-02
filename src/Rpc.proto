@@ -265,3 +265,9 @@ message RemovePeerRequest {
 message RemovePeerResponse {
 	uint32 deletedCount = 1;
 }
+
+message GetPeerCountRequest { }
+
+message GetPeerCountResponse {
+	int32 peerCount = 1;
+}
