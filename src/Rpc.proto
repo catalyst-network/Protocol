@@ -175,6 +175,15 @@ message GetPeerListResponse {
     repeated Common.PeerId Peers = 1;
 }
 
+message GetPeerReputationRequest {
+    bytes publicKey = 1;
+    bytes ip = 2;
+}
+
+message GetPeerReputationResponse {
+   int32 reputation = 1;
+}
+
 message GetPeerInfoRequest {
     bool query = 1;
 }
@@ -269,5 +278,5 @@ message RemovePeerResponse {
 message GetPeerCountRequest { }
 
 message GetPeerCountResponse {
-	int32 peerCount = 1;
+	int32 peerCount = 1; 
 }
