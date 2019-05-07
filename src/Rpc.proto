@@ -278,7 +278,7 @@ message RemovePeerResponse {
 message GetPeerCountRequest { }
 
 message GetPeerCountResponse {
-	int32 peerCount = 1; 
+	int32 peerCount = 1;  
 }
 
 message GetFileFromDfsRequest {
