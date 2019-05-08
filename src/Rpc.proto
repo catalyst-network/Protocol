@@ -280,3 +280,12 @@ message GetPeerCountRequest { }
 message GetPeerCountResponse {
 	int32 peerCount = 1;  
 }
+
+message GetFileFromDfsRequest {
+	string dfsHash = 1;
+}
+
+message GetFileFromDfsResponse {
+	uint64 fileSize = 1;
+	bytes responseCode = 2;
+}
