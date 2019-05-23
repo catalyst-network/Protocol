@@ -190,7 +190,7 @@ message UpdatePeerBlackListRequest {
     bool blacklist = 3;
 }
 
-message GetPeerBlackListResponse{
+message UpdatePeerBlackListResponse{
     bytes publicKey = 1;
     bytes ip = 2;
     bool blacklist = 3;
