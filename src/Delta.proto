@@ -22,6 +22,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 import "Transaction.proto";
+import "Common.proto";
 
 package Catalyst.Protocol.Delta;
 
@@ -29,6 +30,7 @@ package Catalyst.Protocol.Delta;
  * Delta
  *
  * version:
+ * PreviousDeltaDfsHash: address for the content of the previous delta on the DFS
  * MerkleRoot:
  * MerklePoda: proof of delegated authority for active wokers
  * TimeStamp:
@@ -37,12 +39,26 @@ package Catalyst.Protocol.Delta;
  * CBEntries: one per active worker
  */
  message Delta {
-	uint32 version = 1; 
-	bytes PreviousDelta = 2;
+	uint32 Version = 1; 
+	bytes PreviousDeltaDfsHash = 2;
 	bytes MerkleRoot = 3;
 	bytes MerklePoda = 4;
 	uint32 TimeStamp = 5;
 	repeated Transaction.STTransactionEntry STEntries = 6;
 	repeated Transaction.CFTransactionEntry CFEntries = 7;
 	repeated Transaction.CoinbaseEntry CBEntries = 8;
+}
+
+/**
+ * CandidateDelta
+ *
+ * DeltaHash: The hash computed for the current delta produced by ProducerId.
+ *	This is meant to be used when voting for most popular hashes.
+ * PreviousDeltaDfsHash: DFDS address for the content of the delta preceding this candidate.
+ * ProducerId: Identifier of the producer of the candidate.
+ */
+message CandidateDelta {
+	bytes Hash = 1;
+	Common.PeerId ProducerId = 2;
+	bytes PreviousDeltaDfsHash = 3;
 }
