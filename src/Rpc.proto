@@ -184,7 +184,7 @@ message GetPeerReputationResponse {
    int32 reputation = 1;
 }
 
-message GetPeerBlackListRequest {
+message UpdatePeerBlackListRequest {
     bytes publicKey = 1;
     bytes ip = 2;
     bool blacklist = 3;
