@@ -58,7 +58,7 @@ package Catalyst.Protocol.Delta;
  * ProducerId: Identifier of the producer of the candidate.
  */
 message CandidateDelta {
-	bytes DeltaHash = 1;
+	bytes Hash = 1;
 	Common.PeerId ProducerId = 2;
 	bytes PreviousDeltaDfsHash = 3;
 }
