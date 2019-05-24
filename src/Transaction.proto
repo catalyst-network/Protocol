@@ -35,7 +35,7 @@ package Catalyst.Protocol.Transaction;
  * Signature: 64 bytes
  * EntryRangeProof: 0 field for non-confidential transaction
  */
-message Transaction {
+message TransactionBroadcast {
     uint32 Version = 1;
     uint64 TimeStamp = 2;
     uint64 TransactionFees = 3;
