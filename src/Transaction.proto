@@ -23,8 +23,6 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Transaction;
 
-import "MessageOptions.proto";
-
 /**
  * Transaction
  *
@@ -37,8 +35,7 @@ import "MessageOptions.proto";
  * Signature: 64 bytes
  * EntryRangeProof: 0 field for non-confidential transaction
  */
-message Transaction {
-    option (canGossip) = true;
+message TransactionBroadcast {
     uint32 Version = 1;
     uint64 TimeStamp = 2;
     uint64 TransactionFees = 3;
