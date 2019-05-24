@@ -184,6 +184,18 @@ message GetPeerReputationResponse {
    int32 reputation = 1;
 }
 
+message SetPeerBlackListRequest {
+    bytes publicKey = 1;
+    bytes ip = 2;
+    bool blacklist = 3;
+}
+
+message SetPeerBlackListResponse{
+    bytes publicKey = 1;
+    bytes ip = 2;
+    bool blacklist = 3;
+}
+
 message GetPeerInfoRequest {
     bool query = 1;
 }
