@@ -27,7 +27,7 @@ import "Common.proto";
 package Catalyst.Protocol.Delta;
 
 /**
- * DeltaBroadcast
+ * Delta
  *
  * version:
  * PreviousDeltaDfsHash: address for the content of the previous delta on the DFS
@@ -38,7 +38,7 @@ package Catalyst.Protocol.Delta;
  * CFEntries:
  * CBEntries: one per active worker
  */
- message DeltaBroadcast {
+ message Delta {
 	uint32 Version = 1; 
 	bytes PreviousDeltaDfsHash = 2;
 	bytes MerkleRoot = 3;
