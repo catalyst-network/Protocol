@@ -70,6 +70,6 @@ message CandidateDeltaBroadcast {
  * VoterId: The PeerId of the participant submitting its vote to the network.
  */
 message FavouriteDeltaBroadcast {
-	CandidateDeltaBroadcast = 1;
+	CandidateDeltaBroadcast Candidate = 1;
 	Common.PeerId VoterId = 2;
 }
