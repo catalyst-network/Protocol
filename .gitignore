@@ -1,2 +1,4 @@
 .sdk
 protoc.exe
+.idea/*
+DotSettings.user

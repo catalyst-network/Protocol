@@ -23,6 +23,8 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Rpc.Node;
 
+import "Common.proto";
+
 message VersionRequest {
     bool query = 1;
 }
@@ -167,12 +169,31 @@ message AddNodeResponse {
     string query = 1;
 }
 
-message GetPeerListRequest {
-    bool query = 1;
-}
+message GetPeerListRequest { }
 
 message GetPeerListResponse {
-    string query = 1;
+    repeated Common.PeerId Peers = 1;
+}
+
+message GetPeerReputationRequest {
+    bytes publicKey = 1;
+    bytes ip = 2;
+}
+
+message GetPeerReputationResponse {
+   int32 reputation = 1;
+}
+
+message SetPeerBlackListRequest {
+    bytes publicKey = 1;
+    bytes ip = 2;
+    bool blacklist = 3;
+}
+
+message SetPeerBlackListResponse{
+    bytes publicKey = 1;
+    bytes ip = 2;
+    bool blacklist = 3;
 }
 
 message GetPeerInfoRequest {
@@ -204,23 +225,28 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    map<string, string> info = 1;
+    repeated string mempool = 1;
 }
 
 message SignMessageRequest {
-    bool query = 1;
+    bytes message = 1;
+    string keyId = 2;
 }
 
 message SignMessageResponse {
-    string query = 1;
+    bytes signature = 1;
+    bytes publicKey = 2;
+    bytes originalMessage = 3;
 }
 
 message VerifyMessageRequest {
-    bool query = 1;
+    bytes signature = 1;
+    bytes publicKey = 2;
+    bytes message = 3;
 }
 
 message VerifyMessageResponse {
-    string query = 1;
+    bool isSignedByKey = 1;
 }
 
 message ServiceStatusRequest {
@@ -229,4 +255,49 @@ message ServiceStatusRequest {
 
 message ServiceStatusResponse {
     string query = 1;
+}
+
+message AddFileToDfsRequest {
+	uint64 fileSize = 1;
+	string fileName = 2;
+	string node = 3;
+}
+
+message AddFileToDfsResponse {
+	bytes responseCode = 1;
+	string dfsHash = 2;
+}
+
+message TransferFileBytesRequest {
+	uint32 chunkId = 1;
+	bytes chunkBytes = 2;
+	bytes correlationFileName = 3;
+}
+
+message TransferFileBytesResponse {
+	bytes responseCode = 1;
+}
+
+message RemovePeerRequest {
+	bytes peerIp = 1;
+	bytes publicKey = 2;
+}
+
+message RemovePeerResponse {
+	uint32 deletedCount = 1;
+}
+
+message GetPeerCountRequest { }
+
+message GetPeerCountResponse {
+	int32 peerCount = 1;  
+}
+
+message GetFileFromDfsRequest {
+	string dfsHash = 1;
+}
+
+message GetFileFromDfsResponse {
+	uint64 fileSize = 1;
+	bytes responseCode = 2;
 }

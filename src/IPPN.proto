@@ -21,30 +21,14 @@ syntax = "proto3";
 
 package Catalyst.Protocol.IPPN;
 
-message PeerProtocol {
+import "Common.proto";
 
-    message PeerInfoRequest {
-        string ping = 1;
-    }
+message PeerNeighborsRequest { }
 
-    message PeerInfoResponse {
-        string pong = 1;
-    }
-
-    message PeerNeighborsRequest {
-        bytes correlationId = 1;
-    }
-
-    message PeerNeighborsResponse {
-        bytes correlationId = 1;
-        repeated bytes peerIds = 2;
-    }
-
-    message PingRequest {
-        bytes correlationId = 1;
-    }
-
-    message PingResponse {
-        bytes correlationId = 1;
-    }
+message PeerNeighborsResponse {
+    repeated Common.PeerId Peers = 1;
 }
+
+message PingRequest { }
+
+message PingResponse { }

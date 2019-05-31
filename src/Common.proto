@@ -21,17 +21,30 @@ syntax = "proto3";
 
 package Catalyst.Protocol.Common;
 
+/**
+* Aggregated size of the fields in PeerId should be 42 bytes as specified in
+* https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
+*/
 message PeerId {
-    int32 clientId = 1;
-    int32 clientVersion = 2; 
-    string ip = 3;
-    int32 port = 4;
-    bytes publicKey = 5;
+    bytes clientId = 1; //2 bytes
+    bytes clientVersion = 2; //2 bytes
+    bytes ip = 3; //16 bytes
+    bytes port = 4; //2 bytes
+    bytes publicKey = 5; //20 bytes
 }
 
+/**
+* Wrapper to be used to send any message on the network
+* - peerId is the sender's peerId
+* - correlationId is a 16 bytes guid used to match responses to their original requests
+* - signature is the correlationId + value signed by the sender's and verifiable using peerId.publicKey
+* - type_url is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+* - value is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+*/
 message AnySigned {
     PeerId peerId = 1;
-    bytes signature = 2;
-    string type_url = 3;
-    bytes value = 4;
+    bytes correlationId = 2;
+    bytes signature = 3;
+    string type_url = 4;
+    bytes value = 5;
 }
