@@ -33,7 +33,6 @@ message PeerId {
     bytes publicKey = 5; //20 bytes
 }
 
-
 /**
 * Wrapper to be used to send any message on the network
 * - peerId is the sender's peerId
