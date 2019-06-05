@@ -37,9 +37,9 @@ message PeerId {
 * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
 * To verify use message.peerId.publicKey
 */
-message SignedEnvelope {
+message ProtocolMessageSigned {
     bytes signature = 1;
-    ServiceMessage message = 2;
+    ProtocolMessage message = 2;
 }
 
 /**
@@ -49,7 +49,7 @@ message SignedEnvelope {
 * - type_url is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
 * - value is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
 */
-message ServiceMessage {
+message ProtocolMessage {
     PeerId peerId = 1;
     bytes correlationId = 2;
     string type_url = 3;
