@@ -34,6 +34,16 @@ message PeerId {
 }
 
 /**
+* Provides a network error message, for when a node cant send/ build a valid response
+*/
+message ProtocolErrorMessageSigned {
+    bytes signature = 1;
+    PeerId peerId = 2;
+    bytes correlationId = 3;
+    int32 code = 4;
+}
+
+/**
 * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
 * To verify use message.peerId.publicKey
 */
