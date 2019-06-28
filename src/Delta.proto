@@ -54,7 +54,7 @@ package Catalyst.Protocol.Delta;
  *
  * DeltaHash: The hash computed for the current delta produced by ProducerId.
  *	This is meant to be used when voting for most popular hashes.
- * PreviousDeltaDfsHash: DFS address for the content of the delta preceding this candidate.
+ * PreviousDeltaDfsHash: The DFS address for the content of the delta preceding this candidate.
  * ProducerId: Identifier of the producer of the candidate.
  */
 message CandidateDeltaBroadcast {
@@ -77,8 +77,8 @@ message FavouriteDeltaBroadcast {
 /**
  * DeltaDfsHashBroadcast
  *
- * DeltaDfsHash: The address at which the full content of the delta can be retrieved.
- * PreviousDeltaDfsHash: DFS address for the content of the delta preceding this candidate.
+ * DeltaDfsHash: The DFS address at which the full content of the delta can be retrieved.
+ * PreviousDeltaDfsHash: The DFS address for the content of the delta preceding this candidate.
  */
  message DeltaDfsHashBroadcast {
 	bytes DeltaDfsHash = 1;
