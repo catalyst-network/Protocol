@@ -75,12 +75,12 @@ message FavouriteDeltaBroadcast {
 }
 
 /**
- * DeltaDfsAddressBroadcast
+ * DeltaDfsHashBroadcast
  *
  * DeltaDfsHash: The address at which the full content of the delta can be retrieved.
  * PreviousDeltaDfsHash: DFS address for the content of the delta preceding this candidate.
  */
- message DeltaDfsAddressBroadcast {
+ message DeltaDfsHashBroadcast {
 	bytes DeltaDfsHash = 1;
 	bytes PreviousDeltaDfsHash = 2;
 }
