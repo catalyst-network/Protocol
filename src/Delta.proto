@@ -73,3 +73,14 @@ message FavouriteDeltaBroadcast {
 	CandidateDeltaBroadcast Candidate = 1;
 	Common.PeerId VoterId = 2;
 }
+
+/**
+ * DeltaDfsAddressBroadcast
+ *
+ * DeltaDfsHash: The address at which the full content of the delta can be retrieved.
+ * PreviousDeltaDfsHash: DFS address for the content of the delta preceding this candidate.
+ */
+ message DeltaDfsAddressBroadcast {
+	bytes DeltaDfsHash = 1;
+	bytes PreviousDeltaDfsHash = 2;
+}
