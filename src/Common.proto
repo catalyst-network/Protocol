@@ -21,6 +21,8 @@ syntax = "proto3";
 
 package Catalyst.Protocol.Common;
 
+import "google/protobuf/timestamp.proto";
+
 /**
 * Aggregated size of the fields in PeerId should be 42 bytes as specified in
 * https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
@@ -64,4 +66,28 @@ message ProtocolMessage {
     bytes correlationId = 2;
     string type_url = 3;
     bytes value = 4;
+}
+
+/**
+* Information about a peer
+* - peerId is the peerId
+* - pkId is the primary key of the peer in storage
+* - reputation of peer
+* - blackListed is to check if the peer is blackListed
+* - isAwolPeer is when the peer cannot be reached on the network
+* - inactiveFor is how long the peer has beekn inactive for
+* - lastSeen is when the peer was last seen
+* - modified is when the peer was last modified
+* - created is when the peer was created
+*/
+message PeerInfo {
+    PeerId peerId = 1;
+    uint64 pkId = 2;
+    int64 reputation = 3;
+    bool blackListed = 4;
+    bool isAwolPeer = 5;
+    uint64 inactiveFor = 6;
+    google.protobuf.Timestamp lastSeen = 7;
+    google.protobuf.Timestamp modified = 8;
+    google.protobuf.Timestamp created = 9;
 }

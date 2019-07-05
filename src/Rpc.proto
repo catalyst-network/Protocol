@@ -197,11 +197,12 @@ message SetPeerBlackListResponse{
 }
 
 message GetPeerInfoRequest {
-    bool query = 1;
+    bytes publicKey = 1;
+    bytes ip = 2;
 }
 
 message GetPeerInfoResponse {
-    string query = 1;
+    repeated Common.PeerInfo PeerInfo = 1;
 }
 
 message GetConnectionCountRequest {
