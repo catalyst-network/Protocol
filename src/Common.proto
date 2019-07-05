@@ -21,7 +21,7 @@ syntax = "proto3";
 
 package Catalyst.Protocol.Common;
 
-import "google/protobuf/timestamp.proto"
+import "google/protobuf/timestamp.proto";
 
 /**
 * Aggregated size of the fields in PeerId should be 42 bytes as specified in
