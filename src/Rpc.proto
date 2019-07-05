@@ -202,11 +202,7 @@ message GetPeerInfoRequest {
 }
 
 message GetPeerInfoResponse {
-    bytes clientId = 1;
-    bytes clientVersion = 2;
-    bytes ip = 3;
-    bytes port = 4;
-    bytes publicKey = 5;
+    repeated Common.PeerId Peers = 1;
 }
 
 message GetConnectionCountRequest {
