@@ -82,11 +82,10 @@ message ProtocolMessage {
 */
 message PeerInfo {
     PeerId peerId = 1;
-    uint64 pkId = 2;
     int64 reputation = 3;
     bool blackListed = 4;
     bool isAwolPeer = 5;
-    uint64 inactiveFor = 6;
+    int64 inactiveFor = 6;
     google.protobuf.Timestamp lastSeen = 7;
     google.protobuf.Timestamp modified = 8;
     google.protobuf.Timestamp created = 9;
