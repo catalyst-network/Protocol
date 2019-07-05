@@ -202,7 +202,7 @@ message GetPeerInfoRequest {
 }
 
 message GetPeerInfoResponse {
-    repeated Common.PeerId Peers = 1;
+    repeated Common.PeerInfo PeerInfo = 1;
 }
 
 message GetConnectionCountRequest {
