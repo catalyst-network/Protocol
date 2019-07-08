@@ -22,6 +22,7 @@ syntax = "proto3";
 package Catalyst.Protocol.Common;
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
 
 /**
 * Aggregated size of the fields in PeerId should be 42 bytes as specified in
@@ -85,7 +86,7 @@ message PeerInfo {
     int64 reputation = 2;
     bool blackListed = 3;
     bool isAwolPeer = 4;
-    int64 inactiveFor = 5;
+    google.protobuf.Duration inactiveFor = 5;
     google.protobuf.Timestamp lastSeen = 6;
     google.protobuf.Timestamp modified = 7;
     google.protobuf.Timestamp created = 8;
