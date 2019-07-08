@@ -83,7 +83,7 @@ message ProtocolMessage {
 */
 message PeerInfo {
     PeerId peerId = 1;
-    int64 reputation = 2;
+    int32 reputation = 2;
     bool blackListed = 3;
     bool isAwolPeer = 4;
     google.protobuf.Duration inactiveFor = 5;

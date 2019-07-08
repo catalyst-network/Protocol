@@ -182,7 +182,7 @@ message GetPeerReputationRequest {
 }
 
 message GetPeerReputationResponse {
-   int64 reputation = 1;
+   int32 reputation = 1;
 }
 
 message SetPeerBlackListRequest {
