@@ -24,6 +24,7 @@ option java_multiple_files = true;
 package Catalyst.Protocol.Rpc.Node;
 
 import "Common.proto";
+import "Delta.proto";
 
 message VersionRequest {
     bool query = 1;
@@ -214,11 +215,11 @@ message GetConnectionCountResponse {
 }
 
 message GetDeltaRequest {
-    bool query = 1;
+    bytes DeltaDfsHash = 1;
 }
 
 message GetDeltaResponse {
-    string query = 1;
+    Delta.Delta Delta = 1;
 }
 
 message GetMempoolRequest {
