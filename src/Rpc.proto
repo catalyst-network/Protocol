@@ -24,7 +24,7 @@ option java_multiple_files = true;
 package Catalyst.Protocol.Rpc.Node;
 
 import "Common.proto";
-import "Delta.proto";
+import "Deltas.proto";
 
 message VersionRequest {
     bool query = 1;
