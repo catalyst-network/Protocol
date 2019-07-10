@@ -219,7 +219,7 @@ message GetDeltaRequest {
 }
 
 message GetDeltaResponse {
-    Delta.Delta Delta = 1;
+    Deltas.Delta Delta = 1;
 }
 
 message GetMempoolRequest {
