@@ -23,6 +23,7 @@ option java_multiple_files = true;
 
 import "Transaction.proto";
 import "Common.proto";
+import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Delta;
 
@@ -43,7 +44,7 @@ package Catalyst.Protocol.Delta;
 	bytes PreviousDeltaDfsHash = 2;
 	bytes MerkleRoot = 3;
 	bytes MerklePoda = 4;
-	uint32 TimeStamp = 5;
+	google.protobuf.Timestamp TimeStamp = 5;
 	repeated Transaction.STTransactionEntry STEntries = 6;
 	repeated Transaction.CFTransactionEntry CFEntries = 7;
 	repeated Transaction.CoinbaseEntry CBEntries = 8;
