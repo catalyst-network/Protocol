@@ -303,3 +303,13 @@ message GetFileFromDfsResponse {
 	uint64 fileSize = 1;
 	bytes responseCode = 2;
 }
+
+message SetPeerDataFolderRequest {
+    bytes publicKey = 1;
+    bytes ip = 2;    
+    string datafolder = 3; 
+}
+
+message GetPeerDataFolderResponse {
+  bool query = 1; 
+}
