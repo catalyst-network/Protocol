@@ -29,8 +29,8 @@ import "google/protobuf/duration.proto";
 * https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
 */
 message PeerId {
-    bytes clientId = 1; //2 bytes
-    bytes clientVersion = 2; //2 bytes
+    bytes clientId = 1[default = 0x0001]; //2 bytes
+    bytes clientVersion = 2[default = 0x0001]; //2 bytes
     bytes ip = 3; //16 bytes
     bytes port = 4; //2 bytes
     bytes publicKey = 5; //20 bytes
