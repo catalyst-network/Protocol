@@ -21,6 +21,8 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
+import "google/protobuf/timestamp.proto";
+
 package Catalyst.Protocol.Transaction;
 
 /**
@@ -37,7 +39,7 @@ package Catalyst.Protocol.Transaction;
  */
 message TransactionBroadcast {
     uint32 Version = 1;
-    uint64 TimeStamp = 2;
+    google.protobuf.Timestamp TimeStamp = 2;
     uint64 TransactionFees = 3;
     uint64 LockTime = 4;
     repeated STTransactionEntry STEntries = 5;
