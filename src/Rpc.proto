@@ -25,6 +25,7 @@ package Catalyst.Protocol.Rpc.Node;
 
 import "Common.proto";
 import "Deltas.proto";
+import "Transaction.proto";
 
 message VersionRequest {
     bool query = 1;
@@ -123,11 +124,11 @@ message DecodeRawTransactionResponse {
 }
 
 message BroadcastRawTransactionRequest {
-    bool query = 1;
+	Transaction.TransactionBroadcast transaction = 1;
 }
 
 message BroadcastRawTransactionResponse {
-    string query = 1;
+    bytes responseCode = 1;
 }
 
 message SendToRequest {
