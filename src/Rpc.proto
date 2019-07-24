@@ -128,7 +128,7 @@ message BroadcastRawTransactionRequest {
 }
 
 message BroadcastRawTransactionResponse {
-    bytes responseCode = 1;
+    Transaction.TransactionBroadcastResponses responseCode = 1;
 }
 
 message SendToRequest {
