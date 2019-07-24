@@ -27,6 +27,21 @@ import "Common.proto";
 import "Deltas.proto";
 import "Transaction.proto";
 
+/**
+ * ResponseCode
+ *
+ * Possible response codes
+ * 
+ */
+enum ResponseCode {
+	PENDING = 0;
+	SUCCESSFUL = 1;
+	ERROR = 2;
+	FINISHED = 3;
+	EXPIRED = 4;
+	FAILED = 5;
+}
+
 message VersionRequest {
     bool query = 1;
 }
@@ -128,7 +143,7 @@ message BroadcastRawTransactionRequest {
 }
 
 message BroadcastRawTransactionResponse {
-    Transaction.TransactionBroadcastResponses responseCode = 1;
+    ResponseCode responseCode = 1;
 }
 
 message SendToRequest {

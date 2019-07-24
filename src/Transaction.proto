@@ -47,18 +47,6 @@ message TransactionBroadcast {
 }
 
 /**
- * TransactionBroadcastResponses
- *
- * Possible response codes from sending a transaction broadcast
- * 
- */
-enum TransactionBroadcastResponses {
-	PENDING = 0;
-	SUCCESS = 1;
-	FAILED = 2;
-}
-
-/**
  * STTransactionEntry
  *
  * PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
