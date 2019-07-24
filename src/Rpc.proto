@@ -25,6 +25,16 @@ package Catalyst.Protocol.Rpc.Node;
 
 import "Common.proto";
 import "Deltas.proto";
+import "Transaction.proto";
+
+enum ResponseCode {
+	PENDING = 0;
+	SUCCESSFUL = 1;
+	ERROR = 2;
+	FINISHED = 3;
+	EXPIRED = 4;
+	FAILED = 5;
+}
 
 message VersionRequest {
     bool query = 1;
@@ -123,11 +133,11 @@ message DecodeRawTransactionResponse {
 }
 
 message BroadcastRawTransactionRequest {
-    bool query = 1;
+	Transaction.TransactionBroadcast transaction = 1;
 }
 
 message BroadcastRawTransactionResponse {
-    string query = 1;
+    ResponseCode responseCode = 1;
 }
 
 message SendToRequest {
