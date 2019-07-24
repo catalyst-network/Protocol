@@ -27,12 +27,6 @@ import "Common.proto";
 import "Deltas.proto";
 import "Transaction.proto";
 
-/**
- * ResponseCode
- *
- * Possible response codes
- * 
- */
 enum ResponseCode {
 	PENDING = 0;
 	SUCCESSFUL = 1;
