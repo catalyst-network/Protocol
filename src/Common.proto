@@ -30,7 +30,7 @@ import "google/protobuf/duration.proto";
 */
 message PeerId {
     bytes clientId = 1; //2 bytes
-    bytes clientVersion = 2; //2 bytes
+    bytes protocolVersion = 2; //2 bytes
     bytes ip = 3; //16 bytes
     bytes port = 4; //2 bytes
     bytes publicKey = 5; //20 bytes
