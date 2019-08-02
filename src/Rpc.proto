@@ -314,10 +314,8 @@ message GetFileFromDfsResponse {
 	bytes responseCode = 2;
 }
 
-message SetPeerDataFolderRequest {
-    bytes publicKey = 1;
-    bytes ip = 2;    
-    string datafolder = 3; 
+message SetPeerDataFolderRequest { 
+    string datafolder = 1; 
 }
 
 message GetPeerDataFolderResponse {
