@@ -318,6 +318,6 @@ message SetPeerDataFolderRequest {
     string datafolder = 1; 
 }
 
-message GetPeerDataFolderResponse {
+message SetPeerDataFolderResponse {
   bool query = 1; 
 }
