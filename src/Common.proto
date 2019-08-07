@@ -93,16 +93,19 @@ message PeerInfo {
 }
 
 enum Network {
-    MAINET = 0;
-    DEVNET = 1;
-    TESTNET = 2;
+    UNKNOWN = 0;
+    MAINET = 1;
+    DEVNET = 2;
+    TESTNET = 3;
+
 }
 
 enum SignatureType {
-    TRANSACTION_PUBLIC = 0;
-    TRANSACTION_CONFIDENTIAL = 1;
-    PROTOCOL_RPC = 2;
-    PROTOCOL_PEER = 3;
+    UNKNOWN = 0;
+    TRANSACTION_PUBLIC = 1;
+    TRANSACTION_CONFIDENTIAL = 2;
+    PROTOCOL_RPC = 3;
+    PROTOCOL_PEER = 4;
 }
 
 /**
