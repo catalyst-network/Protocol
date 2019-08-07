@@ -93,14 +93,14 @@ message PeerInfo {
 }
 
 enum Network {
-    UNKNOWN = 0;
+    NETWORK_UNKNOWN = 0;
     MAINET = 1;
     DEVNET = 2;
     TESTNET = 3;
 }
 
 enum SignatureType {
-    UNKNOWN = 0;
+    SIGNATURE_TYPE_UNKNOWN = 0;
     TRANSACTION_PUBLIC = 1;
     TRANSACTION_CONFIDENTIAL = 2;
     PROTOCOL_RPC = 3;
