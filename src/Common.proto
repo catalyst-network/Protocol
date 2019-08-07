@@ -97,7 +97,6 @@ enum Network {
     MAINET = 1;
     DEVNET = 2;
     TESTNET = 3;
-
 }
 
 enum SignatureType {
