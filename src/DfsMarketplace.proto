@@ -26,7 +26,7 @@ package Catalyst.Protocol.DfsMarketplace;
 import "Common.proto";
 
 message BlockChallengeRequest {
-	string challangeSalt = 1;
+	string challengeSalt = 1;
 	string mainFileCid = 2;
 	bytes blockIdxRandomGuid = 3;
 }
