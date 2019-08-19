@@ -237,7 +237,7 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    repeated string mempool = 1;
+    repeated Transaction.TransactionBroadcast transactions = 1;
 }
 
 message SignMessageRequest {
