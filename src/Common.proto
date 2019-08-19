@@ -91,3 +91,29 @@ message PeerInfo {
     google.protobuf.Timestamp modified = 7;
     google.protobuf.Timestamp created = 8;
 }
+
+enum Network {
+    NETWORK_UNKNOWN = 0;
+    MAINET = 1;
+    DEVNET = 2;
+    TESTNET = 3;
+}
+
+enum SignatureType {
+    SIGNATURE_TYPE_UNKNOWN = 0;
+    TRANSACTION_PUBLIC = 1;
+    TRANSACTION_CONFIDENTIAL = 2;
+    PROTOCOL_RPC = 3;
+    PROTOCOL_PEER = 4;
+}
+
+/**
+* Context in which a signature takes place.
+* - peerId is the peerId
+* - Network is the network (mainet / devnet etc)
+* - SignatureType contains info on whether the signature is for a protocol message or a transaction.
+*/
+message SigningContext {
+    Network network = 1;
+    SignatureType signatureType = 2;
+}
