@@ -94,7 +94,7 @@ message PeerInfo {
 
 enum Network {
     NETWORK_UNKNOWN = 0;
-    MAINET = 1;
+    MAINNET = 1;
     DEVNET = 2;
     TESTNET = 3;
 }
