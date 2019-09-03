@@ -36,6 +36,8 @@ package Catalyst.Protocol.Transaction;
  * CFEntries: 0 field for non-confidential transaction
  * Signature: 64 bytes
  * EntryRangeProof: 0 field for non-confidential transaction
+ * Init: 0 field used for smart contract deployment
+ * Data: 0 field used for smart contracts method calls
  */
 message PublicTransactionBroadcast {
 	PublicTransaction Transaction = 1;
