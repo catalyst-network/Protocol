@@ -37,15 +37,34 @@ package Catalyst.Protocol.Transaction;
  * Signature: 64 bytes
  * EntryRangeProof: 0 field for non-confidential transaction
  */
-message TransactionBroadcast {
-    uint32 Version = 1;
-    google.protobuf.Timestamp TimeStamp = 2;
-    uint64 TransactionFees = 3;
-    uint64 LockTime = 4;
-    repeated STTransactionEntry STEntries = 5;
-    repeated CFTransactionEntry CFEntries = 6;
-    TransactionSignature Signature = 7; 
-    repeated EntryRangeProof EntryRangeProofs = 8;
+message PublicTransactionBroadcast {
+	PublicTransaction Transaction = 1;
+}
+
+message ConfidentialTransactionBroadcast {
+	ConfidentialTransaction Transaction = 1;
+}
+
+message BaseTransaction {
+	google.protobuf.Timestamp TimeStamp = 1;
+	uint64 TransactionFees = 2;
+	uint64 LockTime = 3;
+	uint32 Version = 4;
+	bytes From = 5;	
+	bytes Signature = 6;
+}
+
+message ConfidentialTransaction {
+	BaseTransaction BaseTransaction = 1;	
+	repeated CFTransactionEntry CFEntries = 2;
+	repeated EntryRangeProof EntryRangeProofs = 3;
+}
+
+message PublicTransaction {
+	BaseTransaction BaseTransaction = 1;
+	repeated STTransactionEntry STEntries = 2;
+	bytes Init = 3;
+	bytes Data = 4;
 }
 
 /**
@@ -56,7 +75,7 @@ message TransactionBroadcast {
  */
 message STTransactionEntry {
     bytes PubKey = 1;
-    sint64 Amount = 2;
+    uint64 Amount = 2;
 }
  
 /**
@@ -68,18 +87,6 @@ message STTransactionEntry {
 message CFTransactionEntry { 
     bytes PubKey = 1;
     bytes PedersenCommit = 2;
-}
-
-/**
- * TransactionSignature
- *
- * 1 aggregated signature per transaction  (s: SchnorrSignature; B: SchnorrComponent),
- * SchnorrSignature: 32 bytes, 
- * SchnorrComponent: 32 bytes
- */
-message TransactionSignature {
-    bytes SchnorrSignature = 1;
-    bytes SchnorrComponent = 2;
 }
 
 /**

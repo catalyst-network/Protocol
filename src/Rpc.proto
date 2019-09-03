@@ -132,8 +132,8 @@ message DecodeRawTransactionResponse {
     string query = 1;
 }
 
-message BroadcastRawTransactionRequest {
-	Transaction.TransactionBroadcast transaction = 1;
+message BroadcastPublicTransactionRequest {
+	Transaction.PublicTransaction transaction = 1;
 }
 
 message BroadcastRawTransactionResponse {
@@ -237,7 +237,8 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    repeated Transaction.TransactionBroadcast transactions = 1;
+    repeated Transaction.PublicTransaction PublicTransactions = 1;
+    repeated Transaction.ConfidentialTransaction ConfidentialTransactions = 2;
 }
 
 message SignMessageRequest {
