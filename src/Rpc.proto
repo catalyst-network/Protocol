@@ -136,8 +136,16 @@ message BroadcastPublicTransactionRequest {
 	Transaction.PublicTransaction transaction = 1;
 }
 
-message BroadcastRawTransactionResponse {
+message BroadcastConfidentialTransactionRequest {
+	Transaction.ConfidentialTransaction transaction = 1;
+}
+
+message BroadcastPublicTransactionResponse {
     ResponseCode responseCode = 1;
+}
+
+message BroadcastConfidentialTransactionResponse {
+	ResponseCode responseCode = 1;
 }
 
 message SendToRequest {
