@@ -33,7 +33,7 @@ enum TransactionType {
 /**
  * Transaction
  *
- * Version: 1 for non-confidential transaction, 2 for confidential transaction
+ * TransactionType: 0 for non-confidential transaction, 1 for confidential transaction
  * TimeStamp:
  * TransactionFees: 8 bytes, clear text, fees * 10^12 - always positive
  * LockTime: 32 bits
