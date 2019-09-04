@@ -25,6 +25,11 @@ import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Transaction;
 
+enum TransactionType {
+	NORMAL = 0;
+	CONFIDENTIAL = 1;
+}
+
 /**
  * Transaction
  *
@@ -36,16 +41,22 @@ package Catalyst.Protocol.Transaction;
  * CFEntries: 0 field for non-confidential transaction
  * Signature: 64 bytes
  * EntryRangeProof: 0 field for non-confidential transaction
+ * Init: 0 field for smart contract deployment
+ * Data: 0 field for smart contract calls
+ * From: Public key from address
  */
 message TransactionBroadcast {
-    uint32 Version = 1;
+	TransactionType TransactionType = 1;
     google.protobuf.Timestamp TimeStamp = 2;
     uint64 TransactionFees = 3;
     uint64 LockTime = 4;
     repeated STTransactionEntry STEntries = 5;
     repeated CFTransactionEntry CFEntries = 6;
-    TransactionSignature Signature = 7; 
+    bytes Signature = 7; 
     repeated EntryRangeProof EntryRangeProofs = 8;
+	bytes Init = 9;
+	bytes Data = 10;
+	bytes From = 11;
 }
 
 /**
@@ -56,7 +67,7 @@ message TransactionBroadcast {
  */
 message STTransactionEntry {
     bytes PubKey = 1;
-    sint64 Amount = 2;
+    uint64 Amount = 2;
 }
  
 /**
@@ -68,18 +79,6 @@ message STTransactionEntry {
 message CFTransactionEntry { 
     bytes PubKey = 1;
     bytes PedersenCommit = 2;
-}
-
-/**
- * TransactionSignature
- *
- * 1 aggregated signature per transaction  (s: SchnorrSignature; B: SchnorrComponent),
- * SchnorrSignature: 32 bytes, 
- * SchnorrComponent: 32 bytes
- */
-message TransactionSignature {
-    bytes SchnorrSignature = 1;
-    bytes SchnorrComponent = 2;
 }
 
 /**
