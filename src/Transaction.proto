@@ -78,7 +78,7 @@ message STTransactionEntry {
 message CFTransactionEntry { 
     bytes PubKey = 1;
     bytes PedersenCommit = 2;
-    EntryRangeProof EntryRangeProofs = 8;
+    EntryRangeProof EntryRangeProofs = 3;
 }
 
 /**
