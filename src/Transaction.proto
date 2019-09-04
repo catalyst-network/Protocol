@@ -53,7 +53,6 @@ message TransactionBroadcast {
     repeated STTransactionEntry STEntries = 5;
     repeated CFTransactionEntry CFEntries = 6;
     bytes Signature = 7; 
-    repeated EntryRangeProof EntryRangeProofs = 8;
 	bytes Init = 9;
 	bytes Data = 10;
 	bytes From = 11;
@@ -79,6 +78,7 @@ message STTransactionEntry {
 message CFTransactionEntry { 
     bytes PubKey = 1;
     bytes PedersenCommit = 2;
+    EntryRangeProof EntryRangeProofs = 8;
 }
 
 /**
