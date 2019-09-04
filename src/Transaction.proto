@@ -43,7 +43,7 @@ enum TransactionType {
  * EntryRangeProof: 0 field for non-confidential transaction
  * Init: 0 field for smart contract deployment
  * Data: 0 field for smart contract calls
- * From: Public key from address
+ * From: PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
  */
 message TransactionBroadcast {
 	TransactionType TransactionType = 1;
