@@ -117,3 +117,16 @@ message SigningContext {
     Network network = 1;
     SignatureType signatureType = 2;
 }
+
+message Address {
+    SigningContext SigningContext = 1;
+    AccountType AccountType = 2;
+    bytes Address = 3;
+}
+
+enum AccountType {
+    ACCOUNT_TYPE_UNKNOWN = 0;
+    PUBLIC_ACCOUNT = 1;
+    PRIVATE_ACCOUNT = 2;
+    SMART_CONTRACT_ACCOUNT = 3;
+}
