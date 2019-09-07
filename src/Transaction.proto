@@ -26,100 +26,55 @@ import "google/protobuf/timestamp.proto";
 package Catalyst.Protocol.Transaction;
 
 enum TransactionType {
-	NORMAL = 0;
-	CONFIDENTIAL = 1;
+	NORMAL = 0; // Public transaction type.
+	CONFIDENTIAL = 1; // Private transaction type.
 }
 
-/**
- * Transaction
- *
- * TransactionType: 0 for non-confidential transaction, 1 for confidential transaction
- * TimeStamp:
- * TransactionFees: 8 bytes, clear text, fees * 10^12 - always positive
- * LockTime: 32 bits
- * STEntries: 0 field for confidential transaction
- * CFEntries: 0 field for non-confidential transaction
- * Signature: 64 bytes
- * EntryRangeProof: 0 field for non-confidential transaction
- * Init: 0 field for smart contract deployment
- * Data: 0 field for smart contract calls
- * From: PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
- */
 message TransactionBroadcast {
-	TransactionType TransactionType = 1;
-    google.protobuf.Timestamp TimeStamp = 2;
-    uint64 TransactionFees = 3;
-    uint64 LockTime = 4;
-    repeated STTransactionEntry STEntries = 5;
-    repeated CFTransactionEntry CFEntries = 6;
-    bytes Signature = 7; 
-	bytes Init = 9;
-	bytes Data = 10;
-	bytes From = 11;
+	TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
+    google.protobuf.Timestamp TimeStamp = 2; // Timestamp transaction was created
+    uint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12 - always positive
+    uint64 LockTime = 4; // 32 bits
+    repeated STTransactionEntry STEntries = 5; // 0 field for confidential transaction
+    repeated CFTransactionEntry CFEntries = 6; // 0 field for non-confidential transaction
+    bytes Signature = 7; // 64 bytes
+	bytes Init = 9; // 0 field for smart contract deployment
+	bytes Data = 10; // 0 field for smart contract calls
+	bytes From = 11; // PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
 }
 
-/**
- * STTransactionEntry
- *
- * PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
- * Amount: max 8 bytes (positive or negative)
- */
 message STTransactionEntry {
-    bytes PubKey = 1;
-    uint64 Amount = 2;
+    bytes FromAddress = 1; // Adress of sender
+    bytes ToAddress = 2; // Address of reciever.
+    uint64 Amount = 3; // 8 byte amount
 }
- 
-/**
- * CFTransactionEntry
- *
- * PubKey: 32 bytes, account address derived from the public key
- * PedersenCommitment: 32 bytes
- */
+
 message CFTransactionEntry { 
-    bytes PubKey = 1;
-    bytes PedersenCommit = 2;
+    bytes Address = 1; // 32 bytes, account address derived from the public key
+    bytes PedersenCommit = 2; // 32 bytes
     EntryRangeProof EntryRangeProofs = 3;
 }
 
 /**
- * EntryRangeProof
  * BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
  * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
- * V: m * 32 bytes, value commitment (eq. 36) 
- * A: 32 bytes, bit commitment (eq. 48)
- * S: 32 bytes, per bit blinding factor commitment (eq. 48)
- * T1: 32 bytes, poly commitment (eq. 54)
- * T2: 32 bytes, poly commitment (eq. 54)
- * TAU: 32 bytes, proof of share (eq. 63)
- * MU: 32 bytes, proof of share (eq. 63)
- * L: k * 32 bytes, aggregated vector polynomial (eq. 63)
- * R: k * 32 bytes, aggregated vector polynomial (eq. 63)
- * APrime0: 32 bytes (eq. 63)
- * BPrime0: 32 bytes (eq. 63)
  */
 message EntryRangeProof {
-    repeated bytes V = 1;
-    bytes A = 2;
-    bytes S = 3;
-    bytes T1 = 4;
-    bytes T2 = 5;
-    bytes TAU = 6;
-    bytes MU = 7;
-    repeated bytes L = 8;
-    repeated bytes R = 9;
-    bytes APrime0 = 10;
-    bytes BPrime0 = 11;
-    bytes t = 12;
+    repeated bytes V = 1; // m * 32 bytes, value commitment (eq. 36) 
+    bytes A = 2; // 32 bytes, bit commitment (eq. 48)
+    bytes S = 3; // 32 bytes, per bit blinding factor commitment (eq. 48)
+    bytes T1 = 4; // 32 bytes, poly commitment (eq. 54)
+    bytes T2 = 5; // 32 bytes, poly commitment (eq. 54)
+    bytes TAU = 6; // 32 bytes, proof of share (eq. 63)
+    bytes MU = 7; // 32 bytes, proof of share (eq. 63)
+    repeated bytes L = 8; // k * 32 bytes, aggregated vector polynomial (eq. 63)
+    repeated bytes R = 9; // k * 32 bytes, aggregated vector polynomial (eq. 63)
+    bytes APrime0 = 10; // 32 bytes (eq. 63)
+    bytes BPrime0 = 11; // 32 bytes (eq. 63)
+    bytes t = 12; 
 } 
 
-/**
- * CoinbaseEntry
- *
- * Version: For now only one verison. Workers would be paid in plain tx.
- * Amount: max 8 bytes (always positive).
- */
 message CoinbaseEntry {
-    uint32 Version = 1;
-    bytes PubKey = 2;
-    uint64 Amount = 3;
+    bytes Address = 1; // 32 bytes, account address derived from the public key
+    uint64 Amount = 2; // max 8 bytes (always positive).
 }

@@ -69,27 +69,15 @@ message ProtocolMessage {
     bytes value = 4;
 }
 
-/**
-* Information about a peer
-* - peerId is the peerId
-* - pkId is the primary key of the peer in storage
-* - reputation of peer
-* - blackListed is to check if the peer is blackListed
-* - isAwolPeer is when the peer cannot be reached on the network
-* - inactiveFor is how long the peer has beekn inactive for
-* - lastSeen is when the peer was last seen
-* - modified is when the peer was last modified
-* - created is when the peer was created
-*/
 message PeerInfo {
-    PeerId peerId = 1;
-    int32 reputation = 2;
-    bool blackListed = 3;
-    bool isAwolPeer = 4;
-    google.protobuf.Duration inactiveFor = 5;
-    google.protobuf.Timestamp lastSeen = 6;
-    google.protobuf.Timestamp modified = 7;
-    google.protobuf.Timestamp created = 8;
+    PeerId peerId = 1; // is peerId of network
+    int32 reputation = 2; // reputation of peer
+    bool blackListed = 3; // is to check if the peer is blackListed
+    bool isAwolPeer = 4; // is when the peer cannot be reached on the network
+    google.protobuf.Duration inactiveFor = 5; // is how long the peer has beekn inactive for
+    google.protobuf.Timestamp lastSeen = 6; // is when the peer was last seen
+    google.protobuf.Timestamp modified = 7; // modified is when the peer was last modified
+    google.protobuf.Timestamp created = 8; // created is when the peer was created
 }
 
 enum Network {
@@ -107,13 +95,7 @@ enum SignatureType {
     PROTOCOL_PEER = 4;
 }
 
-/**
-* Context in which a signature takes place.
-* - peerId is the peerId
-* - Network is the network (mainet / devnet etc)
-* - SignatureType contains info on whether the signature is for a protocol message or a transaction.
-*/
 message SigningContext {
-    Network network = 1;
-    SignatureType signatureType = 2;
+    Network network = 1; // is the network unum (mainet / devnet etc)
+    SignatureType signatureType = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }
