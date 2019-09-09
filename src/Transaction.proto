@@ -45,7 +45,7 @@ message TransactionBroadcast {
 
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
-    uint64 Amount = 3; // 8 byte amount
+    uint64 Amount = 2; // 8 byte amount
 }
 
 message CFTransactionEntry {
