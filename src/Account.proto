@@ -28,7 +28,13 @@ package Catalyst.Protocol.Account;
 message Address {
     Signature.SigningContext SigningContext = 1;
     AccountType AccountType = 2;
-    bytes Address = 3;
+    HashType PublicKeyHashType = 3;
+    bytes PublicKeyHash = 4;
+}
+
+enum HashType {
+    HASH_TYPE_UNKONWN = 0;
+    BLAKE_256B_HASH = 1;
 }
 
 enum AccountType {
