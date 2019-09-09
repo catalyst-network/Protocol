@@ -39,12 +39,12 @@ message TransactionBroadcast {
     repeated STTransactionEntry STEntries = 4; // 0 field for confidential transaction
     repeated CFTransactionEntry CFEntries = 5; // 0 field for non-confidential transaction
     repeated ContractEntry ContractEntries = 6;
-    bytes Signature = 7; // 64 bytes
 }
 
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
+    Common.Signature Signature = 3; // 64 bytes
 }
 
 message CFTransactionEntry {
@@ -52,12 +52,14 @@ message CFTransactionEntry {
     BaseTransactionEntry Address = 2; // 32 bytes, account address derived from the public key
     bytes PedersenCommit = 3; // 32 bytes
     EntryRangeProof EntryRangeProofs = 4;
+    Common.Signature Signature = 5; // 64 bytes
 }
 
 message ContractEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
     bytes CallData = 3; // Smart contract data.
+    Common.Signature Signature = 4; // 64 bytes
 }
 
 message BaseTransactionEntry {

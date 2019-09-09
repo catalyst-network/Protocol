@@ -40,7 +40,7 @@ message PeerId {
 * Provides a network error message, for when a node cant send/ build a valid response
 */
 message ProtocolErrorMessageSigned {
-    bytes signature = 1;
+    Signature signature = 1;
     PeerId peerId = 2;
     bytes correlationId = 3;
     int32 code = 4;
@@ -48,25 +48,13 @@ message ProtocolErrorMessageSigned {
 
 /**
 * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
-* To verify use message.peerId.publicKey
 */
 message ProtocolMessageSigned {
-    bytes signature = 1;
-    ProtocolMessage message = 2;
-}
-
-/**
-* Core protocol messages to be sent across the network.
-* - peerId is the sender's peerId
-* - correlationId is a 16 bytes guid used to match responses to their original requests
-* - type_url is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
-* - value is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
-*/
-message ProtocolMessage {
-    PeerId peerId = 1;
-    bytes correlationId = 2;
-    string type_url = 3;
-    bytes value = 4;
+    PeerId peerId = 1; // is the sender's peerId
+    bytes correlationId = 2; // is a 16 bytes guid used to match responses to their original requests
+    string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+    bytes value = 4; // is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+    Signature signature = 5; // is the ed25519ph context signature
 }
 
 message PeerInfo {
@@ -81,10 +69,15 @@ message PeerInfo {
 }
 
 enum Network {
-    NETWORK_UNKNOWN = 0;
-    MAINNET = 1;
-    DEVNET = 2;
-    TESTNET = 3;
+    NETWORK_UNKNOWN = 0; // un-known network
+    MAINNET = 1; // main live network
+    DEVNET = 2; // local devnet
+    TESTNET = 3; // public testnet
+}
+
+message Signature {
+    SigningContext SigningContext = 1;
+    bytes Signature = 2;
 }
 
 enum SignatureType {
