@@ -37,15 +37,12 @@ message TransactionBroadcast {
     uint64 LockTime = 4; // 32 bits
     repeated STTransactionEntry STEntries = 5; // 0 field for confidential transaction
     repeated CFTransactionEntry CFEntries = 6; // 0 field for non-confidential transaction
-    bytes Signature = 7; // 64 bytes
-	bytes Init = 9; // 0 field for smart contract deployment
-	bytes Data = 10; // 0 field for smart contract calls
-	bytes From = 11; // PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key)
+    repeated ContractEntry ContractEntries = 7;
+    bytes Signature = 8; // 64 bytes
 }
 
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
-    bytes ToAddress = 2; // Address of receiver.
     uint64 Amount = 3; // 8 byte amount
 }
 
