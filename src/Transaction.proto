@@ -40,10 +40,9 @@ message STTransactionEntry {
 
 message CFTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
-    BaseTransactionEntry Address = 2; // 32 bytes, account address derived from the public key
-    bytes PedersenCommit = 3; // 32 bytes
-    EntryRangeProof EntryRangeProofs = 4;
-    Signature.Signature Signature = 5; // 64 bytes
+    bytes PedersenCommit = 2; // 32 bytes
+    EntryRangeProof EntryRangeProofs = 3;
+    Signature.Signature Signature = 4; // 64 bytes
 }
 
 message ContractEntry {
