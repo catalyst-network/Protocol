@@ -86,5 +86,5 @@ message EntryRangeProof {
 
 message CoinbaseEntry {
     Address.Address Address = 1; // 32 bytes, account address derived from the public key
-    uint64 Amount = 2; // max 8 bytes (always positive).
+    uint64 Amount = 2; // max 8 bytes (always positive)
 }
