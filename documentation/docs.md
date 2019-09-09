@@ -50,7 +50,7 @@
 
 - [Network.proto](#Network.proto)
   
-    - [Network](#Catalyst.Protocol.Network.Network)
+    - [NetworkType](#Catalyst.Protocol.Network.NetworkType)
   
   
   
@@ -510,9 +510,9 @@ VoterId: The PeerId of the participant submitting its vote to the network.
  
 
 
-<a name="Catalyst.Protocol.Network.Network"></a>
+<a name="Catalyst.Protocol.Network.NetworkType"></a>
 
-### Network
+### NetworkType
 
 
 | Name | Number | Description |
@@ -1682,7 +1682,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| network | [Catalyst.Protocol.Network.Network](#Catalyst.Protocol.Network.Network) |  | is the network unum (mainet / devnet etc) |
+| network | [Catalyst.Protocol.Network.NetworkType](#Catalyst.Protocol.Network.NetworkType) |  | is the network enum (mainet / devnet etc) |
 | signatureType | [SignatureType](#Catalyst.Protocol.Signature.SignatureType) |  | contains info on whether the signature is for a protocol message or a transaction. |
 
 

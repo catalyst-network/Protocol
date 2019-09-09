@@ -39,6 +39,6 @@ enum SignatureType {
 }
 
 message SigningContext {
-    Network.Network network = 1; // is the network unum (mainet / devnet etc)
+    Network.NetworkType network = 1; // is the network enum (mainet / devnet etc)
     SignatureType signatureType = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }
