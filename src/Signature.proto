@@ -26,7 +26,7 @@ package Catalyst.Protocol.Signature;
 import "Network.proto";
 
 message Signature {
-    SigningContext SigningContext = 1;
+    Context Context = 1;
     bytes Signature = 2;
 }
 
@@ -38,7 +38,7 @@ enum SignatureType {
     PROTOCOL_PEER = 4;
 }
 
-message SigningContext {
+message Context {
     Network.NetworkType network = 1; // is the network enum (mainet / devnet etc)
     SignatureType signatureType = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }

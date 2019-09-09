@@ -26,7 +26,7 @@ import "Signature.proto";
 package Catalyst.Protocol.Account;
 
 message Address {
-    Signature.SigningContext SigningContext = 1;
+    Signature.Context SigningContext = 1;
     AccountType AccountType = 2;
     HashType PublicKeyHashType = 3;
     bytes PublicKeyHash = 4;
