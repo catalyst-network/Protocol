@@ -22,7 +22,8 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 import "Transaction.proto";
-import "Common.proto";
+import "Signature.proto";
+import "Peer.proto";
 import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Deltas;
@@ -60,7 +61,7 @@ package Catalyst.Protocol.Deltas;
  */
 message CandidateDeltaBroadcast {
 	bytes Hash = 1;
-	Common.PeerId ProducerId = 2;
+	Peer.PeerId ProducerId = 2;
 	bytes PreviousDeltaDfsHash = 3;
 }
 
@@ -72,7 +73,7 @@ message CandidateDeltaBroadcast {
  */
 message FavouriteDeltaBroadcast {
 	CandidateDeltaBroadcast Candidate = 1;
-	Common.PeerId VoterId = 2;
+	Peer.PeerId VoterId = 2;
 }
 
 /**

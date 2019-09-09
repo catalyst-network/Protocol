@@ -19,16 +19,24 @@
 
 syntax = "proto3";
 
-package Catalyst.Protocol.IPPN;
+package Catalyst.Protocol.Signature;
 
-import "Peer.proto";
+import "Network.proto";
 
-message PeerNeighborsRequest { }
-
-message PeerNeighborsResponse {
-    repeated Peer.PeerId Peers = 1;
+message Signature {
+    SigningContext SigningContext = 1;
+    bytes Signature = 2;
 }
 
-message PingRequest { }
+enum SignatureType {
+    SIGNATURE_TYPE_UNKNOWN = 0;
+    TRANSACTION_PUBLIC = 1;
+    TRANSACTION_CONFIDENTIAL = 2;
+    PROTOCOL_RPC = 3;
+    PROTOCOL_PEER = 4;
+}
 
-message PingResponse { }
+message SigningContext {
+    Network.Network network = 1; // is the network unum (mainet / devnet etc)
+    SignatureType signatureType = 2; // contains info on whether the signature is for a protocol message or a transaction.
+}

@@ -23,7 +23,8 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Rpc.Node;
 
-import "Common.proto";
+import "Peer.proto";
+import "Signature.proto";
 import "Deltas.proto";
 import "Transaction.proto";
 
@@ -183,7 +184,7 @@ message AddNodeResponse {
 message GetPeerListRequest { }
 
 message GetPeerListResponse {
-    repeated Common.PeerId Peers = 1;
+    repeated Peer.PeerId Peers = 1;
 }
 
 message GetPeerReputationRequest {
@@ -213,7 +214,7 @@ message GetPeerInfoRequest {
 }
 
 message GetPeerInfoResponse {
-    repeated Common.PeerInfo PeerInfo = 1;
+    repeated Peer.PeerInfo PeerInfo = 1;
 }
 
 message GetConnectionCountRequest {
@@ -243,7 +244,7 @@ message GetMempoolResponse {
 message SignMessageRequest {
     bytes message = 1;
     string keyId = 2;
-    Common.SigningContext signingContext = 3;
+    Signature.SigningContext signingContext = 3;
 }
 
 message SignMessageResponse {
@@ -256,7 +257,7 @@ message VerifyMessageRequest {
     bytes signature = 1;
     bytes publicKey = 2;
     bytes message = 3;
-    Common.SigningContext signingContext = 4;
+    Signature.SigningContext signingContext = 4;
 }
 
 message VerifyMessageResponse {
@@ -321,5 +322,5 @@ message SetPeerDataFolderRequest {
 }
 
 message SetPeerDataFolderResponse {
-  bool query = 1; 
+    bool query = 1; 
 }

@@ -19,16 +19,21 @@
 
 syntax = "proto3";
 
-package Catalyst.Protocol.IPPN;
+option java_multiple_files = true;
 
-import "Peer.proto";
+import "Signature.proto";
 
-message PeerNeighborsRequest { }
+package Catalyst.Protocol.Account;
 
-message PeerNeighborsResponse {
-    repeated Peer.PeerId Peers = 1;
+message Address {
+    Signature.SigningContext SigningContext = 1;
+    AccountType AccountType = 2;
+    bytes Address = 3;
 }
 
-message PingRequest { }
-
-message PingResponse { }
+enum AccountType {
+    ACCOUNT_TYPE_UNKNOWN = 0;
+    PUBLIC_ACCOUNT = 1;
+    PRIVATE_ACCOUNT = 2;
+    SMART_CONTRACT_ACCOUNT = 3;
+}

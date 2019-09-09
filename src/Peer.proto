@@ -19,7 +19,7 @@
 
 syntax = "proto3";
 
-package Catalyst.Protocol.Common;
+package Catalyst.Protocol.Peer;
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
@@ -36,27 +36,6 @@ message PeerId {
     bytes publicKey = 5; //20 bytes
 }
 
-/**
-* Provides a network error message, for when a node cant send/ build a valid response
-*/
-message ProtocolErrorMessageSigned {
-    Signature signature = 1;
-    PeerId peerId = 2;
-    bytes correlationId = 3;
-    int32 code = 4;
-}
-
-/**
-* A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
-*/
-message ProtocolMessageSigned {
-    PeerId peerId = 1; // is the sender's peerId
-    bytes correlationId = 2; // is a 16 bytes guid used to match responses to their original requests
-    string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
-    bytes value = 4; // is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
-    Signature signature = 5; // is the ed25519ph context signature
-}
-
 message PeerInfo {
     PeerId peerId = 1; // is peerId of network
     int32 reputation = 2; // reputation of peer
@@ -66,29 +45,4 @@ message PeerInfo {
     google.protobuf.Timestamp lastSeen = 6; // is when the peer was last seen
     google.protobuf.Timestamp modified = 7; // modified is when the peer was last modified
     google.protobuf.Timestamp created = 8; // created is when the peer was created
-}
-
-enum Network {
-    NETWORK_UNKNOWN = 0; // un-known network
-    MAINNET = 1; // main live network
-    DEVNET = 2; // local devnet
-    TESTNET = 3; // public testnet
-}
-
-message Signature {
-    SigningContext SigningContext = 1;
-    bytes Signature = 2;
-}
-
-enum SignatureType {
-    SIGNATURE_TYPE_UNKNOWN = 0;
-    TRANSACTION_PUBLIC = 1;
-    TRANSACTION_CONFIDENTIAL = 2;
-    PROTOCOL_RPC = 3;
-    PROTOCOL_PEER = 4;
-}
-
-message SigningContext {
-    Network network = 1; // is the network unum (mainet / devnet etc)
-    SignatureType signatureType = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }

@@ -19,21 +19,11 @@
 
 syntax = "proto3";
 
-option java_multiple_files = true;
+package Catalyst.Protocol.Network;
 
-import "Common.proto";
-
-package Catalyst.Protocol.Address;
-
-message Address {
-    Common.SigningContext SigningContext = 1;
-    AccountType AccountType = 2;
-    bytes Address = 3;
-}
-
-enum AccountType {
-    ACCOUNT_TYPE_UNKNOWN = 0;
-    PUBLIC_ACCOUNT = 1;
-    PRIVATE_ACCOUNT = 2;
-    SMART_CONTRACT_ACCOUNT = 3;
+enum Network {
+    NETWORK_UNKNOWN = 0; // un-known network
+    MAINNET = 1; // main live network
+    DEVNET = 2; // local devnet
+    TESTNET = 3; // public testnet
 }

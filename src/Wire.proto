@@ -1,0 +1,59 @@
+/**
+* Copyright (c) 2019 Catalyst Network
+*
+* This file is part of Catalyst.Network.Protocol.Protobuffs <https://github.com/catalyst-network/protocol-protobuffs>
+*
+* Catalyst.Network.Protocol.Protobuffs is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 2 of the License, or
+* (at your option) any later version.
+* 
+* Catalyst.Network.Protocol.Protobuffs is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with Catalyst.Network.Protocol.Protobuffs If not, see <https://www.gnu.org/licenses/>.
+*/
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+import "Peer.proto";
+import "Signature.proto";
+import "Transaction.proto";
+import "google/protobuf/timestamp.proto";
+
+package Catalyst.Protocol.Wire;
+
+/**
+* Provides a network error message, for when a node cant send/ build a valid response
+*/
+message ProtocolErrorMessageSigned {
+    Signature.Signature signature = 1;
+    Peer.PeerId peerId = 2;
+    bytes correlationId = 3;
+    int32 code = 4;
+}
+
+/**
+* A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
+*/
+message ProtocolMessageSigned {
+    Peer.PeerId peerId = 1; // is the sender's peerId
+    bytes correlationId = 2; // is a 16 bytes guid used to match responses to their original requests
+    string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+    bytes value = 4; // is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+    Signature.Signature signature = 5; // is the ed25519ph context signature
+}
+
+message TransactionBroadcast {
+	TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
+    uint64 TransactionFees = 2; // 8 bytes, clear text, fees * 10^12 - always positive
+    google.protobuf.Timestamp LockTime = 3; // 32 bits
+    repeated Transaction.STTransactionEntry STEntries = 4; // 0 field for confidential transaction
+    repeated Transaction.CFTransactionEntry CFEntries = 5; // 0 field for non-confidential transaction
+    repeated Transaction.ContractEntry ContractEntries = 6;
+}

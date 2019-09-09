@@ -23,7 +23,7 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.DfsMarketplace;
 
-import "Common.proto";
+import "Peer.proto";
 
 message BlockChallengeRequest {
 	string challengeSalt = 1;
@@ -39,6 +39,6 @@ message BlockChallengeResponse {
 message BlockChallengeBroadcast {
 	BlockChallengeRequest originalChallenge = 1;	
 	string answer = 2;
-	Common.PeerId challengedPeer = 3;
-	Common.PeerId challengedBy = 4;
+	Peer.PeerId challengedPeer = 3;
+	Peer.PeerId challengedBy = 4;
 }

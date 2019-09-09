@@ -21,7 +21,7 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
-import "Common.proto";
+import "Signature.proto";
 import "Address.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -32,19 +32,10 @@ enum TransactionType {
 	CONFIDENTIAL = 1; // Private transaction type.
 }
 
-message TransactionBroadcast {
-	TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
-    uint64 TransactionFees = 2; // 8 bytes, clear text, fees * 10^12 - always positive
-    uint64 LockTime = 3; // 32 bits
-    repeated STTransactionEntry STEntries = 4; // 0 field for confidential transaction
-    repeated CFTransactionEntry CFEntries = 5; // 0 field for non-confidential transaction
-    repeated ContractEntry ContractEntries = 6;
-}
-
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
-    Common.Signature Signature = 3; // 64 bytes
+    Signature.Signature Signature = 3; // 64 bytes
 }
 
 message CFTransactionEntry {
@@ -52,14 +43,14 @@ message CFTransactionEntry {
     BaseTransactionEntry Address = 2; // 32 bytes, account address derived from the public key
     bytes PedersenCommit = 3; // 32 bytes
     EntryRangeProof EntryRangeProofs = 4;
-    Common.Signature Signature = 5; // 64 bytes
+    Signature.Signature Signature = 5; // 64 bytes
 }
 
 message ContractEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
     bytes CallData = 3; // Smart contract data.
-    Common.Signature Signature = 4; // 64 bytes
+    Signature.Signature Signature = 4; // 64 bytes
 }
 
 message BaseTransactionEntry {
