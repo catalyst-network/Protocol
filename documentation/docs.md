@@ -1749,6 +1749,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | PedersenCommit | [bytes](#bytes) |  | 32 bytes |
 | EntryRangeProofs | [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof) |  |  |
+| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
 | Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
@@ -1765,7 +1766,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | PublicKey | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | 32 bytes, account address derived from the public key |
-| Amount | [uint64](#uint64) |  | max 8 bytes (always positive). |
+| Amount | [sint64](#sint64) |  | max 8 bytes (always positive). |
 
 
 
@@ -1783,6 +1784,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | Amount | [uint64](#uint64) |  | 8 byte amount |
 | CallData | [bytes](#bytes) |  | Smart contract data. |
+| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
 | Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
@@ -1827,6 +1829,7 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 | ----- | ---- | ----- | ----------- |
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | Amount | [uint64](#uint64) |  | 8 byte amount |
+| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
 | Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
@@ -1908,7 +1911,6 @@ A wrapper around the service message, the contents of service message should be 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TransactionType | [Catalyst.Protocol.Transaction.TransactionType](#Catalyst.Protocol.Transaction.TransactionType) |  | 0 for non-confidential transaction, 1 for confidential transaction |
-| TransactionFees | [uint64](#uint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
 | LockTime | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | 32 bits |
 | STEntries | [Catalyst.Protocol.Transaction.STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry) | repeated | 0 field for confidential transaction |
 | CFEntries | [Catalyst.Protocol.Transaction.CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry) | repeated | 0 field for non-confidential transaction |

@@ -35,21 +35,24 @@ enum TransactionType {
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
-    Signature.Signature Signature = 3; // 64 bytes
+    sint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12 - always positive
+    Signature.Signature Signature = 4; // 64 bytes
 }
 
 message CFTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     bytes PedersenCommit = 2; // 32 bytes
     EntryRangeProof EntryRangeProofs = 3;
-    Signature.Signature Signature = 4; // 64 bytes
+    sint64 TransactionFees = 4; // 8 bytes, clear text, fees * 10^12 - always positive
+    Signature.Signature Signature = 5; // 64 bytes
 }
 
 message ContractEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
     bytes CallData = 3; // Smart contract data.
-    Signature.Signature Signature = 4; // 64 bytes
+    sint64 TransactionFees = 4; // 8 bytes, clear text, fees * 10^12 - always positive
+    Signature.Signature Signature = 5; // 64 bytes
 }
 
 message BaseTransactionEntry {
@@ -79,5 +82,5 @@ message EntryRangeProof {
 
 message CoinbaseEntry {
     Cryptography.PublicKey PublicKey = 1; // 32 bytes, account address derived from the public key
-    uint64 Amount = 2; // max 8 bytes (always positive).
+    sint64 Amount = 2; // max 8 bytes (always positive).
 }
