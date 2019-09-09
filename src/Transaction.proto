@@ -34,7 +34,7 @@ enum TransactionType {
 
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1;
-    sint64 Amount = 2; // 8 byte amount
+    uint64 Amount = 2; // 8 byte amount
 }
 
 message CFTransactionEntry {
@@ -45,16 +45,15 @@ message CFTransactionEntry {
 
 message ContractEntry {
     BaseTransactionEntry TXEntry = 1;
-    sint64 Amount = 2; // 8 byte amount
+    uint64 Amount = 2; // 8 byte amount
     bytes CallData = 3; // Smart contract data.
 }
 
 message BaseTransactionEntry {
     Cryptography.PublicKey Recipient = 1; // PublicKey of receiver.
-    Cryptography.PublicKey Sender = 2;// PublicKey of sender, only to be filled if you want traceability on the ledger.
-    uint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12
-    Signature.Signature Signature = 4; // 64 bytes
-    google.protobuf.Timestamp TimeStamp = 5; // Timestamp transaction was created
+    Cryptography.PublicKey Sender = 2;// PublicKey of sender.
+    sint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12
+    google.protobuf.Timestamp TimeStamp = 54; // Timestamp transaction was created
 }
 
 /**
@@ -78,5 +77,5 @@ message EntryRangeProof {
 
 message CoinbaseEntry {
     Cryptography.PublicKey PublicKey = 1; // public key behind the address where the Coinbase will be credited
-    uint64 Amount = 2; // max 8 bytes
+    sint64 Amount = 2; // max 8 bytes
 }

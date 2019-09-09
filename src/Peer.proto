@@ -23,6 +23,7 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Peer;
 
+import "Cryptography.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 
@@ -31,11 +32,10 @@ import "google/protobuf/duration.proto";
 * https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
 */
 message PeerId {
-    bytes clientId = 1; //2 bytes
-    bytes protocolVersion = 2; //2 bytes
-    bytes ip = 3; //16 bytes
-    bytes port = 4; //2 bytes
-    bytes publicKey = 5; //20 bytes
+    bytes protocolVersion = 1; //2 bytes
+    bytes ip = 2; // 16 bytes
+    bytes port = 3; // 2 bytes
+    Cryptography.PublicKey publicKey = 4; // Peers public key, node operators are encouraged to use the same, public key across all their nodes.
 }
 
 message PeerInfo {

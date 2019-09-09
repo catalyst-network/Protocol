@@ -50,11 +50,10 @@ message ProtocolMessageSigned {
 }
 
 message TransactionBroadcast {
-	Transaction.TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
-    google.protobuf.Timestamp LockTime = 3; // 32 bits
-    repeated Transaction.STTransactionEntry STEntries = 4; // 0 field for confidential transaction
-    repeated Transaction.CFTransactionEntry CFEntries = 5; // 0 field for non-confidential transaction
-    repeated Transaction.ContractEntry ContractEntries = 6;
+    google.protobuf.Timestamp Timestamp = 1; // 32 bits
+    repeated Transaction.STTransactionEntry STEntries = 2; // 0 field for confidential transaction
+    repeated Transaction.CFTransactionEntry CFEntries = 3; // 0 field for non-confidential transaction
+    repeated Transaction.ContractEntry ContractEntries = 4;
 }
 
  message CandidateDeltaBroadcast {
