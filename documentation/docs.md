@@ -11,6 +11,14 @@
   
   
 
+- [Cryptography.proto](#Cryptography.proto)
+    - [PrivateKey](#Catalyst.Protocol.Cryptography.PrivateKey)
+    - [PublicKey](#Catalyst.Protocol.Cryptography.PublicKey)
+  
+  
+  
+  
+
 - [Deltas.proto](#Deltas.proto)
     - [CandidateDeltaBroadcast](#Catalyst.Protocol.Deltas.CandidateDeltaBroadcast)
     - [Delta](#Catalyst.Protocol.Deltas.Delta)
@@ -203,6 +211,52 @@
 | PRIVATE_ACCOUNT | 2 |  |
 | SMART_CONTRACT_ACCOUNT | 3 |  |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="Cryptography.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## Cryptography.proto
+
+
+
+<a name="Catalyst.Protocol.Cryptography.PrivateKey"></a>
+
+### PrivateKey
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PublicKey | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Cryptography.PublicKey"></a>
+
+### PublicKey
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| PublicKey | [bytes](#bytes) |  |  |
+
+
+
+
+
+ 
 
  
 
@@ -1675,8 +1729,8 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| FromAddress | [Catalyst.Protocol.Account.Address](#Catalyst.Protocol.Account.Address) |  | Address of sender. |
-| ToAddress | [Catalyst.Protocol.Account.Address](#Catalyst.Protocol.Account.Address) |  | Address of receiver. |
+| FromAddress | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | Address of sender. |
+| ToAddress | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | Address of receiver. |
 | TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp transaction was created |
 
 
@@ -1693,7 +1747,6 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
-| Address | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | 32 bytes, account address derived from the public key |
 | PedersenCommit | [bytes](#bytes) |  | 32 bytes |
 | EntryRangeProofs | [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof) |  |  |
 | Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
@@ -1711,7 +1764,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Address | [Catalyst.Protocol.Account.Address](#Catalyst.Protocol.Account.Address) |  | 32 bytes, account address derived from the public key |
+| PublicKey | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | 32 bytes, account address derived from the public key |
 | Amount | [uint64](#uint64) |  | max 8 bytes (always positive). |
 
 
