@@ -3,16 +3,10 @@
 
 ## Table of Contents
 
-- [Common.proto](#Common.proto)
-    - [PeerId](#Catalyst.Protocol.Common.PeerId)
-    - [PeerInfo](#Catalyst.Protocol.Common.PeerInfo)
-    - [ProtocolErrorMessageSigned](#Catalyst.Protocol.Common.ProtocolErrorMessageSigned)
-    - [ProtocolMessage](#Catalyst.Protocol.Common.ProtocolMessage)
-    - [ProtocolMessageSigned](#Catalyst.Protocol.Common.ProtocolMessageSigned)
-    - [SigningContext](#Catalyst.Protocol.Common.SigningContext)
+- [Account.proto](#Account.proto)
+    - [Address](#Catalyst.Protocol.Account.Address)
   
-    - [Network](#Catalyst.Protocol.Common.Network)
-    - [SignatureType](#Catalyst.Protocol.Common.SignatureType)
+    - [AccountType](#Catalyst.Protocol.Account.AccountType)
   
   
   
@@ -41,6 +35,21 @@
     - [PeerNeighborsResponse](#Catalyst.Protocol.IPPN.PeerNeighborsResponse)
     - [PingRequest](#Catalyst.Protocol.IPPN.PingRequest)
     - [PingResponse](#Catalyst.Protocol.IPPN.PingResponse)
+  
+  
+  
+  
+
+- [Network.proto](#Network.proto)
+  
+    - [Network](#Catalyst.Protocol.Network.Network)
+  
+  
+  
+
+- [Peer.proto](#Peer.proto)
+    - [PeerId](#Catalyst.Protocol.Peer.PeerId)
+    - [PeerInfo](#Catalyst.Protocol.Peer.PeerInfo)
   
   
   
@@ -121,14 +130,33 @@
   
   
 
+- [Signature.proto](#Signature.proto)
+    - [Signature](#Catalyst.Protocol.Signature.Signature)
+    - [SigningContext](#Catalyst.Protocol.Signature.SigningContext)
+  
+    - [SignatureType](#Catalyst.Protocol.Signature.SignatureType)
+  
+  
+  
+
 - [Transaction.proto](#Transaction.proto)
+    - [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry)
     - [CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry)
     - [CoinbaseEntry](#Catalyst.Protocol.Transaction.CoinbaseEntry)
+    - [ContractEntry](#Catalyst.Protocol.Transaction.ContractEntry)
     - [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof)
     - [STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry)
-    - [TransactionBroadcast](#Catalyst.Protocol.Transaction.TransactionBroadcast)
   
     - [TransactionType](#Catalyst.Protocol.Transaction.TransactionType)
+  
+  
+  
+
+- [Wire.proto](#Wire.proto)
+    - [ProtocolErrorMessageSigned](#Catalyst.Protocol.Wire.ProtocolErrorMessageSigned)
+    - [ProtocolMessageSigned](#Catalyst.Protocol.Wire.ProtocolMessageSigned)
+    - [TransactionBroadcast](#Catalyst.Protocol.Wire.TransactionBroadcast)
+  
   
   
   
@@ -137,122 +165,24 @@
 
 
 
-<a name="Common.proto"></a>
+<a name="Account.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## Common.proto
+## Account.proto
 
 
 
-<a name="Catalyst.Protocol.Common.PeerId"></a>
+<a name="Catalyst.Protocol.Account.Address"></a>
 
-### PeerId
-Aggregated size of the fields in PeerId should be 42 bytes as specified in
-https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| clientId | [bytes](#bytes) |  | 2 bytes |
-| protocolVersion | [bytes](#bytes) |  | 2 bytes |
-| ip | [bytes](#bytes) |  | 16 bytes |
-| port | [bytes](#bytes) |  | 2 bytes |
-| publicKey | [bytes](#bytes) |  | 20 bytes |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Common.PeerInfo"></a>
-
-### PeerInfo
+### Address
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peerId | [PeerId](#Catalyst.Protocol.Common.PeerId) |  | is peerId of network |
-| reputation | [int32](#int32) |  | reputation of peer |
-| blackListed | [bool](#bool) |  | is to check if the peer is blackListed |
-| isAwolPeer | [bool](#bool) |  | is when the peer cannot be reached on the network |
-| inactiveFor | [google.protobuf.Duration](#google.protobuf.Duration) |  | is how long the peer has beekn inactive for |
-| lastSeen | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | is when the peer was last seen |
-| modified | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | modified is when the peer was last modified |
-| created | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | created is when the peer was created |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Common.ProtocolErrorMessageSigned"></a>
-
-### ProtocolErrorMessageSigned
-Provides a network error message, for when a node cant send/ build a valid response
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| signature | [bytes](#bytes) |  |  |
-| peerId | [PeerId](#Catalyst.Protocol.Common.PeerId) |  |  |
-| correlationId | [bytes](#bytes) |  |  |
-| code | [int32](#int32) |  |  |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Common.ProtocolMessage"></a>
-
-### ProtocolMessage
-Core protocol messages to be sent across the network.
-- peerId is the sender&#39;s peerId
-- correlationId is a 16 bytes guid used to match responses to their original requests
-- type_url is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
-- value is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| peerId | [PeerId](#Catalyst.Protocol.Common.PeerId) |  |  |
-| correlationId | [bytes](#bytes) |  |  |
-| type_url | [string](#string) |  |  |
-| value | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Common.ProtocolMessageSigned"></a>
-
-### ProtocolMessageSigned
-A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
-To verify use message.peerId.publicKey
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| signature | [bytes](#bytes) |  |  |
-| message | [ProtocolMessage](#Catalyst.Protocol.Common.ProtocolMessage) |  |  |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Common.SigningContext"></a>
-
-### SigningContext
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| network | [Network](#Catalyst.Protocol.Common.Network) |  | is the network unum (mainet / devnet etc) |
-| signatureType | [SignatureType](#Catalyst.Protocol.Common.SignatureType) |  | contains info on whether the signature is for a protocol message or a transaction. |
+| SigningContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
+| AccountType | [AccountType](#Catalyst.Protocol.Account.AccountType) |  |  |
+| Address | [bytes](#bytes) |  |  |
 
 
 
@@ -261,32 +191,17 @@ To verify use message.peerId.publicKey
  
 
 
-<a name="Catalyst.Protocol.Common.Network"></a>
+<a name="Catalyst.Protocol.Account.AccountType"></a>
 
-### Network
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NETWORK_UNKNOWN | 0 |  |
-| MAINNET | 1 |  |
-| DEVNET | 2 |  |
-| TESTNET | 3 |  |
-
-
-
-<a name="Catalyst.Protocol.Common.SignatureType"></a>
-
-### SignatureType
+### AccountType
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| SIGNATURE_TYPE_UNKNOWN | 0 |  |
-| TRANSACTION_PUBLIC | 1 |  |
-| TRANSACTION_CONFIDENTIAL | 2 |  |
-| PROTOCOL_RPC | 3 |  |
-| PROTOCOL_PEER | 4 |  |
+| ACCOUNT_TYPE_UNKNOWN | 0 |  |
+| PUBLIC_ACCOUNT | 1 |  |
+| PRIVATE_ACCOUNT | 2 |  |
+| SMART_CONTRACT_ACCOUNT | 3 |  |
 
 
  
@@ -318,7 +233,7 @@ ProducerId: Identifier of the producer of the candidate.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Hash | [bytes](#bytes) |  |  |
-| ProducerId | [Catalyst.Protocol.Common.PeerId](#Catalyst.Protocol.Common.PeerId) |  |  |
+| ProducerId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
 | PreviousDeltaDfsHash | [bytes](#bytes) |  |  |
 
 
@@ -388,7 +303,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Candidate | [CandidateDeltaBroadcast](#Catalyst.Protocol.Deltas.CandidateDeltaBroadcast) |  |  |
-| VoterId | [Catalyst.Protocol.Common.PeerId](#Catalyst.Protocol.Common.PeerId) |  |  |
+| VoterId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
 
 
 
@@ -421,8 +336,8 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 | ----- | ---- | ----- | ----------- |
 | originalChallenge | [BlockChallengeRequest](#Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest) |  |  |
 | answer | [string](#string) |  |  |
-| challengedPeer | [Catalyst.Protocol.Common.PeerId](#Catalyst.Protocol.Common.PeerId) |  |  |
-| challengedBy | [Catalyst.Protocol.Common.PeerId](#Catalyst.Protocol.Common.PeerId) |  |  |
+| challengedPeer | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
+| challengedBy | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
 
 
 
@@ -496,7 +411,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Peers | [Catalyst.Protocol.Common.PeerId](#Catalyst.Protocol.Common.PeerId) | repeated |  |
+| Peers | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) | repeated |  |
 
 
 
@@ -517,6 +432,94 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 ### PingResponse
 
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="Network.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## Network.proto
+
+
+ 
+
+
+<a name="Catalyst.Protocol.Network.Network"></a>
+
+### Network
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NETWORK_UNKNOWN | 0 | un-known network |
+| MAINNET | 1 | main live network |
+| DEVNET | 2 | local devnet |
+| TESTNET | 3 | public testnet |
+
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="Peer.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## Peer.proto
+
+
+
+<a name="Catalyst.Protocol.Peer.PeerId"></a>
+
+### PeerId
+Aggregated size of the fields in PeerId should be 42 bytes as specified in
+https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| clientId | [bytes](#bytes) |  | 2 bytes |
+| protocolVersion | [bytes](#bytes) |  | 2 bytes |
+| ip | [bytes](#bytes) |  | 16 bytes |
+| port | [bytes](#bytes) |  | 2 bytes |
+| publicKey | [bytes](#bytes) |  | 20 bytes |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Peer.PeerInfo"></a>
+
+### PeerInfo
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| peerId | [PeerId](#Catalyst.Protocol.Peer.PeerId) |  | is peerId of network |
+| reputation | [int32](#int32) |  | reputation of peer |
+| blackListed | [bool](#bool) |  | is to check if the peer is blackListed |
+| isAwolPeer | [bool](#bool) |  | is when the peer cannot be reached on the network |
+| inactiveFor | [google.protobuf.Duration](#google.protobuf.Duration) |  | is how long the peer has beekn inactive for |
+| lastSeen | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | is when the peer was last seen |
+| modified | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | modified is when the peer was last modified |
+| created | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | created is when the peer was created |
 
 
 
@@ -610,7 +613,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transaction | [Catalyst.Protocol.Transaction.TransactionBroadcast](#Catalyst.Protocol.Transaction.TransactionBroadcast) |  |  |
+| transaction | [Catalyst.Protocol.Wire.TransactionBroadcast](#Catalyst.Protocol.Wire.TransactionBroadcast) |  |  |
 
 
 
@@ -956,7 +959,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transactions | [Catalyst.Protocol.Transaction.TransactionBroadcast](#Catalyst.Protocol.Transaction.TransactionBroadcast) | repeated |  |
+| transactions | [Catalyst.Protocol.Wire.TransactionBroadcast](#Catalyst.Protocol.Wire.TransactionBroadcast) | repeated |  |
 
 
 
@@ -1012,7 +1015,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PeerInfo | [Catalyst.Protocol.Common.PeerInfo](#Catalyst.Protocol.Common.PeerInfo) | repeated |  |
+| PeerInfo | [Catalyst.Protocol.Peer.PeerInfo](#Catalyst.Protocol.Peer.PeerInfo) | repeated |  |
 
 
 
@@ -1037,7 +1040,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Peers | [Catalyst.Protocol.Common.PeerId](#Catalyst.Protocol.Common.PeerId) | repeated |  |
+| Peers | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) | repeated |  |
 
 
 
@@ -1390,7 +1393,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 | ----- | ---- | ----- | ----------- |
 | message | [bytes](#bytes) |  |  |
 | keyId | [string](#string) |  |  |
-| signingContext | [Catalyst.Protocol.Common.SigningContext](#Catalyst.Protocol.Common.SigningContext) |  |  |
+| signingContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
 
 
 
@@ -1517,7 +1520,7 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 | signature | [bytes](#bytes) |  |  |
 | publicKey | [bytes](#bytes) |  |  |
 | message | [bytes](#bytes) |  |  |
-| signingContext | [Catalyst.Protocol.Common.SigningContext](#Catalyst.Protocol.Common.SigningContext) |  |  |
+| signingContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
 
 
 
@@ -1594,10 +1597,90 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 
 
+<a name="Signature.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## Signature.proto
+
+
+
+<a name="Catalyst.Protocol.Signature.Signature"></a>
+
+### Signature
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| SigningContext | [SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
+| Signature | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Signature.SigningContext"></a>
+
+### SigningContext
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| network | [Catalyst.Protocol.Network.Network](#Catalyst.Protocol.Network.Network) |  | is the network unum (mainet / devnet etc) |
+| signatureType | [SignatureType](#Catalyst.Protocol.Signature.SignatureType) |  | contains info on whether the signature is for a protocol message or a transaction. |
+
+
+
+
+
+ 
+
+
+<a name="Catalyst.Protocol.Signature.SignatureType"></a>
+
+### SignatureType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SIGNATURE_TYPE_UNKNOWN | 0 |  |
+| TRANSACTION_PUBLIC | 1 |  |
+| TRANSACTION_CONFIDENTIAL | 2 |  |
+| PROTOCOL_RPC | 3 |  |
+| PROTOCOL_PEER | 4 |  |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="Transaction.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## Transaction.proto
+
+
+
+<a name="Catalyst.Protocol.Transaction.BaseTransactionEntry"></a>
+
+### BaseTransactionEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| FromAddress | [Catalyst.Protocol.Account.Address](#Catalyst.Protocol.Account.Address) |  | Address of sender. |
+| ToAddress | [Catalyst.Protocol.Account.Address](#Catalyst.Protocol.Account.Address) |  | Address of receiver. |
+| TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp transaction was created |
+
+
+
 
 
 
@@ -1609,9 +1692,11 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Address | [bytes](#bytes) |  | 32 bytes, account address derived from the public key |
+| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
+| Address | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | 32 bytes, account address derived from the public key |
 | PedersenCommit | [bytes](#bytes) |  | 32 bytes |
 | EntryRangeProofs | [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof) |  |  |
+| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
 
@@ -1626,8 +1711,26 @@ VoterId: The PeerId of the participant submitting its vote to the network.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Address | [bytes](#bytes) |  | 32 bytes, account address derived from the public key |
+| Address | [Catalyst.Protocol.Account.Address](#Catalyst.Protocol.Account.Address) |  | 32 bytes, account address derived from the public key |
 | Amount | [uint64](#uint64) |  | max 8 bytes (always positive). |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Transaction.ContractEntry"></a>
+
+### ContractEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
+| Amount | [uint64](#uint64) |  | 8 byte amount |
+| CallData | [bytes](#bytes) |  | Smart contract data. |
+| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
 
@@ -1669,33 +1772,9 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| FromAddress | [bytes](#bytes) |  | Adress of sender |
-| ToAddress | [bytes](#bytes) |  | Address of reciever. |
+| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | Amount | [uint64](#uint64) |  | 8 byte amount |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Transaction.TransactionBroadcast"></a>
-
-### TransactionBroadcast
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TransactionType | [TransactionType](#Catalyst.Protocol.Transaction.TransactionType) |  | 0 for non-confidential transaction, 1 for confidential transaction |
-| TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp transaction was created |
-| TransactionFees | [uint64](#uint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
-| LockTime | [uint64](#uint64) |  | 32 bits |
-| STEntries | [STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry) | repeated | 0 field for confidential transaction |
-| CFEntries | [CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry) | repeated | 0 field for non-confidential transaction |
-| Signature | [bytes](#bytes) |  | 64 bytes |
-| Init | [bytes](#bytes) |  | 0 field for smart contract deployment |
-| Data | [bytes](#bytes) |  | 0 field for smart contract calls |
-| From | [bytes](#bytes) |  | PubKey: 32 bytes, (255 bits or 256 with last bit to 0) public key (account address derived from the public key) |
+| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
 
@@ -1714,6 +1793,79 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 | NORMAL | 0 | Public transaction type. |
 | CONFIDENTIAL | 1 | Private transaction type. |
 
+
+ 
+
+ 
+
+ 
+
+
+
+<a name="Wire.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## Wire.proto
+
+
+
+<a name="Catalyst.Protocol.Wire.ProtocolErrorMessageSigned"></a>
+
+### ProtocolErrorMessageSigned
+Provides a network error message, for when a node cant send/ build a valid response
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  |  |
+| peerId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
+| correlationId | [bytes](#bytes) |  |  |
+| code | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Wire.ProtocolMessageSigned"></a>
+
+### ProtocolMessageSigned
+A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| peerId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  | is the sender&#39;s peerId |
+| correlationId | [bytes](#bytes) |  | is a 16 bytes guid used to match responses to their original requests |
+| type_url | [string](#string) |  | is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes) |
+| value | [bytes](#bytes) |  | is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes) |
+| signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | is the ed25519ph context signature |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Wire.TransactionBroadcast"></a>
+
+### TransactionBroadcast
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| TransactionType | [Catalyst.Protocol.Transaction.TransactionType](#Catalyst.Protocol.Transaction.TransactionType) |  | 0 for non-confidential transaction, 1 for confidential transaction |
+| TransactionFees | [uint64](#uint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
+| LockTime | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | 32 bits |
+| STEntries | [Catalyst.Protocol.Transaction.STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry) | repeated | 0 field for confidential transaction |
+| CFEntries | [Catalyst.Protocol.Transaction.CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry) | repeated | 0 field for non-confidential transaction |
+| ContractEntries | [Catalyst.Protocol.Transaction.ContractEntry](#Catalyst.Protocol.Transaction.ContractEntry) | repeated |  |
+
+
+
+
+
+ 
 
  
 

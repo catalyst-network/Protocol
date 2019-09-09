@@ -26,7 +26,7 @@ package Catalyst.Protocol.Rpc.Node;
 import "Peer.proto";
 import "Signature.proto";
 import "Deltas.proto";
-import "Transaction.proto";
+import "Wire.proto";
 
 enum ResponseCode {
 	PENDING = 0;
@@ -134,7 +134,7 @@ message DecodeRawTransactionResponse {
 }
 
 message BroadcastRawTransactionRequest {
-	Transaction.TransactionBroadcast transaction = 1;
+	Wire.TransactionBroadcast transaction = 1;
 }
 
 message BroadcastRawTransactionResponse {
@@ -238,7 +238,7 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    repeated Transaction.TransactionBroadcast transactions = 1;
+    repeated Wire.TransactionBroadcast transactions = 1;
 }
 
 message SignMessageRequest {

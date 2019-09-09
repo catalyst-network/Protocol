@@ -50,7 +50,7 @@ message ProtocolMessageSigned {
 }
 
 message TransactionBroadcast {
-	TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
+	Transaction.TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
     uint64 TransactionFees = 2; // 8 bytes, clear text, fees * 10^12 - always positive
     google.protobuf.Timestamp LockTime = 3; // 32 bits
     repeated Transaction.STTransactionEntry STEntries = 4; // 0 field for confidential transaction
