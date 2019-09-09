@@ -22,7 +22,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 import "Common.proto";
-import "Address.proto";
+import "Accounts.proto";
 import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Transaction;
@@ -61,8 +61,8 @@ message ContractEntry {
 }
 
 message BaseTransactionEntry {
-    Address.Address FromAddress = 1;// Address of sender.
-    Address.Address ToAddress = 2; // Address of receiver.
+	Accounts.Address FromAddress = 1;// Address of sender.
+	Accounts.Address ToAddress = 2; // Address of receiver.
     google.protobuf.Timestamp TimeStamp = 3; // Timestamp transaction was created
 }
 
@@ -86,6 +86,6 @@ message EntryRangeProof {
 } 
 
 message CoinbaseEntry {
-    Address.Address Address = 1; // 32 bytes, account address derived from the public key
+	Accounts.Address Address = 1; // 32 bytes, account address derived from the public key
     uint64 Amount = 2; // max 8 bytes (always positive)
 }
