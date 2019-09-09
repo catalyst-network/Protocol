@@ -244,7 +244,7 @@ message GetMempoolResponse {
 message SignMessageRequest {
     bytes message = 1;
     string keyId = 2;
-    Signature.SigningContext signingContext = 3;
+    Signature.Context signingContext = 3;
 }
 
 message SignMessageResponse {
@@ -257,7 +257,7 @@ message VerifyMessageRequest {
     bytes signature = 1;
     bytes publicKey = 2;
     bytes message = 3;
-    Signature.SigningContext signingContext = 4;
+    Signature.Context signingContext = 4;
 }
 
 message VerifyMessageResponse {

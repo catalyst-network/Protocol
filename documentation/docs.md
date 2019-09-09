@@ -137,8 +137,8 @@
   
 
 - [Signature.proto](#Signature.proto)
+    - [Context](#Catalyst.Protocol.Signature.Context)
     - [Signature](#Catalyst.Protocol.Signature.Signature)
-    - [SigningContext](#Catalyst.Protocol.Signature.SigningContext)
   
     - [SignatureType](#Catalyst.Protocol.Signature.SignatureType)
   
@@ -146,12 +146,12 @@
   
 
 - [Transaction.proto](#Transaction.proto)
-    - [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry)
-    - [CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry)
+    - [BaseEntry](#Catalyst.Protocol.Transaction.BaseEntry)
     - [CoinbaseEntry](#Catalyst.Protocol.Transaction.CoinbaseEntry)
+    - [ConfidentialEntry](#Catalyst.Protocol.Transaction.ConfidentialEntry)
     - [ContractEntry](#Catalyst.Protocol.Transaction.ContractEntry)
-    - [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof)
-    - [STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry)
+    - [PublicEntry](#Catalyst.Protocol.Transaction.PublicEntry)
+    - [RangeProof](#Catalyst.Protocol.Transaction.RangeProof)
   
     - [TransactionType](#Catalyst.Protocol.Transaction.TransactionType)
   
@@ -189,7 +189,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SigningContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
+| SigningContext | [Catalyst.Protocol.Signature.Context](#Catalyst.Protocol.Signature.Context) |  |  |
 | AccountType | [AccountType](#Catalyst.Protocol.Account.AccountType) |  |  |
 | PublicKeyHashType | [HashType](#Catalyst.Protocol.Account.HashType) |  |  |
 | PublicKeyHash | [bytes](#bytes) |  |  |
@@ -295,14 +295,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| Version | [uint32](#uint32) |  |  |
 | PreviousDeltaDfsHash | [bytes](#bytes) |  | address for the content of the previous delta on the DFS |
 | MerkleRoot | [bytes](#bytes) |  |  |
 | MerklePoda | [bytes](#bytes) |  | proof of delegated authority for active wokers |
 | TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| STEntries | [Catalyst.Protocol.Transaction.STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry) | repeated |  |
-| CFEntries | [Catalyst.Protocol.Transaction.CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry) | repeated |  |
-| CBEntries | [Catalyst.Protocol.Transaction.CoinbaseEntry](#Catalyst.Protocol.Transaction.CoinbaseEntry) | repeated | one per active worker |
+| PublicEntries | [Catalyst.Protocol.Transaction.PublicEntry](#Catalyst.Protocol.Transaction.PublicEntry) | repeated |  |
+| ConfidentialEntries | [Catalyst.Protocol.Transaction.ConfidentialEntry](#Catalyst.Protocol.Transaction.ConfidentialEntry) | repeated |  |
+| ContractEntries | [Catalyst.Protocol.Transaction.ContractEntry](#Catalyst.Protocol.Transaction.ContractEntry) | repeated |  |
+| CoinbaseEntries | [Catalyst.Protocol.Transaction.CoinbaseEntry](#Catalyst.Protocol.Transaction.CoinbaseEntry) | repeated | one per active worker |
 
 
 
@@ -492,11 +492,10 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| clientId | [bytes](#bytes) |  | 2 bytes |
 | protocolVersion | [bytes](#bytes) |  | 2 bytes |
 | ip | [bytes](#bytes) |  | 16 bytes |
 | port | [bytes](#bytes) |  | 2 bytes |
-| publicKey | [bytes](#bytes) |  | 20 bytes |
+| publicKey | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | Peers public key, node operators are encouraged to use the same, public key across all their nodes. |
 
 
 
@@ -1392,7 +1391,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | ----- | ---- | ----- | ----------- |
 | message | [bytes](#bytes) |  |  |
 | keyId | [string](#string) |  |  |
-| signingContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
+| signingContext | [Catalyst.Protocol.Signature.Context](#Catalyst.Protocol.Signature.Context) |  |  |
 
 
 
@@ -1519,7 +1518,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | signature | [bytes](#bytes) |  |  |
 | publicKey | [bytes](#bytes) |  |  |
 | message | [bytes](#bytes) |  |  |
-| signingContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
+| signingContext | [Catalyst.Protocol.Signature.Context](#Catalyst.Protocol.Signature.Context) |  |  |
 
 
 
@@ -1603,6 +1602,22 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 
 
+<a name="Catalyst.Protocol.Signature.Context"></a>
+
+### Context
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| network | [Catalyst.Protocol.Network.NetworkType](#Catalyst.Protocol.Network.NetworkType) |  | is the network enum (mainet / devnet etc) |
+| signatureType | [SignatureType](#Catalyst.Protocol.Signature.SignatureType) |  | contains info on whether the signature is for a protocol message or a transaction. |
+
+
+
+
+
+
 <a name="Catalyst.Protocol.Signature.Signature"></a>
 
 ### Signature
@@ -1611,24 +1626,8 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| SigningContext | [SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
+| Context | [Context](#Catalyst.Protocol.Signature.Context) |  |  |
 | Signature | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Signature.SigningContext"></a>
-
-### SigningContext
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| network | [Catalyst.Protocol.Network.NetworkType](#Catalyst.Protocol.Network.NetworkType) |  | is the network enum (mainet / devnet etc) |
-| signatureType | [SignatureType](#Catalyst.Protocol.Signature.SignatureType) |  | contains info on whether the signature is for a protocol message or a transaction. |
 
 
 
@@ -1666,36 +1665,17 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 
 
-<a name="Catalyst.Protocol.Transaction.BaseTransactionEntry"></a>
+<a name="Catalyst.Protocol.Transaction.BaseEntry"></a>
 
-### BaseTransactionEntry
+### BaseEntry
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Recipient | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of receiver. |
-| Sender | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of sender, only to be filled if you want traceability on the ledger. |
-| TransactionFees | [uint64](#uint64) |  | 8 bytes, clear text, fees * 10^12 |
-| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
-| TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp transaction was created |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Transaction.CFTransactionEntry"></a>
-
-### CFTransactionEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  |  |
-| PedersenCommit | [bytes](#bytes) |  | 32 bytes |
-| EntryRangeProofs | [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof) |  |  |
+| Sender | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of sender. |
+| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 |
 
 
 
@@ -1711,7 +1691,24 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | PublicKey | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | public key behind the address where the Coinbase will be credited |
-| Amount | [uint64](#uint64) |  | max 8 bytes |
+| Amount | [sint64](#sint64) |  | max 8 bytes |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Transaction.ConfidentialEntry"></a>
+
+### ConfidentialEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Base | [BaseEntry](#Catalyst.Protocol.Transaction.BaseEntry) |  |  |
+| PedersenCommit | [bytes](#bytes) |  | 32 bytes |
+| RangeProof | [RangeProof](#Catalyst.Protocol.Transaction.RangeProof) |  |  |
 
 
 
@@ -1726,7 +1723,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  |  |
+| Base | [BaseEntry](#Catalyst.Protocol.Transaction.BaseEntry) |  |  |
 | Amount | [sint64](#sint64) |  | 8 byte amount |
 | CallData | [bytes](#bytes) |  | Smart contract data. |
 
@@ -1735,9 +1732,25 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 
 
-<a name="Catalyst.Protocol.Transaction.EntryRangeProof"></a>
+<a name="Catalyst.Protocol.Transaction.PublicEntry"></a>
 
-### EntryRangeProof
+### PublicEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Base | [BaseEntry](#Catalyst.Protocol.Transaction.BaseEntry) |  |  |
+| Amount | [sint64](#sint64) |  | 8 byte amount |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Transaction.RangeProof"></a>
+
+### RangeProof
 BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
 Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
 
@@ -1761,22 +1774,6 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 
 
 
-
-<a name="Catalyst.Protocol.Transaction.STTransactionEntry"></a>
-
-### STTransactionEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  |  |
-| Amount | [sint64](#sint64) |  | 8 byte amount |
-
-
-
-
-
  
 
 
@@ -1787,8 +1784,9 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| PUBLIC | 0 | Public transaction type. |
-| CONFIDENTIAL | 1 | Private transaction type. |
+| TRANSACTION_TYPE_UNKNOWN | 0 | Unknown transaction type. |
+| PUBLIC | 1 | Public transaction type. |
+| CONFIDENTIAL | 2 | Private transaction type. |
 
 
  
@@ -1900,10 +1898,9 @@ A wrapper around the service message, the contents of service message should be 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TransactionType | [Catalyst.Protocol.Transaction.TransactionType](#Catalyst.Protocol.Transaction.TransactionType) |  | 0 for non-confidential transaction, 1 for confidential transaction |
-| LockTime | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | 32 bits |
-| STEntries | [Catalyst.Protocol.Transaction.STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry) | repeated | 0 field for confidential transaction |
-| CFEntries | [Catalyst.Protocol.Transaction.CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry) | repeated | 0 field for non-confidential transaction |
+| Timestamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | 32 bits |
+| PublicEntries | [Catalyst.Protocol.Transaction.PublicEntry](#Catalyst.Protocol.Transaction.PublicEntry) | repeated | 0 field for confidential transaction |
+| ConfidentialEntries | [Catalyst.Protocol.Transaction.ConfidentialEntry](#Catalyst.Protocol.Transaction.ConfidentialEntry) | repeated | 0 field for non-confidential transaction |
 | ContractEntries | [Catalyst.Protocol.Transaction.ContractEntry](#Catalyst.Protocol.Transaction.ContractEntry) | repeated |  |
 
 
