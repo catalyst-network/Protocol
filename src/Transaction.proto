@@ -35,7 +35,7 @@ enum TransactionType {
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
-    sint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12 - always positive
+    uint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12
     Signature.Signature Signature = 4; // 64 bytes
 }
 
@@ -43,7 +43,7 @@ message CFTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     bytes PedersenCommit = 2; // 32 bytes
     EntryRangeProof EntryRangeProofs = 3;
-    sint64 TransactionFees = 4; // 8 bytes, clear text, fees * 10^12 - always positive
+    uint64 TransactionFees = 4; // 8 bytes, clear text, fees * 10^12
     Signature.Signature Signature = 5; // 64 bytes
 }
 
@@ -51,13 +51,13 @@ message ContractEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     uint64 Amount = 2; // 8 byte amount
     bytes CallData = 3; // Smart contract data.
-    sint64 TransactionFees = 4; // 8 bytes, clear text, fees * 10^12 - always positive
+    uint64 TransactionFees = 4; // 8 bytes, clear text, fees * 10^12
     Signature.Signature Signature = 5; // 64 bytes
 }
 
 message BaseTransactionEntry {
-    Cryptography.PublicKey FromAddress = 1;// Address of sender.
-    Cryptography.PublicKey ToAddress = 2; // Address of receiver.
+    Cryptography.PublicKey FromAddress = 1;// PublicKey of sender.
+    Cryptography.PublicKey ToAddress = 2; // PublicKey of receiver.
     google.protobuf.Timestamp TimeStamp = 3; // Timestamp transaction was created
 }
 
@@ -81,6 +81,6 @@ message EntryRangeProof {
 } 
 
 message CoinbaseEntry {
-    Cryptography.PublicKey PublicKey = 1; // 32 bytes, account address derived from the public key
-    sint64 Amount = 2; // max 8 bytes (always positive).
+    Cryptography.PublicKey PublicKey = 1; // public key behind the address where the Coinbase will be credited
+    uint64 Amount = 2; // max 8 bytes
 }

@@ -24,9 +24,9 @@ option java_multiple_files = true;
 package Catalyst.Protocol.Cryptography;
 
 message PublicKey {
-    bytes PublicKey = 1;
+    bytes RawBytes = 1;
 }
 
 message PrivateKey {
-    bytes PublicKey = 1;
+    bytes RawBytes = 1;
 }
