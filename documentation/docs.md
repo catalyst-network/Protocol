@@ -1675,7 +1675,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Recipient | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of receiver. |
-| Sender | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of sender. |
+| Sender | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of sender, only to be filled if you want traceability on the ledger. |
 | TransactionFees | [uint64](#uint64) |  | 8 bytes, clear text, fees * 10^12 |
 | Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 | TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp transaction was created |
@@ -1693,7 +1693,7 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
+| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  |  |
 | PedersenCommit | [bytes](#bytes) |  | 32 bytes |
 | EntryRangeProofs | [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof) |  |  |
 
@@ -1726,8 +1726,8 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
-| Amount | [uint64](#uint64) |  | 8 byte amount |
+| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  |  |
+| Amount | [sint64](#sint64) |  | 8 byte amount |
 | CallData | [bytes](#bytes) |  | Smart contract data. |
 
 
@@ -1770,8 +1770,8 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
-| Amount | [uint64](#uint64) |  | 8 byte amount |
+| TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  |  |
+| Amount | [sint64](#sint64) |  | 8 byte amount |
 
 
 
@@ -1787,7 +1787,7 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| NORMAL | 0 | Public transaction type. |
+| PUBLIC | 0 | Public transaction type. |
 | CONFIDENTIAL | 1 | Private transaction type. |
 
 

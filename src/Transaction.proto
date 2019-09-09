@@ -28,30 +28,30 @@ import "google/protobuf/timestamp.proto";
 package Catalyst.Protocol.Transaction;
 
 enum TransactionType {
-	NORMAL = 0; // Public transaction type.
+	PUBLIC = 0; // Public transaction type.
 	CONFIDENTIAL = 1; // Private transaction type.
 }
 
 message STTransactionEntry {
-    BaseTransactionEntry TXEntry = 1; // Address of sender
-    uint64 Amount = 2; // 8 byte amount
+    BaseTransactionEntry TXEntry = 1;
+    sint64 Amount = 2; // 8 byte amount
 }
 
 message CFTransactionEntry {
-    BaseTransactionEntry TXEntry = 1; // Address of sender
+    BaseTransactionEntry TXEntry = 1;
     bytes PedersenCommit = 2; // 32 bytes
     EntryRangeProof EntryRangeProofs = 3;
 }
 
 message ContractEntry {
-    BaseTransactionEntry TXEntry = 1; // Address of sender
-    uint64 Amount = 2; // 8 byte amount
+    BaseTransactionEntry TXEntry = 1;
+    sint64 Amount = 2; // 8 byte amount
     bytes CallData = 3; // Smart contract data.
 }
 
 message BaseTransactionEntry {
     Cryptography.PublicKey Recipient = 1; // PublicKey of receiver.
-    Cryptography.PublicKey Sender = 2;// PublicKey of sender.
+    Cryptography.PublicKey Sender = 2;// PublicKey of sender, only to be filled if you want traceability on the ledger.
     uint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12
     Signature.Signature Signature = 4; // 64 bytes
     google.protobuf.Timestamp TimeStamp = 5; // Timestamp transaction was created
