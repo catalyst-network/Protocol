@@ -44,14 +44,14 @@ message TransactionBroadcast {
 
 message STTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
-    uint64 Amount = 3; // 8 byte amount
+    uint64 Amount = 2; // 8 byte amount
 }
 
 message CFTransactionEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
     BaseTransactionEntry Address = 2; // 32 bytes, account address derived from the public key
     bytes PedersenCommit = 3; // 32 bytes
-    EntryRangeProof EntryRangeProofs = 3;
+    EntryRangeProof EntryRangeProofs = 4;
 }
 
 message ContractEntry {
