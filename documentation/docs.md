@@ -7,6 +7,7 @@
     - [Address](#Catalyst.Protocol.Account.Address)
   
     - [AccountType](#Catalyst.Protocol.Account.AccountType)
+    - [HashType](#Catalyst.Protocol.Account.HashType)
   
   
   
@@ -190,7 +191,8 @@
 | ----- | ---- | ----- | ----------- |
 | SigningContext | [Catalyst.Protocol.Signature.SigningContext](#Catalyst.Protocol.Signature.SigningContext) |  |  |
 | AccountType | [AccountType](#Catalyst.Protocol.Account.AccountType) |  |  |
-| Address | [bytes](#bytes) |  |  |
+| PublicKeyHashType | [HashType](#Catalyst.Protocol.Account.HashType) |  |  |
+| PublicKeyHash | [bytes](#bytes) |  |  |
 
 
 
@@ -210,6 +212,18 @@
 | PUBLIC_ACCOUNT | 1 |  |
 | PRIVATE_ACCOUNT | 2 |  |
 | SMART_CONTRACT_ACCOUNT | 3 |  |
+
+
+
+<a name="Catalyst.Protocol.Account.HashType"></a>
+
+### HashType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| HASH_TYPE_UNKONWN | 0 |  |
+| BLAKE_256B_HASH | 1 |  |
 
 
  
@@ -235,7 +249,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PublicKey | [bytes](#bytes) |  |  |
+| RawBytes | [bytes](#bytes) |  |  |
 
 
 
@@ -250,7 +264,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PublicKey | [bytes](#bytes) |  |  |
+| RawBytes | [bytes](#bytes) |  |  |
 
 
 
@@ -1660,8 +1674,10 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| FromAddress | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | Address of sender. |
-| ToAddress | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | Address of receiver. |
+| Recipient | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of receiver. |
+| Sender | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | PublicKey of sender. |
+| TransactionFees | [uint64](#uint64) |  | 8 bytes, clear text, fees * 10^12 |
+| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 | TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | Timestamp transaction was created |
 
 
@@ -1680,8 +1696,6 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | PedersenCommit | [bytes](#bytes) |  | 32 bytes |
 | EntryRangeProofs | [EntryRangeProof](#Catalyst.Protocol.Transaction.EntryRangeProof) |  |  |
-| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
-| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
 
@@ -1696,8 +1710,8 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| PublicKey | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | 32 bytes, account address derived from the public key |
-| Amount | [sint64](#sint64) |  | max 8 bytes (always positive). |
+| PublicKey | [Catalyst.Protocol.Cryptography.PublicKey](#Catalyst.Protocol.Cryptography.PublicKey) |  | public key behind the address where the Coinbase will be credited |
+| Amount | [uint64](#uint64) |  | max 8 bytes |
 
 
 
@@ -1715,8 +1729,6 @@ https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | Amount | [uint64](#uint64) |  | 8 byte amount |
 | CallData | [bytes](#bytes) |  | Smart contract data. |
-| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
-| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
 
@@ -1760,8 +1772,6 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 | ----- | ---- | ----- | ----------- |
 | TXEntry | [BaseTransactionEntry](#Catalyst.Protocol.Transaction.BaseTransactionEntry) |  | Address of sender |
 | Amount | [uint64](#uint64) |  | 8 byte amount |
-| TransactionFees | [sint64](#sint64) |  | 8 bytes, clear text, fees * 10^12 - always positive |
-| Signature | [Catalyst.Protocol.Signature.Signature](#Catalyst.Protocol.Signature.Signature) |  | 64 bytes |
 
 
 
