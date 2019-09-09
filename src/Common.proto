@@ -99,3 +99,16 @@ message SigningContext {
     Network network = 1; // is the network unum (mainet / devnet etc)
     SignatureType signatureType = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }
+
+message Address {
+    SigningContext SigningContext = 1;
+    AccountType AccountType = 2;
+    bytes Address = 3;
+}
+
+enum AccountType {
+    ACCOUNT_TYPE_UNKNOWN = 0;
+    PUBLIC_ACCOUNT = 1;
+    PRIVATE_ACCOUNT = 2;
+    SMART_CONTRACT_ACCOUNT = 3;
+}
