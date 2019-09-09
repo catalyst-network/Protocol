@@ -56,3 +56,19 @@ message TransactionBroadcast {
     repeated Transaction.CFTransactionEntry CFEntries = 5; // 0 field for non-confidential transaction
     repeated Transaction.ContractEntry ContractEntries = 6;
 }
+
+ message CandidateDeltaBroadcast {
+	bytes Hash = 1; // The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
+	Peer.PeerId ProducerId = 2;  // Identifier of the producer of the candidate.
+	bytes PreviousDeltaDfsHash = 3; // The DFS address for the content of the delta preceding this candidate.
+}
+
+message FavouriteDeltaBroadcast {
+	CandidateDeltaBroadcast Candidate = 1; // The candidate favoured by the voter broadcasting this message.
+	Peer.PeerId VoterId = 2; // The PeerId of the participant submitting its vote to the network.
+}
+
+ message DeltaDfsHashBroadcast {
+	bytes DeltaDfsHash = 1; // The DFS address at which the full content of the delta can be retrieved.
+	bytes PreviousDeltaDfsHash = 2; // The DFS address for the content of the delta preceding this candidate.
+}

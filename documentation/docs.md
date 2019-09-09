@@ -20,10 +20,7 @@
   
 
 - [Deltas.proto](#Deltas.proto)
-    - [CandidateDeltaBroadcast](#Catalyst.Protocol.Deltas.CandidateDeltaBroadcast)
     - [Delta](#Catalyst.Protocol.Deltas.Delta)
-    - [DeltaDfsHashBroadcast](#Catalyst.Protocol.Deltas.DeltaDfsHashBroadcast)
-    - [FavouriteDeltaBroadcast](#Catalyst.Protocol.Deltas.FavouriteDeltaBroadcast)
   
   
   
@@ -161,6 +158,9 @@
   
 
 - [Wire.proto](#Wire.proto)
+    - [CandidateDeltaBroadcast](#Catalyst.Protocol.Wire.CandidateDeltaBroadcast)
+    - [DeltaDfsHashBroadcast](#Catalyst.Protocol.Wire.DeltaDfsHashBroadcast)
+    - [FavouriteDeltaBroadcast](#Catalyst.Protocol.Wire.FavouriteDeltaBroadcast)
     - [ProtocolErrorMessageSigned](#Catalyst.Protocol.Wire.ProtocolErrorMessageSigned)
     - [ProtocolMessageSigned](#Catalyst.Protocol.Wire.ProtocolMessageSigned)
     - [TransactionBroadcast](#Catalyst.Protocol.Wire.TransactionBroadcast)
@@ -273,91 +273,22 @@
 
 
 
-<a name="Catalyst.Protocol.Deltas.CandidateDeltaBroadcast"></a>
-
-### CandidateDeltaBroadcast
-CandidateDeltaBroadcast
-
-DeltaHash: The hash computed for the current delta produced by ProducerId.
-	This is meant to be used when voting for most popular hashes.
-PreviousDeltaDfsHash: The DFS address for the content of the delta preceding this candidate.
-ProducerId: Identifier of the producer of the candidate.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Hash | [bytes](#bytes) |  |  |
-| ProducerId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
-| PreviousDeltaDfsHash | [bytes](#bytes) |  |  |
-
-
-
-
-
-
 <a name="Catalyst.Protocol.Deltas.Delta"></a>
 
 ### Delta
-Delta
 
-version:
-PreviousDeltaDfsHash: address for the content of the previous delta on the DFS
-MerkleRoot:
-MerklePoda: proof of delegated authority for active wokers
-TimeStamp:
-STEntries:
-CFEntries:
-CBEntries: one per active worker
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Version | [uint32](#uint32) |  |  |
-| PreviousDeltaDfsHash | [bytes](#bytes) |  |  |
+| PreviousDeltaDfsHash | [bytes](#bytes) |  | address for the content of the previous delta on the DFS |
 | MerkleRoot | [bytes](#bytes) |  |  |
-| MerklePoda | [bytes](#bytes) |  |  |
+| MerklePoda | [bytes](#bytes) |  | proof of delegated authority for active wokers |
 | TimeStamp | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
 | STEntries | [Catalyst.Protocol.Transaction.STTransactionEntry](#Catalyst.Protocol.Transaction.STTransactionEntry) | repeated |  |
 | CFEntries | [Catalyst.Protocol.Transaction.CFTransactionEntry](#Catalyst.Protocol.Transaction.CFTransactionEntry) | repeated |  |
-| CBEntries | [Catalyst.Protocol.Transaction.CoinbaseEntry](#Catalyst.Protocol.Transaction.CoinbaseEntry) | repeated |  |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Deltas.DeltaDfsHashBroadcast"></a>
-
-### DeltaDfsHashBroadcast
-DeltaDfsHashBroadcast
-
-DeltaDfsHash: The DFS address at which the full content of the delta can be retrieved.
-PreviousDeltaDfsHash: The DFS address for the content of the delta preceding this candidate.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| DeltaDfsHash | [bytes](#bytes) |  |  |
-| PreviousDeltaDfsHash | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="Catalyst.Protocol.Deltas.FavouriteDeltaBroadcast"></a>
-
-### FavouriteDeltaBroadcast
-FavouriteDeltaBroadcast
-
-CandidateDeltaBroadcast: The candidate favoured by the voter broadcasting this message.
-VoterId: The PeerId of the participant submitting its vote to the network.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| Candidate | [CandidateDeltaBroadcast](#Catalyst.Protocol.Deltas.CandidateDeltaBroadcast) |  |  |
-| VoterId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  |  |
+| CBEntries | [Catalyst.Protocol.Transaction.CoinbaseEntry](#Catalyst.Protocol.Transaction.CoinbaseEntry) | repeated | one per active worker |
 
 
 
@@ -1862,6 +1793,55 @@ Total byte size is (9&#43;2k)*32, where k = log_2(n*m), m is number of aggregate
 <p align="right"><a href="#top">Top</a></p>
 
 ## Wire.proto
+
+
+
+<a name="Catalyst.Protocol.Wire.CandidateDeltaBroadcast"></a>
+
+### CandidateDeltaBroadcast
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Hash | [bytes](#bytes) |  | The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes. |
+| ProducerId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  | Identifier of the producer of the candidate. |
+| PreviousDeltaDfsHash | [bytes](#bytes) |  | The DFS address for the content of the delta preceding this candidate. |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Wire.DeltaDfsHashBroadcast"></a>
+
+### DeltaDfsHashBroadcast
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| DeltaDfsHash | [bytes](#bytes) |  | The DFS address at which the full content of the delta can be retrieved. |
+| PreviousDeltaDfsHash | [bytes](#bytes) |  | The DFS address for the content of the delta preceding this candidate. |
+
+
+
+
+
+
+<a name="Catalyst.Protocol.Wire.FavouriteDeltaBroadcast"></a>
+
+### FavouriteDeltaBroadcast
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| Candidate | [CandidateDeltaBroadcast](#Catalyst.Protocol.Wire.CandidateDeltaBroadcast) |  | The candidate favoured by the voter broadcasting this message. |
+| VoterId | [Catalyst.Protocol.Peer.PeerId](#Catalyst.Protocol.Peer.PeerId) |  | The PeerId of the participant submitting its vote to the network. |
+
+
+
 
 
 
