@@ -34,13 +34,12 @@ enum TransactionType {
 
 message TransactionBroadcast {
 	TransactionType TransactionType = 1; // 0 for non-confidential transaction, 1 for confidential transaction
-    google.protobuf.Timestamp TimeStamp = 2; // Timestamp transaction was created
-    uint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12 - always positive
-    uint64 LockTime = 4; // 32 bits
-    repeated STTransactionEntry STEntries = 5; // 0 field for confidential transaction
-    repeated CFTransactionEntry CFEntries = 6; // 0 field for non-confidential transaction
-    repeated ContractEntry ContractEntries = 7;
-    bytes Signature = 8; // 64 bytes
+    uint64 TransactionFees = 2; // 8 bytes, clear text, fees * 10^12 - always positive
+    uint64 LockTime = 3; // 32 bits
+    repeated STTransactionEntry STEntries = 4; // 0 field for confidential transaction
+    repeated CFTransactionEntry CFEntries = 5; // 0 field for non-confidential transaction
+    repeated ContractEntry ContractEntries = 6;
+    bytes Signature = 7; // 64 bytes
 }
 
 message STTransactionEntry {
@@ -57,12 +56,14 @@ message CFTransactionEntry {
 
 message ContractEntry {
     BaseTransactionEntry TXEntry = 1; // Address of sender
-    bytes CallData = 2; // Smart contract data.
+    uint64 Amount = 2; // 8 byte amount
+    bytes CallData = 3; // Smart contract data.
 }
 
 message BaseTransactionEntry {
     Address.Address FromAddress = 1;// Address of sender.
     Address.Address ToAddress = 2; // Address of receiver.
+    google.protobuf.Timestamp TimeStamp = 3; // Timestamp transaction was created
 }
 
 /**
