@@ -31,7 +31,7 @@ package Catalyst.Protocol.Wire;
 /**
 * Provides a network error message, for when a node cant send/ build a valid response
 */
-message ProtocolErrorMessageSigned {
+message ProtocolErrorMessage {
 	Cryptography.Signature signature = 1;
     Peer.PeerId peer_id = 2;
     bytes correlation_id = 3;
@@ -41,7 +41,7 @@ message ProtocolErrorMessageSigned {
 /**
 * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
 */
-message ProtocolMessageSigned {
+message ProtocolMessage {
     Peer.PeerId peer_id = 1; // is the sender's peerId
     bytes correlation_id = 2; // is a 16 bytes guid used to match responses to their original requests
     string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
