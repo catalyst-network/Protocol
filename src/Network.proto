@@ -24,7 +24,7 @@ option java_multiple_files = true;
 package Catalyst.Protocol.Network;
 
 enum NetworkType {
-    NETWORK_UNKNOWN = 0; // un-known network
+    NETWORK_TYPE_UNKNOWN = 0; // un-known network
     MAINNET = 1; // main live network
     DEVNET = 2; // local devnet
     TESTNET = 3; // public testnet

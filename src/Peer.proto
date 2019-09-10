@@ -32,19 +32,19 @@ import "google/protobuf/duration.proto";
 * https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
 */
 message PeerId {
-    bytes protocolVersion = 1; //2 bytes
+    bytes protocol_version = 1; //2 bytes
     bytes ip = 2; // 16 bytes
-    bytes port = 3; // 2 bytes
-    Cryptography.PublicKey publicKey = 4; // Peers public key, node operators are encouraged to use the same, public key across all their nodes.
+    uint32 port = 3; // 2 bytes
+    Cryptography.PublicKey public_key = 4; // Peers public key, node operators are encouraged to use the same, public key across all their nodes.
 }
 
 message PeerInfo {
-    PeerId peerId = 1; // is peerId of network
+    PeerId peer_id = 1; // is peerId of network
     int32 reputation = 2; // reputation of peer
-    bool blackListed = 3; // is to check if the peer is blackListed
-    bool isAwolPeer = 4; // is when the peer cannot be reached on the network
-    google.protobuf.Duration inactiveFor = 5; // is how long the peer has beekn inactive for
-    google.protobuf.Timestamp lastSeen = 6; // is when the peer was last seen
+    bool is_blacklisted = 3; // is to check if the peer is blackListed
+    bool is_unreachable = 4; // is when the peer cannot be reached on the network
+    google.protobuf.Duration inactive_for = 5; // is how long the peer has beekn inactive for
+    google.protobuf.Timestamp last_seen = 6; // is when the peer was last seen
     google.protobuf.Timestamp modified = 7; // modified is when the peer was last modified
     google.protobuf.Timestamp created = 8; // created is when the peer was created
 }

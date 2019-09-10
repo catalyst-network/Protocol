@@ -28,7 +28,7 @@ import "Peer.proto";
 message PeerNeighborsRequest { }
 
 message PeerNeighborsResponse {
-    repeated Peer.PeerId Peers = 1;
+    repeated Peer.PeerId peers = 1;
 }
 
 message PingRequest { }

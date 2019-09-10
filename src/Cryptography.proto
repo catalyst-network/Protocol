@@ -21,12 +21,32 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
+import "Network.proto";
+
 package Catalyst.Protocol.Cryptography;
 
 message PublicKey {
-    bytes RawBytes = 1;
+    bytes raw_bytes = 1;
 }
 
 message PrivateKey {
-    bytes RawBytes = 1;
+    bytes raw_bytes = 1;
+}
+
+message Signature {
+	SigningContext signing_context = 1;
+	bytes signature = 2;
+}
+
+enum SignatureType {
+	SIGNATURE_TYPE_UNKNOWN = 0;
+	TRANSACTION_PUBLIC = 1;
+	TRANSACTION_CONFIDENTIAL = 2;
+	PROTOCOL_RPC = 3;
+	PROTOCOL_PEER = 4;
+}
+
+message SigningContext {
+	Network.NetworkType network_type = 1; // is the network enum (mainet / devnet etc)
+	SignatureType signature_type = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }

@@ -21,15 +21,15 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
-import "Signature.proto";
+import "Cryptography.proto";
 
 package Catalyst.Protocol.Account;
 
 message Address {
-    Signature.Context SigningContext = 1;
-    AccountType AccountType = 2;
-    HashType PublicKeyHashType = 3;
-    bytes PublicKeyHash = 4;
+    Cryptography.SigningContext signing_context = 1;
+    AccountType account_type = 2;
+    HashType public_key_hash_type = 3;
+    bytes public_key_hash = 4;
 }
 
 enum HashType {

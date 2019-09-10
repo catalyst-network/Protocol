@@ -21,8 +21,8 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
+import "Cryptography.proto";
 import "Peer.proto";
-import "Signature.proto";
 import "Transaction.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -32,9 +32,9 @@ package Catalyst.Protocol.Wire;
 * Provides a network error message, for when a node cant send/ build a valid response
 */
 message ProtocolErrorMessageSigned {
-    Signature.Signature signature = 1;
-    Peer.PeerId peerId = 2;
-    bytes correlationId = 3;
+	Cryptography.Signature signature = 1;
+    Peer.PeerId peer_id = 2;
+    bytes correlation_id = 3;
     int32 code = 4;
 }
 
@@ -42,32 +42,32 @@ message ProtocolErrorMessageSigned {
 * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
 */
 message ProtocolMessageSigned {
-    Peer.PeerId peerId = 1; // is the sender's peerId
-    bytes correlationId = 2; // is a 16 bytes guid used to match responses to their original requests
+    Peer.PeerId peer_id = 1; // is the sender's peerId
+    bytes correlation_id = 2; // is a 16 bytes guid used to match responses to their original requests
     string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
     bytes value = 4; // is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
-    Signature.Signature signature = 5; // is the ed25519ph context signature
+    Cryptography.Signature signature = 5; // is the ed25519ph context signature
 }
 
 message TransactionBroadcast {
-    google.protobuf.Timestamp Timestamp = 1; // 32 bits
-    repeated Transaction.PublicEntry PublicEntries = 3; // 0 field for confidential transaction
-    repeated Transaction.ConfidentialEntry ConfidentialEntries = 4; // 0 field for non-confidential transaction
-    repeated Transaction.ContractEntry ContractEntries = 5;
+    google.protobuf.Timestamp timestamp = 1; // 32 bits
+    repeated Transaction.PublicEntry public_entries = 3; // 0 field for confidential transaction
+    repeated Transaction.ConfidentialEntry confidential_entries = 4; // 0 field for non-confidential transaction
+    repeated Transaction.ContractEntry contract_entries = 5;
 }
 
  message CandidateDeltaBroadcast {
-	bytes Hash = 1; // The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
-	Peer.PeerId ProducerId = 2;  // Identifier of the producer of the candidate.
-	bytes PreviousDeltaDfsHash = 3; // The DFS address for the content of the delta preceding this candidate.
+	bytes hash = 1; // The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
+	Peer.PeerId producer_id = 2;  // Identifier of the producer of the candidate.
+	bytes previous_delta_dfs_hash = 3; // The DFS address for the content of the delta preceding this candidate.
 }
 
 message FavouriteDeltaBroadcast {
-	CandidateDeltaBroadcast Candidate = 1; // The candidate favoured by the voter broadcasting this message.
-	Peer.PeerId VoterId = 2; // The PeerId of the participant submitting its vote to the network.
+	CandidateDeltaBroadcast candidate = 1; // The candidate favoured by the voter broadcasting this message.
+	Peer.PeerId voter_id = 2; // The PeerId of the participant submitting its vote to the network.
 }
 
  message DeltaDfsHashBroadcast {
-	bytes DeltaDfsHash = 1; // The DFS address at which the full content of the delta can be retrieved.
-	bytes PreviousDeltaDfsHash = 2; // The DFS address for the content of the delta preceding this candidate.
+	bytes delta_dfs_hash = 1; // The DFS address at which the full content of the delta can be retrieved.
+	bytes previous_delta_dfs_hash = 2; // The DFS address for the content of the delta preceding this candidate.
 }

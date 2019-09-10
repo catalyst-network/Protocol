@@ -26,19 +26,19 @@ package Catalyst.Protocol.DfsMarketplace;
 import "Peer.proto";
 
 message BlockChallengeRequest {
-	string challengeSalt = 1;
-	string mainFileCid = 2;
-	bytes blockIdxRandomGuid = 3;
+	string challenge_salt = 1;
+	string main_file_cid = 2;
+	bytes block_idx_random_guid = 3;
 }
 
 message BlockChallengeResponse {
 	string answer = 1;
-	string blockChallengeRequestHash = 2;
+	string block_challenge_request_hash = 2;
 }
 
 message BlockChallengeBroadcast {
-	BlockChallengeRequest originalChallenge = 1;	
+	BlockChallengeRequest original_challenge = 1;	
 	string answer = 2;
-	Peer.PeerId challengedPeer = 3;
-	Peer.PeerId challengedBy = 4;
+	Peer.PeerId challenged_peer = 3;
+	Peer.PeerId challenged_by = 4;
 }

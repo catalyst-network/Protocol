@@ -28,12 +28,12 @@ package Catalyst.Protocol.Deltas;
 
 
  message Delta {
-	bytes PreviousDeltaDfsHash = 1; //  address for the content of the previous delta on the DFS
-	bytes MerkleRoot = 2;
-	bytes MerklePoda = 3; // proof of delegated authority for active wokers
-	google.protobuf.Timestamp TimeStamp = 4;
-	repeated Transaction.PublicEntry PublicEntries = 5;
-	repeated Transaction.ConfidentialEntry ConfidentialEntries = 6;
-	repeated Transaction.ContractEntry ContractEntries = 7;
-	repeated Transaction.CoinbaseEntry CoinbaseEntries = 8; // one per active worker
+	bytes previous_delta_dfs_hash = 1; //  address for the content of the previous delta on the DFS
+	bytes merkle_root = 2;
+	bytes merkle_poda = 3; // proof of delegated authority for active wokers
+	google.protobuf.Timestamp time_stamp = 4;
+	repeated Transaction.PublicEntry public_entries = 5;
+	repeated Transaction.ConfidentialEntry confidential_entries = 6;
+	repeated Transaction.ContractEntry contract_entries = 7;
+	repeated Transaction.CoinbaseEntry coinbase_entries = 8; // one per active worker
 }

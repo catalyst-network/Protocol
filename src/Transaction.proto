@@ -21,7 +21,6 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
-import "Signature.proto";
 import "Cryptography.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -34,26 +33,26 @@ enum TransactionType {
 }
 
 message PublicEntry {
-    BaseEntry Base = 1;
-    sint64 Amount = 2; // 8 byte amount
+    BaseEntry base = 1;
+    sint64 amount = 2; // 8 byte amount
 }
 
 message ConfidentialEntry {
-    BaseEntry Base = 1;
-    bytes PedersenCommit = 2; // 32 bytes
-    RangeProof RangeProof = 3;
+    BaseEntry base = 1;
+    bytes pedersen_commitment = 2; // 32 bytes
+    RangeProof range_proof = 3;
 }
 
 message ContractEntry {
-    BaseEntry Base = 1;
-    sint64 Amount = 2; // 8 byte amount
-    bytes CallData = 3; // Smart contract data.
+    BaseEntry base = 1;
+    uint64 amount = 2; // 8 byte amount
+    bytes call_data = 3; // Smart contract data.
 }
 
 message BaseEntry {
-    Cryptography.PublicKey Recipient = 1; // PublicKey of receiver.
-    Cryptography.PublicKey Sender = 2;// PublicKey of sender.
-    sint64 TransactionFees = 3; // 8 bytes, clear text, fees * 10^12
+    Cryptography.PublicKey recipient = 1; // PublicKey of receiver.
+    Cryptography.PublicKey sender = 2;// PublicKey of sender.
+    uint64 transaction_fees = 3; // 8 bytes, clear text, fees * 10^12
 }
 
 /**
@@ -61,21 +60,21 @@ message BaseEntry {
  * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
  */
 message RangeProof {
-    repeated bytes V = 1; // m * 32 bytes, value commitment (eq. 36) 
-    bytes A = 2; // 32 bytes, bit commitment (eq. 48)
-    bytes S = 3; // 32 bytes, per bit blinding factor commitment (eq. 48)
-    bytes T1 = 4; // 32 bytes, poly commitment (eq. 54)
-    bytes T2 = 5; // 32 bytes, poly commitment (eq. 54)
-    bytes TAU = 6; // 32 bytes, proof of share (eq. 63)
-    bytes MU = 7; // 32 bytes, proof of share (eq. 63)
-    repeated bytes L = 8; // k * 32 bytes, aggregated vector polynomial (eq. 63)
-    repeated bytes R = 9; // k * 32 bytes, aggregated vector polynomial (eq. 63)
-    bytes APrime0 = 10; // 32 bytes (eq. 63)
-    bytes BPrime0 = 11; // 32 bytes (eq. 63)
+    repeated bytes value_commitment = 1; // m * 32 bytes, value commitment (eq. 36) 
+    bytes bit_commitment = 2; // 32 bytes, bit commitment (eq. 48)
+    bytes per_bit_blinding_factor_commitment = 3; // 32 bytes, per bit blinding factor commitment (eq. 48)
+    bytes poly_commitment_t1 = 4; // 32 bytes, poly commitment (eq. 54)
+    bytes poly_commitment_t2 = 5; // 32 bytes, poly commitment (eq. 54)
+    bytes proof_of_share_tau = 6; // 32 bytes, proof of share (eq. 63)
+    bytes proof_of_share_mu = 7; // 32 bytes, proof of share (eq. 63)
+    repeated bytes aggregated_vector_polynomial_l = 8; // k * 32 bytes, aggregated vector polynomial (eq. 63)
+    repeated bytes aggregated_vector_polynomial_r = 9; // k * 32 bytes, aggregated vector polynomial (eq. 63)
+    bytes a_prime_0 = 10; // 32 bytes (eq. 63)
+    bytes b_prime_0 = 11; // 32 bytes (eq. 63)
     bytes t = 12; 
 } 
 
 message CoinbaseEntry {
-    Cryptography.PublicKey PublicKey = 1; // public key behind the address where the Coinbase will be credited
-    sint64 Amount = 2; // max 8 bytes
+    Cryptography.PublicKey public_key = 1; // public key behind the address where the Coinbase will be credited
+    uint64 amount = 2; // max 8 bytes
 }
