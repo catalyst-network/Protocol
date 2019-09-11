@@ -22,11 +22,12 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 import "Cryptography.proto";
+import "Network.proto";
 
 package Catalyst.Protocol.Account;
 
 message Address {
-    Cryptography.SigningContext signing_context = 1;
+	Network.NetworkType network_type = 1;
     AccountType account_type = 2;
     HashType public_key_hash_type = 3;
     bytes public_key_hash = 4;
