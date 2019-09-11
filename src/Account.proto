@@ -33,9 +33,14 @@ message Address {
     bytes public_key_hash = 4;
 }
 
+//When adding support for new HashType, please make sure
+//that the names maps to the code defined by multiformats, as found in 
+//https://github.com/multiformats/multicodec/blob/master/table.csv
+//the name of the enum field should also be retrieved from this table
+//replacing "-" with "_".
 enum HashType {
-    HASH_TYPE_UNKONWN = 0;
-    BLAKE_256B_HASH = 1;
+    IDENTITY = 0;
+    BLAKE2B_256 = 0xb220;
 }
 
 enum AccountType {
