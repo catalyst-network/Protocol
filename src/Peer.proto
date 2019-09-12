@@ -39,7 +39,7 @@ message PeerId {
 
 message PeerInfo {
     PeerId peer_id = 1; // is peerId of network
-    int32 reputation = 2; // reputation of peer
+    sint32 reputation = 2; // reputation of peer
     bool is_blacklisted = 3; // is to check if the peer is blackListed
     bool is_unreachable = 4; // is when the peer cannot be reached on the network
     google.protobuf.Duration inactive_for = 5; // is how long the peer has beekn inactive for
