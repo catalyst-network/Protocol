@@ -45,7 +45,7 @@ message ConfidentialEntry {
 
 message ContractEntry {
     BaseEntry base = 1;
-    uint64 amount = 2; // 8 byte amount
+    bytes amount = 2; // 8 byte amount
     bytes data = 3; // Smart contract data.
 }
 
