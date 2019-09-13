@@ -31,10 +31,9 @@ import "google/protobuf/duration.proto";
 * https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
 */
 message PeerId {
-    bytes protocol_version = 1; //2 bytes
-    bytes ip = 2; // 16 bytes
-    uint32 port = 3; // 2 bytes
-    bytes public_key = 4; // Peers public key, node operators are encouraged to use the same, public key across all their nodes.
+    bytes ip = 1; // 16 bytes
+    uint32 port = 2; // 2 bytes
+    bytes public_key = 3; // Peers public key, node operators are encouraged to use the same, public key across all their nodes.
 }
 
 message PeerInfo {
