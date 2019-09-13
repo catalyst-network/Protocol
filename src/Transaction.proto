@@ -34,7 +34,7 @@ enum TransactionType {
 
 message PublicEntry {
     BaseEntry base = 1;
-    sint64 amount = 2; // 8 byte amount
+    bytes amount = 2; // uint256 amount
 }
 
 message ConfidentialEntry {
@@ -52,7 +52,7 @@ message ContractEntry {
 message BaseEntry {
     Cryptography.PublicKey recipient = 1; // PublicKey of receiver.
     Cryptography.PublicKey sender = 2;// PublicKey of sender.
-    uint64 transaction_fees = 3; // 8 bytes, clear text, fees * 10^12
+    bytes transaction_fees = 3; // uint256 amount
 }
 
 /**
@@ -75,6 +75,6 @@ message RangeProof {
 } 
 
 message CoinbaseEntry {
-    Cryptography.PublicKey public_key = 1; // public key behind the address where the Coinbase will be credited
-    uint64 amount = 2; // max 8 bytes
+    bytes public_key = 1; // public key behind the address where the Coinbase will be credited
+    bytes amount = 2; // uint256 amount
 }
