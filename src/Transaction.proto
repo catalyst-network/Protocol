@@ -50,9 +50,9 @@ message ContractEntry {
 }
 
 message BaseEntry {
-    Cryptography.PublicKey recipient = 1; // PublicKey of receiver.
-    Cryptography.PublicKey sender = 2;// PublicKey of sender.
-    bytes transaction_fees = 3; // uint256 amount
+	bytes receiver_public_key = 1; // PublicKey of receiver.
+	bytes sender_public_key = 2;// PublicKey of sender.
+    bytes transaction_fees = 3; // 8 bytes, clear text, fees * 10^12
 }
 
 /**
@@ -75,6 +75,6 @@ message RangeProof {
 } 
 
 message CoinbaseEntry {
-    bytes public_key = 1; // public key behind the address where the Coinbase will be credited
+    bytes receiver_public_key = 1; // public key behind the address where the Coinbase will be credited
     bytes amount = 2; // uint256 amount
 }

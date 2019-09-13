@@ -25,14 +25,6 @@ import "Network.proto";
 
 package Catalyst.Protocol.Cryptography;
 
-message PublicKey {
-    bytes raw_bytes = 1;
-}
-
-message PrivateKey {
-    bytes raw_bytes = 1;
-}
-
 message Signature {
 	SigningContext signing_context = 1;
 	bytes raw_bytes = 2;
