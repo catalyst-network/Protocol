@@ -21,19 +21,25 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
-import "Transaction.proto";
-import "google/protobuf/timestamp.proto";
+import "Cryptography.proto";
+import "Network.proto";
 
-package Catalyst.Protocol.Deltas;
+package Catalyst.Protocol.Account;
 
+message Address {
+	Network.NetworkType network_type = 1;
+    AccountType account_type = 2;
 
- message Delta {
-	bytes previous_delta_dfs_hash = 1; //  address for the content of the previous delta on the DFS
-	bytes merkle_root = 2;
-	bytes merkle_poda = 3; // proof of delegated authority for active wokers
-	google.protobuf.Timestamp time_stamp = 4;
-	repeated Transaction.PublicEntry public_entries = 5;
-	repeated Transaction.ConfidentialEntry confidential_entries = 6;
-	repeated Transaction.ContractEntry contract_entries = 7;
-	repeated Transaction.CoinbaseEntry coinbase_entries = 8; // one per active worker
+	//multihash of the public key behind the address using Blake2b-152
+	//Blake2b-152 produces 19 bytes digest
+	bytes public_key_hash = 3;
+}
+
+//We need to leave the 3 first bits for the NetworkType and can use the rest
+//for the AccountType
+enum AccountType {
+    ACCOUNT_TYPE_UNKNOWN = 0;
+    PUBLIC_ACCOUNT = 8;
+    CONFIDENTIAL_ACCOUNT = 9;
+    SMART_CONTRACT_ACCOUNT = 10;
 }

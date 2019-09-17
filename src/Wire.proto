@@ -1,0 +1,74 @@
+/**
+* Copyright (c) 2019 Catalyst Network
+*
+* This file is part of Catalyst.Network.Protocol.Protobuffs <https://github.com/catalyst-network/protocol-protobuffs>
+*
+* Catalyst.Network.Protocol.Protobuffs is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 2 of the License, or
+* (at your option) any later version.
+* 
+* Catalyst.Network.Protocol.Protobuffs is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with Catalyst.Network.Protocol.Protobuffs If not, see <https://www.gnu.org/licenses/>.
+*/
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+import "Cryptography.proto";
+import "Peer.proto";
+import "Transaction.proto";
+import "google/protobuf/timestamp.proto";
+
+package Catalyst.Protocol.Wire;
+
+/**
+* Provides a network error message, for when a node cant send/ build a valid response
+*/
+message ProtocolErrorMessage {
+	Cryptography.Signature signature = 1;
+    Peer.PeerId peer_id = 2;
+    bytes correlation_id = 3;
+    int32 code = 4;
+}
+
+/**
+* A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
+*/
+message ProtocolMessage {
+    Peer.PeerId peer_id = 1; // is the sender's peerId
+    bytes correlation_id = 2; // is a 16 bytes guid used to match responses to their original requests
+    string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+    bytes value = 4; // is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+    Cryptography.Signature signature = 5; // is the ed25519ph context signature
+}
+
+message TransactionBroadcast {
+    Cryptography.Signature signature = 1; // is the ed25519ph context signature
+    google.protobuf.Timestamp timestamp = 2; //  records the transaction creation time
+    repeated Transaction.PublicEntry public_entries = 3; // 0 field for confidential transaction
+    repeated Transaction.ConfidentialEntry confidential_entries = 4; // 0 field for non-confidential transaction
+    repeated Transaction.ContractEntry contract_entries = 5;
+}
+
+ message CandidateDeltaBroadcast {
+	bytes hash = 1; // The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
+	Peer.PeerId producer_id = 2;  // Identifier of the producer of the candidate.
+	bytes previous_delta_dfs_hash = 3; // The DFS address for the content of the delta preceding this candidate.
+}
+
+message FavouriteDeltaBroadcast {
+	CandidateDeltaBroadcast candidate = 1; // The candidate favoured by the voter broadcasting this message.
+	Peer.PeerId voter_id = 2; // The PeerId of the participant submitting its vote to the network.
+}
+
+ message DeltaDfsHashBroadcast {
+	bytes delta_dfs_hash = 1; // The DFS address at which the full content of the delta can be retrieved.
+	bytes previous_delta_dfs_hash = 2; // The DFS address for the content of the delta preceding this candidate.
+}

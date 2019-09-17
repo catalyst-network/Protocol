@@ -21,19 +21,24 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 
-import "Transaction.proto";
-import "google/protobuf/timestamp.proto";
+import "Network.proto";
 
-package Catalyst.Protocol.Deltas;
+package Catalyst.Protocol.Cryptography;
 
+message Signature {
+	SigningContext signing_context = 1;
+	bytes raw_bytes = 2;
+}
 
- message Delta {
-	bytes previous_delta_dfs_hash = 1; //  address for the content of the previous delta on the DFS
-	bytes merkle_root = 2;
-	bytes merkle_poda = 3; // proof of delegated authority for active wokers
-	google.protobuf.Timestamp time_stamp = 4;
-	repeated Transaction.PublicEntry public_entries = 5;
-	repeated Transaction.ConfidentialEntry confidential_entries = 6;
-	repeated Transaction.ContractEntry contract_entries = 7;
-	repeated Transaction.CoinbaseEntry coinbase_entries = 8; // one per active worker
+enum SignatureType {
+	SIGNATURE_TYPE_UNKNOWN = 0;
+	TRANSACTION_PUBLIC = 1;
+	TRANSACTION_CONFIDENTIAL = 2;
+	PROTOCOL_RPC = 3;
+	PROTOCOL_PEER = 4;
+}
+
+message SigningContext {
+	Network.NetworkType network_type = 1; // is the network enum (mainet / devnet etc)
+	SignatureType signature_type = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }

@@ -23,9 +23,10 @@ option java_multiple_files = true;
 
 package Catalyst.Protocol.Rpc.Node;
 
-import "Common.proto";
+import "Peer.proto";
+import "Cryptography.proto";
 import "Deltas.proto";
-import "Transaction.proto";
+import "Wire.proto";
 
 enum ResponseCode {
 	PENDING = 0;
@@ -133,11 +134,11 @@ message DecodeRawTransactionResponse {
 }
 
 message BroadcastRawTransactionRequest {
-	Transaction.TransactionBroadcast transaction = 1;
+	Wire.TransactionBroadcast transaction = 1;
 }
 
 message BroadcastRawTransactionResponse {
-    ResponseCode responseCode = 1;
+    ResponseCode response_code = 1;
 }
 
 message SendToRequest {
@@ -183,11 +184,11 @@ message AddNodeResponse {
 message GetPeerListRequest { }
 
 message GetPeerListResponse {
-    repeated Common.PeerId Peers = 1;
+    repeated Peer.PeerId peers = 1;
 }
 
 message GetPeerReputationRequest {
-    bytes publicKey = 1;
+    bytes public_key = 1;
     bytes ip = 2;
 }
 
@@ -195,25 +196,25 @@ message GetPeerReputationResponse {
    int32 reputation = 1;
 }
 
-message SetPeerBlackListRequest {
-    bytes publicKey = 1;
+message SetPeerBlacklistRequest {
+    bytes public_key = 1;
     bytes ip = 2;
     bool blacklist = 3;
 }
 
-message SetPeerBlackListResponse{
-    bytes publicKey = 1;
+message SetPeerBlacklistResponse{
+    bytes public_key = 1;
     bytes ip = 2;
     bool blacklist = 3;
 }
 
 message GetPeerInfoRequest {
-    bytes publicKey = 1;
+    bytes public_key = 1;
     bytes ip = 2;
 }
 
 message GetPeerInfoResponse {
-    repeated Common.PeerInfo PeerInfo = 1;
+    repeated Peer.PeerInfo peer_info = 1;
 }
 
 message GetConnectionCountRequest {
@@ -225,11 +226,11 @@ message GetConnectionCountResponse {
 }
 
 message GetDeltaRequest {
-    bytes DeltaDfsHash = 1;
+    bytes delta_dfs_hash = 1;
 }
 
 message GetDeltaResponse {
-    Deltas.Delta Delta = 1;
+    Deltas.Delta delta = 1;
 }
 
 message GetMempoolRequest {
@@ -237,30 +238,30 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    repeated Transaction.TransactionBroadcast transactions = 1;
+    repeated Wire.TransactionBroadcast transactions = 1;
 }
 
 message SignMessageRequest {
     bytes message = 1;
-    string keyId = 2;
-    Common.SigningContext signingContext = 3;
+    string key_id = 2;
+    Cryptography.SigningContext signing_context = 3;
 }
 
 message SignMessageResponse {
     bytes signature = 1;
-    bytes publicKey = 2;
-    bytes originalMessage = 3;
+    bytes public_key = 2;
+    bytes original_message = 3;
 }
 
 message VerifyMessageRequest {
     bytes signature = 1;
-    bytes publicKey = 2;
+    bytes public_key = 2;
     bytes message = 3;
-    Common.SigningContext signingContext = 4;
+    Cryptography.SigningContext signing_context = 4;
 }
 
 message VerifyMessageResponse {
-    bool isSignedByKey = 1;
+    bool is_signed_by_key = 1;
 }
 
 message ServiceStatusRequest {
@@ -272,54 +273,54 @@ message ServiceStatusResponse {
 }
 
 message AddFileToDfsRequest {
-	uint64 fileSize = 1;
-	string fileName = 2;
+	uint64 file_size = 1;
+	string file_name = 2;
 	string node = 3;
 }
 
 message AddFileToDfsResponse {
-	bytes responseCode = 1;
-	string dfsHash = 2;
+	bytes response_code = 1;
+	string dfs_hash = 2;
 }
 
 message TransferFileBytesRequest {
-	uint32 chunkId = 1;
-	bytes chunkBytes = 2;
-	bytes correlationFileName = 3;
+	uint32 chunk_id = 1;
+	bytes chunk_bytes = 2;
+	bytes correlation_file_name = 3;
 }
 
 message TransferFileBytesResponse {
-	bytes responseCode = 1;
+	bytes response_code = 1;
 }
 
 message RemovePeerRequest {
-	bytes peerIp = 1;
-	bytes publicKey = 2;
+	bytes peer_ip = 1;
+	bytes public_key = 2;
 }
 
 message RemovePeerResponse {
-	uint32 deletedCount = 1;
+	uint32 deleted_count = 1;
 }
 
 message GetPeerCountRequest { }
 
 message GetPeerCountResponse {
-	int32 peerCount = 1;  
+	int32 peer_count = 1;  
 }
 
 message GetFileFromDfsRequest {
-	string dfsHash = 1;
+	string dfs_hash = 1;
 }
 
 message GetFileFromDfsResponse {
-	uint64 fileSize = 1;
-	bytes responseCode = 2;
+	uint64 file_size = 1;
+	bytes response_code = 2;
 }
 
 message SetPeerDataFolderRequest { 
-    string datafolder = 1; 
+    string data_folder = 1; 
 }
 
 message SetPeerDataFolderResponse {
-  bool query = 1; 
+    bool query = 1; 
 }
