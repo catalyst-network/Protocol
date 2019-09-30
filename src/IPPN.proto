@@ -34,3 +34,9 @@ message PeerNeighborsResponse {
 message PingRequest { }
 
 message PingResponse { }
+
+message DeltaHeightRequest { }
+
+message DeltaHeightResponse {
+    bytes delta_hash = 1;
+}
