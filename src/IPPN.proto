@@ -37,6 +37,6 @@ message PingResponse { }
 
 message DeltaHeightRequest { }
 
-message DeltaHeightResponse {
+message LatestDeltaHashResponse {
     bytes delta_hash = 1;
 }
