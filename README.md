@@ -11,10 +11,13 @@
 </div>
 
 <div align="center">
+
 [Build Status](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_apis/build/status/protocol-protobuffs%20-%20generate%20C%23%20files?branchName=develop)](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_build/latest?definitionId=8&branchName=develop)
-</div>
 
 The Catalyst Network protocol is defined using the Protobuffs seralisation format.
+
+</div>
+
 
 <!-- TOC -->
 
