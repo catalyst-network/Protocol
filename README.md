@@ -6,13 +6,13 @@
 [![Discord](https://img.shields.io/discord/629667101774446593?color=blueviolet&label=discord)](https://discord.gg/anTP7xm)
 ![GitHub followers](https://img.shields.io/github/followers/catalyst-network?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/catalyst-network/community?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/catalystnetorg?style=social)
-![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/catalystnet?style=social)
+[![Twitter Follow](https://img.shields.io/twitter/follow/catalystnetorg?style=social)](https://twitter.com/catalystnet)
+[![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/catalystnet?style=social)](https://reddit.com/r/catalystnet)
 </div>
 
 <div align="center">
 
-![Build Status](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_apis/build/status/protocol-protobuffs%20-%20generate%20C%23%20files?branchName=develop)](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_build/latest?definitionId=8&branchName=develop)
+[![Build Status](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_apis/build/status/protocol-protobuffs%20-%20generate%20C%23%20files?branchName=develop)](https://dev.azure.com/AtlasCityIO/protobuffs%20protocol%20sdk%20csharp/_build/latest?definitionId=8&branchName=develop)
 
 The Catalyst Network protocol is defined using the Protobuffs seralisation format.
 
