@@ -40,3 +40,12 @@ message LatestDeltaHashRequest { }
 message LatestDeltaHashResponse {
     bytes delta_hash = 1;
 }
+
+message DeltaHistoryRequest {
+    uint32 range = 1;
+    uint32 height = 2;
+}
+
+message DeltaHistoryResponse {
+    repeated bytes delta_hash = 1;
+}
