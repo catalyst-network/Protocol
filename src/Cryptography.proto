@@ -26,28 +26,29 @@ import "Network.proto";
 package Catalyst.Protocol.Cryptography;
 
 message Signature {
-	SigningContext signing_context = 1;
-	bytes raw_bytes = 2;
+	SigningContext signing_context = 1; // system domain context.
+	bytes raw_bytes = 2; // signature digest.
 }
 
+// Represents domains of a node.
 enum SignatureType {
-	SIGNATURE_TYPE_UNKNOWN = 0;
-	TRANSACTION_PUBLIC = 1;
-	TRANSACTION_CONFIDENTIAL = 2;
-	PROTOCOL_RPC = 3;
-	PROTOCOL_PEER = 4;
+	SIGNATURE_TYPE_UNKNOWN = 0; // Unknown signature.
+	TRANSACTION_PUBLIC = 1; // Signatures for public transactions.
+	TRANSACTION_CONFIDENTIAL = 2; // Signatures for confidential transactions.
+	PROTOCOL_RPC = 3; // Signatures for rpc messages.
+	PROTOCOL_PEER = 4; // Signatures for peer protocol messages.
 }
 
 message SigningContext {
-	Network.NetworkType network_type = 1; // is the network enum (mainet / devnet etc)
+	Network.NetworkType network_type = 1; // is the network enum (mainet / devnet etc).
 	SignatureType signature_type = 2; // contains info on whether the signature is for a protocol message or a transaction.
 }
 
 enum ErrorCode {
-	ERROR_CODE_UNKNOWN = 0;					
+	ERROR_CODE_UNKNOWN = 0;					// Unknown error.
 	INVALID_SIGNATURE = 1;					// Signature is of incorrect length or does not correspond to a valid point.
 	INVALID_PUBLIC_KEY = 2;					// Public key is of incorrect length or cannot be decompressed to a valid point.
-	INVALID_PRIVATE_KEY = 3;					// Private key is of incorrect length.
+	INVALID_PRIVATE_KEY = 3;				// Private key is of incorrect length.
     SIGNATURE_VERIFICATION_FAILURE = 4;		// Signature cannot be verified against the provided information.
     INVALID_CONTEXT_LENGTH = 5;				// Context exceed the maximum allowed length.
 	NO_ERROR = 418;							// No error (just a teapot).

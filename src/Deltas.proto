@@ -26,8 +26,12 @@ import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Deltas;
 
+message DeltaIndex {
+	uint32 height = 1;
+	bytes cid = 2;
+}
 
- message Delta {
+message Delta {
 	bytes previous_delta_dfs_hash = 1; //  address for the content of the previous delta on the DFS
 	bytes merkle_root = 2;
 	bytes merkle_poda = 3; // proof of delegated authority for active wokers
