@@ -38,6 +38,5 @@ message Delta {
 	google.protobuf.Timestamp time_stamp = 4;
 	repeated Transaction.PublicEntry public_entries = 5;
 	repeated Transaction.ConfidentialEntry confidential_entries = 6;
-	repeated Transaction.ContractEntry contract_entries = 7;
-	repeated Transaction.CoinbaseEntry coinbase_entries = 8; // one per active worker
+	repeated Transaction.CoinbaseEntry coinbase_entries = 7; // one per active worker
 }
