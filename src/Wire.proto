@@ -54,7 +54,6 @@ message TransactionBroadcast {
     google.protobuf.Timestamp timestamp = 2; //  records the transaction creation time
     repeated Transaction.PublicEntry public_entries = 3; // 0 field for confidential transaction
     repeated Transaction.ConfidentialEntry confidential_entries = 4; // 0 field for non-confidential transaction
-    repeated Transaction.ContractEntry contract_entries = 5;
 }
 
  message CandidateDeltaBroadcast {
