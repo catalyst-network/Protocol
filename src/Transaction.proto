@@ -33,9 +33,11 @@ enum TransactionType {
 }
 
 message PublicEntry {
-    BaseEntry base = 1;
+	BaseEntry base = 1;
     bytes amount = 2; // uint256 amount
     bytes data = 3; // Smart contract data.
+	google.protobuf.Timestamp timestamp = 4; 
+	Cryptography.Signature signature = 5; // is the ed25519ph context signature
 }
 
 message ConfidentialEntry {

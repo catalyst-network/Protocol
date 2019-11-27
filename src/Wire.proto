@@ -50,10 +50,11 @@ message ProtocolMessage {
 }
 
 message TransactionBroadcast {
-    Cryptography.Signature signature = 1; // is the ed25519ph context signature
-    google.protobuf.Timestamp timestamp = 2; //  records the transaction creation time
-    repeated Transaction.PublicEntry public_entries = 3; // 0 field for confidential transaction
-    repeated Transaction.ConfidentialEntry confidential_entries = 4; // 0 field for non-confidential transaction
+	Transaction.PublicEntry public_entry = 1; // 0 field for confidential transaction
+    //Cryptography.Signature signature = 1; // is the ed25519ph context signature
+    //google.protobuf.Timestamp timestamp = 2; //  records the transaction creation time
+    //repeated Transaction.PublicEntry public_entries = 3; // 0 field for confidential transaction
+    //repeated Transaction.ConfidentialEntry confidential_entries = 4; // 0 field for non-confidential transaction
 }
 
  message CandidateDeltaBroadcast {
