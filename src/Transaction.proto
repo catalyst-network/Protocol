@@ -43,10 +43,6 @@ message PublicEntry {
 message ConfidentialEntry {
     BaseEntry base = 1;
     bytes pedersen_commitment = 2; // 32 bytes
-    /**
-    * BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
-    * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
-    */
     RangeProof range_proof = 3;
 }
 
