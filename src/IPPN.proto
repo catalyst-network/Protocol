@@ -40,3 +40,7 @@ message LatestDeltaHashRequest { }
 message LatestDeltaHashResponse {
     bytes delta_hash = 1;
 }
+
+message PingRequest { }
+
+message PingResponse { }
