@@ -24,11 +24,12 @@ option java_multiple_files = true;
 package Catalyst.Protocol.IPPN;
 
 import "Peer.proto";
+import "Deltas.proto";
 
 message PeerNeighborsRequest { }
 
 message PeerNeighborsResponse {
-    repeated Peer.PeerId peers = 1;
+    repeated Peer.PeerId peers = 1; // Random subset of a nodes peer db.
 }
 
 message PingRequest { }
@@ -38,5 +39,14 @@ message PingResponse { }
 message LatestDeltaHashRequest { }
 
 message LatestDeltaHashResponse {
-    bytes delta_hash = 1;
+    bytes delta_hash = 1; // Rhe cid of a nodes last delta.
+}
+
+message DeltaHistoryRequest {
+    uint32 range = 1; // The number of deltas CIDs a node requests.
+    uint32 height = 2; // The given height the node wants the range from.
+}
+
+message DeltaHistoryResponse {
+    repeated Deltas.DeltaIndex result = 1; // K given del
 }

@@ -27,19 +27,15 @@ import "Network.proto";
 package Catalyst.Protocol.Account;
 
 message Address {
-	Network.NetworkType network_type = 1;
-    AccountType account_type = 2;
-
-	//multihash of the public key behind the address using Blake2b-152
-	//Blake2b-152 produces 19 bytes digest
-	bytes public_key_hash = 3;
+	Network.NetworkType network_type = 1; // bit signalling the network type
+    AccountType account_type = 2; // bit signalling the type of account
+	bytes public_key_hash = 3; // multihash of the public key
 }
 
-//We need to leave the 3 first bits for the NetworkType and can use the rest
-//for the AccountType
+// We need to leave the 3 first bits for the NetworkType and can use the rest for the AccountType
 enum AccountType {
-    ACCOUNT_TYPE_UNKNOWN = 0;
-    PUBLIC_ACCOUNT = 8;
-    CONFIDENTIAL_ACCOUNT = 16;
-    SMART_CONTRACT_ACCOUNT = 24;
+    ACCOUNT_TYPE_UNKNOWN = 0; // Un-known account type.
+    PUBLIC_ACCOUNT = 8; // Public account type.
+    CONFIDENTIAL_ACCOUNT = 16; // Confidential account type.
+    SMART_CONTRACT_ACCOUNT = 24; // Smart contract account type {TO BE DEPRECATED}. 
 }

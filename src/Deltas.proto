@@ -26,14 +26,17 @@ import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Deltas;
 
+message DeltaIndex {
+	uint32 height = 1;
+	bytes cid = 2;
+}
 
- message Delta {
+message Delta {
 	bytes previous_delta_dfs_hash = 1; //  address for the content of the previous delta on the DFS
 	bytes merkle_root = 2;
 	bytes merkle_poda = 3; // proof of delegated authority for active wokers
 	google.protobuf.Timestamp time_stamp = 4;
 	repeated Transaction.PublicEntry public_entries = 5;
 	repeated Transaction.ConfidentialEntry confidential_entries = 6;
-	repeated Transaction.ContractEntry contract_entries = 7;
-	repeated Transaction.CoinbaseEntry coinbase_entries = 8; // one per active worker
+	repeated Transaction.CoinbaseEntry coinbase_entries = 7; // one per active worker
 }
