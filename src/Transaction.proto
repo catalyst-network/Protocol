@@ -33,19 +33,17 @@ enum TransactionType {
 }
 
 message PublicEntry {
-    BaseEntry base = 1;
+	BaseEntry base = 1;
     bytes amount = 2; // uint256 amount
     bytes data = 3; // Smart contract data.
+	google.protobuf.Timestamp timestamp = 4; 
+	Cryptography.Signature signature = 5; // is the ed25519ph context signature
 }
 
 message ConfidentialEntry {
     BaseEntry base = 1;
     bytes pedersen_commitment = 2; // 32 bytes
-    /**
-    * BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
-    * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
-    */
-    bytes range_proof = 3;
+    RangeProof range_proof = 3;
 }
 
 message BaseEntry {
@@ -59,3 +57,22 @@ message CoinbaseEntry {
     bytes receiver_public_key = 1; // public key behind the address where the Coinbase will be credited
     bytes amount = 2; // uint256 amount
 }
+
+/**
+ * BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
+ * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
+ */
+message RangeProof {
+	repeated bytes value_commitment = 1; // m * 32 bytes, value commitment (eq. 36) 
+	bytes bit_commitment = 2; // 32 bytes, bit commitment (eq. 48)
+	bytes per_bit_blinding_factor_commitment = 3; // 32 bytes, per bit blinding factor commitment (eq. 48)
+	bytes poly_commitment_t1 = 4; // 32 bytes, poly commitment (eq. 54)
+	bytes poly_commitment_t2 = 5; // 32 bytes, poly commitment (eq. 54)
+	bytes proof_of_share_tau = 6; // 32 bytes, proof of share (eq. 63)
+	bytes proof_of_share_mu = 7; // 32 bytes, proof of share (eq. 63)
+	repeated bytes aggregated_vector_polynomial_l = 8; // k * 32 bytes, aggregated vector polynomial (eq. 63)
+	repeated bytes aggregated_vector_polynomial_r = 9; // k * 32 bytes, aggregated vector polynomial (eq. 63)
+	bytes a_prime_0 = 10; // 32 bytes (eq. 63)
+	bytes b_prime_0 = 11; // 32 bytes (eq. 63)
+	bytes t = 12; 
+} 

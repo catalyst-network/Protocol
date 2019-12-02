@@ -27,6 +27,7 @@ import "Peer.proto";
 import "Cryptography.proto";
 import "Deltas.proto";
 import "Wire.proto";
+import "Transaction.proto";
 
 enum ResponseCode {
 	PENDING = 0;
@@ -238,7 +239,7 @@ message GetMempoolRequest {
 }
 
 message GetMempoolResponse {
-    repeated Wire.TransactionBroadcast transactions = 1;
+    repeated Transaction.PublicEntry transactions = 1;
 }
 
 message SignMessageRequest {
