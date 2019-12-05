@@ -36,6 +36,7 @@ enum ResponseCode {
 	FINISHED = 3;
 	EXPIRED = 4;
 	FAILED = 5;
+	EXISTS = 6;
 }
 
 message VersionRequest {
