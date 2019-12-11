@@ -39,4 +39,5 @@ message Delta {
 	repeated Transaction.PublicEntry public_entries = 5;
 	repeated Transaction.ConfidentialEntry confidential_entries = 6;
 	repeated Transaction.CoinbaseEntry coinbase_entries = 7; // one per active worker
+	bytes state_root = 8; // the hash of the state root
 }
