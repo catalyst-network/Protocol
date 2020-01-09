@@ -18,4 +18,4 @@ jobs:
 
 - job: setupProtobuffs
   steps:
-  - template: ../libs/sdk-rust.yml
+  - template: ./libs/sdk-rust/azure-pipeline.yml
