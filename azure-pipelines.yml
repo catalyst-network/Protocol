@@ -17,4 +17,5 @@ jobs:
     displayName: 'Set Protobuff permissions'
 
 - job: setupProtobuffs
-- template: ../libs/sdk-rust.yml
+  steps:
+  - template: ../libs/sdk-rust.yml

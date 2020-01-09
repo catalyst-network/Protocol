@@ -1,5 +1,3 @@
-jobs:
-- job: sdk-rust-test
-  steps:
-  - script: cargo install protobuf-codegen
-    displayName: 'Install Rust protobuff-codegen'
+steps:
+- script: cargo install protobuf-codegen
+  displayName: 'Install Rust protobuff-codegen'
