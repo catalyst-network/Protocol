@@ -16,6 +16,6 @@ jobs:
   - script: sudo chown $USER /usr/local/bin/protoc && sudo chown -R $USER /usr/local/include/google
     displayName: 'Set Protobuff permissions'
 
-- job: sdk-rust
+- job: sdkRust
   steps:
   - template: ./libs/sdk-rust/azure-pipeline.yml
