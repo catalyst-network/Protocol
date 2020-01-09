@@ -11,5 +11,5 @@ steps:
 - script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/
   displayName: 'Intall Protobuffs'
 
-- script: sudo chown $USER /usr/local/bin/protoc && sudo chwon -R $USER /usr/local/include/google
+- script: sudo chown $USER /usr/local/bin/protoc && sudo chown -R $USER /usr/local/include/google
   displayName: 'Set Protobuff permissions'
