@@ -57,6 +57,7 @@ enum ErrorCode {
 	NO_ERROR = 418;								// No error (just a teapot).
 }
 
+//Holds data for batch verification of signatures.
 message SignatureBatch {
 	repeated bytes signatures = 1;
 	repeated bytes public_keys = 2;
