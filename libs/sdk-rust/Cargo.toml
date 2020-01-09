@@ -11,4 +11,4 @@ exclude = [".gitignore", "tests/*.rs"]
 license = "MIT"
 
 [dependencies]
-protobuf = "=2.8.1"
+protobuf = "=2.10.0"

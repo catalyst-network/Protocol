@@ -1,3 +1,12 @@
 steps:
 - script: cargo install protobuf-codegen
   displayName: 'Install Rust protobuff-codegen'
+
+- script: protoc --proto_path ./src --rust_out libs/sdk-rust/src src/*.proto
+  displayName: 'Generate protos'
+
+- script: cargo build --manifest-path libs/sdk-rust/Cargo.toml
+  displayName: 'Cargo build'
+
+- script: cargo test --manifest-path libs/sdk-rust/Cargo.toml
+  displayName: 'Cargo test'
