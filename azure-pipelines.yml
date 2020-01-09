@@ -4,12 +4,17 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: curl -OL https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip && unzip protoc-3.2.0-linux-x86_64.zip -d protoc3
-  displayName: 'Get Protobuffs'
+jobs:
+- job: setupProtobuffs
+  steps:
+  - script: curl -OL https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip && unzip protoc-3.2.0-linux-x86_64.zip -d protoc3
+    displayName: 'Get Protobuffs'
 
-- script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/
-  displayName: 'Intall Protobuffs'
+  - script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/
+    displayName: 'Intall Protobuffs'
 
-- script: sudo chown $USER /usr/local/bin/protoc && sudo chown -R $USER /usr/local/include/google
-  displayName: 'Set Protobuff permissions'
+  - script: sudo chown $USER /usr/local/bin/protoc && sudo chown -R $USER /usr/local/include/google
+    displayName: 'Set Protobuff permissions'
+
+- job: setupProtobuffs
+  - template: ../libs/sdk-rust.yml
