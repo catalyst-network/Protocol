@@ -7,15 +7,19 @@ pool:
 jobs:
 - job: setupProtobuffs
   steps:
-  - script: curl -OL https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip && unzip protoc-3.2.0-linux-x86_64.zip -d protoc3
+  - script: make getproto
     displayName: 'Get Protobuffs'
 
-  - script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/
+  - script: make installproto
     displayName: 'Intall Protobuffs'
 
-  - script: sudo chown $USER /usr/local/bin/protoc && sudo chown -R $USER /usr/local/include/google
-    displayName: 'Set Protobuff permissions'
+  - script: make setpermissions
+    displayName: 'Set permissions'
 
 - job: sdkRust
   steps:
   - template: ./libs/sdk-rust/azure-pipeline.yml
+
+- job: sdkJs
+  steps:
+  - template: ./libs/sdk-js/azure-pipeline.yml

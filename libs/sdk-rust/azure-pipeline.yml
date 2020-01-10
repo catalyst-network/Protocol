@@ -3,10 +3,13 @@ steps:
   displayName: 'Install Rust protobuff-codegen'
 
 - script: make buildrust
+  workingDirectory: libs/sdk-rust
   displayName: 'Generate protos'
 
 - script: make cargobuild
+  workingDirectory: libs/sdk-rust
   displayName: 'Cargo build'
 
 - script: make cargotest
+  workingDirectory: libs/sdk-rust
   displayName: 'Cargo test'
