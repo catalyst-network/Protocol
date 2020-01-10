@@ -11,7 +11,7 @@ jobs:
     displayName: 'Get Protobuffs'
     condition: succeeded()
 
-  - script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/
+  - script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/ && ls -la /usr/local/bin
     displayName: 'Intall Protobuffs'
     condition: succeeded()
 
