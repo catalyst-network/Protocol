@@ -19,12 +19,6 @@ jobs:
     displayName: 'Set permissions'
     condition: succeeded()
 
-- job: sdkRust
-  steps:
   - template: ./libs/sdk-rust/azure-pipeline.yml
-  dependsOn: setupProtobuffs
 
-- job: sdkJs
-  steps:
   - template: ./libs/sdk-js/azure-pipeline.yml
-  dependsOn: setupProtobuffs
