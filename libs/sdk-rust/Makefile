@@ -6,8 +6,8 @@ build:
 
 .PHONY: cargobuild
 cargobuild:
-	cargo build --manifest-path libs/sdk-rust/Cargo.toml
+	cargo build
 
 .PHONY: cargotest
 cargotest:
-	cargo test --manifest-path libs/sdk-rust/Cargo.toml
+	cargo test
