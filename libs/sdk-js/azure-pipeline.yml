@@ -1,5 +1,4 @@
 steps:
 
-- script: make buid
-  workingDirectory: libs/sdk-js
+- script: cd libs/sdk-js && make buid
   displayName: 'Generate protos'
