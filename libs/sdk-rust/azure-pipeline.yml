@@ -2,7 +2,7 @@ steps:
 - script: cargo install protobuf-codegen
   displayName: 'Install Rust protobuff-codegen'
 
-- script: make buildrust
+- script: make build
   workingDirectory: libs/sdk-rust
   displayName: 'Generate protos'
 
