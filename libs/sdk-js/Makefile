@@ -1,3 +1,3 @@
 .PHONY: build
 build:
-	protoc --proto_path ../../src --js_out src ../../src/*.proto
+	/usr/local/bin/protoc --proto_path ../../src --js_out src ../../src/*.proto
