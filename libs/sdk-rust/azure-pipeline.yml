@@ -3,7 +3,7 @@ steps:
   displayName: 'Install Rust protobuff-codegen'
 
 - script: cd libs/sdk-rust && make build
-  displayName: 'Generate protos'
+  displayName: 'Generate rust sdk'
 
 - script: cd libs/sdk-rust && make cargobuild
   displayName: 'Cargo build'
