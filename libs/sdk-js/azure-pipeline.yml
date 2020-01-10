@@ -1,4 +1,4 @@
 steps:
 
-- script: protoc --proto_path ./src --js_out libs/sdk-js/src src/*.proto
+- script: make buidjs
   displayName: 'Generate protos'

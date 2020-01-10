@@ -5,7 +5,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest');
+goog.provide('proto.Catalyst.Protocol.Deltas.DeltaIndex');
 
 goog.require('jspb.Message');
 goog.require('jspb.BinaryReader');
@@ -22,12 +22,12 @@ goog.require('jspb.BinaryWriter');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest = function(opt_data) {
+proto.Catalyst.Protocol.Deltas.DeltaIndex = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest, jspb.Message);
+goog.inherits(proto.Catalyst.Protocol.Deltas.DeltaIndex, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.displayName = 'proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest';
+  proto.Catalyst.Protocol.Deltas.DeltaIndex.displayName = 'proto.Catalyst.Protocol.Deltas.DeltaIndex';
 }
 
 
@@ -42,8 +42,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.toObject(opt_includeInstance, this);
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.toObject = function(opt_includeInstance) {
+  return proto.Catalyst.Protocol.Deltas.DeltaIndex.toObject(opt_includeInstance, this);
 };
 
 
@@ -52,12 +52,13 @@ proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest} msg The msg instance to transform.
+ * @param {!proto.Catalyst.Protocol.Deltas.DeltaIndex} msg The msg instance to transform.
  * @return {!Object}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.toObject = function(includeInstance, msg) {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deltaDfsHash: msg.getDeltaDfsHash_asB64()
+    height: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    cid: msg.getCid_asB64()
   };
 
   if (includeInstance) {
@@ -71,23 +72,23 @@ proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.toObject = function(includeInst
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest}
+ * @return {!proto.Catalyst.Protocol.Deltas.DeltaIndex}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.deserializeBinary = function(bytes) {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest;
-  return proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.Catalyst.Protocol.Deltas.DeltaIndex;
+  return proto.Catalyst.Protocol.Deltas.DeltaIndex.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest} msg The message object to deserialize into.
+ * @param {!proto.Catalyst.Protocol.Deltas.DeltaIndex} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest}
+ * @return {!proto.Catalyst.Protocol.Deltas.DeltaIndex}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -95,8 +96,12 @@ proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setHeight(value);
+      break;
+    case 2:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setDeltaDfsHash(value);
+      msg.setCid(value);
       break;
     default:
       reader.skipField();
@@ -111,9 +116,9 @@ proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.deserializeBinaryFromReader = f
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.serializeBinary = function() {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.serializeBinaryToWriter(this, writer);
+  proto.Catalyst.Protocol.Deltas.DeltaIndex.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -121,15 +126,22 @@ proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.serializeBinary = fun
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest} message
+ * @param {!proto.Catalyst.Protocol.Deltas.DeltaIndex} message
  * @param {!jspb.BinaryWriter} writer
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.serializeBinaryToWriter = function(message, writer) {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDeltaDfsHash_asU8();
+  f = message.getHeight();
+  if (f !== 0) {
+    writer.writeUint32(
+      1,
+      f
+    );
+  }
+  f = message.getCid_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      1,
+      2,
       f
     );
   }
@@ -137,41 +149,56 @@ proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.serializeBinaryToWriter = funct
 
 
 /**
- * optional bytes delta_dfs_hash = 1;
- * @return {string}
+ * optional uint32 height = 1;
+ * @return {number}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.getDeltaDfsHash = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.getHeight = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/** @param {number} value */
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.setHeight = function(value) {
+  jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * optional bytes delta_dfs_hash = 1;
- * This is a type-conversion wrapper around `getDeltaDfsHash()`
+ * optional bytes cid = 2;
  * @return {string}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.getDeltaDfsHash_asB64 = function() {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.getCid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * optional bytes cid = 2;
+ * This is a type-conversion wrapper around `getCid()`
+ * @return {string}
+ */
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.getCid_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getDeltaDfsHash()));
+      this.getCid()));
 };
 
 
 /**
- * optional bytes delta_dfs_hash = 1;
+ * optional bytes cid = 2;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getDeltaDfsHash()`
+ * This is a type-conversion wrapper around `getCid()`
  * @return {!Uint8Array}
  */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.getDeltaDfsHash_asU8 = function() {
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.getCid_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getDeltaDfsHash()));
+      this.getCid()));
 };
 
 
 /** @param {!(string|Uint8Array)} value */
-proto.Catalyst.Protocol.Rpc.Node.GetDeltaRequest.prototype.setDeltaDfsHash = function(value) {
-  jspb.Message.setField(this, 1, value);
+proto.Catalyst.Protocol.Deltas.DeltaIndex.prototype.setCid = function(value) {
+  jspb.Message.setField(this, 2, value);
 };
 
 

@@ -5,7 +5,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse');
+goog.provide('proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest');
 
 goog.require('jspb.Message');
 goog.require('jspb.BinaryReader');
@@ -22,12 +22,12 @@ goog.require('jspb.BinaryWriter');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse = function(opt_data) {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse, jspb.Message);
+goog.inherits(proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.displayName = 'proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse';
+  proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.displayName = 'proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest';
 }
 
 
@@ -42,8 +42,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.toObject(opt_includeInstance, this);
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -52,12 +52,13 @@ proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.prototype.toObject = functio
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse} msg The msg instance to transform.
+ * @param {!proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest} msg The msg instance to transform.
  * @return {!Object}
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.toObject = function(includeInstance, msg) {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deletedCount: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    range: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    height: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -71,23 +72,23 @@ proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.toObject = function(includeI
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse}
+ * @return {!proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest}
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.deserializeBinary = function(bytes) {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse;
-  return proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest;
+  return proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse} msg The message object to deserialize into.
+ * @param {!proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse}
+ * @return {!proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest}
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -96,7 +97,11 @@ proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.deserializeBinaryFromReader 
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setDeletedCount(value);
+      msg.setRange(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setHeight(value);
       break;
     default:
       reader.skipField();
@@ -111,9 +116,9 @@ proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.deserializeBinaryFromReader 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.prototype.serializeBinary = function() {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.serializeBinaryToWriter(this, writer);
+  proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -121,15 +126,22 @@ proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.prototype.serializeBinary = 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse} message
+ * @param {!proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest} message
  * @param {!jspb.BinaryWriter} writer
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.serializeBinaryToWriter = function(message, writer) {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDeletedCount();
+  f = message.getRange();
   if (f !== 0) {
     writer.writeUint32(
       1,
+      f
+    );
+  }
+  f = message.getHeight();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
       f
     );
   }
@@ -137,17 +149,32 @@ proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.serializeBinaryToWriter = fu
 
 
 /**
- * optional uint32 deleted_count = 1;
+ * optional uint32 range = 1;
  * @return {number}
  */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.prototype.getDeletedCount = function() {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.prototype.getRange = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.Catalyst.Protocol.Rpc.Node.RemovePeerResponse.prototype.setDeletedCount = function(value) {
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.prototype.setRange = function(value) {
   jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 height = 2;
+ * @return {number}
+ */
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.prototype.getHeight = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.Catalyst.Protocol.IPPN.DeltaHistoryRequest.prototype.setHeight = function(value) {
+  jspb.Message.setField(this, 2, value);
 };
 
 
