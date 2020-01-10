@@ -15,7 +15,7 @@ jobs:
     displayName: 'Intall Protobuffs'
     condition: succeeded()
 
-  - script: sudo chown root /usr/local/bin/protoc && sudo chown -R root /usr/local/include/google
+  - script: sudo chown root /usr/local/bin/protoc && sudo chown -R root /usr/local/include/google && ls -la /usr/local/bin
     displayName: 'Set permissions'
     condition: succeeded()
 
