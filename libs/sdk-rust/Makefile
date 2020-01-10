@@ -1,6 +1,8 @@
-.PHONY: buildrust
-buildrust:
-	protoc --proto_path ../../src --rust_out src ../../src/*.proto
+all: build cargobuild cargotest
+
+.PHONY: build
+build:
+	/usr/local/bin/protoc --proto_path ../../src --rust_out src ../../src/*.proto
 
 .PHONY: cargobuild
 cargobuild:
