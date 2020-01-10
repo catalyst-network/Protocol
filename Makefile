@@ -18,4 +18,4 @@ installproto:
 
 .PHONY: setpermissions
 setpermissions:
-	sudo chown $USER /usr/local/bin/protoc && sudo chown -R $USER /usr/local/include/google
+	sudo chown ${USER} /usr/local/bin/protoc && sudo chown -R ${USER} /usr/local/include/google
