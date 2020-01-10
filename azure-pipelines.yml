@@ -22,11 +22,9 @@ jobs:
 - job: sdkRust
   steps:
   - template: ./libs/sdk-rust/azure-pipeline.yml
-  workingDirectory: libs/sdk-rust
   dependsOn: setupProtobuffs
 
 - job: sdkJs
   steps:
   - template: ./libs/sdk-js/azure-pipeline.yml
-  workingDirectory: libs/sdk-js
   dependsOn: setupProtobuffs
