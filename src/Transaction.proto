@@ -33,26 +33,25 @@ enum TransactionType {
 }
 
 message PublicEntry {
-	BaseEntry base = 1;
-    bytes amount = 2; // uint256 amount
-    bytes data = 3; // Smart contract data.
-	google.protobuf.Timestamp timestamp = 4; 
-	Cryptography.Signature signature = 5; // is the ed25519ph context signature
+	bytes receiver_address = 1; // Address of receiver.
+	bytes sender_address = 2;// Address of sender.
+  bytes amount = 3; // uint256 amount
+  bytes data = 4; // Smart contract data.
+	google.protobuf.Timestamp timestamp = 5; 
 	bytes gas_price = 6;
 	uint64 gas_limit = 7;
+	bytes transaction_fees = 8; // 8 bytes, clear text, fees * 10^12
+	uint64 nonce = 9; // A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
+	Cryptography.Signature signature = 10; // is the ed25519ph context signature
 }
 
 message ConfidentialEntry {
-    BaseEntry base = 1;
-    bytes pedersen_commitment = 2; // 32 bytes
-    RangeProof range_proof = 3;
-}
-
-message BaseEntry {
-    uint64 nonce = 1; // A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
-	bytes receiver_public_key = 2; // PublicKey of receiver.
-	bytes sender_public_key = 3;// PublicKey of sender.
-    bytes transaction_fees = 4; // 8 bytes, clear text, fees * 10^12
+	bytes receiver_public_key = 1; // PublicKey of receiver.
+	bytes sender_public_key = 2;// PublicKey of sender.
+  bytes pedersen_commitment = 3; // 32 bytes
+  RangeProof range_proof = 4;
+	bytes transaction_fees = 5; // 8 bytes, clear text, fees * 10^12
+	uint64 nonce = 6; // A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
 }
 
 message CoinbaseEntry {
