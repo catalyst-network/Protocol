@@ -49,8 +49,8 @@ enum ErrorCode {
 	INVALID_SIGNATURE = 1;						// Signature is of incorrect length or does not correspond to a valid point.
 	INVALID_PUBLIC_KEY = 2;						// Public key is of incorrect length or cannot be decompressed to a valid point.
 	INVALID_PRIVATE_KEY = 3;					// Private key is of incorrect length.
-    SIGNATURE_VERIFICATION_FAILURE = 4;			// Signature cannot be verified against the provided information.
-    INVALID_CONTEXT_LENGTH = 5;					// Context exceed the maximum allowed length.
+  SIGNATURE_VERIFICATION_FAILURE = 4;			// Signature cannot be verified against the provided information.
+  INVALID_CONTEXT_LENGTH = 5;					// Context exceed the maximum allowed length.
 	INVALID_BATCH_MESSAGE = 6;					// Unable to convert message to valid data. 
 	ARRAYS_NOT_EQUAL_LENGTH = 7;				// Cannot perform batch verification as an unequal number of messages/signatures/keys were provided.
 	BATCH_VERIFICATION_FAILURE = 8; 			// One or more signatures cannot be verified.
