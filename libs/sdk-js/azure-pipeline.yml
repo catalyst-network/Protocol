@@ -1,0 +1,3 @@
+steps:
+- script: ls -la /usr/local/bin && cd libs/sdk-js && make build
+  displayName: 'Generate js sdk'
