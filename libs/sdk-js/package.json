@@ -1,0 +1,27 @@
+{
+  "name": "protocol-sdk",
+  "version": "0.0.1",
+  "description": "Catalyst Protocol Js SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catalyst-network/protocol-sdk-js.git"
+  },
+  "keywords": [
+    "catalyst-network",
+    "blockchain",
+    "dlt"
+  ],
+  "author": "James Kirby <nshcore@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/catalyst-network/protocol-sdk-js/issues"
+  },
+  "homepage": "https://github.com/catalyst-network/protocol-sdk-js#readme",
+  "devDependencies": {
+    "protobufjs": "^6.8.8"
+  }
+}
