@@ -5,12 +5,6 @@ pool:
     vmImage: 'ubuntu-latest'
 
 steps:
-    - script: |
-          curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly
-      displayName: 'Install rustup toolchain'
-    - script: |
-          rustup override set nightly
-      displayName: 'Override wasm-pack default toolchain'
     - task: Npm@1
       displayName: 'Install NPM'
       inputs:
@@ -20,4 +14,4 @@ steps:
       inputs:
           command: publish
           publishEndpoint: 'npm'
-          workingDir: packages/sdk-js
+          workingDir: 'packages/sdk-js'
