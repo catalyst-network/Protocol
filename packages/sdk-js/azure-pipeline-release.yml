@@ -1,0 +1,28 @@
+trigger:
+    - master
+
+pool:
+    vmImage: 'ubuntu-latest'
+
+steps:
+    - script: |
+          curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly
+      displayName: 'Install rustup toolchain'
+    - script: |
+          rustup override set nightly
+      displayName: 'Override wasm-pack default toolchain'
+    - task: Npm@1
+      displayName: 'Install NPM'
+      inputs:
+          command: 'install'
+
+    - task: Npm@1
+      displayName: 'Build npm bundle'
+      inputs:
+          command: 'custom'
+          customCommand: 'run build:bundler'
+
+    - task: Npm@1
+      inputs:
+          command: publish
+          publishEndpoint: 'npm'
