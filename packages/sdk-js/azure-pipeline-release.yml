@@ -12,6 +12,6 @@ steps:
 
     - task: Npm@1
       inputs:
-          command: publish --access public
+          customCommand: publish --access public
           publishEndpoint: 'npm'
           workingDir: 'packages/sdk-js'
