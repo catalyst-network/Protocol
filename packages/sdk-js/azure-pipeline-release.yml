@@ -20,4 +20,4 @@ steps:
       inputs:
           command: publish
           publishEndpoint: 'npm'
-    	  workingDir: packages/sdk-js
+          workingDir: packages/sdk-js
