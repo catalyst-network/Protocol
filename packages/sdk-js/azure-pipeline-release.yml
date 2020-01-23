@@ -19,5 +19,5 @@ steps:
     - task: Npm@1
       inputs:
           command: publish
-	  workingDir: packages/sdk-js
           publishEndpoint: 'npm'
+    	  workingDir: packages/sdk-js
