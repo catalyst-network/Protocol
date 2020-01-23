@@ -17,12 +17,7 @@ steps:
           command: 'install'
 
     - task: Npm@1
-      displayName: 'Build npm bundle'
-      inputs:
-          command: 'custom'
-          customCommand: 'run build:bundler'
-
-    - task: Npm@1
       inputs:
           command: publish
+	  workingDir: packages/sdk-js
           publishEndpoint: 'npm'
