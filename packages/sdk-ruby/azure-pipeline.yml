@@ -1,0 +1,3 @@
+steps:
+- script: cd libs/sdk-ruby && make build
+  displayName: 'Generate ruby sdk'
