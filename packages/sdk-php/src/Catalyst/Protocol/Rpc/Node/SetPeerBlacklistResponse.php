@@ -9,47 +9,64 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse</code>
  */
-class SetPeerBlacklistResponse extends \Google\Protobuf\Internal\Message
+class SetPeerBlackListResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes public_key = 1;</code>
+     * Generated from protobuf field <code>bytes publicKey = 1;</code>
      */
-    private $public_key = '';
+    private $publicKey = '';
     /**
-     * <code>bytes ip = 2;</code>
+     * Generated from protobuf field <code>bytes ip = 2;</code>
      */
     private $ip = '';
     /**
-     * <code>bool blacklist = 3;</code>
+     * Generated from protobuf field <code>bool blacklist = 3;</code>
      */
     private $blacklist = false;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $publicKey
+     *     @type string $ip
+     *     @type bool $blacklist
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>bytes public_key = 1;</code>
+     * Generated from protobuf field <code>bytes publicKey = 1;</code>
+     * @return string
      */
     public function getPublicKey()
     {
-        return $this->public_key;
+        return $this->publicKey;
     }
 
     /**
-     * <code>bytes public_key = 1;</code>
+     * Generated from protobuf field <code>bytes publicKey = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPublicKey($var)
     {
         GPBUtil::checkString($var, False);
-        $this->public_key = $var;
+        $this->publicKey = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes ip = 2;</code>
+     * Generated from protobuf field <code>bytes ip = 2;</code>
+     * @return string
      */
     public function getIp()
     {
@@ -57,16 +74,21 @@ class SetPeerBlacklistResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes ip = 2;</code>
+     * Generated from protobuf field <code>bytes ip = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setIp($var)
     {
         GPBUtil::checkString($var, False);
         $this->ip = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bool blacklist = 3;</code>
+     * Generated from protobuf field <code>bool blacklist = 3;</code>
+     * @return bool
      */
     public function getBlacklist()
     {
@@ -74,12 +96,16 @@ class SetPeerBlacklistResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool blacklist = 3;</code>
+     * Generated from protobuf field <code>bool blacklist = 3;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setBlacklist($var)
     {
         GPBUtil::checkBool($var);
         $this->blacklist = $var;
+
+        return $this;
     }
 
 }
