@@ -19,19 +19,19 @@ jobs:
     displayName: 'Set permissions'
     condition: succeeded()
 
-  - template: ./libs/sdk-cpp/azure-pipeline.yml
+  - template: ./packages/sdk-cpp/azure-pipeline.yml
 
-  - template: ./libs/sdk-java/azure-pipeline.yml
+  - template: ./packages/sdk-java/azure-pipeline.yml
 
-  - template: ./libs/sdk-js/azure-pipeline.yml
+  - template: ./packages/sdk-js/azure-pipeline.yml
 
-  - template: ./libs/sdk-objc/azure-pipeline.yml
+  - template: ./packages/sdk-objc/azure-pipeline.yml
 
-  - template: ./libs/sdk-php/azure-pipeline.yml
+  - template: ./packages/sdk-php/azure-pipeline.yml
 
-  - template: ./libs/sdk-python/azure-pipeline.yml
+  - template: ./packages/sdk-python/azure-pipeline.yml
 
-  - template: ./libs/sdk-ruby/azure-pipeline.yml
+  - template: ./packages/sdk-ruby/azure-pipeline.yml
 
-  - template: ./libs/sdk-rust/azure-pipeline.yml
+  - template: ./packages/sdk-rust/azure-pipeline.yml
 
