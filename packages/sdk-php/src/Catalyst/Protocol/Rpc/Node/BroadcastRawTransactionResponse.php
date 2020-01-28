@@ -9,22 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.BroadcastRawTransactionResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.BroadcastRawTransactionResponse</code>
  */
 class BroadcastRawTransactionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
      */
     private $response_code = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $response_code
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+     * @return int
      */
     public function getResponseCode()
     {
@@ -32,12 +42,16 @@ class BroadcastRawTransactionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setResponseCode($var)
     {
         GPBUtil::checkEnum($var, \Catalyst\Protocol\Rpc\Node\ResponseCode::class);
         $this->response_code = $var;
+
+        return $this;
     }
 
 }

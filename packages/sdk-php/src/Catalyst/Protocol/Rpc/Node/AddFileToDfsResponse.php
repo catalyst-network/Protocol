@@ -9,26 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.AddFileToDfsResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.AddFileToDfsResponse</code>
  */
 class AddFileToDfsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes response_code = 1;</code>
+     * Generated from protobuf field <code>bytes response_code = 1;</code>
      */
     private $response_code = '';
     /**
-     * <code>string dfs_hash = 2;</code>
+     * Generated from protobuf field <code>string dfs_hash = 2;</code>
      */
     private $dfs_hash = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $response_code
+     *     @type string $dfs_hash
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>bytes response_code = 1;</code>
+     * Generated from protobuf field <code>bytes response_code = 1;</code>
+     * @return string
      */
     public function getResponseCode()
     {
@@ -36,16 +47,21 @@ class AddFileToDfsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes response_code = 1;</code>
+     * Generated from protobuf field <code>bytes response_code = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setResponseCode($var)
     {
         GPBUtil::checkString($var, False);
         $this->response_code = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string dfs_hash = 2;</code>
+     * Generated from protobuf field <code>string dfs_hash = 2;</code>
+     * @return string
      */
     public function getDfsHash()
     {
@@ -53,12 +69,16 @@ class AddFileToDfsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dfs_hash = 2;</code>
+     * Generated from protobuf field <code>string dfs_hash = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDfsHash($var)
     {
         GPBUtil::checkString($var, True);
         $this->dfs_hash = $var;
+
+        return $this;
     }
 
 }

@@ -10,6 +10,7 @@ public  final class GetDeltaRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.GetDeltaRequest)
     GetDeltaRequestOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use GetDeltaRequest.newBuilder() to construct.
   private GetDeltaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,16 +20,27 @@ public  final class GetDeltaRequest extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GetDeltaRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private GetDeltaRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -37,15 +49,16 @@ public  final class GetDeltaRequest extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             deltaDfsHash_ = input.readBytes();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -56,6 +69,7 @@ public  final class GetDeltaRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -64,6 +78,7 @@ public  final class GetDeltaRequest extends
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetDeltaRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetDeltaRequest_fieldAccessorTable
@@ -75,12 +90,14 @@ public  final class GetDeltaRequest extends
   private com.google.protobuf.ByteString deltaDfsHash_;
   /**
    * <code>bytes delta_dfs_hash = 1;</code>
+   * @return The deltaDfsHash.
    */
   public com.google.protobuf.ByteString getDeltaDfsHash() {
     return deltaDfsHash_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -90,13 +107,16 @@ public  final class GetDeltaRequest extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!deltaDfsHash_.isEmpty()) {
       output.writeBytes(1, deltaDfsHash_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -106,11 +126,11 @@ public  final class GetDeltaRequest extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(1, deltaDfsHash_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -121,10 +141,10 @@ public  final class GetDeltaRequest extends
     }
     Catalyst.Protocol.Rpc.Node.GetDeltaRequest other = (Catalyst.Protocol.Rpc.Node.GetDeltaRequest) obj;
 
-    boolean result = true;
-    result = result && getDeltaDfsHash()
-        .equals(other.getDeltaDfsHash());
-    return result;
+    if (!getDeltaDfsHash()
+        .equals(other.getDeltaDfsHash())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -141,6 +161,17 @@ public  final class GetDeltaRequest extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Rpc.Node.GetDeltaRequest parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Rpc.Node.GetDeltaRequest parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Rpc.Node.GetDeltaRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -200,6 +231,7 @@ public  final class GetDeltaRequest extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -207,6 +239,7 @@ public  final class GetDeltaRequest extends
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.GetDeltaRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -230,6 +263,7 @@ public  final class GetDeltaRequest extends
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetDeltaRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetDeltaRequest_fieldAccessorTable
@@ -252,6 +286,7 @@ public  final class GetDeltaRequest extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       deltaDfsHash_ = com.google.protobuf.ByteString.EMPTY;
@@ -259,15 +294,18 @@ public  final class GetDeltaRequest extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetDeltaRequest_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetDeltaRequest getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.GetDeltaRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetDeltaRequest build() {
       Catalyst.Protocol.Rpc.Node.GetDeltaRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -276,6 +314,7 @@ public  final class GetDeltaRequest extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetDeltaRequest buildPartial() {
       Catalyst.Protocol.Rpc.Node.GetDeltaRequest result = new Catalyst.Protocol.Rpc.Node.GetDeltaRequest(this);
       result.deltaDfsHash_ = deltaDfsHash_;
@@ -283,32 +322,39 @@ public  final class GetDeltaRequest extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.GetDeltaRequest) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.GetDeltaRequest)other);
@@ -323,14 +369,17 @@ public  final class GetDeltaRequest extends
       if (other.getDeltaDfsHash() != com.google.protobuf.ByteString.EMPTY) {
         setDeltaDfsHash(other.getDeltaDfsHash());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -352,12 +401,15 @@ public  final class GetDeltaRequest extends
     private com.google.protobuf.ByteString deltaDfsHash_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes delta_dfs_hash = 1;</code>
+     * @return The deltaDfsHash.
      */
     public com.google.protobuf.ByteString getDeltaDfsHash() {
       return deltaDfsHash_;
     }
     /**
      * <code>bytes delta_dfs_hash = 1;</code>
+     * @param value The deltaDfsHash to set.
+     * @return This builder for chaining.
      */
     public Builder setDeltaDfsHash(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -370,6 +422,7 @@ public  final class GetDeltaRequest extends
     }
     /**
      * <code>bytes delta_dfs_hash = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDeltaDfsHash() {
       
@@ -377,14 +430,16 @@ public  final class GetDeltaRequest extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -403,11 +458,12 @@ public  final class GetDeltaRequest extends
 
   private static final com.google.protobuf.Parser<GetDeltaRequest>
       PARSER = new com.google.protobuf.AbstractParser<GetDeltaRequest>() {
+    @java.lang.Override
     public GetDeltaRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetDeltaRequest(input, extensionRegistry);
+      return new GetDeltaRequest(input, extensionRegistry);
     }
   };
 
@@ -420,6 +476,7 @@ public  final class GetDeltaRequest extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.GetDeltaRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

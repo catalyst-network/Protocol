@@ -9,26 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse</code>
  */
 class GetFileFromDfsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint64 file_size = 1;</code>
+     * Generated from protobuf field <code>uint64 file_size = 1;</code>
      */
     private $file_size = 0;
     /**
-     * <code>bytes response_code = 2;</code>
+     * Generated from protobuf field <code>bytes response_code = 2;</code>
      */
     private $response_code = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int|string $file_size
+     *     @type string $response_code
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>uint64 file_size = 1;</code>
+     * Generated from protobuf field <code>uint64 file_size = 1;</code>
+     * @return int|string
      */
     public function getFileSize()
     {
@@ -36,16 +47,21 @@ class GetFileFromDfsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 file_size = 1;</code>
+     * Generated from protobuf field <code>uint64 file_size = 1;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setFileSize($var)
     {
         GPBUtil::checkUint64($var);
         $this->file_size = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes response_code = 2;</code>
+     * Generated from protobuf field <code>bytes response_code = 2;</code>
+     * @return string
      */
     public function getResponseCode()
     {
@@ -53,12 +69,16 @@ class GetFileFromDfsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes response_code = 2;</code>
+     * Generated from protobuf field <code>bytes response_code = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setResponseCode($var)
     {
         GPBUtil::checkString($var, False);
         $this->response_code = $var;
+
+        return $this;
     }
 
 }

@@ -6,59 +6,61 @@ require 'google/protobuf'
 require 'Cryptography_pb'
 require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "Catalyst.Protocol.Transaction.PublicEntry" do
-    optional :receiver_address, :bytes, 1
-    optional :sender_address, :bytes, 2
-    optional :amount, :bytes, 3
-    optional :data, :bytes, 4
-    optional :timestamp, :message, 5, "google.protobuf.Timestamp"
-    optional :gas_price, :bytes, 6
-    optional :gas_limit, :uint64, 7
-    optional :transaction_fees, :bytes, 8
-    optional :nonce, :uint64, 9
-    optional :signature, :message, 10, "Catalyst.Protocol.Cryptography.Signature"
-  end
-  add_message "Catalyst.Protocol.Transaction.ConfidentialEntry" do
-    optional :receiver_public_key, :bytes, 1
-    optional :sender_public_key, :bytes, 2
-    optional :pedersen_commitment, :bytes, 3
-    optional :range_proof, :message, 4, "Catalyst.Protocol.Transaction.RangeProof"
-    optional :transaction_fees, :bytes, 5
-    optional :nonce, :uint64, 6
-  end
-  add_message "Catalyst.Protocol.Transaction.CoinbaseEntry" do
-    optional :receiver_public_key, :bytes, 1
-    optional :amount, :bytes, 2
-  end
-  add_message "Catalyst.Protocol.Transaction.RangeProof" do
-    repeated :value_commitment, :bytes, 1
-    optional :bit_commitment, :bytes, 2
-    optional :per_bit_blinding_factor_commitment, :bytes, 3
-    optional :poly_commitment_t1, :bytes, 4
-    optional :poly_commitment_t2, :bytes, 5
-    optional :proof_of_share_tau, :bytes, 6
-    optional :proof_of_share_mu, :bytes, 7
-    repeated :aggregated_vector_polynomial_l, :bytes, 8
-    repeated :aggregated_vector_polynomial_r, :bytes, 9
-    optional :a_prime_0, :bytes, 10
-    optional :b_prime_0, :bytes, 11
-    optional :t, :bytes, 12
-  end
-  add_enum "Catalyst.Protocol.Transaction.TransactionType" do
-    value :TRANSACTION_TYPE_UNKNOWN, 0
-    value :PUBLIC, 1
-    value :CONFIDENTIAL, 2
+  add_file("Transaction.proto", :syntax => :proto3) do
+    add_message "Catalyst.Protocol.Transaction.PublicEntry" do
+      optional :receiver_address, :bytes, 1
+      optional :sender_address, :bytes, 2
+      optional :amount, :bytes, 3
+      optional :data, :bytes, 4
+      optional :timestamp, :message, 5, "google.protobuf.Timestamp"
+      optional :gas_price, :bytes, 6
+      optional :gas_limit, :uint64, 7
+      optional :transaction_fees, :bytes, 8
+      optional :nonce, :uint64, 9
+      optional :signature, :message, 10, "Catalyst.Protocol.Cryptography.Signature"
+    end
+    add_message "Catalyst.Protocol.Transaction.ConfidentialEntry" do
+      optional :receiver_public_key, :bytes, 1
+      optional :sender_public_key, :bytes, 2
+      optional :pedersen_commitment, :bytes, 3
+      optional :range_proof, :message, 4, "Catalyst.Protocol.Transaction.RangeProof"
+      optional :transaction_fees, :bytes, 5
+      optional :nonce, :uint64, 6
+    end
+    add_message "Catalyst.Protocol.Transaction.CoinbaseEntry" do
+      optional :receiver_public_key, :bytes, 1
+      optional :amount, :bytes, 2
+    end
+    add_message "Catalyst.Protocol.Transaction.RangeProof" do
+      repeated :value_commitment, :bytes, 1
+      optional :bit_commitment, :bytes, 2
+      optional :per_bit_blinding_factor_commitment, :bytes, 3
+      optional :poly_commitment_t1, :bytes, 4
+      optional :poly_commitment_t2, :bytes, 5
+      optional :proof_of_share_tau, :bytes, 6
+      optional :proof_of_share_mu, :bytes, 7
+      repeated :aggregated_vector_polynomial_l, :bytes, 8
+      repeated :aggregated_vector_polynomial_r, :bytes, 9
+      optional :a_prime_0, :bytes, 10
+      optional :b_prime_0, :bytes, 11
+      optional :t, :bytes, 12
+    end
+    add_enum "Catalyst.Protocol.Transaction.TransactionType" do
+      value :TRANSACTION_TYPE_UNKNOWN, 0
+      value :PUBLIC, 1
+      value :CONFIDENTIAL, 2
+    end
   end
 end
 
 module Catalyst
   module Protocol
     module Transaction
-      PublicEntry = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.PublicEntry").msgclass
-      ConfidentialEntry = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.ConfidentialEntry").msgclass
-      CoinbaseEntry = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.CoinbaseEntry").msgclass
-      RangeProof = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.RangeProof").msgclass
-      TransactionType = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.TransactionType").enummodule
+      PublicEntry = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.PublicEntry").msgclass
+      ConfidentialEntry = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.ConfidentialEntry").msgclass
+      CoinbaseEntry = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.CoinbaseEntry").msgclass
+      RangeProof = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.RangeProof").msgclass
+      TransactionType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Transaction.TransactionType").enummodule
     end
   end
 end

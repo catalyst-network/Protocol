@@ -9,90 +9,100 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Transaction.PublicEntry</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Transaction.PublicEntry</code>
  */
 class PublicEntry extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Address of receiver.
-     * </pre>
      *
-     * <code>bytes receiver_address = 1;</code>
+     * Generated from protobuf field <code>bytes receiver_address = 1;</code>
      */
     private $receiver_address = '';
     /**
-     * <pre>
      * Address of sender.
-     * </pre>
      *
-     * <code>bytes sender_address = 2;</code>
+     * Generated from protobuf field <code>bytes sender_address = 2;</code>
      */
     private $sender_address = '';
     /**
-     * <pre>
      * uint256 amount
-     * </pre>
      *
-     * <code>bytes amount = 3;</code>
+     * Generated from protobuf field <code>bytes amount = 3;</code>
      */
     private $amount = '';
     /**
-     * <pre>
      * Smart contract data.
-     * </pre>
      *
-     * <code>bytes data = 4;</code>
+     * Generated from protobuf field <code>bytes data = 4;</code>
      */
     private $data = '';
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 5;</code>
      */
     private $timestamp = null;
     /**
-     * <code>bytes gas_price = 6;</code>
+     * Generated from protobuf field <code>bytes gas_price = 6;</code>
      */
     private $gas_price = '';
     /**
-     * <code>uint64 gas_limit = 7;</code>
+     * Generated from protobuf field <code>uint64 gas_limit = 7;</code>
      */
     private $gas_limit = 0;
     /**
-     * <pre>
      * 8 bytes, clear text, fees * 10^12
-     * </pre>
      *
-     * <code>bytes transaction_fees = 8;</code>
+     * Generated from protobuf field <code>bytes transaction_fees = 8;</code>
      */
     private $transaction_fees = '';
     /**
-     * <pre>
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
-     * </pre>
      *
-     * <code>uint64 nonce = 9;</code>
+     * Generated from protobuf field <code>uint64 nonce = 9;</code>
      */
     private $nonce = 0;
     /**
-     * <pre>
      * is the ed25519ph context signature
-     * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
      */
     private $signature = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $receiver_address
+     *           Address of receiver.
+     *     @type string $sender_address
+     *           Address of sender.
+     *     @type string $amount
+     *           uint256 amount
+     *     @type string $data
+     *           Smart contract data.
+     *     @type \Google\Protobuf\Timestamp $timestamp
+     *     @type string $gas_price
+     *     @type int|string $gas_limit
+     *     @type string $transaction_fees
+     *           8 bytes, clear text, fees * 10^12
+     *     @type int|string $nonce
+     *           A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
+     *     @type \Catalyst\Protocol\Cryptography\Signature $signature
+     *           is the ed25519ph context signature
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Transaction::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <pre>
      * Address of receiver.
-     * </pre>
      *
-     * <code>bytes receiver_address = 1;</code>
+     * Generated from protobuf field <code>bytes receiver_address = 1;</code>
+     * @return string
      */
     public function getReceiverAddress()
     {
@@ -100,24 +110,25 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Address of receiver.
-     * </pre>
      *
-     * <code>bytes receiver_address = 1;</code>
+     * Generated from protobuf field <code>bytes receiver_address = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setReceiverAddress($var)
     {
         GPBUtil::checkString($var, False);
         $this->receiver_address = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Address of sender.
-     * </pre>
      *
-     * <code>bytes sender_address = 2;</code>
+     * Generated from protobuf field <code>bytes sender_address = 2;</code>
+     * @return string
      */
     public function getSenderAddress()
     {
@@ -125,24 +136,25 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Address of sender.
-     * </pre>
      *
-     * <code>bytes sender_address = 2;</code>
+     * Generated from protobuf field <code>bytes sender_address = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setSenderAddress($var)
     {
         GPBUtil::checkString($var, False);
         $this->sender_address = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * uint256 amount
-     * </pre>
      *
-     * <code>bytes amount = 3;</code>
+     * Generated from protobuf field <code>bytes amount = 3;</code>
+     * @return string
      */
     public function getAmount()
     {
@@ -150,24 +162,25 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * uint256 amount
-     * </pre>
      *
-     * <code>bytes amount = 3;</code>
+     * Generated from protobuf field <code>bytes amount = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setAmount($var)
     {
         GPBUtil::checkString($var, False);
         $this->amount = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Smart contract data.
-     * </pre>
      *
-     * <code>bytes data = 4;</code>
+     * Generated from protobuf field <code>bytes data = 4;</code>
+     * @return string
      */
     public function getData()
     {
@@ -175,20 +188,23 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Smart contract data.
-     * </pre>
      *
-     * <code>bytes data = 4;</code>
+     * Generated from protobuf field <code>bytes data = 4;</code>
+     * @param string $var
+     * @return $this
      */
     public function setData($var)
     {
         GPBUtil::checkString($var, False);
         $this->data = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * @return \Google\Protobuf\Timestamp
      */
     public function getTimestamp()
     {
@@ -196,16 +212,21 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
      */
-    public function setTimestamp(&$var)
+    public function setTimestamp($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->timestamp = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes gas_price = 6;</code>
+     * Generated from protobuf field <code>bytes gas_price = 6;</code>
+     * @return string
      */
     public function getGasPrice()
     {
@@ -213,16 +234,21 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes gas_price = 6;</code>
+     * Generated from protobuf field <code>bytes gas_price = 6;</code>
+     * @param string $var
+     * @return $this
      */
     public function setGasPrice($var)
     {
         GPBUtil::checkString($var, False);
         $this->gas_price = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint64 gas_limit = 7;</code>
+     * Generated from protobuf field <code>uint64 gas_limit = 7;</code>
+     * @return int|string
      */
     public function getGasLimit()
     {
@@ -230,20 +256,23 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 gas_limit = 7;</code>
+     * Generated from protobuf field <code>uint64 gas_limit = 7;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setGasLimit($var)
     {
         GPBUtil::checkUint64($var);
         $this->gas_limit = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 8 bytes, clear text, fees * 10^12
-     * </pre>
      *
-     * <code>bytes transaction_fees = 8;</code>
+     * Generated from protobuf field <code>bytes transaction_fees = 8;</code>
+     * @return string
      */
     public function getTransactionFees()
     {
@@ -251,24 +280,25 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 8 bytes, clear text, fees * 10^12
-     * </pre>
      *
-     * <code>bytes transaction_fees = 8;</code>
+     * Generated from protobuf field <code>bytes transaction_fees = 8;</code>
+     * @param string $var
+     * @return $this
      */
     public function setTransactionFees($var)
     {
         GPBUtil::checkString($var, False);
         $this->transaction_fees = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
-     * </pre>
      *
-     * <code>uint64 nonce = 9;</code>
+     * Generated from protobuf field <code>uint64 nonce = 9;</code>
+     * @return int|string
      */
     public function getNonce()
     {
@@ -276,24 +306,25 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
-     * </pre>
      *
-     * <code>uint64 nonce = 9;</code>
+     * Generated from protobuf field <code>uint64 nonce = 9;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setNonce($var)
     {
         GPBUtil::checkUint64($var);
         $this->nonce = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * is the ed25519ph context signature
-     * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * @return \Catalyst\Protocol\Cryptography\Signature
      */
     public function getSignature()
     {
@@ -301,16 +332,18 @@ class PublicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * is the ed25519ph context signature
-     * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * @param \Catalyst\Protocol\Cryptography\Signature $var
+     * @return $this
      */
-    public function setSignature(&$var)
+    public function setSignature($var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Cryptography\Signature::class);
         $this->signature = $var;
+
+        return $this;
     }
 
 }

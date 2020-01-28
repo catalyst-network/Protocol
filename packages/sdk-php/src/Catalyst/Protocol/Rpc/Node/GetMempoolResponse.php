@@ -9,22 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetMempoolResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetMempoolResponse</code>
  */
 class GetMempoolResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>repeated .Catalyst.Protocol.Transaction.PublicEntry transactions = 1;</code>
+     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.PublicEntry transactions = 1;</code>
      */
     private $transactions;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Catalyst\Protocol\Transaction\PublicEntry[]|\Google\Protobuf\Internal\RepeatedField $transactions
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>repeated .Catalyst.Protocol.Transaction.PublicEntry transactions = 1;</code>
+     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.PublicEntry transactions = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTransactions()
     {
@@ -32,12 +42,16 @@ class GetMempoolResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .Catalyst.Protocol.Transaction.PublicEntry transactions = 1;</code>
+     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.PublicEntry transactions = 1;</code>
+     * @param \Catalyst\Protocol\Transaction\PublicEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setTransactions(&$var)
+    public function setTransactions($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\PublicEntry::class);
-        $this->transactions = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\PublicEntry::class);
+        $this->transactions = $arr;
+
+        return $this;
     }
 
 }

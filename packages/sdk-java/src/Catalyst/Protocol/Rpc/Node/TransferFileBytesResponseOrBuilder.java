@@ -9,6 +9,7 @@ public interface TransferFileBytesResponseOrBuilder extends
 
   /**
    * <code>bytes response_code = 1;</code>
+   * @return The responseCode.
    */
   com.google.protobuf.ByteString getResponseCode();
 }

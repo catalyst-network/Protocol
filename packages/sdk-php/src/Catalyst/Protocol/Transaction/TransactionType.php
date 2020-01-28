@@ -4,34 +4,56 @@
 
 namespace Catalyst\Protocol\Transaction;
 
+use UnexpectedValueException;
+
 /**
- * Protobuf enum <code>Catalyst.Protocol.Transaction.TransactionType</code>
+ * Protobuf type <code>Catalyst.Protocol.Transaction.TransactionType</code>
  */
 class TransactionType
 {
     /**
-     * <pre>
      *Unknown transaction type.
-     * </pre>
      *
-     * <code>TRANSACTION_TYPE_UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>TRANSACTION_TYPE_UNKNOWN = 0;</code>
      */
     const TRANSACTION_TYPE_UNKNOWN = 0;
     /**
-     * <pre>
      * Public transaction type.
-     * </pre>
      *
-     * <code>PUBLIC = 1;</code>
+     * Generated from protobuf enum <code>PUBLIC = 1;</code>
      */
-    const PUBLIC = 1;
+    const PBPUBLIC = 1;
     /**
-     * <pre>
      * Private transaction type.
-     * </pre>
      *
-     * <code>CONFIDENTIAL = 2;</code>
+     * Generated from protobuf enum <code>CONFIDENTIAL = 2;</code>
      */
     const CONFIDENTIAL = 2;
+
+    private static $valueToName = [
+        self::TRANSACTION_TYPE_UNKNOWN => 'TRANSACTION_TYPE_UNKNOWN',
+        self::PBPUBLIC => 'PBPUBLIC',
+        self::CONFIDENTIAL => 'CONFIDENTIAL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

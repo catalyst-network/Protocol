@@ -372,7 +372,7 @@ public final class Rpc {
       "\005query\030\001 \001(\t\"$\n\023CreateWalletRequest\022\r\n\005q" +
       "uery\030\001 \001(\010\"%\n\024CreateWalletResponse\022\r\n\005qu" +
       "ery\030\001 \001(\t\"\"\n\021ListWalletRequest\022\r\n\005query\030" +
-      "\001 \001(\010\"#\n\022ListWalletResponse\022\r\n\005query\030\001 \001",
+      "\001 \001(\010\"#\n\022ListWalletResponse\022\r\n\005query\030\001 \001" +
       "(\t\"%\n\024CreateAddressRequest\022\r\n\005query\030\001 \001(" +
       "\010\"&\n\025CreateAddressResponse\022\r\n\005query\030\001 \001(" +
       "\t\"\"\n\021GetAddressRequest\022\r\n\005query\030\001 \001(\010\"#\n" +
@@ -382,7 +382,7 @@ public final class Rpc {
       "eAddressRequest\022\r\n\005query\030\001 \001(\010\"(\n\027Valida" +
       "teAddressResponse\022\r\n\005query\030\001 \001(\t\"\"\n\021GetB" +
       "alanceRequest\022\r\n\005query\030\001 \001(\010\"#\n\022GetBalan" +
-      "ceResponse\022\r\n\005query\030\001 \001(\t\",\n\033CreateRawTr",
+      "ceResponse\022\r\n\005query\030\001 \001(\t\",\n\033CreateRawTr" +
       "ansactionRequest\022\r\n\005query\030\001 \001(\010\"-\n\034Creat" +
       "eRawTransactionResponse\022\r\n\005query\030\001 \001(\t\"*" +
       "\n\031SignRawTransactionRequest\022\r\n\005query\030\001 \001" +
@@ -392,7 +392,7 @@ public final class Rpc {
       "ponse\022\r\n\005query\030\001 \001(\t\"c\n\036BroadcastRawTran" +
       "sactionRequest\022A\n\013transaction\030\001 \001(\0132,.Ca" +
       "talyst.Protocol.Wire.TransactionBroadcas" +
-      "t\"b\n\037BroadcastRawTransactionResponse\022?\n\r",
+      "t\"b\n\037BroadcastRawTransactionResponse\022?\n\r" +
       "response_code\030\001 \001(\0162(.Catalyst.Protocol." +
       "Rpc.Node.ResponseCode\"\036\n\rSendToRequest\022\r" +
       "\n\005query\030\001 \001(\010\"\037\n\016SendToResponse\022\r\n\005query" +
@@ -402,7 +402,7 @@ public final class Rpc {
       "dManyResponse\022\r\n\005query\030\001 \001(\t\"$\n\023SendFrom" +
       "ManyRequest\022\r\n\005query\030\001 \001(\010\"%\n\024SendFromMa" +
       "nyResponse\022\r\n\005query\030\001 \001(\t\"\037\n\016AddNodeRequ" +
-      "est\022\r\n\005query\030\001 \001(\010\" \n\017AddNodeResponse\022\r\n",
+      "est\022\r\n\005query\030\001 \001(\010\" \n\017AddNodeResponse\022\r\n" +
       "\005query\030\001 \001(\t\"\024\n\022GetPeerListRequest\"D\n\023Ge" +
       "tPeerListResponse\022-\n\005peers\030\001 \003(\0132\036.Catal" +
       "yst.Protocol.Peer.PeerId\":\n\030GetPeerReput" +
@@ -412,7 +412,7 @@ public final class Rpc {
       "\022\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\022\021\n\tblac" +
       "klist\030\003 \001(\010\"M\n\030SetPeerBlacklistResponse\022" +
       "\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\022\021\n\tblack" +
-      "list\030\003 \001(\010\"4\n\022GetPeerInfoRequest\022\022\n\npubl",
+      "list\030\003 \001(\010\"4\n\022GetPeerInfoRequest\022\022\n\npubl" +
       "ic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\"J\n\023GetPeerInfoR" +
       "esponse\0223\n\tpeer_info\030\001 \003(\0132 .Catalyst.Pr" +
       "otocol.Peer.PeerInfo\"*\n\031GetConnectionCou" +
@@ -422,7 +422,7 @@ public final class Rpc {
       "eltaResponse\022.\n\005delta\030\001 \001(\0132\037.Catalyst.P" +
       "rotocol.Deltas.Delta\"\"\n\021GetMempoolReques" +
       "t\022\r\n\005query\030\001 \001(\010\"V\n\022GetMempoolResponse\022@" +
-      "\n\014transactions\030\001 \003(\0132*.Catalyst.Protocol",
+      "\n\014transactions\030\001 \003(\0132*.Catalyst.Protocol" +
       ".Transaction.PublicEntry\"~\n\022SignMessageR" +
       "equest\022\017\n\007message\030\001 \001(\014\022\016\n\006key_id\030\002 \001(\t\022" +
       "G\n\017signing_context\030\003 \001(\0132..Catalyst.Prot" +
@@ -432,7 +432,7 @@ public final class Rpc {
       "\"\227\001\n\024VerifyMessageRequest\022\021\n\tsignature\030\001" +
       " \001(\014\022\022\n\npublic_key\030\002 \001(\014\022\017\n\007message\030\003 \001(" +
       "\014\022G\n\017signing_context\030\004 \001(\0132..Catalyst.Pr" +
-      "otocol.Cryptography.SigningContext\"1\n\025Ve",
+      "otocol.Cryptography.SigningContext\"1\n\025Ve" +
       "rifyMessageResponse\022\030\n\020is_signed_by_key\030" +
       "\001 \001(\010\"%\n\024ServiceStatusRequest\022\r\n\005query\030\001" +
       " \001(\010\"&\n\025ServiceStatusResponse\022\r\n\005query\030\001" +
@@ -442,7 +442,7 @@ public final class Rpc {
       "\030\001 \001(\014\022\020\n\010dfs_hash\030\002 \001(\t\"`\n\030TransferFile" +
       "BytesRequest\022\020\n\010chunk_id\030\001 \001(\r\022\023\n\013chunk_" +
       "bytes\030\002 \001(\014\022\035\n\025correlation_file_name\030\003 \001" +
-      "(\014\"2\n\031TransferFileBytesResponse\022\025\n\rrespo",
+      "(\014\"2\n\031TransferFileBytesResponse\022\025\n\rrespo" +
       "nse_code\030\001 \001(\014\"8\n\021RemovePeerRequest\022\017\n\007p" +
       "eer_ip\030\001 \001(\014\022\022\n\npublic_key\030\002 \001(\014\"+\n\022Remo" +
       "vePeerResponse\022\025\n\rdeleted_count\030\001 \001(\r\"\025\n" +
@@ -452,20 +452,12 @@ public final class Rpc {
       "omDfsResponse\022\021\n\tfile_size\030\001 \001(\004\022\025\n\rresp" +
       "onse_code\030\002 \001(\014\"/\n\030SetPeerDataFolderRequ" +
       "est\022\023\n\013data_folder\030\001 \001(\t\"*\n\031SetPeerDataF" +
-      "olderResponse\022\r\n\005query\030\001 \001(\010*i\n\014Response",
+      "olderResponse\022\r\n\005query\030\001 \001(\010*i\n\014Response" +
       "Code\022\013\n\007PENDING\020\000\022\016\n\nSUCCESSFUL\020\001\022\t\n\005ERR" +
       "OR\020\002\022\014\n\010FINISHED\020\003\022\013\n\007EXPIRED\020\004\022\n\n\006FAILE" +
       "D\020\005\022\n\n\006EXISTS\020\006B\002P\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Peer.Peer.getDescriptor(),
@@ -473,7 +465,7 @@ public final class Rpc {
           Catalyst.Protocol.Deltas.Deltas.getDescriptor(),
           Catalyst.Protocol.Wire.Wire.getDescriptor(),
           Catalyst.Protocol.Transaction.Transaction.getDescriptor(),
-        }, assigner);
+        });
     internal_static_Catalyst_Protocol_Rpc_Node_VersionRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_Rpc_Node_VersionRequest_fieldAccessorTable = new

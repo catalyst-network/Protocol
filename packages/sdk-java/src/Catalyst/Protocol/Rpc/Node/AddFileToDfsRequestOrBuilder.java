@@ -9,25 +9,30 @@ public interface AddFileToDfsRequestOrBuilder extends
 
   /**
    * <code>uint64 file_size = 1;</code>
+   * @return The fileSize.
    */
   long getFileSize();
 
   /**
    * <code>string file_name = 2;</code>
+   * @return The fileName.
    */
   java.lang.String getFileName();
   /**
    * <code>string file_name = 2;</code>
+   * @return The bytes for fileName.
    */
   com.google.protobuf.ByteString
       getFileNameBytes();
 
   /**
    * <code>string node = 3;</code>
+   * @return The node.
    */
   java.lang.String getNode();
   /**
    * <code>string node = 3;</code>
+   * @return The bytes for node.
    */
   com.google.protobuf.ByteString
       getNodeBytes();

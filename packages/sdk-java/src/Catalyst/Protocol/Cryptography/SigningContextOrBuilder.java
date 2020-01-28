@@ -13,6 +13,7 @@ public interface SigningContextOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+   * @return The enum numeric value on the wire for networkType.
    */
   int getNetworkTypeValue();
   /**
@@ -21,6 +22,7 @@ public interface SigningContextOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+   * @return The networkType.
    */
   Catalyst.Protocol.Network.NetworkType getNetworkType();
 
@@ -30,6 +32,7 @@ public interface SigningContextOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+   * @return The enum numeric value on the wire for signatureType.
    */
   int getSignatureTypeValue();
   /**
@@ -38,6 +41,7 @@ public interface SigningContextOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+   * @return The signatureType.
    */
   Catalyst.Protocol.Cryptography.SignatureType getSignatureType();
 }

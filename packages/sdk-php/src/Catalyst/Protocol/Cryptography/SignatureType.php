@@ -4,54 +4,72 @@
 
 namespace Catalyst\Protocol\Cryptography;
 
+use UnexpectedValueException;
+
 /**
- * <pre>
  * Represents domains of a node.
- * </pre>
  *
- * Protobuf enum <code>Catalyst.Protocol.Cryptography.SignatureType</code>
+ * Protobuf type <code>Catalyst.Protocol.Cryptography.SignatureType</code>
  */
 class SignatureType
 {
     /**
-     * <pre>
      * Unknown signature.
-     * </pre>
      *
-     * <code>SIGNATURE_TYPE_UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>SIGNATURE_TYPE_UNKNOWN = 0;</code>
      */
     const SIGNATURE_TYPE_UNKNOWN = 0;
     /**
-     * <pre>
      * Signatures for public transactions.
-     * </pre>
      *
-     * <code>TRANSACTION_PUBLIC = 1;</code>
+     * Generated from protobuf enum <code>TRANSACTION_PUBLIC = 1;</code>
      */
     const TRANSACTION_PUBLIC = 1;
     /**
-     * <pre>
      * Signatures for confidential transactions.
-     * </pre>
      *
-     * <code>TRANSACTION_CONFIDENTIAL = 2;</code>
+     * Generated from protobuf enum <code>TRANSACTION_CONFIDENTIAL = 2;</code>
      */
     const TRANSACTION_CONFIDENTIAL = 2;
     /**
-     * <pre>
      * Signatures for rpc messages.
-     * </pre>
      *
-     * <code>PROTOCOL_RPC = 3;</code>
+     * Generated from protobuf enum <code>PROTOCOL_RPC = 3;</code>
      */
     const PROTOCOL_RPC = 3;
     /**
-     * <pre>
      * Signatures for peer protocol messages.
-     * </pre>
      *
-     * <code>PROTOCOL_PEER = 4;</code>
+     * Generated from protobuf enum <code>PROTOCOL_PEER = 4;</code>
      */
     const PROTOCOL_PEER = 4;
+
+    private static $valueToName = [
+        self::SIGNATURE_TYPE_UNKNOWN => 'SIGNATURE_TYPE_UNKNOWN',
+        self::TRANSACTION_PUBLIC => 'TRANSACTION_PUBLIC',
+        self::TRANSACTION_CONFIDENTIAL => 'TRANSACTION_CONFIDENTIAL',
+        self::PROTOCOL_RPC => 'PROTOCOL_RPC',
+        self::PROTOCOL_PEER => 'PROTOCOL_PEER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

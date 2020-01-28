@@ -10,6 +10,7 @@ public  final class CoinbaseEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Transaction.CoinbaseEntry)
     CoinbaseEntryOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use CoinbaseEntry.newBuilder() to construct.
   private CoinbaseEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -20,16 +21,27 @@ public  final class CoinbaseEntry extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CoinbaseEntry();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private CoinbaseEntry(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -38,12 +50,6 @@ public  final class CoinbaseEntry extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             receiverPublicKey_ = input.readBytes();
@@ -54,6 +60,13 @@ public  final class CoinbaseEntry extends
             amount_ = input.readBytes();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -62,6 +75,7 @@ public  final class CoinbaseEntry extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -70,6 +84,7 @@ public  final class CoinbaseEntry extends
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_CoinbaseEntry_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_CoinbaseEntry_fieldAccessorTable
@@ -85,6 +100,7 @@ public  final class CoinbaseEntry extends
    * </pre>
    *
    * <code>bytes receiver_public_key = 1;</code>
+   * @return The receiverPublicKey.
    */
   public com.google.protobuf.ByteString getReceiverPublicKey() {
     return receiverPublicKey_;
@@ -98,12 +114,14 @@ public  final class CoinbaseEntry extends
    * </pre>
    *
    * <code>bytes amount = 2;</code>
+   * @return The amount.
    */
   public com.google.protobuf.ByteString getAmount() {
     return amount_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -113,6 +131,7 @@ public  final class CoinbaseEntry extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!receiverPublicKey_.isEmpty()) {
@@ -121,8 +140,10 @@ public  final class CoinbaseEntry extends
     if (!amount_.isEmpty()) {
       output.writeBytes(2, amount_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -136,11 +157,11 @@ public  final class CoinbaseEntry extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, amount_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -151,12 +172,12 @@ public  final class CoinbaseEntry extends
     }
     Catalyst.Protocol.Transaction.CoinbaseEntry other = (Catalyst.Protocol.Transaction.CoinbaseEntry) obj;
 
-    boolean result = true;
-    result = result && getReceiverPublicKey()
-        .equals(other.getReceiverPublicKey());
-    result = result && getAmount()
-        .equals(other.getAmount());
-    return result;
+    if (!getReceiverPublicKey()
+        .equals(other.getReceiverPublicKey())) return false;
+    if (!getAmount()
+        .equals(other.getAmount())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -175,6 +196,17 @@ public  final class CoinbaseEntry extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Transaction.CoinbaseEntry parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Transaction.CoinbaseEntry parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Transaction.CoinbaseEntry parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -234,6 +266,7 @@ public  final class CoinbaseEntry extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -241,6 +274,7 @@ public  final class CoinbaseEntry extends
   public static Builder newBuilder(Catalyst.Protocol.Transaction.CoinbaseEntry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -264,6 +298,7 @@ public  final class CoinbaseEntry extends
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_CoinbaseEntry_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_CoinbaseEntry_fieldAccessorTable
@@ -286,6 +321,7 @@ public  final class CoinbaseEntry extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       receiverPublicKey_ = com.google.protobuf.ByteString.EMPTY;
@@ -295,15 +331,18 @@ public  final class CoinbaseEntry extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_CoinbaseEntry_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.CoinbaseEntry getDefaultInstanceForType() {
       return Catalyst.Protocol.Transaction.CoinbaseEntry.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.CoinbaseEntry build() {
       Catalyst.Protocol.Transaction.CoinbaseEntry result = buildPartial();
       if (!result.isInitialized()) {
@@ -312,6 +351,7 @@ public  final class CoinbaseEntry extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.CoinbaseEntry buildPartial() {
       Catalyst.Protocol.Transaction.CoinbaseEntry result = new Catalyst.Protocol.Transaction.CoinbaseEntry(this);
       result.receiverPublicKey_ = receiverPublicKey_;
@@ -320,32 +360,39 @@ public  final class CoinbaseEntry extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Transaction.CoinbaseEntry) {
         return mergeFrom((Catalyst.Protocol.Transaction.CoinbaseEntry)other);
@@ -363,14 +410,17 @@ public  final class CoinbaseEntry extends
       if (other.getAmount() != com.google.protobuf.ByteString.EMPTY) {
         setAmount(other.getAmount());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -396,6 +446,7 @@ public  final class CoinbaseEntry extends
      * </pre>
      *
      * <code>bytes receiver_public_key = 1;</code>
+     * @return The receiverPublicKey.
      */
     public com.google.protobuf.ByteString getReceiverPublicKey() {
       return receiverPublicKey_;
@@ -406,6 +457,8 @@ public  final class CoinbaseEntry extends
      * </pre>
      *
      * <code>bytes receiver_public_key = 1;</code>
+     * @param value The receiverPublicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setReceiverPublicKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -422,6 +475,7 @@ public  final class CoinbaseEntry extends
      * </pre>
      *
      * <code>bytes receiver_public_key = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearReceiverPublicKey() {
       
@@ -437,6 +491,7 @@ public  final class CoinbaseEntry extends
      * </pre>
      *
      * <code>bytes amount = 2;</code>
+     * @return The amount.
      */
     public com.google.protobuf.ByteString getAmount() {
       return amount_;
@@ -447,6 +502,8 @@ public  final class CoinbaseEntry extends
      * </pre>
      *
      * <code>bytes amount = 2;</code>
+     * @param value The amount to set.
+     * @return This builder for chaining.
      */
     public Builder setAmount(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -463,6 +520,7 @@ public  final class CoinbaseEntry extends
      * </pre>
      *
      * <code>bytes amount = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAmount() {
       
@@ -470,14 +528,16 @@ public  final class CoinbaseEntry extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -496,11 +556,12 @@ public  final class CoinbaseEntry extends
 
   private static final com.google.protobuf.Parser<CoinbaseEntry>
       PARSER = new com.google.protobuf.AbstractParser<CoinbaseEntry>() {
+    @java.lang.Override
     public CoinbaseEntry parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoinbaseEntry(input, extensionRegistry);
+      return new CoinbaseEntry(input, extensionRegistry);
     }
   };
 
@@ -513,6 +574,7 @@ public  final class CoinbaseEntry extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Transaction.CoinbaseEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

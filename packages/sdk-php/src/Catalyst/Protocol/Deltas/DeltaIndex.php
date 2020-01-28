@@ -9,26 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Deltas.DeltaIndex</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Deltas.DeltaIndex</code>
  */
 class DeltaIndex extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 height = 1;</code>
+     * Generated from protobuf field <code>uint32 height = 1;</code>
      */
     private $height = 0;
     /**
-     * <code>bytes cid = 2;</code>
+     * Generated from protobuf field <code>bytes cid = 2;</code>
      */
     private $cid = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $height
+     *     @type string $cid
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Deltas::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>uint32 height = 1;</code>
+     * Generated from protobuf field <code>uint32 height = 1;</code>
+     * @return int
      */
     public function getHeight()
     {
@@ -36,16 +47,21 @@ class DeltaIndex extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 height = 1;</code>
+     * Generated from protobuf field <code>uint32 height = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setHeight($var)
     {
         GPBUtil::checkUint32($var);
         $this->height = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes cid = 2;</code>
+     * Generated from protobuf field <code>bytes cid = 2;</code>
+     * @return string
      */
     public function getCid()
     {
@@ -53,12 +69,16 @@ class DeltaIndex extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes cid = 2;</code>
+     * Generated from protobuf field <code>bytes cid = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setCid($var)
     {
         GPBUtil::checkString($var, False);
         $this->cid = $var;
+
+        return $this;
     }
 
 }
