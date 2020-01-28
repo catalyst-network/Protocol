@@ -1,3 +1,3 @@
 steps:
-- script: cd libs/sdk-python && make build
+- script: cd packages/sdk-python && make build
   displayName: 'Generate python sdk'
