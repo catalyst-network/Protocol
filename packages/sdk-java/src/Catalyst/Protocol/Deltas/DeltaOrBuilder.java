@@ -13,11 +13,13 @@ public interface DeltaOrBuilder extends
    * </pre>
    *
    * <code>bytes previous_delta_dfs_hash = 1;</code>
+   * @return The previousDeltaDfsHash.
    */
   com.google.protobuf.ByteString getPreviousDeltaDfsHash();
 
   /**
    * <code>bytes merkle_root = 2;</code>
+   * @return The merkleRoot.
    */
   com.google.protobuf.ByteString getMerkleRoot();
 
@@ -27,15 +29,18 @@ public interface DeltaOrBuilder extends
    * </pre>
    *
    * <code>bytes merkle_poda = 3;</code>
+   * @return The merklePoda.
    */
   com.google.protobuf.ByteString getMerklePoda();
 
   /**
    * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+   * @return Whether the timeStamp field is set.
    */
   boolean hasTimeStamp();
   /**
    * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+   * @return The timeStamp.
    */
   com.google.protobuf.Timestamp getTimeStamp();
   /**
@@ -141,6 +146,7 @@ public interface DeltaOrBuilder extends
    * </pre>
    *
    * <code>bytes state_root = 8;</code>
+   * @return The stateRoot.
    */
   com.google.protobuf.ByteString getStateRoot();
 }

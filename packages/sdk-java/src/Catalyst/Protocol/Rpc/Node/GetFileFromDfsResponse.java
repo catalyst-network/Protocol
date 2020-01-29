@@ -10,26 +10,37 @@ public  final class GetFileFromDfsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse)
     GetFileFromDfsResponseOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use GetFileFromDfsResponse.newBuilder() to construct.
   private GetFileFromDfsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private GetFileFromDfsResponse() {
-    fileSize_ = 0L;
     responseCode_ = com.google.protobuf.ByteString.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GetFileFromDfsResponse();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private GetFileFromDfsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -38,12 +49,6 @@ public  final class GetFileFromDfsResponse extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
 
             fileSize_ = input.readUInt64();
@@ -54,6 +59,13 @@ public  final class GetFileFromDfsResponse extends
             responseCode_ = input.readBytes();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -62,6 +74,7 @@ public  final class GetFileFromDfsResponse extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -70,6 +83,7 @@ public  final class GetFileFromDfsResponse extends
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_fieldAccessorTable
@@ -81,6 +95,7 @@ public  final class GetFileFromDfsResponse extends
   private long fileSize_;
   /**
    * <code>uint64 file_size = 1;</code>
+   * @return The fileSize.
    */
   public long getFileSize() {
     return fileSize_;
@@ -90,12 +105,14 @@ public  final class GetFileFromDfsResponse extends
   private com.google.protobuf.ByteString responseCode_;
   /**
    * <code>bytes response_code = 2;</code>
+   * @return The responseCode.
    */
   public com.google.protobuf.ByteString getResponseCode() {
     return responseCode_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -105,6 +122,7 @@ public  final class GetFileFromDfsResponse extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (fileSize_ != 0L) {
@@ -113,8 +131,10 @@ public  final class GetFileFromDfsResponse extends
     if (!responseCode_.isEmpty()) {
       output.writeBytes(2, responseCode_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -128,11 +148,11 @@ public  final class GetFileFromDfsResponse extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, responseCode_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -143,12 +163,12 @@ public  final class GetFileFromDfsResponse extends
     }
     Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse other = (Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse) obj;
 
-    boolean result = true;
-    result = result && (getFileSize()
-        == other.getFileSize());
-    result = result && getResponseCode()
-        .equals(other.getResponseCode());
-    return result;
+    if (getFileSize()
+        != other.getFileSize()) return false;
+    if (!getResponseCode()
+        .equals(other.getResponseCode())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -168,6 +188,17 @@ public  final class GetFileFromDfsResponse extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -227,6 +258,7 @@ public  final class GetFileFromDfsResponse extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -234,6 +266,7 @@ public  final class GetFileFromDfsResponse extends
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -257,6 +290,7 @@ public  final class GetFileFromDfsResponse extends
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_fieldAccessorTable
@@ -279,6 +313,7 @@ public  final class GetFileFromDfsResponse extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       fileSize_ = 0L;
@@ -288,15 +323,18 @@ public  final class GetFileFromDfsResponse extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse build() {
       Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -305,6 +343,7 @@ public  final class GetFileFromDfsResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse buildPartial() {
       Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse result = new Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse(this);
       result.fileSize_ = fileSize_;
@@ -313,32 +352,39 @@ public  final class GetFileFromDfsResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse)other);
@@ -356,14 +402,17 @@ public  final class GetFileFromDfsResponse extends
       if (other.getResponseCode() != com.google.protobuf.ByteString.EMPTY) {
         setResponseCode(other.getResponseCode());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -385,12 +434,15 @@ public  final class GetFileFromDfsResponse extends
     private long fileSize_ ;
     /**
      * <code>uint64 file_size = 1;</code>
+     * @return The fileSize.
      */
     public long getFileSize() {
       return fileSize_;
     }
     /**
      * <code>uint64 file_size = 1;</code>
+     * @param value The fileSize to set.
+     * @return This builder for chaining.
      */
     public Builder setFileSize(long value) {
       
@@ -400,6 +452,7 @@ public  final class GetFileFromDfsResponse extends
     }
     /**
      * <code>uint64 file_size = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFileSize() {
       
@@ -411,12 +464,15 @@ public  final class GetFileFromDfsResponse extends
     private com.google.protobuf.ByteString responseCode_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes response_code = 2;</code>
+     * @return The responseCode.
      */
     public com.google.protobuf.ByteString getResponseCode() {
       return responseCode_;
     }
     /**
      * <code>bytes response_code = 2;</code>
+     * @param value The responseCode to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseCode(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -429,6 +485,7 @@ public  final class GetFileFromDfsResponse extends
     }
     /**
      * <code>bytes response_code = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResponseCode() {
       
@@ -436,14 +493,16 @@ public  final class GetFileFromDfsResponse extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -462,11 +521,12 @@ public  final class GetFileFromDfsResponse extends
 
   private static final com.google.protobuf.Parser<GetFileFromDfsResponse>
       PARSER = new com.google.protobuf.AbstractParser<GetFileFromDfsResponse>() {
+    @java.lang.Override
     public GetFileFromDfsResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetFileFromDfsResponse(input, extensionRegistry);
+      return new GetFileFromDfsResponse(input, extensionRegistry);
     }
   };
 
@@ -479,6 +539,7 @@ public  final class GetFileFromDfsResponse extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

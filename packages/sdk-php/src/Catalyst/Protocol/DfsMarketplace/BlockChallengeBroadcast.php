@@ -9,34 +9,47 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast</code>
  */
 class BlockChallengeBroadcast extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
      */
     private $original_challenge = null;
     /**
-     * <code>string answer = 2;</code>
+     * Generated from protobuf field <code>string answer = 2;</code>
      */
     private $answer = '';
     /**
-     * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
      */
     private $challenged_peer = null;
     /**
-     * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
      */
     private $challenged_by = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Catalyst\Protocol\DfsMarketplace\BlockChallengeRequest $original_challenge
+     *     @type string $answer
+     *     @type \Catalyst\Protocol\Peer\PeerId $challenged_peer
+     *     @type \Catalyst\Protocol\Peer\PeerId $challenged_by
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\DfsMarketplace::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * @return \Catalyst\Protocol\DfsMarketplace\BlockChallengeRequest
      */
     public function getOriginalChallenge()
     {
@@ -44,16 +57,21 @@ class BlockChallengeBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * @param \Catalyst\Protocol\DfsMarketplace\BlockChallengeRequest $var
+     * @return $this
      */
-    public function setOriginalChallenge(&$var)
+    public function setOriginalChallenge($var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\DfsMarketplace\BlockChallengeRequest::class);
         $this->original_challenge = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string answer = 2;</code>
+     * Generated from protobuf field <code>string answer = 2;</code>
+     * @return string
      */
     public function getAnswer()
     {
@@ -61,16 +79,21 @@ class BlockChallengeBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string answer = 2;</code>
+     * Generated from protobuf field <code>string answer = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setAnswer($var)
     {
         GPBUtil::checkString($var, True);
         $this->answer = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * @return \Catalyst\Protocol\Peer\PeerId
      */
     public function getChallengedPeer()
     {
@@ -78,16 +101,21 @@ class BlockChallengeBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * @param \Catalyst\Protocol\Peer\PeerId $var
+     * @return $this
      */
-    public function setChallengedPeer(&$var)
+    public function setChallengedPeer($var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->challenged_peer = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * @return \Catalyst\Protocol\Peer\PeerId
      */
     public function getChallengedBy()
     {
@@ -95,12 +123,16 @@ class BlockChallengeBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * @param \Catalyst\Protocol\Peer\PeerId $var
+     * @return $this
      */
-    public function setChallengedBy(&$var)
+    public function setChallengedBy($var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->challenged_by = $var;
+
+        return $this;
     }
 
 }

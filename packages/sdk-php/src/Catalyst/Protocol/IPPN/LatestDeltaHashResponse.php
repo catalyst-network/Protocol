@@ -9,30 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.IPPN.LatestDeltaHashResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.IPPN.LatestDeltaHashResponse</code>
  */
 class LatestDeltaHashResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Rhe cid of a nodes last delta.
-     * </pre>
      *
-     * <code>bytes delta_hash = 1;</code>
+     * Generated from protobuf field <code>bytes delta_hash = 1;</code>
      */
     private $delta_hash = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $delta_hash
+     *           Rhe cid of a nodes last delta.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <pre>
      * Rhe cid of a nodes last delta.
-     * </pre>
      *
-     * <code>bytes delta_hash = 1;</code>
+     * Generated from protobuf field <code>bytes delta_hash = 1;</code>
+     * @return string
      */
     public function getDeltaHash()
     {
@@ -40,16 +47,18 @@ class LatestDeltaHashResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Rhe cid of a nodes last delta.
-     * </pre>
      *
-     * <code>bytes delta_hash = 1;</code>
+     * Generated from protobuf field <code>bytes delta_hash = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDeltaHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->delta_hash = $var;
+
+        return $this;
     }
 
 }

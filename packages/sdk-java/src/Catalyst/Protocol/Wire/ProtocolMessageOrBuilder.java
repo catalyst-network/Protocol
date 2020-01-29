@@ -13,6 +13,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+   * @return Whether the peerId field is set.
    */
   boolean hasPeerId();
   /**
@@ -21,6 +22,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+   * @return The peerId.
    */
   Catalyst.Protocol.Peer.PeerId getPeerId();
   /**
@@ -38,6 +40,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>bytes correlation_id = 2;</code>
+   * @return The correlationId.
    */
   com.google.protobuf.ByteString getCorrelationId();
 
@@ -47,6 +50,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>string type_url = 3;</code>
+   * @return The typeUrl.
    */
   java.lang.String getTypeUrl();
   /**
@@ -55,6 +59,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>string type_url = 3;</code>
+   * @return The bytes for typeUrl.
    */
   com.google.protobuf.ByteString
       getTypeUrlBytes();
@@ -65,6 +70,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>bytes value = 4;</code>
+   * @return The value.
    */
   com.google.protobuf.ByteString getValue();
 
@@ -74,6 +80,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
+   * @return Whether the signature field is set.
    */
   boolean hasSignature();
   /**
@@ -82,6 +89,7 @@ public interface ProtocolMessageOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
+   * @return The signature.
    */
   Catalyst.Protocol.Cryptography.Signature getSignature();
   /**
