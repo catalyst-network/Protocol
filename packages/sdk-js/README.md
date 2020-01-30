@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-npm install protocol-sdk
+npm install @catalystnetwork/sdk-js
 ```
 
 ## Usage
