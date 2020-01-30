@@ -9,16 +9,19 @@ public interface SignMessageResponseOrBuilder extends
 
   /**
    * <code>bytes signature = 1;</code>
+   * @return The signature.
    */
   com.google.protobuf.ByteString getSignature();
 
   /**
    * <code>bytes public_key = 2;</code>
+   * @return The publicKey.
    */
   com.google.protobuf.ByteString getPublicKey();
 
   /**
    * <code>bytes original_message = 3;</code>
+   * @return The originalMessage.
    */
   com.google.protobuf.ByteString getOriginalMessage();
 }

@@ -10,6 +10,7 @@ public  final class CandidateDeltaBroadcast extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Wire.CandidateDeltaBroadcast)
     CandidateDeltaBroadcastOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use CandidateDeltaBroadcast.newBuilder() to construct.
   private CandidateDeltaBroadcast(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -20,16 +21,27 @@ public  final class CandidateDeltaBroadcast extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CandidateDeltaBroadcast();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private CandidateDeltaBroadcast(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -38,12 +50,6 @@ public  final class CandidateDeltaBroadcast extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             hash_ = input.readBytes();
@@ -67,6 +73,13 @@ public  final class CandidateDeltaBroadcast extends
             previousDeltaDfsHash_ = input.readBytes();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -75,6 +88,7 @@ public  final class CandidateDeltaBroadcast extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -83,6 +97,7 @@ public  final class CandidateDeltaBroadcast extends
     return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_CandidateDeltaBroadcast_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_CandidateDeltaBroadcast_fieldAccessorTable
@@ -98,6 +113,7 @@ public  final class CandidateDeltaBroadcast extends
    * </pre>
    *
    * <code>bytes hash = 1;</code>
+   * @return The hash.
    */
   public com.google.protobuf.ByteString getHash() {
     return hash_;
@@ -111,6 +127,7 @@ public  final class CandidateDeltaBroadcast extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+   * @return Whether the producerId field is set.
    */
   public boolean hasProducerId() {
     return producerId_ != null;
@@ -121,6 +138,7 @@ public  final class CandidateDeltaBroadcast extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+   * @return The producerId.
    */
   public Catalyst.Protocol.Peer.PeerId getProducerId() {
     return producerId_ == null ? Catalyst.Protocol.Peer.PeerId.getDefaultInstance() : producerId_;
@@ -144,12 +162,14 @@ public  final class CandidateDeltaBroadcast extends
    * </pre>
    *
    * <code>bytes previous_delta_dfs_hash = 3;</code>
+   * @return The previousDeltaDfsHash.
    */
   public com.google.protobuf.ByteString getPreviousDeltaDfsHash() {
     return previousDeltaDfsHash_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -159,6 +179,7 @@ public  final class CandidateDeltaBroadcast extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!hash_.isEmpty()) {
@@ -170,8 +191,10 @@ public  final class CandidateDeltaBroadcast extends
     if (!previousDeltaDfsHash_.isEmpty()) {
       output.writeBytes(3, previousDeltaDfsHash_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -189,11 +212,11 @@ public  final class CandidateDeltaBroadcast extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(3, previousDeltaDfsHash_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -204,17 +227,17 @@ public  final class CandidateDeltaBroadcast extends
     }
     Catalyst.Protocol.Wire.CandidateDeltaBroadcast other = (Catalyst.Protocol.Wire.CandidateDeltaBroadcast) obj;
 
-    boolean result = true;
-    result = result && getHash()
-        .equals(other.getHash());
-    result = result && (hasProducerId() == other.hasProducerId());
+    if (!getHash()
+        .equals(other.getHash())) return false;
+    if (hasProducerId() != other.hasProducerId()) return false;
     if (hasProducerId()) {
-      result = result && getProducerId()
-          .equals(other.getProducerId());
+      if (!getProducerId()
+          .equals(other.getProducerId())) return false;
     }
-    result = result && getPreviousDeltaDfsHash()
-        .equals(other.getPreviousDeltaDfsHash());
-    return result;
+    if (!getPreviousDeltaDfsHash()
+        .equals(other.getPreviousDeltaDfsHash())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -237,6 +260,17 @@ public  final class CandidateDeltaBroadcast extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Wire.CandidateDeltaBroadcast parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Wire.CandidateDeltaBroadcast parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Wire.CandidateDeltaBroadcast parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -296,6 +330,7 @@ public  final class CandidateDeltaBroadcast extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -303,6 +338,7 @@ public  final class CandidateDeltaBroadcast extends
   public static Builder newBuilder(Catalyst.Protocol.Wire.CandidateDeltaBroadcast prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -326,6 +362,7 @@ public  final class CandidateDeltaBroadcast extends
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_CandidateDeltaBroadcast_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_CandidateDeltaBroadcast_fieldAccessorTable
@@ -348,6 +385,7 @@ public  final class CandidateDeltaBroadcast extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       hash_ = com.google.protobuf.ByteString.EMPTY;
@@ -363,15 +401,18 @@ public  final class CandidateDeltaBroadcast extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_CandidateDeltaBroadcast_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Wire.CandidateDeltaBroadcast getDefaultInstanceForType() {
       return Catalyst.Protocol.Wire.CandidateDeltaBroadcast.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Wire.CandidateDeltaBroadcast build() {
       Catalyst.Protocol.Wire.CandidateDeltaBroadcast result = buildPartial();
       if (!result.isInitialized()) {
@@ -380,6 +421,7 @@ public  final class CandidateDeltaBroadcast extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Wire.CandidateDeltaBroadcast buildPartial() {
       Catalyst.Protocol.Wire.CandidateDeltaBroadcast result = new Catalyst.Protocol.Wire.CandidateDeltaBroadcast(this);
       result.hash_ = hash_;
@@ -393,32 +435,39 @@ public  final class CandidateDeltaBroadcast extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Wire.CandidateDeltaBroadcast) {
         return mergeFrom((Catalyst.Protocol.Wire.CandidateDeltaBroadcast)other);
@@ -439,14 +488,17 @@ public  final class CandidateDeltaBroadcast extends
       if (other.getPreviousDeltaDfsHash() != com.google.protobuf.ByteString.EMPTY) {
         setPreviousDeltaDfsHash(other.getPreviousDeltaDfsHash());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -472,6 +524,7 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>bytes hash = 1;</code>
+     * @return The hash.
      */
     public com.google.protobuf.ByteString getHash() {
       return hash_;
@@ -482,6 +535,8 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>bytes hash = 1;</code>
+     * @param value The hash to set.
+     * @return This builder for chaining.
      */
     public Builder setHash(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -498,6 +553,7 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>bytes hash = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHash() {
       
@@ -506,7 +562,7 @@ public  final class CandidateDeltaBroadcast extends
       return this;
     }
 
-    private Catalyst.Protocol.Peer.PeerId producerId_ = null;
+    private Catalyst.Protocol.Peer.PeerId producerId_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Peer.PeerId, Catalyst.Protocol.Peer.PeerId.Builder, Catalyst.Protocol.Peer.PeerIdOrBuilder> producerIdBuilder_;
     /**
@@ -515,6 +571,7 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+     * @return Whether the producerId field is set.
      */
     public boolean hasProducerId() {
       return producerIdBuilder_ != null || producerId_ != null;
@@ -525,6 +582,7 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+     * @return The producerId.
      */
     public Catalyst.Protocol.Peer.PeerId getProducerId() {
       if (producerIdBuilder_ == null) {
@@ -666,6 +724,7 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 3;</code>
+     * @return The previousDeltaDfsHash.
      */
     public com.google.protobuf.ByteString getPreviousDeltaDfsHash() {
       return previousDeltaDfsHash_;
@@ -676,6 +735,8 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 3;</code>
+     * @param value The previousDeltaDfsHash to set.
+     * @return This builder for chaining.
      */
     public Builder setPreviousDeltaDfsHash(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -692,6 +753,7 @@ public  final class CandidateDeltaBroadcast extends
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPreviousDeltaDfsHash() {
       
@@ -699,14 +761,16 @@ public  final class CandidateDeltaBroadcast extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -725,11 +789,12 @@ public  final class CandidateDeltaBroadcast extends
 
   private static final com.google.protobuf.Parser<CandidateDeltaBroadcast>
       PARSER = new com.google.protobuf.AbstractParser<CandidateDeltaBroadcast>() {
+    @java.lang.Override
     public CandidateDeltaBroadcast parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CandidateDeltaBroadcast(input, extensionRegistry);
+      return new CandidateDeltaBroadcast(input, extensionRegistry);
     }
   };
 
@@ -742,6 +807,7 @@ public  final class CandidateDeltaBroadcast extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Wire.CandidateDeltaBroadcast getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

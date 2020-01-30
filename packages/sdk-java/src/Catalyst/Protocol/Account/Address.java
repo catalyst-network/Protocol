@@ -10,6 +10,7 @@ public  final class Address extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Account.Address)
     AddressOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use Address.newBuilder() to construct.
   private Address(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -21,16 +22,27 @@ public  final class Address extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Address();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private Address(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -39,12 +51,6 @@ public  final class Address extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
             int rawValue = input.readEnum();
 
@@ -62,6 +68,13 @@ public  final class Address extends
             publicKeyHash_ = input.readBytes();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -70,6 +83,7 @@ public  final class Address extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -78,6 +92,7 @@ public  final class Address extends
     return Catalyst.Protocol.Account.Account.internal_static_Catalyst_Protocol_Account_Address_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Account.Account.internal_static_Catalyst_Protocol_Account_Address_fieldAccessorTable
@@ -93,6 +108,7 @@ public  final class Address extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+   * @return The enum numeric value on the wire for networkType.
    */
   public int getNetworkTypeValue() {
     return networkType_;
@@ -103,8 +119,10 @@ public  final class Address extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+   * @return The networkType.
    */
   public Catalyst.Protocol.Network.NetworkType getNetworkType() {
+    @SuppressWarnings("deprecation")
     Catalyst.Protocol.Network.NetworkType result = Catalyst.Protocol.Network.NetworkType.valueOf(networkType_);
     return result == null ? Catalyst.Protocol.Network.NetworkType.UNRECOGNIZED : result;
   }
@@ -117,6 +135,7 @@ public  final class Address extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+   * @return The enum numeric value on the wire for accountType.
    */
   public int getAccountTypeValue() {
     return accountType_;
@@ -127,8 +146,10 @@ public  final class Address extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+   * @return The accountType.
    */
   public Catalyst.Protocol.Account.AccountType getAccountType() {
+    @SuppressWarnings("deprecation")
     Catalyst.Protocol.Account.AccountType result = Catalyst.Protocol.Account.AccountType.valueOf(accountType_);
     return result == null ? Catalyst.Protocol.Account.AccountType.UNRECOGNIZED : result;
   }
@@ -141,12 +162,14 @@ public  final class Address extends
    * </pre>
    *
    * <code>bytes public_key_hash = 3;</code>
+   * @return The publicKeyHash.
    */
   public com.google.protobuf.ByteString getPublicKeyHash() {
     return publicKeyHash_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -156,6 +179,7 @@ public  final class Address extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (networkType_ != Catalyst.Protocol.Network.NetworkType.NETWORK_TYPE_UNKNOWN.getNumber()) {
@@ -167,8 +191,10 @@ public  final class Address extends
     if (!publicKeyHash_.isEmpty()) {
       output.writeBytes(3, publicKeyHash_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -186,11 +212,11 @@ public  final class Address extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(3, publicKeyHash_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -201,12 +227,12 @@ public  final class Address extends
     }
     Catalyst.Protocol.Account.Address other = (Catalyst.Protocol.Account.Address) obj;
 
-    boolean result = true;
-    result = result && networkType_ == other.networkType_;
-    result = result && accountType_ == other.accountType_;
-    result = result && getPublicKeyHash()
-        .equals(other.getPublicKeyHash());
-    return result;
+    if (networkType_ != other.networkType_) return false;
+    if (accountType_ != other.accountType_) return false;
+    if (!getPublicKeyHash()
+        .equals(other.getPublicKeyHash())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -227,6 +253,17 @@ public  final class Address extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Account.Address parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Account.Address parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Account.Address parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -286,6 +323,7 @@ public  final class Address extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -293,6 +331,7 @@ public  final class Address extends
   public static Builder newBuilder(Catalyst.Protocol.Account.Address prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -316,6 +355,7 @@ public  final class Address extends
       return Catalyst.Protocol.Account.Account.internal_static_Catalyst_Protocol_Account_Address_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Account.Account.internal_static_Catalyst_Protocol_Account_Address_fieldAccessorTable
@@ -338,6 +378,7 @@ public  final class Address extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       networkType_ = 0;
@@ -349,15 +390,18 @@ public  final class Address extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Account.Account.internal_static_Catalyst_Protocol_Account_Address_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Account.Address getDefaultInstanceForType() {
       return Catalyst.Protocol.Account.Address.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Account.Address build() {
       Catalyst.Protocol.Account.Address result = buildPartial();
       if (!result.isInitialized()) {
@@ -366,6 +410,7 @@ public  final class Address extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Account.Address buildPartial() {
       Catalyst.Protocol.Account.Address result = new Catalyst.Protocol.Account.Address(this);
       result.networkType_ = networkType_;
@@ -375,32 +420,39 @@ public  final class Address extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Account.Address) {
         return mergeFrom((Catalyst.Protocol.Account.Address)other);
@@ -421,14 +473,17 @@ public  final class Address extends
       if (other.getPublicKeyHash() != com.google.protobuf.ByteString.EMPTY) {
         setPublicKeyHash(other.getPublicKeyHash());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -454,6 +509,7 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @return The enum numeric value on the wire for networkType.
      */
     public int getNetworkTypeValue() {
       return networkType_;
@@ -464,6 +520,8 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @param value The enum numeric value on the wire for networkType to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
@@ -476,8 +534,10 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @return The networkType.
      */
     public Catalyst.Protocol.Network.NetworkType getNetworkType() {
+      @SuppressWarnings("deprecation")
       Catalyst.Protocol.Network.NetworkType result = Catalyst.Protocol.Network.NetworkType.valueOf(networkType_);
       return result == null ? Catalyst.Protocol.Network.NetworkType.UNRECOGNIZED : result;
     }
@@ -487,6 +547,8 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @param value The networkType to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkType(Catalyst.Protocol.Network.NetworkType value) {
       if (value == null) {
@@ -503,6 +565,7 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
       
@@ -518,6 +581,7 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+     * @return The enum numeric value on the wire for accountType.
      */
     public int getAccountTypeValue() {
       return accountType_;
@@ -528,6 +592,8 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+     * @param value The enum numeric value on the wire for accountType to set.
+     * @return This builder for chaining.
      */
     public Builder setAccountTypeValue(int value) {
       accountType_ = value;
@@ -540,8 +606,10 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+     * @return The accountType.
      */
     public Catalyst.Protocol.Account.AccountType getAccountType() {
+      @SuppressWarnings("deprecation")
       Catalyst.Protocol.Account.AccountType result = Catalyst.Protocol.Account.AccountType.valueOf(accountType_);
       return result == null ? Catalyst.Protocol.Account.AccountType.UNRECOGNIZED : result;
     }
@@ -551,6 +619,8 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+     * @param value The accountType to set.
+     * @return This builder for chaining.
      */
     public Builder setAccountType(Catalyst.Protocol.Account.AccountType value) {
       if (value == null) {
@@ -567,6 +637,7 @@ public  final class Address extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAccountType() {
       
@@ -582,6 +653,7 @@ public  final class Address extends
      * </pre>
      *
      * <code>bytes public_key_hash = 3;</code>
+     * @return The publicKeyHash.
      */
     public com.google.protobuf.ByteString getPublicKeyHash() {
       return publicKeyHash_;
@@ -592,6 +664,8 @@ public  final class Address extends
      * </pre>
      *
      * <code>bytes public_key_hash = 3;</code>
+     * @param value The publicKeyHash to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKeyHash(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -608,6 +682,7 @@ public  final class Address extends
      * </pre>
      *
      * <code>bytes public_key_hash = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPublicKeyHash() {
       
@@ -615,14 +690,16 @@ public  final class Address extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -641,11 +718,12 @@ public  final class Address extends
 
   private static final com.google.protobuf.Parser<Address>
       PARSER = new com.google.protobuf.AbstractParser<Address>() {
+    @java.lang.Override
     public Address parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Address(input, extensionRegistry);
+      return new Address(input, extensionRegistry);
     }
   };
 
@@ -658,6 +736,7 @@ public  final class Address extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Account.Address getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

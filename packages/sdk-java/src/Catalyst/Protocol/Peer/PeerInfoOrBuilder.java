@@ -13,6 +13,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+   * @return Whether the peerId field is set.
    */
   boolean hasPeerId();
   /**
@@ -21,6 +22,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+   * @return The peerId.
    */
   Catalyst.Protocol.Peer.PeerId getPeerId();
   /**
@@ -38,6 +40,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>sint32 reputation = 2;</code>
+   * @return The reputation.
    */
   int getReputation();
 
@@ -47,6 +50,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>bool is_blacklisted = 3;</code>
+   * @return The isBlacklisted.
    */
   boolean getIsBlacklisted();
 
@@ -56,6 +60,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>bool is_unreachable = 4;</code>
+   * @return The isUnreachable.
    */
   boolean getIsUnreachable();
 
@@ -65,6 +70,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration inactive_for = 5;</code>
+   * @return Whether the inactiveFor field is set.
    */
   boolean hasInactiveFor();
   /**
@@ -73,6 +79,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Duration inactive_for = 5;</code>
+   * @return The inactiveFor.
    */
   com.google.protobuf.Duration getInactiveFor();
   /**
@@ -90,6 +97,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_seen = 6;</code>
+   * @return Whether the lastSeen field is set.
    */
   boolean hasLastSeen();
   /**
@@ -98,6 +106,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_seen = 6;</code>
+   * @return The lastSeen.
    */
   com.google.protobuf.Timestamp getLastSeen();
   /**
@@ -115,6 +124,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified = 7;</code>
+   * @return Whether the modified field is set.
    */
   boolean hasModified();
   /**
@@ -123,6 +133,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified = 7;</code>
+   * @return The modified.
    */
   com.google.protobuf.Timestamp getModified();
   /**
@@ -140,6 +151,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created = 8;</code>
+   * @return Whether the created field is set.
    */
   boolean hasCreated();
   /**
@@ -148,6 +160,7 @@ public interface PeerInfoOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created = 8;</code>
+   * @return The created.
    */
   com.google.protobuf.Timestamp getCreated();
   /**

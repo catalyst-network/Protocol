@@ -8,3 +8,5 @@
 //! ```
 
 pub use protobuf::ProtobufEnum;
+pub use protobuf::Message;
+

@@ -72,23 +72,15 @@ public final class IPPN {
       "se\022\022\n\ndelta_hash\030\001 \001(\014\"4\n\023DeltaHistoryRe" +
       "quest\022\r\n\005range\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"L\n\024" +
       "DeltaHistoryResponse\0224\n\006result\030\001 \003(\0132$.C" +
-      "atalyst.Protocol.Deltas.DeltaIndexB\002P\001b\006",
+      "atalyst.Protocol.Deltas.DeltaIndexB\002P\001b\006" +
       "proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Peer.Peer.getDescriptor(),
           Catalyst.Protocol.Deltas.Deltas.getDescriptor(),
-        }, assigner);
+        });
     internal_static_Catalyst_Protocol_IPPN_PeerNeighborsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_IPPN_PeerNeighborsRequest_fieldAccessorTable = new

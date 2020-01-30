@@ -9,30 +9,42 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest</code>
  */
 class TransferFileBytesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 chunk_id = 1;</code>
+     * Generated from protobuf field <code>uint32 chunk_id = 1;</code>
      */
     private $chunk_id = 0;
     /**
-     * <code>bytes chunk_bytes = 2;</code>
+     * Generated from protobuf field <code>bytes chunk_bytes = 2;</code>
      */
     private $chunk_bytes = '';
     /**
-     * <code>bytes correlation_file_name = 3;</code>
+     * Generated from protobuf field <code>bytes correlation_file_name = 3;</code>
      */
     private $correlation_file_name = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $chunk_id
+     *     @type string $chunk_bytes
+     *     @type string $correlation_file_name
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>uint32 chunk_id = 1;</code>
+     * Generated from protobuf field <code>uint32 chunk_id = 1;</code>
+     * @return int
      */
     public function getChunkId()
     {
@@ -40,16 +52,21 @@ class TransferFileBytesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 chunk_id = 1;</code>
+     * Generated from protobuf field <code>uint32 chunk_id = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setChunkId($var)
     {
         GPBUtil::checkUint32($var);
         $this->chunk_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes chunk_bytes = 2;</code>
+     * Generated from protobuf field <code>bytes chunk_bytes = 2;</code>
+     * @return string
      */
     public function getChunkBytes()
     {
@@ -57,16 +74,21 @@ class TransferFileBytesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes chunk_bytes = 2;</code>
+     * Generated from protobuf field <code>bytes chunk_bytes = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setChunkBytes($var)
     {
         GPBUtil::checkString($var, False);
         $this->chunk_bytes = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes correlation_file_name = 3;</code>
+     * Generated from protobuf field <code>bytes correlation_file_name = 3;</code>
+     * @return string
      */
     public function getCorrelationFileName()
     {
@@ -74,12 +96,16 @@ class TransferFileBytesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes correlation_file_name = 3;</code>
+     * Generated from protobuf field <code>bytes correlation_file_name = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setCorrelationFileName($var)
     {
         GPBUtil::checkString($var, False);
         $this->correlation_file_name = $var;
+
+        return $this;
     }
 
 }

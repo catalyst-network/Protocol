@@ -1,3 +1,3 @@
 steps:
-- script: cd libs/sdk-php && make build
+- script: cd packages/sdk-php && make build
   displayName: 'Generate php sdk'

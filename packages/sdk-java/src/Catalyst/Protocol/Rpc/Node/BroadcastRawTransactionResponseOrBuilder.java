@@ -9,10 +9,12 @@ public interface BroadcastRawTransactionResponseOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+   * @return The enum numeric value on the wire for responseCode.
    */
   int getResponseCodeValue();
   /**
    * <code>.Catalyst.Protocol.Rpc.Node.ResponseCode response_code = 1;</code>
+   * @return The responseCode.
    */
   Catalyst.Protocol.Rpc.Node.ResponseCode getResponseCode();
 }

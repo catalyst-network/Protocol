@@ -31,4 +31,3 @@ buildruby:
 .PHONY: buildrust
 buildrust:
 	cd packages/sdk-rust && make build;
-

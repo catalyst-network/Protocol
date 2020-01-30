@@ -10,6 +10,7 @@ public  final class Delta extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Deltas.Delta)
     DeltaOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use Delta.newBuilder() to construct.
   private Delta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -25,16 +26,28 @@ public  final class Delta extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Delta();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private Delta(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -43,12 +56,6 @@ public  final class Delta extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             previousDeltaDfsHash_ = input.readBytes();
@@ -78,27 +85,27 @@ public  final class Delta extends
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               publicEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.PublicEntry>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000001;
             }
             publicEntries_.add(
                 input.readMessage(Catalyst.Protocol.Transaction.PublicEntry.parser(), extensionRegistry));
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               confidentialEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.ConfidentialEntry>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000002;
             }
             confidentialEntries_.add(
                 input.readMessage(Catalyst.Protocol.Transaction.ConfidentialEntry.parser(), extensionRegistry));
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               coinbaseEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.CoinbaseEntry>();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000004;
             }
             coinbaseEntries_.add(
                 input.readMessage(Catalyst.Protocol.Transaction.CoinbaseEntry.parser(), extensionRegistry));
@@ -109,6 +116,13 @@ public  final class Delta extends
             stateRoot_ = input.readBytes();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -117,15 +131,16 @@ public  final class Delta extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         publicEntries_ = java.util.Collections.unmodifiableList(publicEntries_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         confidentialEntries_ = java.util.Collections.unmodifiableList(confidentialEntries_);
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         coinbaseEntries_ = java.util.Collections.unmodifiableList(coinbaseEntries_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -134,6 +149,7 @@ public  final class Delta extends
     return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_fieldAccessorTable
@@ -141,7 +157,6 @@ public  final class Delta extends
             Catalyst.Protocol.Deltas.Delta.class, Catalyst.Protocol.Deltas.Delta.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PREVIOUS_DELTA_DFS_HASH_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString previousDeltaDfsHash_;
   /**
@@ -150,6 +165,7 @@ public  final class Delta extends
    * </pre>
    *
    * <code>bytes previous_delta_dfs_hash = 1;</code>
+   * @return The previousDeltaDfsHash.
    */
   public com.google.protobuf.ByteString getPreviousDeltaDfsHash() {
     return previousDeltaDfsHash_;
@@ -159,6 +175,7 @@ public  final class Delta extends
   private com.google.protobuf.ByteString merkleRoot_;
   /**
    * <code>bytes merkle_root = 2;</code>
+   * @return The merkleRoot.
    */
   public com.google.protobuf.ByteString getMerkleRoot() {
     return merkleRoot_;
@@ -172,6 +189,7 @@ public  final class Delta extends
    * </pre>
    *
    * <code>bytes merkle_poda = 3;</code>
+   * @return The merklePoda.
    */
   public com.google.protobuf.ByteString getMerklePoda() {
     return merklePoda_;
@@ -181,12 +199,14 @@ public  final class Delta extends
   private com.google.protobuf.Timestamp timeStamp_;
   /**
    * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+   * @return Whether the timeStamp field is set.
    */
   public boolean hasTimeStamp() {
     return timeStamp_ != null;
   }
   /**
    * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+   * @return The timeStamp.
    */
   public com.google.protobuf.Timestamp getTimeStamp() {
     return timeStamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timeStamp_;
@@ -331,12 +351,14 @@ public  final class Delta extends
    * </pre>
    *
    * <code>bytes state_root = 8;</code>
+   * @return The stateRoot.
    */
   public com.google.protobuf.ByteString getStateRoot() {
     return stateRoot_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -346,6 +368,7 @@ public  final class Delta extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!previousDeltaDfsHash_.isEmpty()) {
@@ -372,8 +395,10 @@ public  final class Delta extends
     if (!stateRoot_.isEmpty()) {
       output.writeBytes(8, stateRoot_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -411,11 +436,11 @@ public  final class Delta extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(8, stateRoot_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -426,27 +451,27 @@ public  final class Delta extends
     }
     Catalyst.Protocol.Deltas.Delta other = (Catalyst.Protocol.Deltas.Delta) obj;
 
-    boolean result = true;
-    result = result && getPreviousDeltaDfsHash()
-        .equals(other.getPreviousDeltaDfsHash());
-    result = result && getMerkleRoot()
-        .equals(other.getMerkleRoot());
-    result = result && getMerklePoda()
-        .equals(other.getMerklePoda());
-    result = result && (hasTimeStamp() == other.hasTimeStamp());
+    if (!getPreviousDeltaDfsHash()
+        .equals(other.getPreviousDeltaDfsHash())) return false;
+    if (!getMerkleRoot()
+        .equals(other.getMerkleRoot())) return false;
+    if (!getMerklePoda()
+        .equals(other.getMerklePoda())) return false;
+    if (hasTimeStamp() != other.hasTimeStamp()) return false;
     if (hasTimeStamp()) {
-      result = result && getTimeStamp()
-          .equals(other.getTimeStamp());
+      if (!getTimeStamp()
+          .equals(other.getTimeStamp())) return false;
     }
-    result = result && getPublicEntriesList()
-        .equals(other.getPublicEntriesList());
-    result = result && getConfidentialEntriesList()
-        .equals(other.getConfidentialEntriesList());
-    result = result && getCoinbaseEntriesList()
-        .equals(other.getCoinbaseEntriesList());
-    result = result && getStateRoot()
-        .equals(other.getStateRoot());
-    return result;
+    if (!getPublicEntriesList()
+        .equals(other.getPublicEntriesList())) return false;
+    if (!getConfidentialEntriesList()
+        .equals(other.getConfidentialEntriesList())) return false;
+    if (!getCoinbaseEntriesList()
+        .equals(other.getCoinbaseEntriesList())) return false;
+    if (!getStateRoot()
+        .equals(other.getStateRoot())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -485,6 +510,17 @@ public  final class Delta extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Deltas.Delta parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Deltas.Delta parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Deltas.Delta parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -544,6 +580,7 @@ public  final class Delta extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -551,6 +588,7 @@ public  final class Delta extends
   public static Builder newBuilder(Catalyst.Protocol.Deltas.Delta prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -574,6 +612,7 @@ public  final class Delta extends
       return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_fieldAccessorTable
@@ -599,6 +638,7 @@ public  final class Delta extends
         getCoinbaseEntriesFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       previousDeltaDfsHash_ = com.google.protobuf.ByteString.EMPTY;
@@ -615,19 +655,19 @@ public  final class Delta extends
       }
       if (publicEntriesBuilder_ == null) {
         publicEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         publicEntriesBuilder_.clear();
       }
       if (confidentialEntriesBuilder_ == null) {
         confidentialEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         confidentialEntriesBuilder_.clear();
       }
       if (coinbaseEntriesBuilder_ == null) {
         coinbaseEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         coinbaseEntriesBuilder_.clear();
       }
@@ -636,15 +676,18 @@ public  final class Delta extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Deltas.Delta getDefaultInstanceForType() {
       return Catalyst.Protocol.Deltas.Delta.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Deltas.Delta build() {
       Catalyst.Protocol.Deltas.Delta result = buildPartial();
       if (!result.isInitialized()) {
@@ -653,10 +696,10 @@ public  final class Delta extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Deltas.Delta buildPartial() {
       Catalyst.Protocol.Deltas.Delta result = new Catalyst.Protocol.Deltas.Delta(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.previousDeltaDfsHash_ = previousDeltaDfsHash_;
       result.merkleRoot_ = merkleRoot_;
       result.merklePoda_ = merklePoda_;
@@ -666,64 +709,70 @@ public  final class Delta extends
         result.timeStamp_ = timeStampBuilder_.build();
       }
       if (publicEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           publicEntries_ = java.util.Collections.unmodifiableList(publicEntries_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.publicEntries_ = publicEntries_;
       } else {
         result.publicEntries_ = publicEntriesBuilder_.build();
       }
       if (confidentialEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           confidentialEntries_ = java.util.Collections.unmodifiableList(confidentialEntries_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.confidentialEntries_ = confidentialEntries_;
       } else {
         result.confidentialEntries_ = confidentialEntriesBuilder_.build();
       }
       if (coinbaseEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           coinbaseEntries_ = java.util.Collections.unmodifiableList(coinbaseEntries_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.coinbaseEntries_ = coinbaseEntries_;
       } else {
         result.coinbaseEntries_ = coinbaseEntriesBuilder_.build();
       }
       result.stateRoot_ = stateRoot_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Deltas.Delta) {
         return mergeFrom((Catalyst.Protocol.Deltas.Delta)other);
@@ -751,7 +800,7 @@ public  final class Delta extends
         if (!other.publicEntries_.isEmpty()) {
           if (publicEntries_.isEmpty()) {
             publicEntries_ = other.publicEntries_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePublicEntriesIsMutable();
             publicEntries_.addAll(other.publicEntries_);
@@ -764,7 +813,7 @@ public  final class Delta extends
             publicEntriesBuilder_.dispose();
             publicEntriesBuilder_ = null;
             publicEntries_ = other.publicEntries_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000001);
             publicEntriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPublicEntriesFieldBuilder() : null;
@@ -777,7 +826,7 @@ public  final class Delta extends
         if (!other.confidentialEntries_.isEmpty()) {
           if (confidentialEntries_.isEmpty()) {
             confidentialEntries_ = other.confidentialEntries_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConfidentialEntriesIsMutable();
             confidentialEntries_.addAll(other.confidentialEntries_);
@@ -790,7 +839,7 @@ public  final class Delta extends
             confidentialEntriesBuilder_.dispose();
             confidentialEntriesBuilder_ = null;
             confidentialEntries_ = other.confidentialEntries_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000002);
             confidentialEntriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getConfidentialEntriesFieldBuilder() : null;
@@ -803,7 +852,7 @@ public  final class Delta extends
         if (!other.coinbaseEntries_.isEmpty()) {
           if (coinbaseEntries_.isEmpty()) {
             coinbaseEntries_ = other.coinbaseEntries_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureCoinbaseEntriesIsMutable();
             coinbaseEntries_.addAll(other.coinbaseEntries_);
@@ -816,7 +865,7 @@ public  final class Delta extends
             coinbaseEntriesBuilder_.dispose();
             coinbaseEntriesBuilder_ = null;
             coinbaseEntries_ = other.coinbaseEntries_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000004);
             coinbaseEntriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCoinbaseEntriesFieldBuilder() : null;
@@ -828,14 +877,17 @@ public  final class Delta extends
       if (other.getStateRoot() != com.google.protobuf.ByteString.EMPTY) {
         setStateRoot(other.getStateRoot());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -862,6 +914,7 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 1;</code>
+     * @return The previousDeltaDfsHash.
      */
     public com.google.protobuf.ByteString getPreviousDeltaDfsHash() {
       return previousDeltaDfsHash_;
@@ -872,6 +925,8 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 1;</code>
+     * @param value The previousDeltaDfsHash to set.
+     * @return This builder for chaining.
      */
     public Builder setPreviousDeltaDfsHash(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -888,6 +943,7 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPreviousDeltaDfsHash() {
       
@@ -899,12 +955,15 @@ public  final class Delta extends
     private com.google.protobuf.ByteString merkleRoot_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes merkle_root = 2;</code>
+     * @return The merkleRoot.
      */
     public com.google.protobuf.ByteString getMerkleRoot() {
       return merkleRoot_;
     }
     /**
      * <code>bytes merkle_root = 2;</code>
+     * @param value The merkleRoot to set.
+     * @return This builder for chaining.
      */
     public Builder setMerkleRoot(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -917,6 +976,7 @@ public  final class Delta extends
     }
     /**
      * <code>bytes merkle_root = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMerkleRoot() {
       
@@ -932,6 +992,7 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes merkle_poda = 3;</code>
+     * @return The merklePoda.
      */
     public com.google.protobuf.ByteString getMerklePoda() {
       return merklePoda_;
@@ -942,6 +1003,8 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes merkle_poda = 3;</code>
+     * @param value The merklePoda to set.
+     * @return This builder for chaining.
      */
     public Builder setMerklePoda(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -958,6 +1021,7 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes merkle_poda = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMerklePoda() {
       
@@ -966,17 +1030,19 @@ public  final class Delta extends
       return this;
     }
 
-    private com.google.protobuf.Timestamp timeStamp_ = null;
+    private com.google.protobuf.Timestamp timeStamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeStampBuilder_;
     /**
      * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+     * @return Whether the timeStamp field is set.
      */
     public boolean hasTimeStamp() {
       return timeStampBuilder_ != null || timeStamp_ != null;
     }
     /**
      * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+     * @return The timeStamp.
      */
     public com.google.protobuf.Timestamp getTimeStamp() {
       if (timeStampBuilder_ == null) {
@@ -1086,9 +1152,9 @@ public  final class Delta extends
     private java.util.List<Catalyst.Protocol.Transaction.PublicEntry> publicEntries_ =
       java.util.Collections.emptyList();
     private void ensurePublicEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         publicEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.PublicEntry>(publicEntries_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1238,7 +1304,7 @@ public  final class Delta extends
     public Builder clearPublicEntries() {
       if (publicEntriesBuilder_ == null) {
         publicEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         publicEntriesBuilder_.clear();
@@ -1315,7 +1381,7 @@ public  final class Delta extends
         publicEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Transaction.PublicEntry, Catalyst.Protocol.Transaction.PublicEntry.Builder, Catalyst.Protocol.Transaction.PublicEntryOrBuilder>(
                 publicEntries_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         publicEntries_ = null;
@@ -1326,9 +1392,9 @@ public  final class Delta extends
     private java.util.List<Catalyst.Protocol.Transaction.ConfidentialEntry> confidentialEntries_ =
       java.util.Collections.emptyList();
     private void ensureConfidentialEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         confidentialEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.ConfidentialEntry>(confidentialEntries_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1478,7 +1544,7 @@ public  final class Delta extends
     public Builder clearConfidentialEntries() {
       if (confidentialEntriesBuilder_ == null) {
         confidentialEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         confidentialEntriesBuilder_.clear();
@@ -1555,7 +1621,7 @@ public  final class Delta extends
         confidentialEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Transaction.ConfidentialEntry, Catalyst.Protocol.Transaction.ConfidentialEntry.Builder, Catalyst.Protocol.Transaction.ConfidentialEntryOrBuilder>(
                 confidentialEntries_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         confidentialEntries_ = null;
@@ -1566,9 +1632,9 @@ public  final class Delta extends
     private java.util.List<Catalyst.Protocol.Transaction.CoinbaseEntry> coinbaseEntries_ =
       java.util.Collections.emptyList();
     private void ensureCoinbaseEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         coinbaseEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.CoinbaseEntry>(coinbaseEntries_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1762,7 +1828,7 @@ public  final class Delta extends
     public Builder clearCoinbaseEntries() {
       if (coinbaseEntriesBuilder_ == null) {
         coinbaseEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         coinbaseEntriesBuilder_.clear();
@@ -1867,7 +1933,7 @@ public  final class Delta extends
         coinbaseEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Transaction.CoinbaseEntry, Catalyst.Protocol.Transaction.CoinbaseEntry.Builder, Catalyst.Protocol.Transaction.CoinbaseEntryOrBuilder>(
                 coinbaseEntries_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         coinbaseEntries_ = null;
@@ -1882,6 +1948,7 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes state_root = 8;</code>
+     * @return The stateRoot.
      */
     public com.google.protobuf.ByteString getStateRoot() {
       return stateRoot_;
@@ -1892,6 +1959,8 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes state_root = 8;</code>
+     * @param value The stateRoot to set.
+     * @return This builder for chaining.
      */
     public Builder setStateRoot(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1908,6 +1977,7 @@ public  final class Delta extends
      * </pre>
      *
      * <code>bytes state_root = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStateRoot() {
       
@@ -1915,14 +1985,16 @@ public  final class Delta extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1941,11 +2013,12 @@ public  final class Delta extends
 
   private static final com.google.protobuf.Parser<Delta>
       PARSER = new com.google.protobuf.AbstractParser<Delta>() {
+    @java.lang.Override
     public Delta parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Delta(input, extensionRegistry);
+      return new Delta(input, extensionRegistry);
     }
   };
 
@@ -1958,6 +2031,7 @@ public  final class Delta extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Deltas.Delta getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

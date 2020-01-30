@@ -10,6 +10,7 @@ public  final class PublicEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Transaction.PublicEntry)
     PublicEntryOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use PublicEntry.newBuilder() to construct.
   private PublicEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -20,22 +21,31 @@ public  final class PublicEntry extends
     amount_ = com.google.protobuf.ByteString.EMPTY;
     data_ = com.google.protobuf.ByteString.EMPTY;
     gasPrice_ = com.google.protobuf.ByteString.EMPTY;
-    gasLimit_ = 0L;
     transactionFees_ = com.google.protobuf.ByteString.EMPTY;
-    nonce_ = 0L;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PublicEntry();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private PublicEntry(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -44,12 +54,6 @@ public  final class PublicEntry extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             receiverAddress_ = input.readBytes();
@@ -116,6 +120,13 @@ public  final class PublicEntry extends
 
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -124,6 +135,7 @@ public  final class PublicEntry extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -132,6 +144,7 @@ public  final class PublicEntry extends
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_fieldAccessorTable
@@ -147,6 +160,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>bytes receiver_address = 1;</code>
+   * @return The receiverAddress.
    */
   public com.google.protobuf.ByteString getReceiverAddress() {
     return receiverAddress_;
@@ -160,6 +174,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>bytes sender_address = 2;</code>
+   * @return The senderAddress.
    */
   public com.google.protobuf.ByteString getSenderAddress() {
     return senderAddress_;
@@ -173,6 +188,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>bytes amount = 3;</code>
+   * @return The amount.
    */
   public com.google.protobuf.ByteString getAmount() {
     return amount_;
@@ -186,6 +202,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>bytes data = 4;</code>
+   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
@@ -195,12 +212,14 @@ public  final class PublicEntry extends
   private com.google.protobuf.Timestamp timestamp_;
   /**
    * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+   * @return Whether the timestamp field is set.
    */
   public boolean hasTimestamp() {
     return timestamp_ != null;
   }
   /**
    * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+   * @return The timestamp.
    */
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
@@ -216,6 +235,7 @@ public  final class PublicEntry extends
   private com.google.protobuf.ByteString gasPrice_;
   /**
    * <code>bytes gas_price = 6;</code>
+   * @return The gasPrice.
    */
   public com.google.protobuf.ByteString getGasPrice() {
     return gasPrice_;
@@ -225,6 +245,7 @@ public  final class PublicEntry extends
   private long gasLimit_;
   /**
    * <code>uint64 gas_limit = 7;</code>
+   * @return The gasLimit.
    */
   public long getGasLimit() {
     return gasLimit_;
@@ -238,6 +259,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>bytes transaction_fees = 8;</code>
+   * @return The transactionFees.
    */
   public com.google.protobuf.ByteString getTransactionFees() {
     return transactionFees_;
@@ -251,6 +273,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>uint64 nonce = 9;</code>
+   * @return The nonce.
    */
   public long getNonce() {
     return nonce_;
@@ -264,6 +287,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+   * @return Whether the signature field is set.
    */
   public boolean hasSignature() {
     return signature_ != null;
@@ -274,6 +298,7 @@ public  final class PublicEntry extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+   * @return The signature.
    */
   public Catalyst.Protocol.Cryptography.Signature getSignature() {
     return signature_ == null ? Catalyst.Protocol.Cryptography.Signature.getDefaultInstance() : signature_;
@@ -290,6 +315,7 @@ public  final class PublicEntry extends
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -299,6 +325,7 @@ public  final class PublicEntry extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!receiverAddress_.isEmpty()) {
@@ -331,8 +358,10 @@ public  final class PublicEntry extends
     if (signature_ != null) {
       output.writeMessage(10, getSignature());
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -378,11 +407,11 @@ public  final class PublicEntry extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getSignature());
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -393,34 +422,34 @@ public  final class PublicEntry extends
     }
     Catalyst.Protocol.Transaction.PublicEntry other = (Catalyst.Protocol.Transaction.PublicEntry) obj;
 
-    boolean result = true;
-    result = result && getReceiverAddress()
-        .equals(other.getReceiverAddress());
-    result = result && getSenderAddress()
-        .equals(other.getSenderAddress());
-    result = result && getAmount()
-        .equals(other.getAmount());
-    result = result && getData()
-        .equals(other.getData());
-    result = result && (hasTimestamp() == other.hasTimestamp());
+    if (!getReceiverAddress()
+        .equals(other.getReceiverAddress())) return false;
+    if (!getSenderAddress()
+        .equals(other.getSenderAddress())) return false;
+    if (!getAmount()
+        .equals(other.getAmount())) return false;
+    if (!getData()
+        .equals(other.getData())) return false;
+    if (hasTimestamp() != other.hasTimestamp()) return false;
     if (hasTimestamp()) {
-      result = result && getTimestamp()
-          .equals(other.getTimestamp());
+      if (!getTimestamp()
+          .equals(other.getTimestamp())) return false;
     }
-    result = result && getGasPrice()
-        .equals(other.getGasPrice());
-    result = result && (getGasLimit()
-        == other.getGasLimit());
-    result = result && getTransactionFees()
-        .equals(other.getTransactionFees());
-    result = result && (getNonce()
-        == other.getNonce());
-    result = result && (hasSignature() == other.hasSignature());
+    if (!getGasPrice()
+        .equals(other.getGasPrice())) return false;
+    if (getGasLimit()
+        != other.getGasLimit()) return false;
+    if (!getTransactionFees()
+        .equals(other.getTransactionFees())) return false;
+    if (getNonce()
+        != other.getNonce()) return false;
+    if (hasSignature() != other.hasSignature()) return false;
     if (hasSignature()) {
-      result = result && getSignature()
-          .equals(other.getSignature());
+      if (!getSignature()
+          .equals(other.getSignature())) return false;
     }
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -461,6 +490,17 @@ public  final class PublicEntry extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Transaction.PublicEntry parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Transaction.PublicEntry parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Transaction.PublicEntry parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -520,6 +560,7 @@ public  final class PublicEntry extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -527,6 +568,7 @@ public  final class PublicEntry extends
   public static Builder newBuilder(Catalyst.Protocol.Transaction.PublicEntry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -550,6 +592,7 @@ public  final class PublicEntry extends
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_fieldAccessorTable
@@ -572,6 +615,7 @@ public  final class PublicEntry extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       receiverAddress_ = com.google.protobuf.ByteString.EMPTY;
@@ -605,15 +649,18 @@ public  final class PublicEntry extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.PublicEntry getDefaultInstanceForType() {
       return Catalyst.Protocol.Transaction.PublicEntry.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.PublicEntry build() {
       Catalyst.Protocol.Transaction.PublicEntry result = buildPartial();
       if (!result.isInitialized()) {
@@ -622,6 +669,7 @@ public  final class PublicEntry extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.PublicEntry buildPartial() {
       Catalyst.Protocol.Transaction.PublicEntry result = new Catalyst.Protocol.Transaction.PublicEntry(this);
       result.receiverAddress_ = receiverAddress_;
@@ -646,32 +694,39 @@ public  final class PublicEntry extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Transaction.PublicEntry) {
         return mergeFrom((Catalyst.Protocol.Transaction.PublicEntry)other);
@@ -713,14 +768,17 @@ public  final class PublicEntry extends
       if (other.hasSignature()) {
         mergeSignature(other.getSignature());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -746,6 +804,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes receiver_address = 1;</code>
+     * @return The receiverAddress.
      */
     public com.google.protobuf.ByteString getReceiverAddress() {
       return receiverAddress_;
@@ -756,6 +815,8 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes receiver_address = 1;</code>
+     * @param value The receiverAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setReceiverAddress(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -772,6 +833,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes receiver_address = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearReceiverAddress() {
       
@@ -787,6 +849,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes sender_address = 2;</code>
+     * @return The senderAddress.
      */
     public com.google.protobuf.ByteString getSenderAddress() {
       return senderAddress_;
@@ -797,6 +860,8 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes sender_address = 2;</code>
+     * @param value The senderAddress to set.
+     * @return This builder for chaining.
      */
     public Builder setSenderAddress(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -813,6 +878,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes sender_address = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSenderAddress() {
       
@@ -828,6 +894,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes amount = 3;</code>
+     * @return The amount.
      */
     public com.google.protobuf.ByteString getAmount() {
       return amount_;
@@ -838,6 +905,8 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes amount = 3;</code>
+     * @param value The amount to set.
+     * @return This builder for chaining.
      */
     public Builder setAmount(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -854,6 +923,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes amount = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAmount() {
       
@@ -869,6 +939,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes data = 4;</code>
+     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -879,6 +950,8 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes data = 4;</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -895,6 +968,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes data = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearData() {
       
@@ -903,17 +977,19 @@ public  final class PublicEntry extends
       return this;
     }
 
-    private com.google.protobuf.Timestamp timestamp_ = null;
+    private com.google.protobuf.Timestamp timestamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
     /**
      * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
       return timestampBuilder_ != null || timestamp_ != null;
     }
     /**
      * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+     * @return The timestamp.
      */
     public com.google.protobuf.Timestamp getTimestamp() {
       if (timestampBuilder_ == null) {
@@ -1023,12 +1099,15 @@ public  final class PublicEntry extends
     private com.google.protobuf.ByteString gasPrice_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes gas_price = 6;</code>
+     * @return The gasPrice.
      */
     public com.google.protobuf.ByteString getGasPrice() {
       return gasPrice_;
     }
     /**
      * <code>bytes gas_price = 6;</code>
+     * @param value The gasPrice to set.
+     * @return This builder for chaining.
      */
     public Builder setGasPrice(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1041,6 +1120,7 @@ public  final class PublicEntry extends
     }
     /**
      * <code>bytes gas_price = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGasPrice() {
       
@@ -1052,12 +1132,15 @@ public  final class PublicEntry extends
     private long gasLimit_ ;
     /**
      * <code>uint64 gas_limit = 7;</code>
+     * @return The gasLimit.
      */
     public long getGasLimit() {
       return gasLimit_;
     }
     /**
      * <code>uint64 gas_limit = 7;</code>
+     * @param value The gasLimit to set.
+     * @return This builder for chaining.
      */
     public Builder setGasLimit(long value) {
       
@@ -1067,6 +1150,7 @@ public  final class PublicEntry extends
     }
     /**
      * <code>uint64 gas_limit = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGasLimit() {
       
@@ -1082,6 +1166,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes transaction_fees = 8;</code>
+     * @return The transactionFees.
      */
     public com.google.protobuf.ByteString getTransactionFees() {
       return transactionFees_;
@@ -1092,6 +1177,8 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes transaction_fees = 8;</code>
+     * @param value The transactionFees to set.
+     * @return This builder for chaining.
      */
     public Builder setTransactionFees(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1108,6 +1195,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>bytes transaction_fees = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTransactionFees() {
       
@@ -1123,6 +1211,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>uint64 nonce = 9;</code>
+     * @return The nonce.
      */
     public long getNonce() {
       return nonce_;
@@ -1133,6 +1222,8 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>uint64 nonce = 9;</code>
+     * @param value The nonce to set.
+     * @return This builder for chaining.
      */
     public Builder setNonce(long value) {
       
@@ -1146,6 +1237,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>uint64 nonce = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNonce() {
       
@@ -1154,7 +1246,7 @@ public  final class PublicEntry extends
       return this;
     }
 
-    private Catalyst.Protocol.Cryptography.Signature signature_ = null;
+    private Catalyst.Protocol.Cryptography.Signature signature_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Cryptography.Signature, Catalyst.Protocol.Cryptography.Signature.Builder, Catalyst.Protocol.Cryptography.SignatureOrBuilder> signatureBuilder_;
     /**
@@ -1163,6 +1255,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
       return signatureBuilder_ != null || signature_ != null;
@@ -1173,6 +1266,7 @@ public  final class PublicEntry extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * @return The signature.
      */
     public Catalyst.Protocol.Cryptography.Signature getSignature() {
       if (signatureBuilder_ == null) {
@@ -1306,14 +1400,16 @@ public  final class PublicEntry extends
       }
       return signatureBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1332,11 +1428,12 @@ public  final class PublicEntry extends
 
   private static final com.google.protobuf.Parser<PublicEntry>
       PARSER = new com.google.protobuf.AbstractParser<PublicEntry>() {
+    @java.lang.Override
     public PublicEntry parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PublicEntry(input, extensionRegistry);
+      return new PublicEntry(input, extensionRegistry);
     }
   };
 
@@ -1349,6 +1446,7 @@ public  final class PublicEntry extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Transaction.PublicEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

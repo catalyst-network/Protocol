@@ -9,14 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetPeerCountRequest</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetPeerCountRequest</code>
  */
 class GetPeerCountRequest extends \Google\Protobuf\Internal\Message
 {
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
 }

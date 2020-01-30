@@ -62,7 +62,7 @@ public final class Wire {
       "ocol.Peer.PeerId\022\026\n\016correlation_id\030\003 \001(\014" +
       "\022\014\n\004code\030\004 \001(\005\"\271\001\n\017ProtocolMessage\022/\n\007pe" +
       "er_id\030\001 \001(\0132\036.Catalyst.Protocol.Peer.Pee" +
-      "rId\022\026\n\016correlation_id\030\002 \001(\014\022\020\n\010type_url\030",
+      "rId\022\026\n\016correlation_id\030\002 \001(\014\022\020\n\010type_url\030" +
       "\003 \001(\t\022\r\n\005value\030\004 \001(\014\022<\n\tsignature\030\005 \001(\0132" +
       ").Catalyst.Protocol.Cryptography.Signatu" +
       "re\"X\n\024TransactionBroadcast\022@\n\014public_ent" +
@@ -72,28 +72,20 @@ public final class Wire {
       "alyst.Protocol.Peer.PeerId\022\037\n\027previous_d" +
       "elta_dfs_hash\030\003 \001(\014\"\217\001\n\027FavouriteDeltaBr" +
       "oadcast\022B\n\tcandidate\030\001 \001(\0132/.Catalyst.Pr" +
-      "otocol.Wire.CandidateDeltaBroadcast\0220\n\010v",
+      "otocol.Wire.CandidateDeltaBroadcast\0220\n\010v" +
       "oter_id\030\002 \001(\0132\036.Catalyst.Protocol.Peer.P" +
       "eerId\"P\n\025DeltaDfsHashBroadcast\022\026\n\016delta_" +
       "dfs_hash\030\001 \001(\014\022\037\n\027previous_delta_dfs_has" +
       "h\030\002 \001(\014B\002P\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Cryptography.Cryptography.getDescriptor(),
           Catalyst.Protocol.Peer.Peer.getDescriptor(),
           Catalyst.Protocol.Transaction.Transaction.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_fieldAccessorTable = new

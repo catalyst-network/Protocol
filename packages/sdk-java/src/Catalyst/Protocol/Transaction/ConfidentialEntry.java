@@ -10,6 +10,7 @@ public  final class ConfidentialEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Transaction.ConfidentialEntry)
     ConfidentialEntryOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use ConfidentialEntry.newBuilder() to construct.
   private ConfidentialEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,20 +20,30 @@ public  final class ConfidentialEntry extends
     senderPublicKey_ = com.google.protobuf.ByteString.EMPTY;
     pedersenCommitment_ = com.google.protobuf.ByteString.EMPTY;
     transactionFees_ = com.google.protobuf.ByteString.EMPTY;
-    nonce_ = 0L;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ConfidentialEntry();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private ConfidentialEntry(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -41,12 +52,6 @@ public  final class ConfidentialEntry extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             receiverPublicKey_ = input.readBytes();
@@ -85,6 +90,13 @@ public  final class ConfidentialEntry extends
             nonce_ = input.readUInt64();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -93,6 +105,7 @@ public  final class ConfidentialEntry extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -101,6 +114,7 @@ public  final class ConfidentialEntry extends
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_ConfidentialEntry_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_ConfidentialEntry_fieldAccessorTable
@@ -116,6 +130,7 @@ public  final class ConfidentialEntry extends
    * </pre>
    *
    * <code>bytes receiver_public_key = 1;</code>
+   * @return The receiverPublicKey.
    */
   public com.google.protobuf.ByteString getReceiverPublicKey() {
     return receiverPublicKey_;
@@ -129,6 +144,7 @@ public  final class ConfidentialEntry extends
    * </pre>
    *
    * <code>bytes sender_public_key = 2;</code>
+   * @return The senderPublicKey.
    */
   public com.google.protobuf.ByteString getSenderPublicKey() {
     return senderPublicKey_;
@@ -142,6 +158,7 @@ public  final class ConfidentialEntry extends
    * </pre>
    *
    * <code>bytes pedersen_commitment = 3;</code>
+   * @return The pedersenCommitment.
    */
   public com.google.protobuf.ByteString getPedersenCommitment() {
     return pedersenCommitment_;
@@ -151,12 +168,14 @@ public  final class ConfidentialEntry extends
   private Catalyst.Protocol.Transaction.RangeProof rangeProof_;
   /**
    * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
+   * @return Whether the rangeProof field is set.
    */
   public boolean hasRangeProof() {
     return rangeProof_ != null;
   }
   /**
    * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
+   * @return The rangeProof.
    */
   public Catalyst.Protocol.Transaction.RangeProof getRangeProof() {
     return rangeProof_ == null ? Catalyst.Protocol.Transaction.RangeProof.getDefaultInstance() : rangeProof_;
@@ -176,6 +195,7 @@ public  final class ConfidentialEntry extends
    * </pre>
    *
    * <code>bytes transaction_fees = 5;</code>
+   * @return The transactionFees.
    */
   public com.google.protobuf.ByteString getTransactionFees() {
     return transactionFees_;
@@ -189,12 +209,14 @@ public  final class ConfidentialEntry extends
    * </pre>
    *
    * <code>uint64 nonce = 6;</code>
+   * @return The nonce.
    */
   public long getNonce() {
     return nonce_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -204,6 +226,7 @@ public  final class ConfidentialEntry extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!receiverPublicKey_.isEmpty()) {
@@ -224,8 +247,10 @@ public  final class ConfidentialEntry extends
     if (nonce_ != 0L) {
       output.writeUInt64(6, nonce_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -255,11 +280,11 @@ public  final class ConfidentialEntry extends
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(6, nonce_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -270,23 +295,23 @@ public  final class ConfidentialEntry extends
     }
     Catalyst.Protocol.Transaction.ConfidentialEntry other = (Catalyst.Protocol.Transaction.ConfidentialEntry) obj;
 
-    boolean result = true;
-    result = result && getReceiverPublicKey()
-        .equals(other.getReceiverPublicKey());
-    result = result && getSenderPublicKey()
-        .equals(other.getSenderPublicKey());
-    result = result && getPedersenCommitment()
-        .equals(other.getPedersenCommitment());
-    result = result && (hasRangeProof() == other.hasRangeProof());
+    if (!getReceiverPublicKey()
+        .equals(other.getReceiverPublicKey())) return false;
+    if (!getSenderPublicKey()
+        .equals(other.getSenderPublicKey())) return false;
+    if (!getPedersenCommitment()
+        .equals(other.getPedersenCommitment())) return false;
+    if (hasRangeProof() != other.hasRangeProof()) return false;
     if (hasRangeProof()) {
-      result = result && getRangeProof()
-          .equals(other.getRangeProof());
+      if (!getRangeProof()
+          .equals(other.getRangeProof())) return false;
     }
-    result = result && getTransactionFees()
-        .equals(other.getTransactionFees());
-    result = result && (getNonce()
-        == other.getNonce());
-    return result;
+    if (!getTransactionFees()
+        .equals(other.getTransactionFees())) return false;
+    if (getNonce()
+        != other.getNonce()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -316,6 +341,17 @@ public  final class ConfidentialEntry extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Transaction.ConfidentialEntry parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Transaction.ConfidentialEntry parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Transaction.ConfidentialEntry parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -375,6 +411,7 @@ public  final class ConfidentialEntry extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -382,6 +419,7 @@ public  final class ConfidentialEntry extends
   public static Builder newBuilder(Catalyst.Protocol.Transaction.ConfidentialEntry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -405,6 +443,7 @@ public  final class ConfidentialEntry extends
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_ConfidentialEntry_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_ConfidentialEntry_fieldAccessorTable
@@ -427,6 +466,7 @@ public  final class ConfidentialEntry extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       receiverPublicKey_ = com.google.protobuf.ByteString.EMPTY;
@@ -448,15 +488,18 @@ public  final class ConfidentialEntry extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_ConfidentialEntry_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.ConfidentialEntry getDefaultInstanceForType() {
       return Catalyst.Protocol.Transaction.ConfidentialEntry.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.ConfidentialEntry build() {
       Catalyst.Protocol.Transaction.ConfidentialEntry result = buildPartial();
       if (!result.isInitialized()) {
@@ -465,6 +508,7 @@ public  final class ConfidentialEntry extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.ConfidentialEntry buildPartial() {
       Catalyst.Protocol.Transaction.ConfidentialEntry result = new Catalyst.Protocol.Transaction.ConfidentialEntry(this);
       result.receiverPublicKey_ = receiverPublicKey_;
@@ -481,32 +525,39 @@ public  final class ConfidentialEntry extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Transaction.ConfidentialEntry) {
         return mergeFrom((Catalyst.Protocol.Transaction.ConfidentialEntry)other);
@@ -536,14 +587,17 @@ public  final class ConfidentialEntry extends
       if (other.getNonce() != 0L) {
         setNonce(other.getNonce());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -569,6 +623,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes receiver_public_key = 1;</code>
+     * @return The receiverPublicKey.
      */
     public com.google.protobuf.ByteString getReceiverPublicKey() {
       return receiverPublicKey_;
@@ -579,6 +634,8 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes receiver_public_key = 1;</code>
+     * @param value The receiverPublicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setReceiverPublicKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -595,6 +652,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes receiver_public_key = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearReceiverPublicKey() {
       
@@ -610,6 +668,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes sender_public_key = 2;</code>
+     * @return The senderPublicKey.
      */
     public com.google.protobuf.ByteString getSenderPublicKey() {
       return senderPublicKey_;
@@ -620,6 +679,8 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes sender_public_key = 2;</code>
+     * @param value The senderPublicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setSenderPublicKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -636,6 +697,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes sender_public_key = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSenderPublicKey() {
       
@@ -651,6 +713,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes pedersen_commitment = 3;</code>
+     * @return The pedersenCommitment.
      */
     public com.google.protobuf.ByteString getPedersenCommitment() {
       return pedersenCommitment_;
@@ -661,6 +724,8 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes pedersen_commitment = 3;</code>
+     * @param value The pedersenCommitment to set.
+     * @return This builder for chaining.
      */
     public Builder setPedersenCommitment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -677,6 +742,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes pedersen_commitment = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPedersenCommitment() {
       
@@ -685,17 +751,19 @@ public  final class ConfidentialEntry extends
       return this;
     }
 
-    private Catalyst.Protocol.Transaction.RangeProof rangeProof_ = null;
+    private Catalyst.Protocol.Transaction.RangeProof rangeProof_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Transaction.RangeProof, Catalyst.Protocol.Transaction.RangeProof.Builder, Catalyst.Protocol.Transaction.RangeProofOrBuilder> rangeProofBuilder_;
     /**
      * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
+     * @return Whether the rangeProof field is set.
      */
     public boolean hasRangeProof() {
       return rangeProofBuilder_ != null || rangeProof_ != null;
     }
     /**
      * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
+     * @return The rangeProof.
      */
     public Catalyst.Protocol.Transaction.RangeProof getRangeProof() {
       if (rangeProofBuilder_ == null) {
@@ -809,6 +877,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes transaction_fees = 5;</code>
+     * @return The transactionFees.
      */
     public com.google.protobuf.ByteString getTransactionFees() {
       return transactionFees_;
@@ -819,6 +888,8 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes transaction_fees = 5;</code>
+     * @param value The transactionFees to set.
+     * @return This builder for chaining.
      */
     public Builder setTransactionFees(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -835,6 +906,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>bytes transaction_fees = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTransactionFees() {
       
@@ -850,6 +922,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>uint64 nonce = 6;</code>
+     * @return The nonce.
      */
     public long getNonce() {
       return nonce_;
@@ -860,6 +933,8 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>uint64 nonce = 6;</code>
+     * @param value The nonce to set.
+     * @return This builder for chaining.
      */
     public Builder setNonce(long value) {
       
@@ -873,6 +948,7 @@ public  final class ConfidentialEntry extends
      * </pre>
      *
      * <code>uint64 nonce = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNonce() {
       
@@ -880,14 +956,16 @@ public  final class ConfidentialEntry extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -906,11 +984,12 @@ public  final class ConfidentialEntry extends
 
   private static final com.google.protobuf.Parser<ConfidentialEntry>
       PARSER = new com.google.protobuf.AbstractParser<ConfidentialEntry>() {
+    @java.lang.Override
     public ConfidentialEntry parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConfidentialEntry(input, extensionRegistry);
+      return new ConfidentialEntry(input, extensionRegistry);
     }
   };
 
@@ -923,6 +1002,7 @@ public  final class ConfidentialEntry extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Transaction.ConfidentialEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

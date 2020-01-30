@@ -13,6 +13,7 @@ public interface LatestDeltaHashResponseOrBuilder extends
    * </pre>
    *
    * <code>bytes delta_hash = 1;</code>
+   * @return The deltaHash.
    */
   com.google.protobuf.ByteString getDeltaHash();
 }

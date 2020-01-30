@@ -10,6 +10,7 @@ public  final class GetPeerInfoResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse)
     GetPeerInfoResponseOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use GetPeerInfoResponse.newBuilder() to construct.
   private GetPeerInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,16 +20,28 @@ public  final class GetPeerInfoResponse extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GetPeerInfoResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private GetPeerInfoResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -37,19 +50,20 @@ public  final class GetPeerInfoResponse extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               peerInfo_ = new java.util.ArrayList<Catalyst.Protocol.Peer.PeerInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             peerInfo_.add(
                 input.readMessage(Catalyst.Protocol.Peer.PeerInfo.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -60,9 +74,10 @@ public  final class GetPeerInfoResponse extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         peerInfo_ = java.util.Collections.unmodifiableList(peerInfo_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -71,6 +86,7 @@ public  final class GetPeerInfoResponse extends
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoResponse_fieldAccessorTable
@@ -114,6 +130,7 @@ public  final class GetPeerInfoResponse extends
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -123,13 +140,16 @@ public  final class GetPeerInfoResponse extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < peerInfo_.size(); i++) {
       output.writeMessage(1, peerInfo_.get(i));
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -139,11 +159,11 @@ public  final class GetPeerInfoResponse extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, peerInfo_.get(i));
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -154,10 +174,10 @@ public  final class GetPeerInfoResponse extends
     }
     Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse other = (Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse) obj;
 
-    boolean result = true;
-    result = result && getPeerInfoList()
-        .equals(other.getPeerInfoList());
-    return result;
+    if (!getPeerInfoList()
+        .equals(other.getPeerInfoList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -176,6 +196,17 @@ public  final class GetPeerInfoResponse extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -235,6 +266,7 @@ public  final class GetPeerInfoResponse extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -242,6 +274,7 @@ public  final class GetPeerInfoResponse extends
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -265,6 +298,7 @@ public  final class GetPeerInfoResponse extends
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoResponse_fieldAccessorTable
@@ -288,6 +322,7 @@ public  final class GetPeerInfoResponse extends
         getPeerInfoFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (peerInfoBuilder_ == null) {
@@ -299,15 +334,18 @@ public  final class GetPeerInfoResponse extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoResponse_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse build() {
       Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -316,11 +354,12 @@ public  final class GetPeerInfoResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse buildPartial() {
       Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse result = new Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse(this);
       int from_bitField0_ = bitField0_;
       if (peerInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           peerInfo_ = java.util.Collections.unmodifiableList(peerInfo_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -332,32 +371,39 @@ public  final class GetPeerInfoResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse)other);
@@ -395,14 +441,17 @@ public  final class GetPeerInfoResponse extends
           }
         }
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -425,7 +474,7 @@ public  final class GetPeerInfoResponse extends
     private java.util.List<Catalyst.Protocol.Peer.PeerInfo> peerInfo_ =
       java.util.Collections.emptyList();
     private void ensurePeerInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         peerInfo_ = new java.util.ArrayList<Catalyst.Protocol.Peer.PeerInfo>(peerInfo_);
         bitField0_ |= 0x00000001;
        }
@@ -654,21 +703,23 @@ public  final class GetPeerInfoResponse extends
         peerInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Peer.PeerInfo, Catalyst.Protocol.Peer.PeerInfo.Builder, Catalyst.Protocol.Peer.PeerInfoOrBuilder>(
                 peerInfo_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         peerInfo_ = null;
       }
       return peerInfoBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -687,11 +738,12 @@ public  final class GetPeerInfoResponse extends
 
   private static final com.google.protobuf.Parser<GetPeerInfoResponse>
       PARSER = new com.google.protobuf.AbstractParser<GetPeerInfoResponse>() {
+    @java.lang.Override
     public GetPeerInfoResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetPeerInfoResponse(input, extensionRegistry);
+      return new GetPeerInfoResponse(input, extensionRegistry);
     }
   };
 
@@ -704,6 +756,7 @@ public  final class GetPeerInfoResponse extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
