@@ -1,15 +1,15 @@
 {
   "name": "@catalystnetwork/protocol-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catalyst-network/protocol.git"
+  },
   "version": "0.0.1",
   "description": "Catalyst Protocol SDK-JS",
   "main": "src/index.js",
   "scripts": {
     "test": "test:unit",
     "build:ts": "protoc --plugin=\"protoc-gen-ts=\"./node_modules/.bin/protoc-gen-ts\"\" --proto_path Protocol/src/ --js_out=import_style=commonjs,binary:src --ts_out=\"src\" Protocol/src/*.proto"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/catalyst-network/protocol.git"
   },
   "keywords": [
     "catalyst-network",
