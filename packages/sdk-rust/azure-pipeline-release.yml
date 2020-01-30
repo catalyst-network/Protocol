@@ -8,5 +8,5 @@ steps:
           cargo login $(cratesio-token)
       displayName: 'login to crates.io'
     - script: |
-          cd libs/sdk-rust && cargo publish
+          cd packages/sdk-rust && cargo publish
       displayName: 'publish crate'
