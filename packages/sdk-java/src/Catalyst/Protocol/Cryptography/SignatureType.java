@@ -106,8 +106,6 @@ public enum SignatureType
   }
 
   /**
-   * @param value The numeric wire value of the corresponding enum entry.
-   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -115,10 +113,6 @@ public enum SignatureType
     return forNumber(value);
   }
 
-  /**
-   * @param value The numeric wire value of the corresponding enum entry.
-   * @return The enum associated with the given numeric wire value.
-   */
   public static SignatureType forNumber(int value) {
     switch (value) {
       case 0: return SIGNATURE_TYPE_UNKNOWN;

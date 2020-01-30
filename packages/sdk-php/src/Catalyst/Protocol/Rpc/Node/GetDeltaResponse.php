@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetDeltaResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetDeltaResponse</code>
  */
 class GetDeltaResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
+     * <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
      */
     private $delta = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Deltas\Delta $delta
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
-     * @return \Catalyst\Protocol\Deltas\Delta
+     * <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
      */
     public function getDelta()
     {
@@ -42,16 +32,12 @@ class GetDeltaResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
-     * @param \Catalyst\Protocol\Deltas\Delta $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
      */
-    public function setDelta($var)
+    public function setDelta(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Deltas\Delta::class);
         $this->delta = $var;
-
-        return $this;
     }
 
 }

@@ -52,7 +52,7 @@ public final class Transaction {
       "estamp\022\021\n\tgas_price\030\006 \001(\014\022\021\n\tgas_limit\030\007" +
       " \001(\004\022\030\n\020transaction_fees\030\010 \001(\014\022\r\n\005nonce\030" +
       "\t \001(\004\022<\n\tsignature\030\n \001(\0132).Catalyst.Prot" +
-      "ocol.Cryptography.Signature\"\321\001\n\021Confiden" +
+      "ocol.Cryptography.Signature\"\321\001\n\021Confiden",
       "tialEntry\022\033\n\023receiver_public_key\030\001 \001(\014\022\031" +
       "\n\021sender_public_key\030\002 \001(\014\022\033\n\023pedersen_co" +
       "mmitment\030\003 \001(\014\022>\n\013range_proof\030\004 \001(\0132).Ca" +
@@ -62,7 +62,7 @@ public final class Transaction {
       "\001 \001(\014\022\016\n\006amount\030\002 \001(\014\"\332\002\n\nRangeProof\022\030\n\020" +
       "value_commitment\030\001 \003(\014\022\026\n\016bit_commitment" +
       "\030\002 \001(\014\022*\n\"per_bit_blinding_factor_commit" +
-      "ment\030\003 \001(\014\022\032\n\022poly_commitment_t1\030\004 \001(\014\022\032" +
+      "ment\030\003 \001(\014\022\032\n\022poly_commitment_t1\030\004 \001(\014\022\032",
       "\n\022poly_commitment_t2\030\005 \001(\014\022\032\n\022proof_of_s" +
       "hare_tau\030\006 \001(\014\022\031\n\021proof_of_share_mu\030\007 \001(" +
       "\014\022&\n\036aggregated_vector_polynomial_l\030\010 \003(" +
@@ -72,12 +72,20 @@ public final class Transaction {
       "TION_TYPE_UNKNOWN\020\000\022\n\n\006PUBLIC\020\001\022\020\n\014CONFI" +
       "DENTIAL\020\002B\002P\001b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Cryptography.Cryptography.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-        });
+        }, assigner);
     internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_Transaction_PublicEntry_fieldAccessorTable = new

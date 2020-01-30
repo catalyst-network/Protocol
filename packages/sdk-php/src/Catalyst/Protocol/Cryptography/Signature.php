@@ -9,45 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Cryptography.Signature</code>
+ * Protobuf type <code>Catalyst.Protocol.Cryptography.Signature</code>
  */
 class Signature extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * system domain context.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
+     * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
      */
     private $signing_context = null;
     /**
+     * <pre>
      * signature digest.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes raw_bytes = 2;</code>
+     * <code>bytes raw_bytes = 2;</code>
      */
     private $raw_bytes = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Cryptography\SigningContext $signing_context
-     *           system domain context.
-     *     @type string $raw_bytes
-     *           signature digest.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Cryptography::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * system domain context.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
-     * @return \Catalyst\Protocol\Cryptography\SigningContext
+     * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
      */
     public function getSigningContext()
     {
@@ -55,25 +48,24 @@ class Signature extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * system domain context.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
-     * @param \Catalyst\Protocol\Cryptography\SigningContext $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
      */
-    public function setSigningContext($var)
+    public function setSigningContext(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Cryptography\SigningContext::class);
         $this->signing_context = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * signature digest.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes raw_bytes = 2;</code>
-     * @return string
+     * <code>bytes raw_bytes = 2;</code>
      */
     public function getRawBytes()
     {
@@ -81,18 +73,16 @@ class Signature extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * signature digest.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes raw_bytes = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes raw_bytes = 2;</code>
      */
     public function setRawBytes($var)
     {
         GPBUtil::checkString($var, False);
         $this->raw_bytes = $var;
-
-        return $this;
     }
 
 }

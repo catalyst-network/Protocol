@@ -9,7 +9,6 @@ public interface VerifyMessageResponseOrBuilder extends
 
   /**
    * <code>bool is_signed_by_key = 1;</code>
-   * @return The isSignedByKey.
    */
   boolean getIsSignedByKey();
 }

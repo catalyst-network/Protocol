@@ -9,37 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Wire.TransactionBroadcast</code>
+ * Protobuf type <code>Catalyst.Protocol.Wire.TransactionBroadcast</code>
  */
 class TransactionBroadcast extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * 0 field for confidential transaction
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
+     * <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
      */
     private $public_entry = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Transaction\PublicEntry $public_entry
-     *           0 field for confidential transaction
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Wire::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * 0 field for confidential transaction
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
-     * @return \Catalyst\Protocol\Transaction\PublicEntry
+     * <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
      */
     public function getPublicEntry()
     {
@@ -47,18 +40,16 @@ class TransactionBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * 0 field for confidential transaction
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
-     * @param \Catalyst\Protocol\Transaction\PublicEntry $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
      */
-    public function setPublicEntry($var)
+    public function setPublicEntry(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Transaction\PublicEntry::class);
         $this->public_entry = $var;
-
-        return $this;
     }
 
 }

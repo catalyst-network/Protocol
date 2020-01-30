@@ -9,42 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest</code>
  */
 class AddFileToDfsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint64 file_size = 1;</code>
+     * <code>uint64 file_size = 1;</code>
      */
     private $file_size = 0;
     /**
-     * Generated from protobuf field <code>string file_name = 2;</code>
+     * <code>string file_name = 2;</code>
      */
     private $file_name = '';
     /**
-     * Generated from protobuf field <code>string node = 3;</code>
+     * <code>string node = 3;</code>
      */
     private $node = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int|string $file_size
-     *     @type string $file_name
-     *     @type string $node
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>uint64 file_size = 1;</code>
-     * @return int|string
+     * <code>uint64 file_size = 1;</code>
      */
     public function getFileSize()
     {
@@ -52,21 +40,16 @@ class AddFileToDfsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 file_size = 1;</code>
-     * @param int|string $var
-     * @return $this
+     * <code>uint64 file_size = 1;</code>
      */
     public function setFileSize($var)
     {
         GPBUtil::checkUint64($var);
         $this->file_size = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string file_name = 2;</code>
-     * @return string
+     * <code>string file_name = 2;</code>
      */
     public function getFileName()
     {
@@ -74,21 +57,16 @@ class AddFileToDfsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string file_name = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>string file_name = 2;</code>
      */
     public function setFileName($var)
     {
         GPBUtil::checkString($var, True);
         $this->file_name = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string node = 3;</code>
-     * @return string
+     * <code>string node = 3;</code>
      */
     public function getNode()
     {
@@ -96,16 +74,12 @@ class AddFileToDfsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string node = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>string node = 3;</code>
      */
     public function setNode($var)
     {
         GPBUtil::checkString($var, True);
         $this->node = $var;
-
-        return $this;
     }
 
 }

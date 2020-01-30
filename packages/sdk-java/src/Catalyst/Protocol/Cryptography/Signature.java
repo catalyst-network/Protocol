@@ -10,7 +10,6 @@ public  final class Signature extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Cryptography.Signature)
     SignatureOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use Signature.newBuilder() to construct.
   private Signature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -20,27 +19,16 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new Signature();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private Signature(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -49,6 +37,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
             Catalyst.Protocol.Cryptography.SigningContext.Builder subBuilder = null;
             if (signingContext_ != null) {
@@ -67,13 +61,6 @@ private static final long serialVersionUID = 0L;
             rawBytes_ = input.readBytes();
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -82,7 +69,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -91,7 +77,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_Signature_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_Signature_fieldAccessorTable
@@ -107,7 +92,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
-   * @return Whether the signingContext field is set.
    */
   public boolean hasSigningContext() {
     return signingContext_ != null;
@@ -118,7 +102,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
-   * @return The signingContext.
    */
   public Catalyst.Protocol.Cryptography.SigningContext getSigningContext() {
     return signingContext_ == null ? Catalyst.Protocol.Cryptography.SigningContext.getDefaultInstance() : signingContext_;
@@ -142,14 +125,12 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes raw_bytes = 2;</code>
-   * @return The rawBytes.
    */
   public com.google.protobuf.ByteString getRawBytes() {
     return rawBytes_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -159,7 +140,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (signingContext_ != null) {
@@ -168,10 +148,8 @@ private static final long serialVersionUID = 0L;
     if (!rawBytes_.isEmpty()) {
       output.writeBytes(2, rawBytes_);
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -185,11 +163,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, rawBytes_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -200,15 +178,15 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Cryptography.Signature other = (Catalyst.Protocol.Cryptography.Signature) obj;
 
-    if (hasSigningContext() != other.hasSigningContext()) return false;
+    boolean result = true;
+    result = result && (hasSigningContext() == other.hasSigningContext());
     if (hasSigningContext()) {
-      if (!getSigningContext()
-          .equals(other.getSigningContext())) return false;
+      result = result && getSigningContext()
+          .equals(other.getSigningContext());
     }
-    if (!getRawBytes()
-        .equals(other.getRawBytes())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    result = result && getRawBytes()
+        .equals(other.getRawBytes());
+    return result;
   }
 
   @java.lang.Override
@@ -229,17 +207,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Cryptography.Signature parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Cryptography.Signature parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Cryptography.Signature parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -299,7 +266,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -307,7 +273,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Cryptography.Signature prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -331,7 +296,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_Signature_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_Signature_fieldAccessorTable
@@ -354,7 +318,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (signingContextBuilder_ == null) {
@@ -368,18 +331,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_Signature_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Cryptography.Signature getDefaultInstanceForType() {
       return Catalyst.Protocol.Cryptography.Signature.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Cryptography.Signature build() {
       Catalyst.Protocol.Cryptography.Signature result = buildPartial();
       if (!result.isInitialized()) {
@@ -388,7 +348,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Cryptography.Signature buildPartial() {
       Catalyst.Protocol.Cryptography.Signature result = new Catalyst.Protocol.Cryptography.Signature(this);
       if (signingContextBuilder_ == null) {
@@ -401,39 +360,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Cryptography.Signature) {
         return mergeFrom((Catalyst.Protocol.Cryptography.Signature)other);
@@ -451,17 +403,14 @@ private static final long serialVersionUID = 0L;
       if (other.getRawBytes() != com.google.protobuf.ByteString.EMPTY) {
         setRawBytes(other.getRawBytes());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -480,7 +429,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Catalyst.Protocol.Cryptography.SigningContext signingContext_;
+    private Catalyst.Protocol.Cryptography.SigningContext signingContext_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Cryptography.SigningContext, Catalyst.Protocol.Cryptography.SigningContext.Builder, Catalyst.Protocol.Cryptography.SigningContextOrBuilder> signingContextBuilder_;
     /**
@@ -489,7 +438,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
-     * @return Whether the signingContext field is set.
      */
     public boolean hasSigningContext() {
       return signingContextBuilder_ != null || signingContext_ != null;
@@ -500,7 +448,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
-     * @return The signingContext.
      */
     public Catalyst.Protocol.Cryptography.SigningContext getSigningContext() {
       if (signingContextBuilder_ == null) {
@@ -642,7 +589,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes raw_bytes = 2;</code>
-     * @return The rawBytes.
      */
     public com.google.protobuf.ByteString getRawBytes() {
       return rawBytes_;
@@ -653,8 +599,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes raw_bytes = 2;</code>
-     * @param value The rawBytes to set.
-     * @return This builder for chaining.
      */
     public Builder setRawBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -671,7 +615,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes raw_bytes = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearRawBytes() {
       
@@ -679,16 +622,14 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -707,12 +648,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Signature>
       PARSER = new com.google.protobuf.AbstractParser<Signature>() {
-    @java.lang.Override
     public Signature parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Signature(input, extensionRegistry);
+        return new Signature(input, extensionRegistry);
     }
   };
 
@@ -725,7 +665,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Cryptography.Signature getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

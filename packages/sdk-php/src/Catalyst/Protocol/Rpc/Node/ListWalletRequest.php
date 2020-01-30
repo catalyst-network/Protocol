@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.ListWalletRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.ListWalletRequest</code>
  */
 class ListWalletRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool query = 1;</code>
+     * <code>bool query = 1;</code>
      */
     private $query = false;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type bool $query
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>bool query = 1;</code>
-     * @return bool
+     * <code>bool query = 1;</code>
      */
     public function getQuery()
     {
@@ -42,16 +32,12 @@ class ListWalletRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool query = 1;</code>
-     * @param bool $var
-     * @return $this
+     * <code>bool query = 1;</code>
      */
     public function setQuery($var)
     {
         GPBUtil::checkBool($var);
         $this->query = $var;
-
-        return $this;
     }
 
 }

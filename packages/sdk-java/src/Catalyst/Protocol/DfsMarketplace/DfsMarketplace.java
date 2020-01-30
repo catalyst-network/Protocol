@@ -47,16 +47,24 @@ public final class DfsMarketplace {
       "_hash\030\002 \001(\t\"\356\001\n\027BlockChallengeBroadcast\022" +
       "S\n\022original_challenge\030\001 \001(\01327.Catalyst.P" +
       "rotocol.DfsMarketplace.BlockChallengeReq" +
-      "uest\022\016\n\006answer\030\002 \001(\t\0227\n\017challenged_peer\030" +
+      "uest\022\016\n\006answer\030\002 \001(\t\0227\n\017challenged_peer\030",
       "\003 \001(\0132\036.Catalyst.Protocol.Peer.PeerId\0225\n" +
       "\rchallenged_by\030\004 \001(\0132\036.Catalyst.Protocol" +
       ".Peer.PeerIdB\002P\001b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Peer.Peer.getDescriptor(),
-        });
+        }, assigner);
     internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_fieldAccessorTable = new

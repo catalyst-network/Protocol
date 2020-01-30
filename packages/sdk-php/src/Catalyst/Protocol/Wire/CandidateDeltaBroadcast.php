@@ -9,53 +9,46 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Wire.CandidateDeltaBroadcast</code>
+ * Protobuf type <code>Catalyst.Protocol.Wire.CandidateDeltaBroadcast</code>
  */
 class CandidateDeltaBroadcast extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes hash = 1;</code>
+     * <code>bytes hash = 1;</code>
      */
     private $hash = '';
     /**
+     * <pre>
      * Identifier of the producer of the candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+     * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
      */
     private $producer_id = null;
     /**
+     * <pre>
      * The DFS address for the content of the delta preceding this candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 3;</code>
+     * <code>bytes previous_delta_dfs_hash = 3;</code>
      */
     private $previous_delta_dfs_hash = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $hash
-     *           The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
-     *     @type \Catalyst\Protocol\Peer\PeerId $producer_id
-     *           Identifier of the producer of the candidate.
-     *     @type string $previous_delta_dfs_hash
-     *           The DFS address for the content of the delta preceding this candidate.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Wire::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes hash = 1;</code>
-     * @return string
+     * <code>bytes hash = 1;</code>
      */
     public function getHash()
     {
@@ -63,25 +56,24 @@ class CandidateDeltaBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes hash = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes hash = 1;</code>
      */
     public function setHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->hash = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * Identifier of the producer of the candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
-     * @return \Catalyst\Protocol\Peer\PeerId
+     * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
      */
     public function getProducerId()
     {
@@ -89,25 +81,24 @@ class CandidateDeltaBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * Identifier of the producer of the candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
-     * @param \Catalyst\Protocol\Peer\PeerId $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
      */
-    public function setProducerId($var)
+    public function setProducerId(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->producer_id = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * The DFS address for the content of the delta preceding this candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 3;</code>
-     * @return string
+     * <code>bytes previous_delta_dfs_hash = 3;</code>
      */
     public function getPreviousDeltaDfsHash()
     {
@@ -115,18 +106,16 @@ class CandidateDeltaBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The DFS address for the content of the delta preceding this candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes previous_delta_dfs_hash = 3;</code>
      */
     public function setPreviousDeltaDfsHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->previous_delta_dfs_hash = $var;
-
-        return $this;
     }
 
 }

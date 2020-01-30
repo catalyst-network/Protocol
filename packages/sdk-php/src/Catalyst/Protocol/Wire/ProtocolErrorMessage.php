@@ -9,50 +9,39 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * <pre>
  **
  * Provides a network error message, for when a node cant send/ build a valid response
+ * </pre>
  *
- * Generated from protobuf message <code>Catalyst.Protocol.Wire.ProtocolErrorMessage</code>
+ * Protobuf type <code>Catalyst.Protocol.Wire.ProtocolErrorMessage</code>
  */
 class ProtocolErrorMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
      */
     private $signature = null;
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
      */
     private $peer_id = null;
     /**
-     * Generated from protobuf field <code>bytes correlation_id = 3;</code>
+     * <code>bytes correlation_id = 3;</code>
      */
     private $correlation_id = '';
     /**
-     * Generated from protobuf field <code>int32 code = 4;</code>
+     * <code>int32 code = 4;</code>
      */
     private $code = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Cryptography\Signature $signature
-     *     @type \Catalyst\Protocol\Peer\PeerId $peer_id
-     *     @type string $correlation_id
-     *     @type int $code
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Wire::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-     * @return \Catalyst\Protocol\Cryptography\Signature
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
      */
     public function getSignature()
     {
@@ -60,21 +49,16 @@ class ProtocolErrorMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-     * @param \Catalyst\Protocol\Cryptography\Signature $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
      */
-    public function setSignature($var)
+    public function setSignature(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Cryptography\Signature::class);
         $this->signature = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-     * @return \Catalyst\Protocol\Peer\PeerId
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
      */
     public function getPeerId()
     {
@@ -82,21 +66,16 @@ class ProtocolErrorMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-     * @param \Catalyst\Protocol\Peer\PeerId $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
      */
-    public function setPeerId($var)
+    public function setPeerId(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->peer_id = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bytes correlation_id = 3;</code>
-     * @return string
+     * <code>bytes correlation_id = 3;</code>
      */
     public function getCorrelationId()
     {
@@ -104,21 +83,16 @@ class ProtocolErrorMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes correlation_id = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes correlation_id = 3;</code>
      */
     public function setCorrelationId($var)
     {
         GPBUtil::checkString($var, False);
         $this->correlation_id = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 code = 4;</code>
-     * @return int
+     * <code>int32 code = 4;</code>
      */
     public function getCode()
     {
@@ -126,16 +100,12 @@ class ProtocolErrorMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 code = 4;</code>
-     * @param int $var
-     * @return $this
+     * <code>int32 code = 4;</code>
      */
     public function setCode($var)
     {
         GPBUtil::checkInt32($var);
         $this->code = $var;
-
-        return $this;
     }
 
 }

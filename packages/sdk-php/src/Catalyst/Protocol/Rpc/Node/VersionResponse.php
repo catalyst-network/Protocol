@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.VersionResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.VersionResponse</code>
  */
 class VersionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string version = 1;</code>
+     * <code>string version = 1;</code>
      */
     private $version = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $version
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>string version = 1;</code>
-     * @return string
+     * <code>string version = 1;</code>
      */
     public function getVersion()
     {
@@ -42,16 +32,12 @@ class VersionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string version = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>string version = 1;</code>
      */
     public function setVersion($var)
     {
         GPBUtil::checkString($var, True);
         $this->version = $var;
-
-        return $this;
     }
 
 }

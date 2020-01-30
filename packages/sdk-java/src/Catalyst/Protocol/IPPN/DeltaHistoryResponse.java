@@ -10,7 +10,6 @@ public  final class DeltaHistoryResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.IPPN.DeltaHistoryResponse)
     DeltaHistoryResponseOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use DeltaHistoryResponse.newBuilder() to construct.
   private DeltaHistoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -20,28 +19,16 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new DeltaHistoryResponse();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private DeltaHistoryResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -50,20 +37,19 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               result_ = new java.util.ArrayList<Catalyst.Protocol.Deltas.DeltaIndex>();
               mutable_bitField0_ |= 0x00000001;
             }
             result_.add(
                 input.readMessage(Catalyst.Protocol.Deltas.DeltaIndex.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
             break;
           }
         }
@@ -74,10 +60,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         result_ = java.util.Collections.unmodifiableList(result_);
       }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -86,7 +71,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_fieldAccessorTable
@@ -150,7 +134,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -160,16 +143,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < result_.size(); i++) {
       output.writeMessage(1, result_.get(i));
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -179,11 +159,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, result_.get(i));
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -194,10 +174,10 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.IPPN.DeltaHistoryResponse other = (Catalyst.Protocol.IPPN.DeltaHistoryResponse) obj;
 
-    if (!getResultList()
-        .equals(other.getResultList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && getResultList()
+        .equals(other.getResultList());
+    return result;
   }
 
   @java.lang.Override
@@ -216,17 +196,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.IPPN.DeltaHistoryResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.IPPN.DeltaHistoryResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.IPPN.DeltaHistoryResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -286,7 +255,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -294,7 +262,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.IPPN.DeltaHistoryResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -318,7 +285,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_fieldAccessorTable
@@ -342,7 +308,6 @@ private static final long serialVersionUID = 0L;
         getResultFieldBuilder();
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (resultBuilder_ == null) {
@@ -354,18 +319,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.IPPN.DeltaHistoryResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.IPPN.DeltaHistoryResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.IPPN.DeltaHistoryResponse build() {
       Catalyst.Protocol.IPPN.DeltaHistoryResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -374,12 +336,11 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.IPPN.DeltaHistoryResponse buildPartial() {
       Catalyst.Protocol.IPPN.DeltaHistoryResponse result = new Catalyst.Protocol.IPPN.DeltaHistoryResponse(this);
       int from_bitField0_ = bitField0_;
       if (resultBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           result_ = java.util.Collections.unmodifiableList(result_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -391,39 +352,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.IPPN.DeltaHistoryResponse) {
         return mergeFrom((Catalyst.Protocol.IPPN.DeltaHistoryResponse)other);
@@ -461,17 +415,14 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -494,7 +445,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> result_ =
       java.util.Collections.emptyList();
     private void ensureResultIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         result_ = new java.util.ArrayList<Catalyst.Protocol.Deltas.DeltaIndex>(result_);
         bitField0_ |= 0x00000001;
        }
@@ -795,23 +746,21 @@ private static final long serialVersionUID = 0L;
         resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder>(
                 result_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
         result_ = null;
       }
       return resultBuilder_;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -830,12 +779,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<DeltaHistoryResponse>
       PARSER = new com.google.protobuf.AbstractParser<DeltaHistoryResponse>() {
-    @java.lang.Override
     public DeltaHistoryResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeltaHistoryResponse(input, extensionRegistry);
+        return new DeltaHistoryResponse(input, extensionRegistry);
     }
   };
 
@@ -848,7 +796,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.IPPN.DeltaHistoryResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

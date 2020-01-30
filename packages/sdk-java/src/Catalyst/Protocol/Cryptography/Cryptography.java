@@ -47,7 +47,7 @@ public final class Cryptography {
       "k.NetworkType\022E\n\016signature_type\030\002 \001(\0162-." +
       "Catalyst.Protocol.Cryptography.Signature" +
       "Type\"\\\n\016SignatureBatch\022\022\n\nsignatures\030\001 \003" +
-      "(\014\022\023\n\013public_keys\030\002 \003(\014\022\020\n\010messages\030\003 \003(" +
+      "(\014\022\023\n\013public_keys\030\002 \003(\014\022\020\n\010messages\030\003 \003(",
       "\014\022\017\n\007context\030\004 \001(\014*\206\001\n\rSignatureType\022\032\n\026" +
       "SIGNATURE_TYPE_UNKNOWN\020\000\022\026\n\022TRANSACTION_" +
       "PUBLIC\020\001\022\034\n\030TRANSACTION_CONFIDENTIAL\020\002\022\020" +
@@ -57,15 +57,23 @@ public final class Cryptography {
       "\022\027\n\023INVALID_PRIVATE_KEY\020\003\022\"\n\036SIGNATURE_V" +
       "ERIFICATION_FAILURE\020\004\022\032\n\026INVALID_CONTEXT" +
       "_LENGTH\020\005\022\031\n\025INVALID_BATCH_MESSAGE\020\006\022\033\n\027" +
-      "ARRAYS_NOT_EQUAL_LENGTH\020\007\022\036\n\032BATCH_VERIF" +
+      "ARRAYS_NOT_EQUAL_LENGTH\020\007\022\036\n\032BATCH_VERIF",
       "ICATION_FAILURE\020\010\022\r\n\010NO_ERROR\020\242\003B\002P\001b\006pr" +
       "oto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Network.Network.getDescriptor(),
-        });
+        }, assigner);
     internal_static_Catalyst_Protocol_Cryptography_Signature_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_Cryptography_Signature_fieldAccessorTable = new

@@ -9,81 +9,70 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Deltas.Delta</code>
+ * Protobuf type <code>Catalyst.Protocol.Deltas.Delta</code>
  */
 class Delta extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      *  address for the content of the previous delta on the DFS
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 1;</code>
+     * <code>bytes previous_delta_dfs_hash = 1;</code>
      */
     private $previous_delta_dfs_hash = '';
     /**
-     * Generated from protobuf field <code>bytes merkle_root = 2;</code>
+     * <code>bytes merkle_root = 2;</code>
      */
     private $merkle_root = '';
     /**
+     * <pre>
      * proof of delegated authority for active wokers
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes merkle_poda = 3;</code>
+     * <code>bytes merkle_poda = 3;</code>
      */
     private $merkle_poda = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp time_stamp = 4;</code>
+     * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
      */
     private $time_stamp = null;
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.PublicEntry public_entries = 5;</code>
+     * <code>repeated .Catalyst.Protocol.Transaction.PublicEntry public_entries = 5;</code>
      */
     private $public_entries;
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.ConfidentialEntry confidential_entries = 6;</code>
+     * <code>repeated .Catalyst.Protocol.Transaction.ConfidentialEntry confidential_entries = 6;</code>
      */
     private $confidential_entries;
     /**
+     * <pre>
      * one per active worker
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.CoinbaseEntry coinbase_entries = 7;</code>
+     * <code>repeated .Catalyst.Protocol.Transaction.CoinbaseEntry coinbase_entries = 7;</code>
      */
     private $coinbase_entries;
     /**
+     * <pre>
      * the hash of the state root
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes state_root = 8;</code>
+     * <code>bytes state_root = 8;</code>
      */
     private $state_root = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $previous_delta_dfs_hash
-     *            address for the content of the previous delta on the DFS
-     *     @type string $merkle_root
-     *     @type string $merkle_poda
-     *           proof of delegated authority for active wokers
-     *     @type \Google\Protobuf\Timestamp $time_stamp
-     *     @type \Catalyst\Protocol\Transaction\PublicEntry[]|\Google\Protobuf\Internal\RepeatedField $public_entries
-     *     @type \Catalyst\Protocol\Transaction\ConfidentialEntry[]|\Google\Protobuf\Internal\RepeatedField $confidential_entries
-     *     @type \Catalyst\Protocol\Transaction\CoinbaseEntry[]|\Google\Protobuf\Internal\RepeatedField $coinbase_entries
-     *           one per active worker
-     *     @type string $state_root
-     *           the hash of the state root
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Deltas::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      *  address for the content of the previous delta on the DFS
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 1;</code>
-     * @return string
+     * <code>bytes previous_delta_dfs_hash = 1;</code>
      */
     public function getPreviousDeltaDfsHash()
     {
@@ -91,23 +80,20 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      *  address for the content of the previous delta on the DFS
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes previous_delta_dfs_hash = 1;</code>
      */
     public function setPreviousDeltaDfsHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->previous_delta_dfs_hash = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bytes merkle_root = 2;</code>
-     * @return string
+     * <code>bytes merkle_root = 2;</code>
      */
     public function getMerkleRoot()
     {
@@ -115,23 +101,20 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes merkle_root = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes merkle_root = 2;</code>
      */
     public function setMerkleRoot($var)
     {
         GPBUtil::checkString($var, False);
         $this->merkle_root = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * proof of delegated authority for active wokers
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes merkle_poda = 3;</code>
-     * @return string
+     * <code>bytes merkle_poda = 3;</code>
      */
     public function getMerklePoda()
     {
@@ -139,23 +122,20 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * proof of delegated authority for active wokers
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes merkle_poda = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes merkle_poda = 3;</code>
      */
     public function setMerklePoda($var)
     {
         GPBUtil::checkString($var, False);
         $this->merkle_poda = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp time_stamp = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
      */
     public function getTimeStamp()
     {
@@ -163,21 +143,16 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp time_stamp = 4;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
+     * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
      */
-    public function setTimeStamp($var)
+    public function setTimeStamp(&$var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->time_stamp = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.PublicEntry public_entries = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * <code>repeated .Catalyst.Protocol.Transaction.PublicEntry public_entries = 5;</code>
      */
     public function getPublicEntries()
     {
@@ -185,21 +160,16 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.PublicEntry public_entries = 5;</code>
-     * @param \Catalyst\Protocol\Transaction\PublicEntry[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
+     * <code>repeated .Catalyst.Protocol.Transaction.PublicEntry public_entries = 5;</code>
      */
-    public function setPublicEntries($var)
+    public function setPublicEntries(&$var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\PublicEntry::class);
-        $this->public_entries = $arr;
-
-        return $this;
+        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\PublicEntry::class);
+        $this->public_entries = $var;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.ConfidentialEntry confidential_entries = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * <code>repeated .Catalyst.Protocol.Transaction.ConfidentialEntry confidential_entries = 6;</code>
      */
     public function getConfidentialEntries()
     {
@@ -207,23 +177,20 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.ConfidentialEntry confidential_entries = 6;</code>
-     * @param \Catalyst\Protocol\Transaction\ConfidentialEntry[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
+     * <code>repeated .Catalyst.Protocol.Transaction.ConfidentialEntry confidential_entries = 6;</code>
      */
-    public function setConfidentialEntries($var)
+    public function setConfidentialEntries(&$var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\ConfidentialEntry::class);
-        $this->confidential_entries = $arr;
-
-        return $this;
+        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\ConfidentialEntry::class);
+        $this->confidential_entries = $var;
     }
 
     /**
+     * <pre>
      * one per active worker
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.CoinbaseEntry coinbase_entries = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * <code>repeated .Catalyst.Protocol.Transaction.CoinbaseEntry coinbase_entries = 7;</code>
      */
     public function getCoinbaseEntries()
     {
@@ -231,25 +198,24 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * one per active worker
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Transaction.CoinbaseEntry coinbase_entries = 7;</code>
-     * @param \Catalyst\Protocol\Transaction\CoinbaseEntry[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
+     * <code>repeated .Catalyst.Protocol.Transaction.CoinbaseEntry coinbase_entries = 7;</code>
      */
-    public function setCoinbaseEntries($var)
+    public function setCoinbaseEntries(&$var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\CoinbaseEntry::class);
-        $this->coinbase_entries = $arr;
-
-        return $this;
+        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Transaction\CoinbaseEntry::class);
+        $this->coinbase_entries = $var;
     }
 
     /**
+     * <pre>
      * the hash of the state root
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes state_root = 8;</code>
-     * @return string
+     * <code>bytes state_root = 8;</code>
      */
     public function getStateRoot()
     {
@@ -257,18 +223,16 @@ class Delta extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * the hash of the state root
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes state_root = 8;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes state_root = 8;</code>
      */
     public function setStateRoot($var)
     {
         GPBUtil::checkString($var, False);
         $this->state_root = $var;
-
-        return $this;
     }
 
 }

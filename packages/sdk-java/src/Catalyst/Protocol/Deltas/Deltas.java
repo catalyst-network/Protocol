@@ -42,17 +42,25 @@ public final class Deltas {
       "2\032.google.protobuf.Timestamp\022B\n\016public_e" +
       "ntries\030\005 \003(\0132*.Catalyst.Protocol.Transac" +
       "tion.PublicEntry\022N\n\024confidential_entries" +
-      "\030\006 \003(\01320.Catalyst.Protocol.Transaction.C" +
+      "\030\006 \003(\01320.Catalyst.Protocol.Transaction.C",
       "onfidentialEntry\022F\n\020coinbase_entries\030\007 \003" +
       "(\0132,.Catalyst.Protocol.Transaction.Coinb" +
       "aseEntry\022\022\n\nstate_root\030\010 \001(\014B\002P\001b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Transaction.Transaction.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-        });
+        }, assigner);
     internal_static_Catalyst_Protocol_Deltas_DeltaIndex_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_Deltas_DeltaIndex_fieldAccessorTable = new

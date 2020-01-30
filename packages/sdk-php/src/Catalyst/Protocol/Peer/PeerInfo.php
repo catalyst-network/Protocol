@@ -9,93 +9,86 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Peer.PeerInfo</code>
+ * Protobuf type <code>Catalyst.Protocol.Peer.PeerInfo</code>
  */
 class PeerInfo extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * is peerId of network
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
      */
     private $peer_id = null;
     /**
+     * <pre>
      * reputation of peer
+     * </pre>
      *
-     * Generated from protobuf field <code>sint32 reputation = 2;</code>
+     * <code>sint32 reputation = 2;</code>
      */
     private $reputation = 0;
     /**
+     * <pre>
      * is to check if the peer is blackListed
+     * </pre>
      *
-     * Generated from protobuf field <code>bool is_blacklisted = 3;</code>
+     * <code>bool is_blacklisted = 3;</code>
      */
     private $is_blacklisted = false;
     /**
+     * <pre>
      * is when the peer cannot be reached on the network
+     * </pre>
      *
-     * Generated from protobuf field <code>bool is_unreachable = 4;</code>
+     * <code>bool is_unreachable = 4;</code>
      */
     private $is_unreachable = false;
     /**
+     * <pre>
      * is how long the peer has beekn inactive for
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration inactive_for = 5;</code>
+     * <code>.google.protobuf.Duration inactive_for = 5;</code>
      */
     private $inactive_for = null;
     /**
+     * <pre>
      * is when the peer was last seen
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_seen = 6;</code>
+     * <code>.google.protobuf.Timestamp last_seen = 6;</code>
      */
     private $last_seen = null;
     /**
+     * <pre>
      * modified is when the peer was last modified
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp modified = 7;</code>
+     * <code>.google.protobuf.Timestamp modified = 7;</code>
      */
     private $modified = null;
     /**
+     * <pre>
      * created is when the peer was created
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created = 8;</code>
+     * <code>.google.protobuf.Timestamp created = 8;</code>
      */
     private $created = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Peer\PeerId $peer_id
-     *           is peerId of network
-     *     @type int $reputation
-     *           reputation of peer
-     *     @type bool $is_blacklisted
-     *           is to check if the peer is blackListed
-     *     @type bool $is_unreachable
-     *           is when the peer cannot be reached on the network
-     *     @type \Google\Protobuf\Duration $inactive_for
-     *           is how long the peer has beekn inactive for
-     *     @type \Google\Protobuf\Timestamp $last_seen
-     *           is when the peer was last seen
-     *     @type \Google\Protobuf\Timestamp $modified
-     *           modified is when the peer was last modified
-     *     @type \Google\Protobuf\Timestamp $created
-     *           created is when the peer was created
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Peer::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * is peerId of network
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
-     * @return \Catalyst\Protocol\Peer\PeerId
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
      */
     public function getPeerId()
     {
@@ -103,25 +96,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is peerId of network
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
-     * @param \Catalyst\Protocol\Peer\PeerId $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
      */
-    public function setPeerId($var)
+    public function setPeerId(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->peer_id = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * reputation of peer
+     * </pre>
      *
-     * Generated from protobuf field <code>sint32 reputation = 2;</code>
-     * @return int
+     * <code>sint32 reputation = 2;</code>
      */
     public function getReputation()
     {
@@ -129,25 +121,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * reputation of peer
+     * </pre>
      *
-     * Generated from protobuf field <code>sint32 reputation = 2;</code>
-     * @param int $var
-     * @return $this
+     * <code>sint32 reputation = 2;</code>
      */
     public function setReputation($var)
     {
         GPBUtil::checkInt32($var);
         $this->reputation = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is to check if the peer is blackListed
+     * </pre>
      *
-     * Generated from protobuf field <code>bool is_blacklisted = 3;</code>
-     * @return bool
+     * <code>bool is_blacklisted = 3;</code>
      */
     public function getIsBlacklisted()
     {
@@ -155,25 +146,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is to check if the peer is blackListed
+     * </pre>
      *
-     * Generated from protobuf field <code>bool is_blacklisted = 3;</code>
-     * @param bool $var
-     * @return $this
+     * <code>bool is_blacklisted = 3;</code>
      */
     public function setIsBlacklisted($var)
     {
         GPBUtil::checkBool($var);
         $this->is_blacklisted = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is when the peer cannot be reached on the network
+     * </pre>
      *
-     * Generated from protobuf field <code>bool is_unreachable = 4;</code>
-     * @return bool
+     * <code>bool is_unreachable = 4;</code>
      */
     public function getIsUnreachable()
     {
@@ -181,25 +171,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is when the peer cannot be reached on the network
+     * </pre>
      *
-     * Generated from protobuf field <code>bool is_unreachable = 4;</code>
-     * @param bool $var
-     * @return $this
+     * <code>bool is_unreachable = 4;</code>
      */
     public function setIsUnreachable($var)
     {
         GPBUtil::checkBool($var);
         $this->is_unreachable = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is how long the peer has beekn inactive for
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration inactive_for = 5;</code>
-     * @return \Google\Protobuf\Duration
+     * <code>.google.protobuf.Duration inactive_for = 5;</code>
      */
     public function getInactiveFor()
     {
@@ -207,25 +196,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is how long the peer has beekn inactive for
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration inactive_for = 5;</code>
-     * @param \Google\Protobuf\Duration $var
-     * @return $this
+     * <code>.google.protobuf.Duration inactive_for = 5;</code>
      */
-    public function setInactiveFor($var)
+    public function setInactiveFor(&$var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->inactive_for = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is when the peer was last seen
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_seen = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * <code>.google.protobuf.Timestamp last_seen = 6;</code>
      */
     public function getLastSeen()
     {
@@ -233,25 +221,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is when the peer was last seen
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_seen = 6;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
+     * <code>.google.protobuf.Timestamp last_seen = 6;</code>
      */
-    public function setLastSeen($var)
+    public function setLastSeen(&$var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_seen = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * modified is when the peer was last modified
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp modified = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * <code>.google.protobuf.Timestamp modified = 7;</code>
      */
     public function getModified()
     {
@@ -259,25 +246,24 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * modified is when the peer was last modified
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp modified = 7;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
+     * <code>.google.protobuf.Timestamp modified = 7;</code>
      */
-    public function setModified($var)
+    public function setModified(&$var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * created is when the peer was created
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * <code>.google.protobuf.Timestamp created = 8;</code>
      */
     public function getCreated()
     {
@@ -285,18 +271,16 @@ class PeerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * created is when the peer was created
+     * </pre>
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created = 8;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
+     * <code>.google.protobuf.Timestamp created = 8;</code>
      */
-    public function setCreated($var)
+    public function setCreated(&$var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created = $var;
-
-        return $this;
     }
 
 }

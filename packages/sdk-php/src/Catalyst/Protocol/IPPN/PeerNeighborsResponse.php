@@ -9,37 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.IPPN.PeerNeighborsResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.IPPN.PeerNeighborsResponse</code>
  */
 class PeerNeighborsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * Random subset of a nodes peer db.
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Peer.PeerId peers = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Peer.PeerId peers = 1;</code>
      */
     private $peers;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Peer\PeerId[]|\Google\Protobuf\Internal\RepeatedField $peers
-     *           Random subset of a nodes peer db.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * Random subset of a nodes peer db.
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Peer.PeerId peers = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * <code>repeated .Catalyst.Protocol.Peer.PeerId peers = 1;</code>
      */
     public function getPeers()
     {
@@ -47,18 +40,16 @@ class PeerNeighborsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * Random subset of a nodes peer db.
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Peer.PeerId peers = 1;</code>
-     * @param \Catalyst\Protocol\Peer\PeerId[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
+     * <code>repeated .Catalyst.Protocol.Peer.PeerId peers = 1;</code>
      */
-    public function setPeers($var)
+    public function setPeers(&$var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Peer\PeerId::class);
-        $this->peers = $arr;
-
-        return $this;
+        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Peer\PeerId::class);
+        $this->peers = $var;
     }
 
 }

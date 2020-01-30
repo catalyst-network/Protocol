@@ -9,45 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Transaction.CoinbaseEntry</code>
+ * Protobuf type <code>Catalyst.Protocol.Transaction.CoinbaseEntry</code>
  */
 class CoinbaseEntry extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * public key behind the address where the Coinbase will be credited
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes receiver_public_key = 1;</code>
+     * <code>bytes receiver_public_key = 1;</code>
      */
     private $receiver_public_key = '';
     /**
+     * <pre>
      * uint256 amount
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes amount = 2;</code>
+     * <code>bytes amount = 2;</code>
      */
     private $amount = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $receiver_public_key
-     *           public key behind the address where the Coinbase will be credited
-     *     @type string $amount
-     *           uint256 amount
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Transaction::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * public key behind the address where the Coinbase will be credited
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes receiver_public_key = 1;</code>
-     * @return string
+     * <code>bytes receiver_public_key = 1;</code>
      */
     public function getReceiverPublicKey()
     {
@@ -55,25 +48,24 @@ class CoinbaseEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * public key behind the address where the Coinbase will be credited
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes receiver_public_key = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes receiver_public_key = 1;</code>
      */
     public function setReceiverPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->receiver_public_key = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * uint256 amount
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes amount = 2;</code>
-     * @return string
+     * <code>bytes amount = 2;</code>
      */
     public function getAmount()
     {
@@ -81,18 +73,16 @@ class CoinbaseEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * uint256 amount
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes amount = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes amount = 2;</code>
      */
     public function setAmount($var)
     {
         GPBUtil::checkString($var, False);
         $this->amount = $var;
-
-        return $this;
     }
 
 }

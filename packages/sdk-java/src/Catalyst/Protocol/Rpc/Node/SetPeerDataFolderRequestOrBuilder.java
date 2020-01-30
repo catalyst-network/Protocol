@@ -9,12 +9,10 @@ public interface SetPeerDataFolderRequestOrBuilder extends
 
   /**
    * <code>string data_folder = 1;</code>
-   * @return The dataFolder.
    */
   java.lang.String getDataFolder();
   /**
    * <code>string data_folder = 1;</code>
-   * @return The bytes for dataFolder.
    */
   com.google.protobuf.ByteString
       getDataFolderBytes();

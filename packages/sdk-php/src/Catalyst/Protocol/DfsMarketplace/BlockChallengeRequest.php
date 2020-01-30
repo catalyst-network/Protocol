@@ -9,42 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest</code>
  */
 class BlockChallengeRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string challenge_salt = 1;</code>
+     * <code>string challenge_salt = 1;</code>
      */
     private $challenge_salt = '';
     /**
-     * Generated from protobuf field <code>string main_file_cid = 2;</code>
+     * <code>string main_file_cid = 2;</code>
      */
     private $main_file_cid = '';
     /**
-     * Generated from protobuf field <code>bytes block_idx_random_guid = 3;</code>
+     * <code>bytes block_idx_random_guid = 3;</code>
      */
     private $block_idx_random_guid = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $challenge_salt
-     *     @type string $main_file_cid
-     *     @type string $block_idx_random_guid
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\DfsMarketplace::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>string challenge_salt = 1;</code>
-     * @return string
+     * <code>string challenge_salt = 1;</code>
      */
     public function getChallengeSalt()
     {
@@ -52,21 +40,16 @@ class BlockChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string challenge_salt = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>string challenge_salt = 1;</code>
      */
     public function setChallengeSalt($var)
     {
         GPBUtil::checkString($var, True);
         $this->challenge_salt = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string main_file_cid = 2;</code>
-     * @return string
+     * <code>string main_file_cid = 2;</code>
      */
     public function getMainFileCid()
     {
@@ -74,21 +57,16 @@ class BlockChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string main_file_cid = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>string main_file_cid = 2;</code>
      */
     public function setMainFileCid($var)
     {
         GPBUtil::checkString($var, True);
         $this->main_file_cid = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bytes block_idx_random_guid = 3;</code>
-     * @return string
+     * <code>bytes block_idx_random_guid = 3;</code>
      */
     public function getBlockIdxRandomGuid()
     {
@@ -96,16 +74,12 @@ class BlockChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes block_idx_random_guid = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes block_idx_random_guid = 3;</code>
      */
     public function setBlockIdxRandomGuid($var)
     {
         GPBUtil::checkString($var, False);
         $this->block_idx_random_guid = $var;
-
-        return $this;
     }
 
 }

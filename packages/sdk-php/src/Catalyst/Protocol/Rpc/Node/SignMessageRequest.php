@@ -9,42 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SignMessageRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.SignMessageRequest</code>
  */
 class SignMessageRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes message = 1;</code>
+     * <code>bytes message = 1;</code>
      */
     private $message = '';
     /**
-     * Generated from protobuf field <code>string key_id = 2;</code>
+     * <code>string key_id = 2;</code>
      */
     private $key_id = '';
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
+     * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
      */
     private $signing_context = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $message
-     *     @type string $key_id
-     *     @type \Catalyst\Protocol\Cryptography\SigningContext $signing_context
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>bytes message = 1;</code>
-     * @return string
+     * <code>bytes message = 1;</code>
      */
     public function getMessage()
     {
@@ -52,21 +40,16 @@ class SignMessageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes message = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes message = 1;</code>
      */
     public function setMessage($var)
     {
         GPBUtil::checkString($var, False);
         $this->message = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string key_id = 2;</code>
-     * @return string
+     * <code>string key_id = 2;</code>
      */
     public function getKeyId()
     {
@@ -74,21 +57,16 @@ class SignMessageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string key_id = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>string key_id = 2;</code>
      */
     public function setKeyId($var)
     {
         GPBUtil::checkString($var, True);
         $this->key_id = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
-     * @return \Catalyst\Protocol\Cryptography\SigningContext
+     * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
      */
     public function getSigningContext()
     {
@@ -96,16 +74,12 @@ class SignMessageRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
-     * @param \Catalyst\Protocol\Cryptography\SigningContext $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
      */
-    public function setSigningContext($var)
+    public function setSigningContext(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Cryptography\SigningContext::class);
         $this->signing_context = $var;
-
-        return $this;
     }
 
 }

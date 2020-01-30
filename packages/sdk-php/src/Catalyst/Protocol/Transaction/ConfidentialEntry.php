@@ -9,74 +9,66 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Transaction.ConfidentialEntry</code>
+ * Protobuf type <code>Catalyst.Protocol.Transaction.ConfidentialEntry</code>
  */
 class ConfidentialEntry extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * PublicKey of receiver.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes receiver_public_key = 1;</code>
+     * <code>bytes receiver_public_key = 1;</code>
      */
     private $receiver_public_key = '';
     /**
+     * <pre>
      * PublicKey of sender.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes sender_public_key = 2;</code>
+     * <code>bytes sender_public_key = 2;</code>
      */
     private $sender_public_key = '';
     /**
+     * <pre>
      * 32 bytes
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes pedersen_commitment = 3;</code>
+     * <code>bytes pedersen_commitment = 3;</code>
      */
     private $pedersen_commitment = '';
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
+     * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
      */
     private $range_proof = null;
     /**
+     * <pre>
      * 8 bytes, clear text, fees * 10^12
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes transaction_fees = 5;</code>
+     * <code>bytes transaction_fees = 5;</code>
      */
     private $transaction_fees = '';
     /**
+     * <pre>
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
+     * </pre>
      *
-     * Generated from protobuf field <code>uint64 nonce = 6;</code>
+     * <code>uint64 nonce = 6;</code>
      */
     private $nonce = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $receiver_public_key
-     *           PublicKey of receiver.
-     *     @type string $sender_public_key
-     *           PublicKey of sender.
-     *     @type string $pedersen_commitment
-     *           32 bytes
-     *     @type \Catalyst\Protocol\Transaction\RangeProof $range_proof
-     *     @type string $transaction_fees
-     *           8 bytes, clear text, fees * 10^12
-     *     @type int|string $nonce
-     *           A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Transaction::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * PublicKey of receiver.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes receiver_public_key = 1;</code>
-     * @return string
+     * <code>bytes receiver_public_key = 1;</code>
      */
     public function getReceiverPublicKey()
     {
@@ -84,25 +76,24 @@ class ConfidentialEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * PublicKey of receiver.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes receiver_public_key = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes receiver_public_key = 1;</code>
      */
     public function setReceiverPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->receiver_public_key = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * PublicKey of sender.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes sender_public_key = 2;</code>
-     * @return string
+     * <code>bytes sender_public_key = 2;</code>
      */
     public function getSenderPublicKey()
     {
@@ -110,25 +101,24 @@ class ConfidentialEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * PublicKey of sender.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes sender_public_key = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes sender_public_key = 2;</code>
      */
     public function setSenderPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->sender_public_key = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * 32 bytes
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes pedersen_commitment = 3;</code>
-     * @return string
+     * <code>bytes pedersen_commitment = 3;</code>
      */
     public function getPedersenCommitment()
     {
@@ -136,23 +126,20 @@ class ConfidentialEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * 32 bytes
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes pedersen_commitment = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes pedersen_commitment = 3;</code>
      */
     public function setPedersenCommitment($var)
     {
         GPBUtil::checkString($var, False);
         $this->pedersen_commitment = $var;
-
-        return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
-     * @return \Catalyst\Protocol\Transaction\RangeProof
+     * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
      */
     public function getRangeProof()
     {
@@ -160,23 +147,20 @@ class ConfidentialEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
-     * @param \Catalyst\Protocol\Transaction\RangeProof $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
      */
-    public function setRangeProof($var)
+    public function setRangeProof(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Transaction\RangeProof::class);
         $this->range_proof = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * 8 bytes, clear text, fees * 10^12
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes transaction_fees = 5;</code>
-     * @return string
+     * <code>bytes transaction_fees = 5;</code>
      */
     public function getTransactionFees()
     {
@@ -184,25 +168,24 @@ class ConfidentialEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * 8 bytes, clear text, fees * 10^12
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes transaction_fees = 5;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes transaction_fees = 5;</code>
      */
     public function setTransactionFees($var)
     {
         GPBUtil::checkString($var, False);
         $this->transaction_fees = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
+     * </pre>
      *
-     * Generated from protobuf field <code>uint64 nonce = 6;</code>
-     * @return int|string
+     * <code>uint64 nonce = 6;</code>
      */
     public function getNonce()
     {
@@ -210,18 +193,16 @@ class ConfidentialEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
+     * </pre>
      *
-     * Generated from protobuf field <code>uint64 nonce = 6;</code>
-     * @param int|string $var
-     * @return $this
+     * <code>uint64 nonce = 6;</code>
      */
     public function setNonce($var)
     {
         GPBUtil::checkUint64($var);
         $this->nonce = $var;
-
-        return $this;
     }
 
 }

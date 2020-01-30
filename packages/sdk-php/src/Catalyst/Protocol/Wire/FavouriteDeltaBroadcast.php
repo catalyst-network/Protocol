@@ -9,45 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Wire.FavouriteDeltaBroadcast</code>
+ * Protobuf type <code>Catalyst.Protocol.Wire.FavouriteDeltaBroadcast</code>
  */
 class FavouriteDeltaBroadcast extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * The candidate favoured by the voter broadcasting this message.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
+     * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
      */
     private $candidate = null;
     /**
+     * <pre>
      * The PeerId of the participant submitting its vote to the network.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
+     * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
      */
     private $voter_id = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Wire\CandidateDeltaBroadcast $candidate
-     *           The candidate favoured by the voter broadcasting this message.
-     *     @type \Catalyst\Protocol\Peer\PeerId $voter_id
-     *           The PeerId of the participant submitting its vote to the network.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Wire::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * The candidate favoured by the voter broadcasting this message.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
-     * @return \Catalyst\Protocol\Wire\CandidateDeltaBroadcast
+     * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
      */
     public function getCandidate()
     {
@@ -55,25 +48,24 @@ class FavouriteDeltaBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The candidate favoured by the voter broadcasting this message.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
-     * @param \Catalyst\Protocol\Wire\CandidateDeltaBroadcast $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
      */
-    public function setCandidate($var)
+    public function setCandidate(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Wire\CandidateDeltaBroadcast::class);
         $this->candidate = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * The PeerId of the participant submitting its vote to the network.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
-     * @return \Catalyst\Protocol\Peer\PeerId
+     * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
      */
     public function getVoterId()
     {
@@ -81,18 +73,16 @@ class FavouriteDeltaBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The PeerId of the participant submitting its vote to the network.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
-     * @param \Catalyst\Protocol\Peer\PeerId $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
      */
-    public function setVoterId($var)
+    public function setVoterId(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->voter_id = $var;
-
-        return $this;
     }
 
 }
