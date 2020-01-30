@@ -1,0 +1,17 @@
+trigger:
+    - master
+
+pool:
+    vmImage: 'ubuntu-latest'
+
+steps:
+    - task: Npm@1
+      displayName: 'Install NPM'
+      inputs:
+          command: 'install'
+
+    - task: Npm@1
+      inputs:
+          customCommand: publish --access public
+          publishEndpoint: 'npm'
+          workingDir: 'packages/sdk-js'
