@@ -1,0 +1,12 @@
+steps:
+- script: cargo install protobuf-codegen
+  displayName: 'Install Rust protobuff-codegen'
+
+- script: cd packages/sdk-rust && make build
+  displayName: 'Generate rust sdk'
+
+- script: cd packages/sdk-rust && make cargobuild
+  displayName: 'Cargo build'
+
+- script: cd packages/sdk-rust && make cargotest
+  displayName: 'Cargo test'

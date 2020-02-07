@@ -1,0 +1,37 @@
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: setupProtobuffs
+  steps:
+  - script: curl -OL https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip && unzip protoc-3.2.0-linux-x86_64.zip -d protoc3
+    displayName: 'Get Protobuffs'
+    condition: succeeded()
+
+  - script: sudo mv protoc3/bin/* /usr/local/bin/ && sudo mv protoc3/include/* /usr/local/include/ && ls -la /usr/local/bin
+    displayName: 'Intall Protobuffs'
+    condition: succeeded()
+
+  - script: sudo chown root /usr/local/bin/protoc && sudo chown -R root /usr/local/include/google && ls -la /usr/local/bin
+    displayName: 'Set permissions'
+    condition: succeeded()
+
+  - template: ./packages/sdk-cpp/azure-pipeline.yml
+
+  - template: ./packages/sdk-java/azure-pipeline.yml
+
+  - template: ./packages/sdk-js/azure-pipeline.yml
+
+  - template: ./packages/sdk-objc/azure-pipeline.yml
+
+  - template: ./packages/sdk-php/azure-pipeline.yml
+
+  - template: ./packages/sdk-python/azure-pipeline.yml
+
+  - template: ./packages/sdk-ruby/azure-pipeline.yml
+
+  - template: ./packages/sdk-rust/azure-pipeline.yml
+
