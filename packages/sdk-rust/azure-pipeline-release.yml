@@ -1,0 +1,12 @@
+trigger: none
+
+pool:
+    vmImage: 'ubuntu-latest'
+
+steps:
+    - script: |
+          cargo login $(cratesio-token)
+      displayName: 'login to crates.io'
+    - script: |
+          cd packages/sdk-rust && cargo publish
+      displayName: 'publish crate'
