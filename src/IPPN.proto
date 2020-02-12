@@ -39,7 +39,7 @@ message PingResponse { }
 message LatestDeltaHashRequest { }
 
 message LatestDeltaHashResponse {
-    bytes delta_hash = 1; // Rhe cid of a nodes last delta.
+	Deltas.DeltaIndex result = 1; // K given del
 }
 
 message DeltaHistoryRequest {
