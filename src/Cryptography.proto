@@ -37,7 +37,7 @@ enum SignatureType {
 	TRANSACTION_CONFIDENTIAL = 2; // Signatures for confidential transactions.
 	PROTOCOL_RPC = 3; // Signatures for rpc messages.
 	PROTOCOL_PEER = 4; // Signatures for peer protocol messages.
-	PERSONAL_MESSAGE = 5; // Signatures for general messages.
+	WEB3_MESSAGE = 5; // Signatures for messages in the wen3 provider.
 }
 
 message SigningContext {
