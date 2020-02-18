@@ -5,5 +5,9 @@ pool:
     vmImage: 'ubuntu-latest'
 
 steps:
-  - script: ./publish.sh
-    displayName: 'Generate js sdk'
+  - script: |
+      echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
+
+      cd packages/sdk-js && npm install --unsafe-perm --no-optional \
+      && npm publish --access public
+    displayName: 'Publish NPM package to npmjs.org'
