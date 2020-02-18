@@ -1,0 +1,3 @@
+steps:
+- script: cd packages/sdk-cpp && make build
+  displayName: 'Generate cpp sdk'

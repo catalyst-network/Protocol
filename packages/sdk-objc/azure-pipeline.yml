@@ -1,0 +1,3 @@
+steps:
+- script: cd packages/sdk-objc && make build
+  displayName: 'Generate objc sdk'
