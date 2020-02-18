@@ -3,22 +3,25 @@
 
 package Catalyst.Protocol.Rpc.Node;
 
-public interface SetPeerBlacklistRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+public interface SetPeerBlackListRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <code>bytes public_key = 1;</code>
+   * @return The publicKey.
    */
   com.google.protobuf.ByteString getPublicKey();
 
   /**
    * <code>bytes ip = 2;</code>
+   * @return The ip.
    */
   com.google.protobuf.ByteString getIp();
 
   /**
    * <code>bool blacklist = 3;</code>
+   * @return The blacklist.
    */
   boolean getBlacklist();
 }

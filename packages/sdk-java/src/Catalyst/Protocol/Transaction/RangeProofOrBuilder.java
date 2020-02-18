@@ -13,6 +13,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes value_commitment = 1;</code>
+   * @return A list containing the valueCommitment.
    */
   java.util.List<com.google.protobuf.ByteString> getValueCommitmentList();
   /**
@@ -21,6 +22,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes value_commitment = 1;</code>
+   * @return The count of valueCommitment.
    */
   int getValueCommitmentCount();
   /**
@@ -29,6 +31,8 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes value_commitment = 1;</code>
+   * @param index The index of the element to return.
+   * @return The valueCommitment at the given index.
    */
   com.google.protobuf.ByteString getValueCommitment(int index);
 
@@ -38,6 +42,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes bit_commitment = 2;</code>
+   * @return The bitCommitment.
    */
   com.google.protobuf.ByteString getBitCommitment();
 
@@ -47,6 +52,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+   * @return The perBitBlindingFactorCommitment.
    */
   com.google.protobuf.ByteString getPerBitBlindingFactorCommitment();
 
@@ -56,6 +62,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes poly_commitment_t1 = 4;</code>
+   * @return The polyCommitmentT1.
    */
   com.google.protobuf.ByteString getPolyCommitmentT1();
 
@@ -65,6 +72,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes poly_commitment_t2 = 5;</code>
+   * @return The polyCommitmentT2.
    */
   com.google.protobuf.ByteString getPolyCommitmentT2();
 
@@ -74,6 +82,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes proof_of_share_tau = 6;</code>
+   * @return The proofOfShareTau.
    */
   com.google.protobuf.ByteString getProofOfShareTau();
 
@@ -83,6 +92,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes proof_of_share_mu = 7;</code>
+   * @return The proofOfShareMu.
    */
   com.google.protobuf.ByteString getProofOfShareMu();
 
@@ -92,6 +102,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+   * @return A list containing the aggregatedVectorPolynomialL.
    */
   java.util.List<com.google.protobuf.ByteString> getAggregatedVectorPolynomialLList();
   /**
@@ -100,6 +111,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+   * @return The count of aggregatedVectorPolynomialL.
    */
   int getAggregatedVectorPolynomialLCount();
   /**
@@ -108,6 +120,8 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+   * @param index The index of the element to return.
+   * @return The aggregatedVectorPolynomialL at the given index.
    */
   com.google.protobuf.ByteString getAggregatedVectorPolynomialL(int index);
 
@@ -117,6 +131,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+   * @return A list containing the aggregatedVectorPolynomialR.
    */
   java.util.List<com.google.protobuf.ByteString> getAggregatedVectorPolynomialRList();
   /**
@@ -125,6 +140,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+   * @return The count of aggregatedVectorPolynomialR.
    */
   int getAggregatedVectorPolynomialRCount();
   /**
@@ -133,6 +149,8 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+   * @param index The index of the element to return.
+   * @return The aggregatedVectorPolynomialR at the given index.
    */
   com.google.protobuf.ByteString getAggregatedVectorPolynomialR(int index);
 
@@ -142,6 +160,7 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes a_prime_0 = 10;</code>
+   * @return The aPrime0.
    */
   com.google.protobuf.ByteString getAPrime0();
 
@@ -151,11 +170,13 @@ public interface RangeProofOrBuilder extends
    * </pre>
    *
    * <code>bytes b_prime_0 = 11;</code>
+   * @return The bPrime0.
    */
   com.google.protobuf.ByteString getBPrime0();
 
   /**
    * <code>bytes t = 12;</code>
+   * @return The t.
    */
   com.google.protobuf.ByteString getT();
 }

@@ -13,6 +13,7 @@ public interface FavouriteDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
+   * @return Whether the candidate field is set.
    */
   boolean hasCandidate();
   /**
@@ -21,6 +22,7 @@ public interface FavouriteDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
+   * @return The candidate.
    */
   Catalyst.Protocol.Wire.CandidateDeltaBroadcast getCandidate();
   /**
@@ -38,6 +40,7 @@ public interface FavouriteDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
+   * @return Whether the voterId field is set.
    */
   boolean hasVoterId();
   /**
@@ -46,6 +49,7 @@ public interface FavouriteDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
+   * @return The voterId.
    */
   Catalyst.Protocol.Peer.PeerId getVoterId();
   /**

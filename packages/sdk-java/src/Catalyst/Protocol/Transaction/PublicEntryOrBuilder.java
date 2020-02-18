@@ -13,6 +13,7 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes receiver_address = 1;</code>
+   * @return The receiverAddress.
    */
   com.google.protobuf.ByteString getReceiverAddress();
 
@@ -22,6 +23,7 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes sender_address = 2;</code>
+   * @return The senderAddress.
    */
   com.google.protobuf.ByteString getSenderAddress();
 
@@ -31,6 +33,7 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes amount = 3;</code>
+   * @return The amount.
    */
   com.google.protobuf.ByteString getAmount();
 
@@ -40,15 +43,18 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes data = 4;</code>
+   * @return The data.
    */
   com.google.protobuf.ByteString getData();
 
   /**
    * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+   * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
   /**
    * <code>.google.protobuf.Timestamp timestamp = 5;</code>
+   * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
   /**
@@ -58,22 +64,15 @@ public interface PublicEntryOrBuilder extends
 
   /**
    * <code>bytes gas_price = 6;</code>
+   * @return The gasPrice.
    */
   com.google.protobuf.ByteString getGasPrice();
 
   /**
    * <code>uint64 gas_limit = 7;</code>
+   * @return The gasLimit.
    */
   long getGasLimit();
-
-  /**
-   * <pre>
-   * 8 bytes, clear text, fees * 10^12
-   * </pre>
-   *
-   * <code>bytes transaction_fees = 8;</code>
-   */
-  com.google.protobuf.ByteString getTransactionFees();
 
   /**
    * <pre>
@@ -81,6 +80,7 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>uint64 nonce = 9;</code>
+   * @return The nonce.
    */
   long getNonce();
 
@@ -90,6 +90,7 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+   * @return Whether the signature field is set.
    */
   boolean hasSignature();
   /**
@@ -98,6 +99,7 @@ public interface PublicEntryOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+   * @return The signature.
    */
   Catalyst.Protocol.Cryptography.Signature getSignature();
   /**

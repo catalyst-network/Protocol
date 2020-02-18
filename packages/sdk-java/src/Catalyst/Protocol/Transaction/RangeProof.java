@@ -16,6 +16,7 @@ public  final class RangeProof extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Transaction.RangeProof)
     RangeProofOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use RangeProof.newBuilder() to construct.
   private RangeProof(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -36,16 +37,28 @@ public  final class RangeProof extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RangeProof();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private RangeProof(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -54,14 +67,8 @@ public  final class RangeProof extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               valueCommitment_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -99,17 +106,17 @@ public  final class RangeProof extends
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               aggregatedVectorPolynomialL_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000002;
             }
             aggregatedVectorPolynomialL_.add(input.readBytes());
             break;
           }
           case 74: {
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               aggregatedVectorPolynomialR_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000004;
             }
             aggregatedVectorPolynomialR_.add(input.readBytes());
             break;
@@ -129,6 +136,13 @@ public  final class RangeProof extends
             t_ = input.readBytes();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -137,15 +151,16 @@ public  final class RangeProof extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        valueCommitment_ = java.util.Collections.unmodifiableList(valueCommitment_);
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        valueCommitment_ = java.util.Collections.unmodifiableList(valueCommitment_); // C
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-        aggregatedVectorPolynomialL_ = java.util.Collections.unmodifiableList(aggregatedVectorPolynomialL_);
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        aggregatedVectorPolynomialL_ = java.util.Collections.unmodifiableList(aggregatedVectorPolynomialL_); // C
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-        aggregatedVectorPolynomialR_ = java.util.Collections.unmodifiableList(aggregatedVectorPolynomialR_);
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        aggregatedVectorPolynomialR_ = java.util.Collections.unmodifiableList(aggregatedVectorPolynomialR_); // C
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -154,6 +169,7 @@ public  final class RangeProof extends
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_RangeProof_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_RangeProof_fieldAccessorTable
@@ -161,7 +177,6 @@ public  final class RangeProof extends
             Catalyst.Protocol.Transaction.RangeProof.class, Catalyst.Protocol.Transaction.RangeProof.Builder.class);
   }
 
-  private int bitField0_;
   public static final int VALUE_COMMITMENT_FIELD_NUMBER = 1;
   private java.util.List<com.google.protobuf.ByteString> valueCommitment_;
   /**
@@ -170,6 +185,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes value_commitment = 1;</code>
+   * @return A list containing the valueCommitment.
    */
   public java.util.List<com.google.protobuf.ByteString>
       getValueCommitmentList() {
@@ -181,6 +197,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes value_commitment = 1;</code>
+   * @return The count of valueCommitment.
    */
   public int getValueCommitmentCount() {
     return valueCommitment_.size();
@@ -191,6 +208,8 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes value_commitment = 1;</code>
+   * @param index The index of the element to return.
+   * @return The valueCommitment at the given index.
    */
   public com.google.protobuf.ByteString getValueCommitment(int index) {
     return valueCommitment_.get(index);
@@ -204,6 +223,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes bit_commitment = 2;</code>
+   * @return The bitCommitment.
    */
   public com.google.protobuf.ByteString getBitCommitment() {
     return bitCommitment_;
@@ -217,6 +237,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+   * @return The perBitBlindingFactorCommitment.
    */
   public com.google.protobuf.ByteString getPerBitBlindingFactorCommitment() {
     return perBitBlindingFactorCommitment_;
@@ -230,6 +251,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes poly_commitment_t1 = 4;</code>
+   * @return The polyCommitmentT1.
    */
   public com.google.protobuf.ByteString getPolyCommitmentT1() {
     return polyCommitmentT1_;
@@ -243,6 +265,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes poly_commitment_t2 = 5;</code>
+   * @return The polyCommitmentT2.
    */
   public com.google.protobuf.ByteString getPolyCommitmentT2() {
     return polyCommitmentT2_;
@@ -256,6 +279,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes proof_of_share_tau = 6;</code>
+   * @return The proofOfShareTau.
    */
   public com.google.protobuf.ByteString getProofOfShareTau() {
     return proofOfShareTau_;
@@ -269,6 +293,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes proof_of_share_mu = 7;</code>
+   * @return The proofOfShareMu.
    */
   public com.google.protobuf.ByteString getProofOfShareMu() {
     return proofOfShareMu_;
@@ -282,6 +307,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+   * @return A list containing the aggregatedVectorPolynomialL.
    */
   public java.util.List<com.google.protobuf.ByteString>
       getAggregatedVectorPolynomialLList() {
@@ -293,6 +319,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+   * @return The count of aggregatedVectorPolynomialL.
    */
   public int getAggregatedVectorPolynomialLCount() {
     return aggregatedVectorPolynomialL_.size();
@@ -303,6 +330,8 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+   * @param index The index of the element to return.
+   * @return The aggregatedVectorPolynomialL at the given index.
    */
   public com.google.protobuf.ByteString getAggregatedVectorPolynomialL(int index) {
     return aggregatedVectorPolynomialL_.get(index);
@@ -316,6 +345,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+   * @return A list containing the aggregatedVectorPolynomialR.
    */
   public java.util.List<com.google.protobuf.ByteString>
       getAggregatedVectorPolynomialRList() {
@@ -327,6 +357,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+   * @return The count of aggregatedVectorPolynomialR.
    */
   public int getAggregatedVectorPolynomialRCount() {
     return aggregatedVectorPolynomialR_.size();
@@ -337,6 +368,8 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+   * @param index The index of the element to return.
+   * @return The aggregatedVectorPolynomialR at the given index.
    */
   public com.google.protobuf.ByteString getAggregatedVectorPolynomialR(int index) {
     return aggregatedVectorPolynomialR_.get(index);
@@ -350,6 +383,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes a_prime_0 = 10;</code>
+   * @return The aPrime0.
    */
   public com.google.protobuf.ByteString getAPrime0() {
     return aPrime0_;
@@ -363,6 +397,7 @@ public  final class RangeProof extends
    * </pre>
    *
    * <code>bytes b_prime_0 = 11;</code>
+   * @return The bPrime0.
    */
   public com.google.protobuf.ByteString getBPrime0() {
     return bPrime0_;
@@ -372,12 +407,14 @@ public  final class RangeProof extends
   private com.google.protobuf.ByteString t_;
   /**
    * <code>bytes t = 12;</code>
+   * @return The t.
    */
   public com.google.protobuf.ByteString getT() {
     return t_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -387,6 +424,7 @@ public  final class RangeProof extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < valueCommitment_.size(); i++) {
@@ -425,8 +463,10 @@ public  final class RangeProof extends
     if (!t_.isEmpty()) {
       output.writeBytes(12, t_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -495,11 +535,11 @@ public  final class RangeProof extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(12, t_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -510,32 +550,32 @@ public  final class RangeProof extends
     }
     Catalyst.Protocol.Transaction.RangeProof other = (Catalyst.Protocol.Transaction.RangeProof) obj;
 
-    boolean result = true;
-    result = result && getValueCommitmentList()
-        .equals(other.getValueCommitmentList());
-    result = result && getBitCommitment()
-        .equals(other.getBitCommitment());
-    result = result && getPerBitBlindingFactorCommitment()
-        .equals(other.getPerBitBlindingFactorCommitment());
-    result = result && getPolyCommitmentT1()
-        .equals(other.getPolyCommitmentT1());
-    result = result && getPolyCommitmentT2()
-        .equals(other.getPolyCommitmentT2());
-    result = result && getProofOfShareTau()
-        .equals(other.getProofOfShareTau());
-    result = result && getProofOfShareMu()
-        .equals(other.getProofOfShareMu());
-    result = result && getAggregatedVectorPolynomialLList()
-        .equals(other.getAggregatedVectorPolynomialLList());
-    result = result && getAggregatedVectorPolynomialRList()
-        .equals(other.getAggregatedVectorPolynomialRList());
-    result = result && getAPrime0()
-        .equals(other.getAPrime0());
-    result = result && getBPrime0()
-        .equals(other.getBPrime0());
-    result = result && getT()
-        .equals(other.getT());
-    return result;
+    if (!getValueCommitmentList()
+        .equals(other.getValueCommitmentList())) return false;
+    if (!getBitCommitment()
+        .equals(other.getBitCommitment())) return false;
+    if (!getPerBitBlindingFactorCommitment()
+        .equals(other.getPerBitBlindingFactorCommitment())) return false;
+    if (!getPolyCommitmentT1()
+        .equals(other.getPolyCommitmentT1())) return false;
+    if (!getPolyCommitmentT2()
+        .equals(other.getPolyCommitmentT2())) return false;
+    if (!getProofOfShareTau()
+        .equals(other.getProofOfShareTau())) return false;
+    if (!getProofOfShareMu()
+        .equals(other.getProofOfShareMu())) return false;
+    if (!getAggregatedVectorPolynomialLList()
+        .equals(other.getAggregatedVectorPolynomialLList())) return false;
+    if (!getAggregatedVectorPolynomialRList()
+        .equals(other.getAggregatedVectorPolynomialRList())) return false;
+    if (!getAPrime0()
+        .equals(other.getAPrime0())) return false;
+    if (!getBPrime0()
+        .equals(other.getBPrime0())) return false;
+    if (!getT()
+        .equals(other.getT())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -580,6 +620,17 @@ public  final class RangeProof extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Transaction.RangeProof parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Transaction.RangeProof parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Transaction.RangeProof parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -639,6 +690,7 @@ public  final class RangeProof extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -646,6 +698,7 @@ public  final class RangeProof extends
   public static Builder newBuilder(Catalyst.Protocol.Transaction.RangeProof prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -675,6 +728,7 @@ public  final class RangeProof extends
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_RangeProof_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_RangeProof_fieldAccessorTable
@@ -697,6 +751,7 @@ public  final class RangeProof extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       valueCommitment_ = java.util.Collections.emptyList();
@@ -714,9 +769,9 @@ public  final class RangeProof extends
       proofOfShareMu_ = com.google.protobuf.ByteString.EMPTY;
 
       aggregatedVectorPolynomialL_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000002);
       aggregatedVectorPolynomialR_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000004);
       aPrime0_ = com.google.protobuf.ByteString.EMPTY;
 
       bPrime0_ = com.google.protobuf.ByteString.EMPTY;
@@ -726,15 +781,18 @@ public  final class RangeProof extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_RangeProof_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.RangeProof getDefaultInstanceForType() {
       return Catalyst.Protocol.Transaction.RangeProof.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.RangeProof build() {
       Catalyst.Protocol.Transaction.RangeProof result = buildPartial();
       if (!result.isInitialized()) {
@@ -743,11 +801,11 @@ public  final class RangeProof extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Transaction.RangeProof buildPartial() {
       Catalyst.Protocol.Transaction.RangeProof result = new Catalyst.Protocol.Transaction.RangeProof(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         valueCommitment_ = java.util.Collections.unmodifiableList(valueCommitment_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
@@ -758,50 +816,56 @@ public  final class RangeProof extends
       result.polyCommitmentT2_ = polyCommitmentT2_;
       result.proofOfShareTau_ = proofOfShareTau_;
       result.proofOfShareMu_ = proofOfShareMu_;
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         aggregatedVectorPolynomialL_ = java.util.Collections.unmodifiableList(aggregatedVectorPolynomialL_);
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.aggregatedVectorPolynomialL_ = aggregatedVectorPolynomialL_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         aggregatedVectorPolynomialR_ = java.util.Collections.unmodifiableList(aggregatedVectorPolynomialR_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.aggregatedVectorPolynomialR_ = aggregatedVectorPolynomialR_;
       result.aPrime0_ = aPrime0_;
       result.bPrime0_ = bPrime0_;
       result.t_ = t_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Transaction.RangeProof) {
         return mergeFrom((Catalyst.Protocol.Transaction.RangeProof)other);
@@ -844,7 +908,7 @@ public  final class RangeProof extends
       if (!other.aggregatedVectorPolynomialL_.isEmpty()) {
         if (aggregatedVectorPolynomialL_.isEmpty()) {
           aggregatedVectorPolynomialL_ = other.aggregatedVectorPolynomialL_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAggregatedVectorPolynomialLIsMutable();
           aggregatedVectorPolynomialL_.addAll(other.aggregatedVectorPolynomialL_);
@@ -854,7 +918,7 @@ public  final class RangeProof extends
       if (!other.aggregatedVectorPolynomialR_.isEmpty()) {
         if (aggregatedVectorPolynomialR_.isEmpty()) {
           aggregatedVectorPolynomialR_ = other.aggregatedVectorPolynomialR_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAggregatedVectorPolynomialRIsMutable();
           aggregatedVectorPolynomialR_.addAll(other.aggregatedVectorPolynomialR_);
@@ -870,14 +934,17 @@ public  final class RangeProof extends
       if (other.getT() != com.google.protobuf.ByteString.EMPTY) {
         setT(other.getT());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -899,7 +966,7 @@ public  final class RangeProof extends
 
     private java.util.List<com.google.protobuf.ByteString> valueCommitment_ = java.util.Collections.emptyList();
     private void ensureValueCommitmentIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         valueCommitment_ = new java.util.ArrayList<com.google.protobuf.ByteString>(valueCommitment_);
         bitField0_ |= 0x00000001;
        }
@@ -910,10 +977,12 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @return A list containing the valueCommitment.
      */
     public java.util.List<com.google.protobuf.ByteString>
         getValueCommitmentList() {
-      return java.util.Collections.unmodifiableList(valueCommitment_);
+      return ((bitField0_ & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(valueCommitment_) : valueCommitment_;
     }
     /**
      * <pre>
@@ -921,6 +990,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @return The count of valueCommitment.
      */
     public int getValueCommitmentCount() {
       return valueCommitment_.size();
@@ -931,6 +1001,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @param index The index of the element to return.
+     * @return The valueCommitment at the given index.
      */
     public com.google.protobuf.ByteString getValueCommitment(int index) {
       return valueCommitment_.get(index);
@@ -941,6 +1013,9 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The valueCommitment to set.
+     * @return This builder for chaining.
      */
     public Builder setValueCommitment(
         int index, com.google.protobuf.ByteString value) {
@@ -958,6 +1033,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @param value The valueCommitment to add.
+     * @return This builder for chaining.
      */
     public Builder addValueCommitment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -974,6 +1051,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @param values The valueCommitment to add.
+     * @return This builder for chaining.
      */
     public Builder addAllValueCommitment(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -989,6 +1068,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes value_commitment = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValueCommitment() {
       valueCommitment_ = java.util.Collections.emptyList();
@@ -1004,6 +1084,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes bit_commitment = 2;</code>
+     * @return The bitCommitment.
      */
     public com.google.protobuf.ByteString getBitCommitment() {
       return bitCommitment_;
@@ -1014,6 +1095,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes bit_commitment = 2;</code>
+     * @param value The bitCommitment to set.
+     * @return This builder for chaining.
      */
     public Builder setBitCommitment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1030,6 +1113,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes bit_commitment = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBitCommitment() {
       
@@ -1045,6 +1129,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * @return The perBitBlindingFactorCommitment.
      */
     public com.google.protobuf.ByteString getPerBitBlindingFactorCommitment() {
       return perBitBlindingFactorCommitment_;
@@ -1055,6 +1140,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * @param value The perBitBlindingFactorCommitment to set.
+     * @return This builder for chaining.
      */
     public Builder setPerBitBlindingFactorCommitment(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1071,6 +1158,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPerBitBlindingFactorCommitment() {
       
@@ -1086,6 +1174,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes poly_commitment_t1 = 4;</code>
+     * @return The polyCommitmentT1.
      */
     public com.google.protobuf.ByteString getPolyCommitmentT1() {
       return polyCommitmentT1_;
@@ -1096,6 +1185,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes poly_commitment_t1 = 4;</code>
+     * @param value The polyCommitmentT1 to set.
+     * @return This builder for chaining.
      */
     public Builder setPolyCommitmentT1(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1112,6 +1203,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes poly_commitment_t1 = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPolyCommitmentT1() {
       
@@ -1127,6 +1219,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes poly_commitment_t2 = 5;</code>
+     * @return The polyCommitmentT2.
      */
     public com.google.protobuf.ByteString getPolyCommitmentT2() {
       return polyCommitmentT2_;
@@ -1137,6 +1230,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes poly_commitment_t2 = 5;</code>
+     * @param value The polyCommitmentT2 to set.
+     * @return This builder for chaining.
      */
     public Builder setPolyCommitmentT2(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1153,6 +1248,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes poly_commitment_t2 = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPolyCommitmentT2() {
       
@@ -1168,6 +1264,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes proof_of_share_tau = 6;</code>
+     * @return The proofOfShareTau.
      */
     public com.google.protobuf.ByteString getProofOfShareTau() {
       return proofOfShareTau_;
@@ -1178,6 +1275,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes proof_of_share_tau = 6;</code>
+     * @param value The proofOfShareTau to set.
+     * @return This builder for chaining.
      */
     public Builder setProofOfShareTau(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1194,6 +1293,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes proof_of_share_tau = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearProofOfShareTau() {
       
@@ -1209,6 +1309,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes proof_of_share_mu = 7;</code>
+     * @return The proofOfShareMu.
      */
     public com.google.protobuf.ByteString getProofOfShareMu() {
       return proofOfShareMu_;
@@ -1219,6 +1320,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes proof_of_share_mu = 7;</code>
+     * @param value The proofOfShareMu to set.
+     * @return This builder for chaining.
      */
     public Builder setProofOfShareMu(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1235,6 +1338,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes proof_of_share_mu = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearProofOfShareMu() {
       
@@ -1245,9 +1349,9 @@ public  final class RangeProof extends
 
     private java.util.List<com.google.protobuf.ByteString> aggregatedVectorPolynomialL_ = java.util.Collections.emptyList();
     private void ensureAggregatedVectorPolynomialLIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         aggregatedVectorPolynomialL_ = new java.util.ArrayList<com.google.protobuf.ByteString>(aggregatedVectorPolynomialL_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -1256,10 +1360,12 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @return A list containing the aggregatedVectorPolynomialL.
      */
     public java.util.List<com.google.protobuf.ByteString>
         getAggregatedVectorPolynomialLList() {
-      return java.util.Collections.unmodifiableList(aggregatedVectorPolynomialL_);
+      return ((bitField0_ & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(aggregatedVectorPolynomialL_) : aggregatedVectorPolynomialL_;
     }
     /**
      * <pre>
@@ -1267,6 +1373,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @return The count of aggregatedVectorPolynomialL.
      */
     public int getAggregatedVectorPolynomialLCount() {
       return aggregatedVectorPolynomialL_.size();
@@ -1277,6 +1384,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @param index The index of the element to return.
+     * @return The aggregatedVectorPolynomialL at the given index.
      */
     public com.google.protobuf.ByteString getAggregatedVectorPolynomialL(int index) {
       return aggregatedVectorPolynomialL_.get(index);
@@ -1287,6 +1396,9 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The aggregatedVectorPolynomialL to set.
+     * @return This builder for chaining.
      */
     public Builder setAggregatedVectorPolynomialL(
         int index, com.google.protobuf.ByteString value) {
@@ -1304,6 +1416,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @param value The aggregatedVectorPolynomialL to add.
+     * @return This builder for chaining.
      */
     public Builder addAggregatedVectorPolynomialL(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1320,6 +1434,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @param values The aggregatedVectorPolynomialL to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAggregatedVectorPolynomialL(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1335,19 +1451,20 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAggregatedVectorPolynomialL() {
       aggregatedVectorPolynomialL_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.protobuf.ByteString> aggregatedVectorPolynomialR_ = java.util.Collections.emptyList();
     private void ensureAggregatedVectorPolynomialRIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         aggregatedVectorPolynomialR_ = new java.util.ArrayList<com.google.protobuf.ByteString>(aggregatedVectorPolynomialR_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -1356,10 +1473,12 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @return A list containing the aggregatedVectorPolynomialR.
      */
     public java.util.List<com.google.protobuf.ByteString>
         getAggregatedVectorPolynomialRList() {
-      return java.util.Collections.unmodifiableList(aggregatedVectorPolynomialR_);
+      return ((bitField0_ & 0x00000004) != 0) ?
+               java.util.Collections.unmodifiableList(aggregatedVectorPolynomialR_) : aggregatedVectorPolynomialR_;
     }
     /**
      * <pre>
@@ -1367,6 +1486,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @return The count of aggregatedVectorPolynomialR.
      */
     public int getAggregatedVectorPolynomialRCount() {
       return aggregatedVectorPolynomialR_.size();
@@ -1377,6 +1497,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @param index The index of the element to return.
+     * @return The aggregatedVectorPolynomialR at the given index.
      */
     public com.google.protobuf.ByteString getAggregatedVectorPolynomialR(int index) {
       return aggregatedVectorPolynomialR_.get(index);
@@ -1387,6 +1509,9 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The aggregatedVectorPolynomialR to set.
+     * @return This builder for chaining.
      */
     public Builder setAggregatedVectorPolynomialR(
         int index, com.google.protobuf.ByteString value) {
@@ -1404,6 +1529,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @param value The aggregatedVectorPolynomialR to add.
+     * @return This builder for chaining.
      */
     public Builder addAggregatedVectorPolynomialR(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1420,6 +1547,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @param values The aggregatedVectorPolynomialR to add.
+     * @return This builder for chaining.
      */
     public Builder addAllAggregatedVectorPolynomialR(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1435,10 +1564,11 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAggregatedVectorPolynomialR() {
       aggregatedVectorPolynomialR_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1450,6 +1580,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes a_prime_0 = 10;</code>
+     * @return The aPrime0.
      */
     public com.google.protobuf.ByteString getAPrime0() {
       return aPrime0_;
@@ -1460,6 +1591,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes a_prime_0 = 10;</code>
+     * @param value The aPrime0 to set.
+     * @return This builder for chaining.
      */
     public Builder setAPrime0(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1476,6 +1609,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes a_prime_0 = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAPrime0() {
       
@@ -1491,6 +1625,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes b_prime_0 = 11;</code>
+     * @return The bPrime0.
      */
     public com.google.protobuf.ByteString getBPrime0() {
       return bPrime0_;
@@ -1501,6 +1636,8 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes b_prime_0 = 11;</code>
+     * @param value The bPrime0 to set.
+     * @return This builder for chaining.
      */
     public Builder setBPrime0(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1517,6 +1654,7 @@ public  final class RangeProof extends
      * </pre>
      *
      * <code>bytes b_prime_0 = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBPrime0() {
       
@@ -1528,12 +1666,15 @@ public  final class RangeProof extends
     private com.google.protobuf.ByteString t_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes t = 12;</code>
+     * @return The t.
      */
     public com.google.protobuf.ByteString getT() {
       return t_;
     }
     /**
      * <code>bytes t = 12;</code>
+     * @param value The t to set.
+     * @return This builder for chaining.
      */
     public Builder setT(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1546,6 +1687,7 @@ public  final class RangeProof extends
     }
     /**
      * <code>bytes t = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearT() {
       
@@ -1553,14 +1695,16 @@ public  final class RangeProof extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1579,11 +1723,12 @@ public  final class RangeProof extends
 
   private static final com.google.protobuf.Parser<RangeProof>
       PARSER = new com.google.protobuf.AbstractParser<RangeProof>() {
+    @java.lang.Override
     public RangeProof parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RangeProof(input, extensionRegistry);
+      return new RangeProof(input, extensionRegistry);
     }
   };
 
@@ -1596,6 +1741,7 @@ public  final class RangeProof extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Transaction.RangeProof getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

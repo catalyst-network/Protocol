@@ -39,11 +39,6 @@ export class PublicEntry extends jspb.Message {
   getGasLimit(): number;
   setGasLimit(value: number): void;
 
-  getTransactionFees(): Uint8Array | string;
-  getTransactionFees_asU8(): Uint8Array;
-  getTransactionFees_asB64(): string;
-  setTransactionFees(value: Uint8Array | string): void;
-
   getNonce(): number;
   setNonce(value: number): void;
 
@@ -71,7 +66,6 @@ export namespace PublicEntry {
     timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     gasPrice: Uint8Array | string,
     gasLimit: number,
-    transactionFees: Uint8Array | string,
     nonce: number,
     signature?: Cryptography_pb.Signature.AsObject,
   }

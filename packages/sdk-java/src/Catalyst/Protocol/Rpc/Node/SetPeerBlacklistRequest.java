@@ -4,33 +4,44 @@
 package Catalyst.Protocol.Rpc.Node;
 
 /**
- * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest}
+ * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest}
  */
-public  final class SetPeerBlacklistRequest extends
+public  final class SetPeerBlackListRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
-    SetPeerBlacklistRequestOrBuilder {
-  // Use SetPeerBlacklistRequest.newBuilder() to construct.
-  private SetPeerBlacklistRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
+    SetPeerBlackListRequestOrBuilder {
+private static final long serialVersionUID = 0L;
+  // Use SetPeerBlackListRequest.newBuilder() to construct.
+  private SetPeerBlackListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SetPeerBlacklistRequest() {
+  private SetPeerBlackListRequest() {
     publicKey_ = com.google.protobuf.ByteString.EMPTY;
     ip_ = com.google.protobuf.ByteString.EMPTY;
-    blacklist_ = false;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SetPeerBlackListRequest();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
-  private SetPeerBlacklistRequest(
+  private SetPeerBlackListRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -39,12 +50,6 @@ public  final class SetPeerBlacklistRequest extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             publicKey_ = input.readBytes();
@@ -60,6 +65,13 @@ public  final class SetPeerBlacklistRequest extends
             blacklist_ = input.readBool();
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -68,25 +80,28 @@ public  final class SetPeerBlacklistRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_descriptor;
+    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_fieldAccessorTable
+    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.class, Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.Builder.class);
+            Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.class, Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.Builder.class);
   }
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString publicKey_;
   /**
    * <code>bytes public_key = 1;</code>
+   * @return The publicKey.
    */
   public com.google.protobuf.ByteString getPublicKey() {
     return publicKey_;
@@ -96,6 +111,7 @@ public  final class SetPeerBlacklistRequest extends
   private com.google.protobuf.ByteString ip_;
   /**
    * <code>bytes ip = 2;</code>
+   * @return The ip.
    */
   public com.google.protobuf.ByteString getIp() {
     return ip_;
@@ -105,12 +121,14 @@ public  final class SetPeerBlacklistRequest extends
   private boolean blacklist_;
   /**
    * <code>bool blacklist = 3;</code>
+   * @return The blacklist.
    */
   public boolean getBlacklist() {
     return blacklist_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -120,6 +138,7 @@ public  final class SetPeerBlacklistRequest extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!publicKey_.isEmpty()) {
@@ -131,8 +150,10 @@ public  final class SetPeerBlacklistRequest extends
     if (blacklist_ != false) {
       output.writeBool(3, blacklist_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -150,29 +171,29 @@ public  final class SetPeerBlacklistRequest extends
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, blacklist_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)) {
+    if (!(obj instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)) {
       return super.equals(obj);
     }
-    Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest other = (Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest) obj;
+    Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest other = (Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest) obj;
 
-    boolean result = true;
-    result = result && getPublicKey()
-        .equals(other.getPublicKey());
-    result = result && getIp()
-        .equals(other.getIp());
-    result = result && (getBlacklist()
-        == other.getBlacklist());
-    return result;
+    if (!getPublicKey()
+        .equals(other.getPublicKey())) return false;
+    if (!getIp()
+        .equals(other.getIp())) return false;
+    if (getBlacklist()
+        != other.getBlacklist()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -194,58 +215,69 @@ public  final class SetPeerBlacklistRequest extends
     return hash;
   }
 
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(byte[] data)
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(java.io.InputStream input)
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseDelimitedFrom(java.io.InputStream input)
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseDelimitedFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -253,13 +285,15 @@ public  final class SetPeerBlacklistRequest extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest prototype) {
+  public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -272,25 +306,26 @@ public  final class SetPeerBlacklistRequest extends
     return builder;
   }
   /**
-   * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest}
+   * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_descriptor;
+      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_fieldAccessorTable
+      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.class, Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.Builder.class);
+              Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.class, Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.Builder.class);
     }
 
-    // Construct using Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.newBuilder()
+    // Construct using Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -305,6 +340,7 @@ public  final class SetPeerBlacklistRequest extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       publicKey_ = com.google.protobuf.ByteString.EMPTY;
@@ -316,25 +352,29 @@ public  final class SetPeerBlacklistRequest extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_descriptor;
+      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_descriptor;
     }
 
-    public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest getDefaultInstanceForType() {
-      return Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.getDefaultInstance();
+    @java.lang.Override
+    public Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest getDefaultInstanceForType() {
+      return Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.getDefaultInstance();
     }
 
-    public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest build() {
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest result = buildPartial();
+    @java.lang.Override
+    public Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest build() {
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest buildPartial() {
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest result = new Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest(this);
+    @java.lang.Override
+    public Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest buildPartial() {
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest result = new Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest(this);
       result.publicKey_ = publicKey_;
       result.ip_ = ip_;
       result.blacklist_ = blacklist_;
@@ -342,43 +382,50 @@ public  final class SetPeerBlacklistRequest extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest) {
-        return mergeFrom((Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)other);
+      if (other instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest) {
+        return mergeFrom((Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest other) {
-      if (other == Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest other) {
+      if (other == Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.getDefaultInstance()) return this;
       if (other.getPublicKey() != com.google.protobuf.ByteString.EMPTY) {
         setPublicKey(other.getPublicKey());
       }
@@ -388,23 +435,26 @@ public  final class SetPeerBlacklistRequest extends
       if (other.getBlacklist() != false) {
         setBlacklist(other.getBlacklist());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest parsedMessage = null;
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest) e.getUnfinishedMessage();
+        parsedMessage = (Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -417,12 +467,15 @@ public  final class SetPeerBlacklistRequest extends
     private com.google.protobuf.ByteString publicKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes public_key = 1;</code>
+     * @return The publicKey.
      */
     public com.google.protobuf.ByteString getPublicKey() {
       return publicKey_;
     }
     /**
      * <code>bytes public_key = 1;</code>
+     * @param value The publicKey to set.
+     * @return This builder for chaining.
      */
     public Builder setPublicKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -435,6 +488,7 @@ public  final class SetPeerBlacklistRequest extends
     }
     /**
      * <code>bytes public_key = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPublicKey() {
       
@@ -446,12 +500,15 @@ public  final class SetPeerBlacklistRequest extends
     private com.google.protobuf.ByteString ip_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes ip = 2;</code>
+     * @return The ip.
      */
     public com.google.protobuf.ByteString getIp() {
       return ip_;
     }
     /**
      * <code>bytes ip = 2;</code>
+     * @param value The ip to set.
+     * @return This builder for chaining.
      */
     public Builder setIp(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -464,6 +521,7 @@ public  final class SetPeerBlacklistRequest extends
     }
     /**
      * <code>bytes ip = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIp() {
       
@@ -475,12 +533,15 @@ public  final class SetPeerBlacklistRequest extends
     private boolean blacklist_ ;
     /**
      * <code>bool blacklist = 3;</code>
+     * @return The blacklist.
      */
     public boolean getBlacklist() {
       return blacklist_;
     }
     /**
      * <code>bool blacklist = 3;</code>
+     * @param value The blacklist to set.
+     * @return This builder for chaining.
      */
     public Builder setBlacklist(boolean value) {
       
@@ -490,6 +551,7 @@ public  final class SetPeerBlacklistRequest extends
     }
     /**
      * <code>bool blacklist = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBlacklist() {
       
@@ -497,50 +559,54 @@ public  final class SetPeerBlacklistRequest extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+    // @@protoc_insertion_point(builder_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
-  private static final Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
+  private static final Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest();
+    DEFAULT_INSTANCE = new Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest();
   }
 
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest getDefaultInstance() {
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SetPeerBlacklistRequest>
-      PARSER = new com.google.protobuf.AbstractParser<SetPeerBlacklistRequest>() {
-    public SetPeerBlacklistRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<SetPeerBlackListRequest>
+      PARSER = new com.google.protobuf.AbstractParser<SetPeerBlackListRequest>() {
+    @java.lang.Override
+    public SetPeerBlackListRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetPeerBlacklistRequest(input, extensionRegistry);
+      return new SetPeerBlackListRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SetPeerBlacklistRequest> parser() {
+  public static com.google.protobuf.Parser<SetPeerBlackListRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SetPeerBlacklistRequest> getParserForType() {
+  public com.google.protobuf.Parser<SetPeerBlackListRequest> getParserForType() {
     return PARSER;
   }
 
-  public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

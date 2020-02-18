@@ -9,38 +9,49 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  *Holds data for batch verification of signatures.
- * </pre>
  *
- * Protobuf type <code>Catalyst.Protocol.Cryptography.SignatureBatch</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Cryptography.SignatureBatch</code>
  */
 class SignatureBatch extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>repeated bytes signatures = 1;</code>
+     * Generated from protobuf field <code>repeated bytes signatures = 1;</code>
      */
     private $signatures;
     /**
-     * <code>repeated bytes public_keys = 2;</code>
+     * Generated from protobuf field <code>repeated bytes public_keys = 2;</code>
      */
     private $public_keys;
     /**
-     * <code>repeated bytes messages = 3;</code>
+     * Generated from protobuf field <code>repeated bytes messages = 3;</code>
      */
     private $messages;
     /**
-     * <code>bytes context = 4;</code>
+     * Generated from protobuf field <code>bytes context = 4;</code>
      */
-    private $context = '';
+    protected $context = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $signatures
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $public_keys
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $messages
+     *     @type string $context
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Cryptography::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>repeated bytes signatures = 1;</code>
+     * Generated from protobuf field <code>repeated bytes signatures = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSignatures()
     {
@@ -48,16 +59,21 @@ class SignatureBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated bytes signatures = 1;</code>
+     * Generated from protobuf field <code>repeated bytes signatures = 1;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setSignatures(&$var)
+    public function setSignatures($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
-        $this->signatures = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->signatures = $arr;
+
+        return $this;
     }
 
     /**
-     * <code>repeated bytes public_keys = 2;</code>
+     * Generated from protobuf field <code>repeated bytes public_keys = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPublicKeys()
     {
@@ -65,16 +81,21 @@ class SignatureBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated bytes public_keys = 2;</code>
+     * Generated from protobuf field <code>repeated bytes public_keys = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setPublicKeys(&$var)
+    public function setPublicKeys($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
-        $this->public_keys = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->public_keys = $arr;
+
+        return $this;
     }
 
     /**
-     * <code>repeated bytes messages = 3;</code>
+     * Generated from protobuf field <code>repeated bytes messages = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMessages()
     {
@@ -82,16 +103,21 @@ class SignatureBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated bytes messages = 3;</code>
+     * Generated from protobuf field <code>repeated bytes messages = 3;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setMessages(&$var)
+    public function setMessages($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
-        $this->messages = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->messages = $arr;
+
+        return $this;
     }
 
     /**
-     * <code>bytes context = 4;</code>
+     * Generated from protobuf field <code>bytes context = 4;</code>
+     * @return string
      */
     public function getContext()
     {
@@ -99,12 +125,16 @@ class SignatureBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes context = 4;</code>
+     * Generated from protobuf field <code>bytes context = 4;</code>
+     * @param string $var
+     * @return $this
      */
     public function setContext($var)
     {
         GPBUtil::checkString($var, False);
         $this->context = $var;
+
+        return $this;
     }
 
 }

@@ -4,42 +4,63 @@
 
 namespace Catalyst\Protocol\Network;
 
+use UnexpectedValueException;
+
 /**
- * Protobuf enum <code>Catalyst.Protocol.Network.NetworkType</code>
+ * Protobuf type <code>Catalyst.Protocol.Network.NetworkType</code>
  */
 class NetworkType
 {
     /**
-     * <pre>
      * un-known network
-     * </pre>
      *
-     * <code>NETWORK_TYPE_UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>NETWORK_TYPE_UNKNOWN = 0;</code>
      */
     const NETWORK_TYPE_UNKNOWN = 0;
     /**
-     * <pre>
      * main live network
-     * </pre>
      *
-     * <code>MAINNET = 1;</code>
+     * Generated from protobuf enum <code>MAINNET = 1;</code>
      */
     const MAINNET = 1;
     /**
-     * <pre>
      * local devnet
-     * </pre>
      *
-     * <code>DEVNET = 2;</code>
+     * Generated from protobuf enum <code>DEVNET = 2;</code>
      */
     const DEVNET = 2;
     /**
-     * <pre>
      * public testnet
-     * </pre>
      *
-     * <code>TESTNET = 3;</code>
+     * Generated from protobuf enum <code>TESTNET = 3;</code>
      */
     const TESTNET = 3;
+
+    private static $valueToName = [
+        self::NETWORK_TYPE_UNKNOWN => 'NETWORK_TYPE_UNKNOWN',
+        self::MAINNET => 'MAINNET',
+        self::DEVNET => 'DEVNET',
+        self::TESTNET => 'TESTNET',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

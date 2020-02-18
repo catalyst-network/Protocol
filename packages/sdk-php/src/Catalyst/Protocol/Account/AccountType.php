@@ -4,46 +4,65 @@
 
 namespace Catalyst\Protocol\Account;
 
+use UnexpectedValueException;
+
 /**
- * <pre>
  * We need to leave the 3 first bits for the NetworkType and can use the rest for the AccountType
- * </pre>
  *
- * Protobuf enum <code>Catalyst.Protocol.Account.AccountType</code>
+ * Protobuf type <code>Catalyst.Protocol.Account.AccountType</code>
  */
 class AccountType
 {
     /**
-     * <pre>
      * Un-known account type.
-     * </pre>
      *
-     * <code>ACCOUNT_TYPE_UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>ACCOUNT_TYPE_UNKNOWN = 0;</code>
      */
     const ACCOUNT_TYPE_UNKNOWN = 0;
     /**
-     * <pre>
      * Public account type.
-     * </pre>
      *
-     * <code>PUBLIC_ACCOUNT = 8;</code>
+     * Generated from protobuf enum <code>PUBLIC_ACCOUNT = 8;</code>
      */
     const PUBLIC_ACCOUNT = 8;
     /**
-     * <pre>
      * Confidential account type.
-     * </pre>
      *
-     * <code>CONFIDENTIAL_ACCOUNT = 16;</code>
+     * Generated from protobuf enum <code>CONFIDENTIAL_ACCOUNT = 16;</code>
      */
     const CONFIDENTIAL_ACCOUNT = 16;
     /**
-     * <pre>
      * Smart contract account type {TO BE DEPRECATED}. 
-     * </pre>
      *
-     * <code>SMART_CONTRACT_ACCOUNT = 24;</code>
+     * Generated from protobuf enum <code>SMART_CONTRACT_ACCOUNT = 24;</code>
      */
     const SMART_CONTRACT_ACCOUNT = 24;
+
+    private static $valueToName = [
+        self::ACCOUNT_TYPE_UNKNOWN => 'ACCOUNT_TYPE_UNKNOWN',
+        self::PUBLIC_ACCOUNT => 'PUBLIC_ACCOUNT',
+        self::CONFIDENTIAL_ACCOUNT => 'CONFIDENTIAL_ACCOUNT',
+        self::SMART_CONTRACT_ACCOUNT => 'SMART_CONTRACT_ACCOUNT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

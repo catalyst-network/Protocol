@@ -9,120 +9,126 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  **
  * BulletProof-based range proof. See https://eprint.iacr.org/2017/1066.pdf for references to equations below.
  * Total byte size is (9+2k)*32, where k = log_2(n*m), m is number of aggregates in proof, (2^n)-1 is upper range of values.
- * </pre>
  *
- * Protobuf type <code>Catalyst.Protocol.Transaction.RangeProof</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Transaction.RangeProof</code>
  */
 class RangeProof extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * m * 32 bytes, value commitment (eq. 36) 
-     * </pre>
      *
-     * <code>repeated bytes value_commitment = 1;</code>
+     * Generated from protobuf field <code>repeated bytes value_commitment = 1;</code>
      */
     private $value_commitment;
     /**
-     * <pre>
      * 32 bytes, bit commitment (eq. 48)
-     * </pre>
      *
-     * <code>bytes bit_commitment = 2;</code>
+     * Generated from protobuf field <code>bytes bit_commitment = 2;</code>
      */
-    private $bit_commitment = '';
+    protected $bit_commitment = '';
     /**
-     * <pre>
      * 32 bytes, per bit blinding factor commitment (eq. 48)
-     * </pre>
      *
-     * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * Generated from protobuf field <code>bytes per_bit_blinding_factor_commitment = 3;</code>
      */
-    private $per_bit_blinding_factor_commitment = '';
+    protected $per_bit_blinding_factor_commitment = '';
     /**
-     * <pre>
      * 32 bytes, poly commitment (eq. 54)
-     * </pre>
      *
-     * <code>bytes poly_commitment_t1 = 4;</code>
+     * Generated from protobuf field <code>bytes poly_commitment_t1 = 4;</code>
      */
-    private $poly_commitment_t1 = '';
+    protected $poly_commitment_t1 = '';
     /**
-     * <pre>
      * 32 bytes, poly commitment (eq. 54)
-     * </pre>
      *
-     * <code>bytes poly_commitment_t2 = 5;</code>
+     * Generated from protobuf field <code>bytes poly_commitment_t2 = 5;</code>
      */
-    private $poly_commitment_t2 = '';
+    protected $poly_commitment_t2 = '';
     /**
-     * <pre>
      * 32 bytes, proof of share (eq. 63)
-     * </pre>
      *
-     * <code>bytes proof_of_share_tau = 6;</code>
+     * Generated from protobuf field <code>bytes proof_of_share_tau = 6;</code>
      */
-    private $proof_of_share_tau = '';
+    protected $proof_of_share_tau = '';
     /**
-     * <pre>
      * 32 bytes, proof of share (eq. 63)
-     * </pre>
      *
-     * <code>bytes proof_of_share_mu = 7;</code>
+     * Generated from protobuf field <code>bytes proof_of_share_mu = 7;</code>
      */
-    private $proof_of_share_mu = '';
+    protected $proof_of_share_mu = '';
     /**
-     * <pre>
      * k * 32 bytes, aggregated vector polynomial (eq. 63)
-     * </pre>
      *
-     * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * Generated from protobuf field <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
      */
     private $aggregated_vector_polynomial_l;
     /**
-     * <pre>
      * k * 32 bytes, aggregated vector polynomial (eq. 63)
-     * </pre>
      *
-     * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * Generated from protobuf field <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
      */
     private $aggregated_vector_polynomial_r;
     /**
-     * <pre>
      * 32 bytes (eq. 63)
-     * </pre>
      *
-     * <code>bytes a_prime_0 = 10;</code>
+     * Generated from protobuf field <code>bytes a_prime_0 = 10;</code>
      */
-    private $a_prime_0 = '';
+    protected $a_prime_0 = '';
     /**
-     * <pre>
      * 32 bytes (eq. 63)
-     * </pre>
      *
-     * <code>bytes b_prime_0 = 11;</code>
+     * Generated from protobuf field <code>bytes b_prime_0 = 11;</code>
      */
-    private $b_prime_0 = '';
+    protected $b_prime_0 = '';
     /**
-     * <code>bytes t = 12;</code>
+     * Generated from protobuf field <code>bytes t = 12;</code>
      */
-    private $t = '';
+    protected $t = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $value_commitment
+     *           m * 32 bytes, value commitment (eq. 36) 
+     *     @type string $bit_commitment
+     *           32 bytes, bit commitment (eq. 48)
+     *     @type string $per_bit_blinding_factor_commitment
+     *           32 bytes, per bit blinding factor commitment (eq. 48)
+     *     @type string $poly_commitment_t1
+     *           32 bytes, poly commitment (eq. 54)
+     *     @type string $poly_commitment_t2
+     *           32 bytes, poly commitment (eq. 54)
+     *     @type string $proof_of_share_tau
+     *           32 bytes, proof of share (eq. 63)
+     *     @type string $proof_of_share_mu
+     *           32 bytes, proof of share (eq. 63)
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $aggregated_vector_polynomial_l
+     *           k * 32 bytes, aggregated vector polynomial (eq. 63)
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $aggregated_vector_polynomial_r
+     *           k * 32 bytes, aggregated vector polynomial (eq. 63)
+     *     @type string $a_prime_0
+     *           32 bytes (eq. 63)
+     *     @type string $b_prime_0
+     *           32 bytes (eq. 63)
+     *     @type string $t
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Transaction::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <pre>
      * m * 32 bytes, value commitment (eq. 36) 
-     * </pre>
      *
-     * <code>repeated bytes value_commitment = 1;</code>
+     * Generated from protobuf field <code>repeated bytes value_commitment = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getValueCommitment()
     {
@@ -130,24 +136,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * m * 32 bytes, value commitment (eq. 36) 
-     * </pre>
      *
-     * <code>repeated bytes value_commitment = 1;</code>
+     * Generated from protobuf field <code>repeated bytes value_commitment = 1;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setValueCommitment(&$var)
+    public function setValueCommitment($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
-        $this->value_commitment = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->value_commitment = $arr;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes, bit commitment (eq. 48)
-     * </pre>
      *
-     * <code>bytes bit_commitment = 2;</code>
+     * Generated from protobuf field <code>bytes bit_commitment = 2;</code>
+     * @return string
      */
     public function getBitCommitment()
     {
@@ -155,24 +162,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes, bit commitment (eq. 48)
-     * </pre>
      *
-     * <code>bytes bit_commitment = 2;</code>
+     * Generated from protobuf field <code>bytes bit_commitment = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setBitCommitment($var)
     {
         GPBUtil::checkString($var, False);
         $this->bit_commitment = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes, per bit blinding factor commitment (eq. 48)
-     * </pre>
      *
-     * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * Generated from protobuf field <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * @return string
      */
     public function getPerBitBlindingFactorCommitment()
     {
@@ -180,24 +188,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes, per bit blinding factor commitment (eq. 48)
-     * </pre>
      *
-     * <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * Generated from protobuf field <code>bytes per_bit_blinding_factor_commitment = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPerBitBlindingFactorCommitment($var)
     {
         GPBUtil::checkString($var, False);
         $this->per_bit_blinding_factor_commitment = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes, poly commitment (eq. 54)
-     * </pre>
      *
-     * <code>bytes poly_commitment_t1 = 4;</code>
+     * Generated from protobuf field <code>bytes poly_commitment_t1 = 4;</code>
+     * @return string
      */
     public function getPolyCommitmentT1()
     {
@@ -205,24 +214,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes, poly commitment (eq. 54)
-     * </pre>
      *
-     * <code>bytes poly_commitment_t1 = 4;</code>
+     * Generated from protobuf field <code>bytes poly_commitment_t1 = 4;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPolyCommitmentT1($var)
     {
         GPBUtil::checkString($var, False);
         $this->poly_commitment_t1 = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes, poly commitment (eq. 54)
-     * </pre>
      *
-     * <code>bytes poly_commitment_t2 = 5;</code>
+     * Generated from protobuf field <code>bytes poly_commitment_t2 = 5;</code>
+     * @return string
      */
     public function getPolyCommitmentT2()
     {
@@ -230,24 +240,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes, poly commitment (eq. 54)
-     * </pre>
      *
-     * <code>bytes poly_commitment_t2 = 5;</code>
+     * Generated from protobuf field <code>bytes poly_commitment_t2 = 5;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPolyCommitmentT2($var)
     {
         GPBUtil::checkString($var, False);
         $this->poly_commitment_t2 = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes, proof of share (eq. 63)
-     * </pre>
      *
-     * <code>bytes proof_of_share_tau = 6;</code>
+     * Generated from protobuf field <code>bytes proof_of_share_tau = 6;</code>
+     * @return string
      */
     public function getProofOfShareTau()
     {
@@ -255,24 +266,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes, proof of share (eq. 63)
-     * </pre>
      *
-     * <code>bytes proof_of_share_tau = 6;</code>
+     * Generated from protobuf field <code>bytes proof_of_share_tau = 6;</code>
+     * @param string $var
+     * @return $this
      */
     public function setProofOfShareTau($var)
     {
         GPBUtil::checkString($var, False);
         $this->proof_of_share_tau = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes, proof of share (eq. 63)
-     * </pre>
      *
-     * <code>bytes proof_of_share_mu = 7;</code>
+     * Generated from protobuf field <code>bytes proof_of_share_mu = 7;</code>
+     * @return string
      */
     public function getProofOfShareMu()
     {
@@ -280,24 +292,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes, proof of share (eq. 63)
-     * </pre>
      *
-     * <code>bytes proof_of_share_mu = 7;</code>
+     * Generated from protobuf field <code>bytes proof_of_share_mu = 7;</code>
+     * @param string $var
+     * @return $this
      */
     public function setProofOfShareMu($var)
     {
         GPBUtil::checkString($var, False);
         $this->proof_of_share_mu = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * k * 32 bytes, aggregated vector polynomial (eq. 63)
-     * </pre>
      *
-     * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * Generated from protobuf field <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAggregatedVectorPolynomialL()
     {
@@ -305,24 +318,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * k * 32 bytes, aggregated vector polynomial (eq. 63)
-     * </pre>
      *
-     * <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * Generated from protobuf field <code>repeated bytes aggregated_vector_polynomial_l = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setAggregatedVectorPolynomialL(&$var)
+    public function setAggregatedVectorPolynomialL($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
-        $this->aggregated_vector_polynomial_l = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->aggregated_vector_polynomial_l = $arr;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * k * 32 bytes, aggregated vector polynomial (eq. 63)
-     * </pre>
      *
-     * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * Generated from protobuf field <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAggregatedVectorPolynomialR()
     {
@@ -330,24 +344,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * k * 32 bytes, aggregated vector polynomial (eq. 63)
-     * </pre>
      *
-     * <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * Generated from protobuf field <code>repeated bytes aggregated_vector_polynomial_r = 9;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setAggregatedVectorPolynomialR(&$var)
+    public function setAggregatedVectorPolynomialR($var)
     {
-        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
-        $this->aggregated_vector_polynomial_r = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->aggregated_vector_polynomial_r = $arr;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes (eq. 63)
-     * </pre>
      *
-     * <code>bytes a_prime_0 = 10;</code>
+     * Generated from protobuf field <code>bytes a_prime_0 = 10;</code>
+     * @return string
      */
     public function getAPrime0()
     {
@@ -355,24 +370,25 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes (eq. 63)
-     * </pre>
      *
-     * <code>bytes a_prime_0 = 10;</code>
+     * Generated from protobuf field <code>bytes a_prime_0 = 10;</code>
+     * @param string $var
+     * @return $this
      */
     public function setAPrime0($var)
     {
         GPBUtil::checkString($var, False);
         $this->a_prime_0 = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 32 bytes (eq. 63)
-     * </pre>
      *
-     * <code>bytes b_prime_0 = 11;</code>
+     * Generated from protobuf field <code>bytes b_prime_0 = 11;</code>
+     * @return string
      */
     public function getBPrime0()
     {
@@ -380,20 +396,23 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 32 bytes (eq. 63)
-     * </pre>
      *
-     * <code>bytes b_prime_0 = 11;</code>
+     * Generated from protobuf field <code>bytes b_prime_0 = 11;</code>
+     * @param string $var
+     * @return $this
      */
     public function setBPrime0($var)
     {
         GPBUtil::checkString($var, False);
         $this->b_prime_0 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes t = 12;</code>
+     * Generated from protobuf field <code>bytes t = 12;</code>
+     * @return string
      */
     public function getT()
     {
@@ -401,12 +420,16 @@ class RangeProof extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes t = 12;</code>
+     * Generated from protobuf field <code>bytes t = 12;</code>
+     * @param string $var
+     * @return $this
      */
     public function setT($var)
     {
         GPBUtil::checkString($var, False);
         $this->t = $var;
+
+        return $this;
     }
 
 }

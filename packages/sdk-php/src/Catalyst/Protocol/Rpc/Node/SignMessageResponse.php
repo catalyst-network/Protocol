@@ -9,30 +9,42 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.SignMessageResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SignMessageResponse</code>
  */
 class SignMessageResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes signature = 1;</code>
+     * Generated from protobuf field <code>bytes signature = 1;</code>
      */
-    private $signature = '';
+    protected $signature = '';
     /**
-     * <code>bytes public_key = 2;</code>
+     * Generated from protobuf field <code>bytes public_key = 2;</code>
      */
-    private $public_key = '';
+    protected $public_key = '';
     /**
-     * <code>bytes original_message = 3;</code>
+     * Generated from protobuf field <code>bytes original_message = 3;</code>
      */
-    private $original_message = '';
+    protected $original_message = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $signature
+     *     @type string $public_key
+     *     @type string $original_message
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>bytes signature = 1;</code>
+     * Generated from protobuf field <code>bytes signature = 1;</code>
+     * @return string
      */
     public function getSignature()
     {
@@ -40,16 +52,21 @@ class SignMessageResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes signature = 1;</code>
+     * Generated from protobuf field <code>bytes signature = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setSignature($var)
     {
         GPBUtil::checkString($var, False);
         $this->signature = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes public_key = 2;</code>
+     * Generated from protobuf field <code>bytes public_key = 2;</code>
+     * @return string
      */
     public function getPublicKey()
     {
@@ -57,16 +74,21 @@ class SignMessageResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes public_key = 2;</code>
+     * Generated from protobuf field <code>bytes public_key = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->public_key = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes original_message = 3;</code>
+     * Generated from protobuf field <code>bytes original_message = 3;</code>
+     * @return string
      */
     public function getOriginalMessage()
     {
@@ -74,12 +96,16 @@ class SignMessageResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes original_message = 3;</code>
+     * Generated from protobuf field <code>bytes original_message = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setOriginalMessage($var)
     {
         GPBUtil::checkString($var, False);
         $this->original_message = $var;
+
+        return $this;
     }
 
 }

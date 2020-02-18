@@ -9,6 +9,7 @@ public interface GetPeerReputationResponseOrBuilder extends
 
   /**
    * <code>int32 reputation = 1;</code>
+   * @return The reputation.
    */
   int getReputation();
 }

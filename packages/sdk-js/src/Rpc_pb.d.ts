@@ -816,7 +816,7 @@ export namespace GetPeerReputationResponse {
   }
 }
 
-export class SetPeerBlacklistRequest extends jspb.Message {
+export class SetPeerBlackListRequest extends jspb.Message {
   getPublicKey(): Uint8Array | string;
   getPublicKey_asU8(): Uint8Array;
   getPublicKey_asB64(): string;
@@ -831,16 +831,16 @@ export class SetPeerBlacklistRequest extends jspb.Message {
   setBlacklist(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetPeerBlacklistRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SetPeerBlacklistRequest): SetPeerBlacklistRequest.AsObject;
+  toObject(includeInstance?: boolean): SetPeerBlackListRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetPeerBlackListRequest): SetPeerBlackListRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetPeerBlacklistRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetPeerBlacklistRequest;
-  static deserializeBinaryFromReader(message: SetPeerBlacklistRequest, reader: jspb.BinaryReader): SetPeerBlacklistRequest;
+  static serializeBinaryToWriter(message: SetPeerBlackListRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetPeerBlackListRequest;
+  static deserializeBinaryFromReader(message: SetPeerBlackListRequest, reader: jspb.BinaryReader): SetPeerBlackListRequest;
 }
 
-export namespace SetPeerBlacklistRequest {
+export namespace SetPeerBlackListRequest {
   export type AsObject = {
     publicKey: Uint8Array | string,
     ip: Uint8Array | string,
@@ -848,7 +848,7 @@ export namespace SetPeerBlacklistRequest {
   }
 }
 
-export class SetPeerBlacklistResponse extends jspb.Message {
+export class SetPeerBlackListResponse extends jspb.Message {
   getPublicKey(): Uint8Array | string;
   getPublicKey_asU8(): Uint8Array;
   getPublicKey_asB64(): string;
@@ -863,16 +863,16 @@ export class SetPeerBlacklistResponse extends jspb.Message {
   setBlacklist(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetPeerBlacklistResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SetPeerBlacklistResponse): SetPeerBlacklistResponse.AsObject;
+  toObject(includeInstance?: boolean): SetPeerBlackListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetPeerBlackListResponse): SetPeerBlackListResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetPeerBlacklistResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetPeerBlacklistResponse;
-  static deserializeBinaryFromReader(message: SetPeerBlacklistResponse, reader: jspb.BinaryReader): SetPeerBlacklistResponse;
+  static serializeBinaryToWriter(message: SetPeerBlackListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetPeerBlackListResponse;
+  static deserializeBinaryFromReader(message: SetPeerBlackListResponse, reader: jspb.BinaryReader): SetPeerBlackListResponse;
 }
 
-export namespace SetPeerBlacklistResponse {
+export namespace SetPeerBlackListResponse {
   export type AsObject = {
     publicKey: Uint8Array | string,
     ip: Uint8Array | string,

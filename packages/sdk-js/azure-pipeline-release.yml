@@ -1,0 +1,9 @@
+trigger:
+    - master
+
+pool:
+    vmImage: 'ubuntu-latest'
+
+steps:
+  - script: ./publish.sh
+    displayName: 'Generate js sdk'

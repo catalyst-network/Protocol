@@ -9,26 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.DfsMarketplace.BlockChallengeResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.DfsMarketplace.BlockChallengeResponse</code>
  */
 class BlockChallengeResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string answer = 1;</code>
+     * Generated from protobuf field <code>string answer = 1;</code>
      */
-    private $answer = '';
+    protected $answer = '';
     /**
-     * <code>string block_challenge_request_hash = 2;</code>
+     * Generated from protobuf field <code>string block_challenge_request_hash = 2;</code>
      */
-    private $block_challenge_request_hash = '';
+    protected $block_challenge_request_hash = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $answer
+     *     @type string $block_challenge_request_hash
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\DfsMarketplace::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>string answer = 1;</code>
+     * Generated from protobuf field <code>string answer = 1;</code>
+     * @return string
      */
     public function getAnswer()
     {
@@ -36,16 +47,21 @@ class BlockChallengeResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string answer = 1;</code>
+     * Generated from protobuf field <code>string answer = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setAnswer($var)
     {
         GPBUtil::checkString($var, True);
         $this->answer = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string block_challenge_request_hash = 2;</code>
+     * Generated from protobuf field <code>string block_challenge_request_hash = 2;</code>
+     * @return string
      */
     public function getBlockChallengeRequestHash()
     {
@@ -53,12 +69,16 @@ class BlockChallengeResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string block_challenge_request_hash = 2;</code>
+     * Generated from protobuf field <code>string block_challenge_request_hash = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setBlockChallengeRequestHash($var)
     {
         GPBUtil::checkString($var, True);
         $this->block_challenge_request_hash = $var;
+
+        return $this;
     }
 
 }

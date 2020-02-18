@@ -40,7 +40,6 @@ message PublicEntry {
 	google.protobuf.Timestamp timestamp = 5; 
 	bytes gas_price = 6;
 	uint64 gas_limit = 7;
-	bytes transaction_fees = 8; // 8 bytes, clear text, fees * 10^12
 	uint64 nonce = 9; // A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
 	Cryptography.Signature signature = 10; // is the ed25519ph context signature
 }
