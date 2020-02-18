@@ -10,6 +10,7 @@ public  final class TransferFileBytesResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse)
     TransferFileBytesResponseOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use TransferFileBytesResponse.newBuilder() to construct.
   private TransferFileBytesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,16 +20,27 @@ public  final class TransferFileBytesResponse extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TransferFileBytesResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private TransferFileBytesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -37,15 +49,16 @@ public  final class TransferFileBytesResponse extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
 
             responseCode_ = input.readBytes();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -56,6 +69,7 @@ public  final class TransferFileBytesResponse extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -64,6 +78,7 @@ public  final class TransferFileBytesResponse extends
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesResponse_fieldAccessorTable
@@ -75,12 +90,14 @@ public  final class TransferFileBytesResponse extends
   private com.google.protobuf.ByteString responseCode_;
   /**
    * <code>bytes response_code = 1;</code>
+   * @return The responseCode.
    */
   public com.google.protobuf.ByteString getResponseCode() {
     return responseCode_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -90,13 +107,16 @@ public  final class TransferFileBytesResponse extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!responseCode_.isEmpty()) {
       output.writeBytes(1, responseCode_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -106,11 +126,11 @@ public  final class TransferFileBytesResponse extends
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(1, responseCode_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -121,10 +141,10 @@ public  final class TransferFileBytesResponse extends
     }
     Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse other = (Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse) obj;
 
-    boolean result = true;
-    result = result && getResponseCode()
-        .equals(other.getResponseCode());
-    return result;
+    if (!getResponseCode()
+        .equals(other.getResponseCode())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -141,6 +161,17 @@ public  final class TransferFileBytesResponse extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -200,6 +231,7 @@ public  final class TransferFileBytesResponse extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -207,6 +239,7 @@ public  final class TransferFileBytesResponse extends
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -230,6 +263,7 @@ public  final class TransferFileBytesResponse extends
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesResponse_fieldAccessorTable
@@ -252,6 +286,7 @@ public  final class TransferFileBytesResponse extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       responseCode_ = com.google.protobuf.ByteString.EMPTY;
@@ -259,15 +294,18 @@ public  final class TransferFileBytesResponse extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesResponse_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse build() {
       Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -276,6 +314,7 @@ public  final class TransferFileBytesResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse buildPartial() {
       Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse result = new Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse(this);
       result.responseCode_ = responseCode_;
@@ -283,32 +322,39 @@ public  final class TransferFileBytesResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse)other);
@@ -323,14 +369,17 @@ public  final class TransferFileBytesResponse extends
       if (other.getResponseCode() != com.google.protobuf.ByteString.EMPTY) {
         setResponseCode(other.getResponseCode());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -352,12 +401,15 @@ public  final class TransferFileBytesResponse extends
     private com.google.protobuf.ByteString responseCode_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes response_code = 1;</code>
+     * @return The responseCode.
      */
     public com.google.protobuf.ByteString getResponseCode() {
       return responseCode_;
     }
     /**
      * <code>bytes response_code = 1;</code>
+     * @param value The responseCode to set.
+     * @return This builder for chaining.
      */
     public Builder setResponseCode(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -370,6 +422,7 @@ public  final class TransferFileBytesResponse extends
     }
     /**
      * <code>bytes response_code = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearResponseCode() {
       
@@ -377,14 +430,16 @@ public  final class TransferFileBytesResponse extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -403,11 +458,12 @@ public  final class TransferFileBytesResponse extends
 
   private static final com.google.protobuf.Parser<TransferFileBytesResponse>
       PARSER = new com.google.protobuf.AbstractParser<TransferFileBytesResponse>() {
+    @java.lang.Override
     public TransferFileBytesResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TransferFileBytesResponse(input, extensionRegistry);
+      return new TransferFileBytesResponse(input, extensionRegistry);
     }
   };
 
@@ -420,6 +476,7 @@ public  final class TransferFileBytesResponse extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

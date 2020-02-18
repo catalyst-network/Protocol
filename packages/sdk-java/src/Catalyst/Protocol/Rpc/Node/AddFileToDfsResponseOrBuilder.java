@@ -9,15 +9,18 @@ public interface AddFileToDfsResponseOrBuilder extends
 
   /**
    * <code>bytes response_code = 1;</code>
+   * @return The responseCode.
    */
   com.google.protobuf.ByteString getResponseCode();
 
   /**
    * <code>string dfs_hash = 2;</code>
+   * @return The dfsHash.
    */
   java.lang.String getDfsHash();
   /**
    * <code>string dfs_hash = 2;</code>
+   * @return The bytes for dfsHash.
    */
   com.google.protobuf.ByteString
       getDfsHashBytes();

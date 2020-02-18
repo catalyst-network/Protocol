@@ -52,6 +52,14 @@ public enum SignatureType
    * <code>PROTOCOL_PEER = 4;</code>
    */
   PROTOCOL_PEER(4),
+  /**
+   * <pre>
+   * Signatures for messages in the wen3 provider.
+   * </pre>
+   *
+   * <code>WEB3_MESSAGE = 5;</code>
+   */
+  WEB3_MESSAGE(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -95,6 +103,14 @@ public enum SignatureType
    * <code>PROTOCOL_PEER = 4;</code>
    */
   public static final int PROTOCOL_PEER_VALUE = 4;
+  /**
+   * <pre>
+   * Signatures for messages in the wen3 provider.
+   * </pre>
+   *
+   * <code>WEB3_MESSAGE = 5;</code>
+   */
+  public static final int WEB3_MESSAGE_VALUE = 5;
 
 
   public final int getNumber() {
@@ -106,6 +122,8 @@ public enum SignatureType
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -113,6 +131,10 @@ public enum SignatureType
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static SignatureType forNumber(int value) {
     switch (value) {
       case 0: return SIGNATURE_TYPE_UNKNOWN;
@@ -120,6 +142,7 @@ public enum SignatureType
       case 2: return TRANSACTION_CONFIDENTIAL;
       case 3: return PROTOCOL_RPC;
       case 4: return PROTOCOL_PEER;
+      case 5: return WEB3_MESSAGE;
       default: return null;
     }
   }

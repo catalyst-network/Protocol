@@ -8,14 +8,16 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers_RuntimeSupport.h>
+ #import <protobuf/GPBProtocolBuffers_RuntimeSupport.h>
 #else
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
- #import "Account.pbobjc.h"
- #import "Cryptography.pbobjc.h"
- #import "Network.pbobjc.h"
+#import <stdatomic.h>
+
+#import "Account.pbobjc.h"
+#import "Cryptography.pbobjc.h"
+#import "Network.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -47,7 +49,7 @@ static GPBFileDescriptor *AccountRoot_FileDescriptor(void) {
 #pragma mark - Enum AccountType
 
 GPBEnumDescriptor *AccountType_EnumDescriptor(void) {
-  static GPBEnumDescriptor *descriptor = NULL;
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
         "AccountTypeUnknown\000PublicAccount\000Confide"
@@ -64,7 +66,8 @@ GPBEnumDescriptor *AccountType_EnumDescriptor(void) {
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
                                      enumVerifier:AccountType_IsValidValue];
-    if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
       [worker release];
     }
   }
@@ -140,7 +143,9 @@ typedef struct Address__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Address__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;

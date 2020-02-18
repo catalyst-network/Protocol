@@ -4,90 +4,105 @@
 
 namespace Catalyst\Protocol\Cryptography;
 
+use UnexpectedValueException;
+
 /**
- * Protobuf enum <code>Catalyst.Protocol.Cryptography.ErrorCode</code>
+ * Protobuf type <code>Catalyst.Protocol.Cryptography.ErrorCode</code>
  */
 class ErrorCode
 {
     /**
-     * <pre>
      * Unknown error.
-     * </pre>
      *
-     * <code>ERROR_CODE_UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>ERROR_CODE_UNKNOWN = 0;</code>
      */
     const ERROR_CODE_UNKNOWN = 0;
     /**
-     * <pre>
      * Signature is of incorrect length or does not correspond to a valid point.
-     * </pre>
      *
-     * <code>INVALID_SIGNATURE = 1;</code>
+     * Generated from protobuf enum <code>INVALID_SIGNATURE = 1;</code>
      */
     const INVALID_SIGNATURE = 1;
     /**
-     * <pre>
      * Public key is of incorrect length or cannot be decompressed to a valid point.
-     * </pre>
      *
-     * <code>INVALID_PUBLIC_KEY = 2;</code>
+     * Generated from protobuf enum <code>INVALID_PUBLIC_KEY = 2;</code>
      */
     const INVALID_PUBLIC_KEY = 2;
     /**
-     * <pre>
      * Private key is of incorrect length.
-     * </pre>
      *
-     * <code>INVALID_PRIVATE_KEY = 3;</code>
+     * Generated from protobuf enum <code>INVALID_PRIVATE_KEY = 3;</code>
      */
     const INVALID_PRIVATE_KEY = 3;
     /**
-     * <pre>
      * Signature cannot be verified against the provided information.
-     * </pre>
      *
-     * <code>SIGNATURE_VERIFICATION_FAILURE = 4;</code>
+     * Generated from protobuf enum <code>SIGNATURE_VERIFICATION_FAILURE = 4;</code>
      */
     const SIGNATURE_VERIFICATION_FAILURE = 4;
     /**
-     * <pre>
      * Context exceed the maximum allowed length.
-     * </pre>
      *
-     * <code>INVALID_CONTEXT_LENGTH = 5;</code>
+     * Generated from protobuf enum <code>INVALID_CONTEXT_LENGTH = 5;</code>
      */
     const INVALID_CONTEXT_LENGTH = 5;
     /**
-     * <pre>
      * Unable to convert message to valid data. 
-     * </pre>
      *
-     * <code>INVALID_BATCH_MESSAGE = 6;</code>
+     * Generated from protobuf enum <code>INVALID_BATCH_MESSAGE = 6;</code>
      */
     const INVALID_BATCH_MESSAGE = 6;
     /**
-     * <pre>
      * Cannot perform batch verification as an unequal number of messages/signatures/keys were provided.
-     * </pre>
      *
-     * <code>ARRAYS_NOT_EQUAL_LENGTH = 7;</code>
+     * Generated from protobuf enum <code>ARRAYS_NOT_EQUAL_LENGTH = 7;</code>
      */
     const ARRAYS_NOT_EQUAL_LENGTH = 7;
     /**
-     * <pre>
      * One or more signatures cannot be verified.
-     * </pre>
      *
-     * <code>BATCH_VERIFICATION_FAILURE = 8;</code>
+     * Generated from protobuf enum <code>BATCH_VERIFICATION_FAILURE = 8;</code>
      */
     const BATCH_VERIFICATION_FAILURE = 8;
     /**
-     * <pre>
      * No error (just a teapot).
-     * </pre>
      *
-     * <code>NO_ERROR = 418;</code>
+     * Generated from protobuf enum <code>NO_ERROR = 418;</code>
      */
     const NO_ERROR = 418;
+
+    private static $valueToName = [
+        self::ERROR_CODE_UNKNOWN => 'ERROR_CODE_UNKNOWN',
+        self::INVALID_SIGNATURE => 'INVALID_SIGNATURE',
+        self::INVALID_PUBLIC_KEY => 'INVALID_PUBLIC_KEY',
+        self::INVALID_PRIVATE_KEY => 'INVALID_PRIVATE_KEY',
+        self::SIGNATURE_VERIFICATION_FAILURE => 'SIGNATURE_VERIFICATION_FAILURE',
+        self::INVALID_CONTEXT_LENGTH => 'INVALID_CONTEXT_LENGTH',
+        self::INVALID_BATCH_MESSAGE => 'INVALID_BATCH_MESSAGE',
+        self::ARRAYS_NOT_EQUAL_LENGTH => 'ARRAYS_NOT_EQUAL_LENGTH',
+        self::BATCH_VERIFICATION_FAILURE => 'BATCH_VERIFICATION_FAILURE',
+        self::NO_ERROR => 'NO_ERROR',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

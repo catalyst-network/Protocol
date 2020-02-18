@@ -72,6 +72,9 @@ export class Delta extends jspb.Message {
   getStateRoot_asB64(): string;
   setStateRoot(value: Uint8Array | string): void;
 
+  getDeltaNumber(): number;
+  setDeltaNumber(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Delta.AsObject;
   static toObject(includeInstance: boolean, msg: Delta): Delta.AsObject;
@@ -92,6 +95,7 @@ export namespace Delta {
     confidentialEntriesList: Array<Transaction_pb.ConfidentialEntry.AsObject>,
     coinbaseEntriesList: Array<Transaction_pb.CoinbaseEntry.AsObject>,
     stateRoot: Uint8Array | string,
+    deltaNumber: number,
   }
 }
 

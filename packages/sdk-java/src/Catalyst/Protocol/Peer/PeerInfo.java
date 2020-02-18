@@ -10,27 +10,36 @@ public  final class PeerInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Peer.PeerInfo)
     PeerInfoOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use PeerInfo.newBuilder() to construct.
   private PeerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private PeerInfo() {
-    reputation_ = 0;
-    isBlacklisted_ = false;
-    isUnreachable_ = false;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new PeerInfo();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private PeerInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -39,12 +48,6 @@ public  final class PeerInfo extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             Catalyst.Protocol.Peer.PeerId.Builder subBuilder = null;
             if (peerId_ != null) {
@@ -125,6 +128,13 @@ public  final class PeerInfo extends
 
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -133,6 +143,7 @@ public  final class PeerInfo extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -141,6 +152,7 @@ public  final class PeerInfo extends
     return Catalyst.Protocol.Peer.Peer.internal_static_Catalyst_Protocol_Peer_PeerInfo_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Peer.Peer.internal_static_Catalyst_Protocol_Peer_PeerInfo_fieldAccessorTable
@@ -156,6 +168,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+   * @return Whether the peerId field is set.
    */
   public boolean hasPeerId() {
     return peerId_ != null;
@@ -166,6 +179,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+   * @return The peerId.
    */
   public Catalyst.Protocol.Peer.PeerId getPeerId() {
     return peerId_ == null ? Catalyst.Protocol.Peer.PeerId.getDefaultInstance() : peerId_;
@@ -189,6 +203,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>sint32 reputation = 2;</code>
+   * @return The reputation.
    */
   public int getReputation() {
     return reputation_;
@@ -202,6 +217,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>bool is_blacklisted = 3;</code>
+   * @return The isBlacklisted.
    */
   public boolean getIsBlacklisted() {
     return isBlacklisted_;
@@ -215,6 +231,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>bool is_unreachable = 4;</code>
+   * @return The isUnreachable.
    */
   public boolean getIsUnreachable() {
     return isUnreachable_;
@@ -228,6 +245,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Duration inactive_for = 5;</code>
+   * @return Whether the inactiveFor field is set.
    */
   public boolean hasInactiveFor() {
     return inactiveFor_ != null;
@@ -238,6 +256,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Duration inactive_for = 5;</code>
+   * @return The inactiveFor.
    */
   public com.google.protobuf.Duration getInactiveFor() {
     return inactiveFor_ == null ? com.google.protobuf.Duration.getDefaultInstance() : inactiveFor_;
@@ -261,6 +280,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_seen = 6;</code>
+   * @return Whether the lastSeen field is set.
    */
   public boolean hasLastSeen() {
     return lastSeen_ != null;
@@ -271,6 +291,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_seen = 6;</code>
+   * @return The lastSeen.
    */
   public com.google.protobuf.Timestamp getLastSeen() {
     return lastSeen_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastSeen_;
@@ -294,6 +315,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified = 7;</code>
+   * @return Whether the modified field is set.
    */
   public boolean hasModified() {
     return modified_ != null;
@@ -304,6 +326,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified = 7;</code>
+   * @return The modified.
    */
   public com.google.protobuf.Timestamp getModified() {
     return modified_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modified_;
@@ -327,6 +350,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created = 8;</code>
+   * @return Whether the created field is set.
    */
   public boolean hasCreated() {
     return created_ != null;
@@ -337,6 +361,7 @@ public  final class PeerInfo extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created = 8;</code>
+   * @return The created.
    */
   public com.google.protobuf.Timestamp getCreated() {
     return created_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : created_;
@@ -353,6 +378,7 @@ public  final class PeerInfo extends
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -362,6 +388,7 @@ public  final class PeerInfo extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (peerId_ != null) {
@@ -388,8 +415,10 @@ public  final class PeerInfo extends
     if (created_ != null) {
       output.writeMessage(8, getCreated());
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -427,11 +456,11 @@ public  final class PeerInfo extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getCreated());
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -442,39 +471,39 @@ public  final class PeerInfo extends
     }
     Catalyst.Protocol.Peer.PeerInfo other = (Catalyst.Protocol.Peer.PeerInfo) obj;
 
-    boolean result = true;
-    result = result && (hasPeerId() == other.hasPeerId());
+    if (hasPeerId() != other.hasPeerId()) return false;
     if (hasPeerId()) {
-      result = result && getPeerId()
-          .equals(other.getPeerId());
+      if (!getPeerId()
+          .equals(other.getPeerId())) return false;
     }
-    result = result && (getReputation()
-        == other.getReputation());
-    result = result && (getIsBlacklisted()
-        == other.getIsBlacklisted());
-    result = result && (getIsUnreachable()
-        == other.getIsUnreachable());
-    result = result && (hasInactiveFor() == other.hasInactiveFor());
+    if (getReputation()
+        != other.getReputation()) return false;
+    if (getIsBlacklisted()
+        != other.getIsBlacklisted()) return false;
+    if (getIsUnreachable()
+        != other.getIsUnreachable()) return false;
+    if (hasInactiveFor() != other.hasInactiveFor()) return false;
     if (hasInactiveFor()) {
-      result = result && getInactiveFor()
-          .equals(other.getInactiveFor());
+      if (!getInactiveFor()
+          .equals(other.getInactiveFor())) return false;
     }
-    result = result && (hasLastSeen() == other.hasLastSeen());
+    if (hasLastSeen() != other.hasLastSeen()) return false;
     if (hasLastSeen()) {
-      result = result && getLastSeen()
-          .equals(other.getLastSeen());
+      if (!getLastSeen()
+          .equals(other.getLastSeen())) return false;
     }
-    result = result && (hasModified() == other.hasModified());
+    if (hasModified() != other.hasModified()) return false;
     if (hasModified()) {
-      result = result && getModified()
-          .equals(other.getModified());
+      if (!getModified()
+          .equals(other.getModified())) return false;
     }
-    result = result && (hasCreated() == other.hasCreated());
+    if (hasCreated() != other.hasCreated()) return false;
     if (hasCreated()) {
-      result = result && getCreated()
-          .equals(other.getCreated());
+      if (!getCreated()
+          .equals(other.getCreated())) return false;
     }
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -517,6 +546,17 @@ public  final class PeerInfo extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Peer.PeerInfo parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Peer.PeerInfo parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Peer.PeerInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -576,6 +616,7 @@ public  final class PeerInfo extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -583,6 +624,7 @@ public  final class PeerInfo extends
   public static Builder newBuilder(Catalyst.Protocol.Peer.PeerInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -606,6 +648,7 @@ public  final class PeerInfo extends
       return Catalyst.Protocol.Peer.Peer.internal_static_Catalyst_Protocol_Peer_PeerInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Peer.Peer.internal_static_Catalyst_Protocol_Peer_PeerInfo_fieldAccessorTable
@@ -628,6 +671,7 @@ public  final class PeerInfo extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (peerIdBuilder_ == null) {
@@ -669,15 +713,18 @@ public  final class PeerInfo extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Peer.Peer.internal_static_Catalyst_Protocol_Peer_PeerInfo_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Peer.PeerInfo getDefaultInstanceForType() {
       return Catalyst.Protocol.Peer.PeerInfo.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Peer.PeerInfo build() {
       Catalyst.Protocol.Peer.PeerInfo result = buildPartial();
       if (!result.isInitialized()) {
@@ -686,6 +733,7 @@ public  final class PeerInfo extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Peer.PeerInfo buildPartial() {
       Catalyst.Protocol.Peer.PeerInfo result = new Catalyst.Protocol.Peer.PeerInfo(this);
       if (peerIdBuilder_ == null) {
@@ -720,32 +768,39 @@ public  final class PeerInfo extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Peer.PeerInfo) {
         return mergeFrom((Catalyst.Protocol.Peer.PeerInfo)other);
@@ -781,14 +836,17 @@ public  final class PeerInfo extends
       if (other.hasCreated()) {
         mergeCreated(other.getCreated());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -807,7 +865,7 @@ public  final class PeerInfo extends
       return this;
     }
 
-    private Catalyst.Protocol.Peer.PeerId peerId_ = null;
+    private Catalyst.Protocol.Peer.PeerId peerId_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Peer.PeerId, Catalyst.Protocol.Peer.PeerId.Builder, Catalyst.Protocol.Peer.PeerIdOrBuilder> peerIdBuilder_;
     /**
@@ -816,6 +874,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+     * @return Whether the peerId field is set.
      */
     public boolean hasPeerId() {
       return peerIdBuilder_ != null || peerId_ != null;
@@ -826,6 +885,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+     * @return The peerId.
      */
     public Catalyst.Protocol.Peer.PeerId getPeerId() {
       if (peerIdBuilder_ == null) {
@@ -967,6 +1027,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>sint32 reputation = 2;</code>
+     * @return The reputation.
      */
     public int getReputation() {
       return reputation_;
@@ -977,6 +1038,8 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>sint32 reputation = 2;</code>
+     * @param value The reputation to set.
+     * @return This builder for chaining.
      */
     public Builder setReputation(int value) {
       
@@ -990,6 +1053,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>sint32 reputation = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearReputation() {
       
@@ -1005,6 +1069,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>bool is_blacklisted = 3;</code>
+     * @return The isBlacklisted.
      */
     public boolean getIsBlacklisted() {
       return isBlacklisted_;
@@ -1015,6 +1080,8 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>bool is_blacklisted = 3;</code>
+     * @param value The isBlacklisted to set.
+     * @return This builder for chaining.
      */
     public Builder setIsBlacklisted(boolean value) {
       
@@ -1028,6 +1095,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>bool is_blacklisted = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIsBlacklisted() {
       
@@ -1043,6 +1111,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>bool is_unreachable = 4;</code>
+     * @return The isUnreachable.
      */
     public boolean getIsUnreachable() {
       return isUnreachable_;
@@ -1053,6 +1122,8 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>bool is_unreachable = 4;</code>
+     * @param value The isUnreachable to set.
+     * @return This builder for chaining.
      */
     public Builder setIsUnreachable(boolean value) {
       
@@ -1066,6 +1137,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>bool is_unreachable = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIsUnreachable() {
       
@@ -1074,7 +1146,7 @@ public  final class PeerInfo extends
       return this;
     }
 
-    private com.google.protobuf.Duration inactiveFor_ = null;
+    private com.google.protobuf.Duration inactiveFor_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> inactiveForBuilder_;
     /**
@@ -1083,6 +1155,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Duration inactive_for = 5;</code>
+     * @return Whether the inactiveFor field is set.
      */
     public boolean hasInactiveFor() {
       return inactiveForBuilder_ != null || inactiveFor_ != null;
@@ -1093,6 +1166,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Duration inactive_for = 5;</code>
+     * @return The inactiveFor.
      */
     public com.google.protobuf.Duration getInactiveFor() {
       if (inactiveForBuilder_ == null) {
@@ -1227,7 +1301,7 @@ public  final class PeerInfo extends
       return inactiveForBuilder_;
     }
 
-    private com.google.protobuf.Timestamp lastSeen_ = null;
+    private com.google.protobuf.Timestamp lastSeen_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastSeenBuilder_;
     /**
@@ -1236,6 +1310,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_seen = 6;</code>
+     * @return Whether the lastSeen field is set.
      */
     public boolean hasLastSeen() {
       return lastSeenBuilder_ != null || lastSeen_ != null;
@@ -1246,6 +1321,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_seen = 6;</code>
+     * @return The lastSeen.
      */
     public com.google.protobuf.Timestamp getLastSeen() {
       if (lastSeenBuilder_ == null) {
@@ -1380,7 +1456,7 @@ public  final class PeerInfo extends
       return lastSeenBuilder_;
     }
 
-    private com.google.protobuf.Timestamp modified_ = null;
+    private com.google.protobuf.Timestamp modified_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedBuilder_;
     /**
@@ -1389,6 +1465,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified = 7;</code>
+     * @return Whether the modified field is set.
      */
     public boolean hasModified() {
       return modifiedBuilder_ != null || modified_ != null;
@@ -1399,6 +1476,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified = 7;</code>
+     * @return The modified.
      */
     public com.google.protobuf.Timestamp getModified() {
       if (modifiedBuilder_ == null) {
@@ -1533,7 +1611,7 @@ public  final class PeerInfo extends
       return modifiedBuilder_;
     }
 
-    private com.google.protobuf.Timestamp created_ = null;
+    private com.google.protobuf.Timestamp created_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdBuilder_;
     /**
@@ -1542,6 +1620,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created = 8;</code>
+     * @return Whether the created field is set.
      */
     public boolean hasCreated() {
       return createdBuilder_ != null || created_ != null;
@@ -1552,6 +1631,7 @@ public  final class PeerInfo extends
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created = 8;</code>
+     * @return The created.
      */
     public com.google.protobuf.Timestamp getCreated() {
       if (createdBuilder_ == null) {
@@ -1685,14 +1765,16 @@ public  final class PeerInfo extends
       }
       return createdBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1711,11 +1793,12 @@ public  final class PeerInfo extends
 
   private static final com.google.protobuf.Parser<PeerInfo>
       PARSER = new com.google.protobuf.AbstractParser<PeerInfo>() {
+    @java.lang.Override
     public PeerInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PeerInfo(input, extensionRegistry);
+      return new PeerInfo(input, extensionRegistry);
     }
   };
 
@@ -1728,6 +1811,7 @@ public  final class PeerInfo extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Peer.PeerInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

@@ -6,40 +6,42 @@ require 'google/protobuf'
 require 'Peer_pb'
 require 'Deltas_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "Catalyst.Protocol.IPPN.PeerNeighborsRequest" do
-  end
-  add_message "Catalyst.Protocol.IPPN.PeerNeighborsResponse" do
-    repeated :peers, :message, 1, "Catalyst.Protocol.Peer.PeerId"
-  end
-  add_message "Catalyst.Protocol.IPPN.PingRequest" do
-  end
-  add_message "Catalyst.Protocol.IPPN.PingResponse" do
-  end
-  add_message "Catalyst.Protocol.IPPN.LatestDeltaHashRequest" do
-  end
-  add_message "Catalyst.Protocol.IPPN.LatestDeltaHashResponse" do
-    optional :delta_hash, :bytes, 1
-  end
-  add_message "Catalyst.Protocol.IPPN.DeltaHistoryRequest" do
-    optional :range, :uint32, 1
-    optional :height, :uint32, 2
-  end
-  add_message "Catalyst.Protocol.IPPN.DeltaHistoryResponse" do
-    repeated :result, :message, 1, "Catalyst.Protocol.Deltas.DeltaIndex"
+  add_file("IPPN.proto", :syntax => :proto3) do
+    add_message "Catalyst.Protocol.IPPN.PeerNeighborsRequest" do
+    end
+    add_message "Catalyst.Protocol.IPPN.PeerNeighborsResponse" do
+      repeated :peers, :message, 1, "Catalyst.Protocol.Peer.PeerId"
+    end
+    add_message "Catalyst.Protocol.IPPN.PingRequest" do
+    end
+    add_message "Catalyst.Protocol.IPPN.PingResponse" do
+    end
+    add_message "Catalyst.Protocol.IPPN.LatestDeltaHashRequest" do
+    end
+    add_message "Catalyst.Protocol.IPPN.LatestDeltaHashResponse" do
+      optional :result, :message, 1, "Catalyst.Protocol.Deltas.DeltaIndex"
+    end
+    add_message "Catalyst.Protocol.IPPN.DeltaHistoryRequest" do
+      optional :range, :uint32, 1
+      optional :height, :uint32, 2
+    end
+    add_message "Catalyst.Protocol.IPPN.DeltaHistoryResponse" do
+      repeated :result, :message, 1, "Catalyst.Protocol.Deltas.DeltaIndex"
+    end
   end
 end
 
 module Catalyst
   module Protocol
     module IPPN
-      PeerNeighborsRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PeerNeighborsRequest").msgclass
-      PeerNeighborsResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PeerNeighborsResponse").msgclass
-      PingRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PingRequest").msgclass
-      PingResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PingResponse").msgclass
-      LatestDeltaHashRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.LatestDeltaHashRequest").msgclass
-      LatestDeltaHashResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.LatestDeltaHashResponse").msgclass
-      DeltaHistoryRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.DeltaHistoryRequest").msgclass
-      DeltaHistoryResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.DeltaHistoryResponse").msgclass
+      PeerNeighborsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PeerNeighborsRequest").msgclass
+      PeerNeighborsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PeerNeighborsResponse").msgclass
+      PingRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PingRequest").msgclass
+      PingResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.PingResponse").msgclass
+      LatestDeltaHashRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.LatestDeltaHashRequest").msgclass
+      LatestDeltaHashResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.LatestDeltaHashResponse").msgclass
+      DeltaHistoryRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.DeltaHistoryRequest").msgclass
+      DeltaHistoryResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.IPPN.DeltaHistoryResponse").msgclass
     end
   end
 end

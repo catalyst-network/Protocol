@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers.h>
+ #import <protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -56,6 +56,9 @@ typedef GPB_ENUM(SignatureType) {
 
   /** Signatures for peer protocol messages. */
   SignatureType_ProtocolPeer = 4,
+
+  /** Signatures for messages in the wen3 provider. */
+  SignatureType_Web3Message = 5,
 };
 
 GPBEnumDescriptor *SignatureType_EnumDescriptor(void);

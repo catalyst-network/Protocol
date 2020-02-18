@@ -9,6 +9,7 @@ public interface RemovePeerResponseOrBuilder extends
 
   /**
    * <code>uint32 deleted_count = 1;</code>
+   * @return The deletedCount.
    */
   int getDeletedCount();
 }

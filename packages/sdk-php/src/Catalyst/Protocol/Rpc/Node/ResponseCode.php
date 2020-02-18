@@ -4,38 +4,70 @@
 
 namespace Catalyst\Protocol\Rpc\Node;
 
+use UnexpectedValueException;
+
 /**
- * Protobuf enum <code>Catalyst.Protocol.Rpc.Node.ResponseCode</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.ResponseCode</code>
  */
 class ResponseCode
 {
     /**
-     * <code>PENDING = 0;</code>
+     * Generated from protobuf enum <code>PENDING = 0;</code>
      */
     const PENDING = 0;
     /**
-     * <code>SUCCESSFUL = 1;</code>
+     * Generated from protobuf enum <code>SUCCESSFUL = 1;</code>
      */
     const SUCCESSFUL = 1;
     /**
-     * <code>ERROR = 2;</code>
+     * Generated from protobuf enum <code>ERROR = 2;</code>
      */
     const ERROR = 2;
     /**
-     * <code>FINISHED = 3;</code>
+     * Generated from protobuf enum <code>FINISHED = 3;</code>
      */
     const FINISHED = 3;
     /**
-     * <code>EXPIRED = 4;</code>
+     * Generated from protobuf enum <code>EXPIRED = 4;</code>
      */
     const EXPIRED = 4;
     /**
-     * <code>FAILED = 5;</code>
+     * Generated from protobuf enum <code>FAILED = 5;</code>
      */
     const FAILED = 5;
     /**
-     * <code>EXISTS = 6;</code>
+     * Generated from protobuf enum <code>EXISTS = 6;</code>
      */
     const EXISTS = 6;
+
+    private static $valueToName = [
+        self::PENDING => 'PENDING',
+        self::SUCCESSFUL => 'SUCCESSFUL',
+        self::ERROR => 'ERROR',
+        self::FINISHED => 'FINISHED',
+        self::EXPIRED => 'EXPIRED',
+        self::FAILED => 'FAILED',
+        self::EXISTS => 'EXISTS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

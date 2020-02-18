@@ -9,6 +9,7 @@ public interface GetAddressRequestOrBuilder extends
 
   /**
    * <code>bool query = 1;</code>
+   * @return The query.
    */
   boolean getQuery();
 }

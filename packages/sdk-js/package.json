@@ -4,12 +4,12 @@
     "type": "git",
     "url": "git+https://github.com/catalyst-network/protocol.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Catalyst Protocol SDK-JS",
   "main": "src/index.js",
   "scripts": {
     "test": "test:unit",
-    "build:ts": "protoc --plugin=\"protoc-gen-ts=\"./node_modules/.bin/protoc-gen-ts\"\" --proto_path Protocol/src/ --js_out=import_style=commonjs,binary:src --ts_out=\"src\" Protocol/src/*.proto"
+    "build:ts": "protoc --plugin=\"protoc-gen-ts=\"./node_modules/.bin/protoc-gen-ts\"\" --proto_path ../..//src/ --js_out=import_style=commonjs,binary:src --ts_out=\"src\" ../../src/*.proto"
   },
   "keywords": [
     "catalyst-network",
