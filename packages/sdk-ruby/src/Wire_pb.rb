@@ -8,46 +8,48 @@ require 'Peer_pb'
 require 'Transaction_pb'
 require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "Catalyst.Protocol.Wire.ProtocolErrorMessage" do
-    optional :signature, :message, 1, "Catalyst.Protocol.Cryptography.Signature"
-    optional :peer_id, :message, 2, "Catalyst.Protocol.Peer.PeerId"
-    optional :correlation_id, :bytes, 3
-    optional :code, :int32, 4
-  end
-  add_message "Catalyst.Protocol.Wire.ProtocolMessage" do
-    optional :peer_id, :message, 1, "Catalyst.Protocol.Peer.PeerId"
-    optional :correlation_id, :bytes, 2
-    optional :type_url, :string, 3
-    optional :value, :bytes, 4
-    optional :signature, :message, 5, "Catalyst.Protocol.Cryptography.Signature"
-  end
-  add_message "Catalyst.Protocol.Wire.TransactionBroadcast" do
-    optional :public_entry, :message, 1, "Catalyst.Protocol.Transaction.PublicEntry"
-  end
-  add_message "Catalyst.Protocol.Wire.CandidateDeltaBroadcast" do
-    optional :hash, :bytes, 1
-    optional :producer_id, :message, 2, "Catalyst.Protocol.Peer.PeerId"
-    optional :previous_delta_dfs_hash, :bytes, 3
-  end
-  add_message "Catalyst.Protocol.Wire.FavouriteDeltaBroadcast" do
-    optional :candidate, :message, 1, "Catalyst.Protocol.Wire.CandidateDeltaBroadcast"
-    optional :voter_id, :message, 2, "Catalyst.Protocol.Peer.PeerId"
-  end
-  add_message "Catalyst.Protocol.Wire.DeltaDfsHashBroadcast" do
-    optional :delta_dfs_hash, :bytes, 1
-    optional :previous_delta_dfs_hash, :bytes, 2
+  add_file("Wire.proto", :syntax => :proto3) do
+    add_message "Catalyst.Protocol.Wire.ProtocolErrorMessage" do
+      optional :signature, :message, 1, "Catalyst.Protocol.Cryptography.Signature"
+      optional :peer_id, :message, 2, "Catalyst.Protocol.Peer.PeerId"
+      optional :correlation_id, :bytes, 3
+      optional :code, :int32, 4
+    end
+    add_message "Catalyst.Protocol.Wire.ProtocolMessage" do
+      optional :peer_id, :message, 1, "Catalyst.Protocol.Peer.PeerId"
+      optional :correlation_id, :bytes, 2
+      optional :type_url, :string, 3
+      optional :value, :bytes, 4
+      optional :signature, :message, 5, "Catalyst.Protocol.Cryptography.Signature"
+    end
+    add_message "Catalyst.Protocol.Wire.TransactionBroadcast" do
+      optional :public_entry, :message, 1, "Catalyst.Protocol.Transaction.PublicEntry"
+    end
+    add_message "Catalyst.Protocol.Wire.CandidateDeltaBroadcast" do
+      optional :hash, :bytes, 1
+      optional :producer_id, :message, 2, "Catalyst.Protocol.Peer.PeerId"
+      optional :previous_delta_dfs_hash, :bytes, 3
+    end
+    add_message "Catalyst.Protocol.Wire.FavouriteDeltaBroadcast" do
+      optional :candidate, :message, 1, "Catalyst.Protocol.Wire.CandidateDeltaBroadcast"
+      optional :voter_id, :message, 2, "Catalyst.Protocol.Peer.PeerId"
+    end
+    add_message "Catalyst.Protocol.Wire.DeltaDfsHashBroadcast" do
+      optional :delta_dfs_hash, :bytes, 1
+      optional :previous_delta_dfs_hash, :bytes, 2
+    end
   end
 end
 
 module Catalyst
   module Protocol
     module Wire
-      ProtocolErrorMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.ProtocolErrorMessage").msgclass
-      ProtocolMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.ProtocolMessage").msgclass
-      TransactionBroadcast = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.TransactionBroadcast").msgclass
-      CandidateDeltaBroadcast = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.CandidateDeltaBroadcast").msgclass
-      FavouriteDeltaBroadcast = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.FavouriteDeltaBroadcast").msgclass
-      DeltaDfsHashBroadcast = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.DeltaDfsHashBroadcast").msgclass
+      ProtocolErrorMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.ProtocolErrorMessage").msgclass
+      ProtocolMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.ProtocolMessage").msgclass
+      TransactionBroadcast = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.TransactionBroadcast").msgclass
+      CandidateDeltaBroadcast = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.CandidateDeltaBroadcast").msgclass
+      FavouriteDeltaBroadcast = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.FavouriteDeltaBroadcast").msgclass
+      DeltaDfsHashBroadcast = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Wire.DeltaDfsHashBroadcast").msgclass
     end
   end
 end

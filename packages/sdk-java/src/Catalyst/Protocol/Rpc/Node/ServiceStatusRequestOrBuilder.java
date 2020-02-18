@@ -9,6 +9,7 @@ public interface ServiceStatusRequestOrBuilder extends
 
   /**
    * <code>bool query = 1;</code>
+   * @return The query.
    */
   boolean getQuery();
 }

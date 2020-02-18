@@ -10,6 +10,7 @@ public  final class BlockChallengeBroadcast extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast)
     BlockChallengeBroadcastOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use BlockChallengeBroadcast.newBuilder() to construct.
   private BlockChallengeBroadcast(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,16 +20,27 @@ public  final class BlockChallengeBroadcast extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new BlockChallengeBroadcast();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private BlockChallengeBroadcast(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -37,12 +49,6 @@ public  final class BlockChallengeBroadcast extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest.Builder subBuilder = null;
             if (originalChallenge_ != null) {
@@ -88,6 +94,13 @@ public  final class BlockChallengeBroadcast extends
 
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -96,6 +109,7 @@ public  final class BlockChallengeBroadcast extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -104,6 +118,7 @@ public  final class BlockChallengeBroadcast extends
     return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeBroadcast_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeBroadcast_fieldAccessorTable
@@ -115,12 +130,14 @@ public  final class BlockChallengeBroadcast extends
   private Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest originalChallenge_;
   /**
    * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+   * @return Whether the originalChallenge field is set.
    */
   public boolean hasOriginalChallenge() {
     return originalChallenge_ != null;
   }
   /**
    * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+   * @return The originalChallenge.
    */
   public Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest getOriginalChallenge() {
     return originalChallenge_ == null ? Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest.getDefaultInstance() : originalChallenge_;
@@ -136,6 +153,7 @@ public  final class BlockChallengeBroadcast extends
   private volatile java.lang.Object answer_;
   /**
    * <code>string answer = 2;</code>
+   * @return The answer.
    */
   public java.lang.String getAnswer() {
     java.lang.Object ref = answer_;
@@ -151,6 +169,7 @@ public  final class BlockChallengeBroadcast extends
   }
   /**
    * <code>string answer = 2;</code>
+   * @return The bytes for answer.
    */
   public com.google.protobuf.ByteString
       getAnswerBytes() {
@@ -170,12 +189,14 @@ public  final class BlockChallengeBroadcast extends
   private Catalyst.Protocol.Peer.PeerId challengedPeer_;
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+   * @return Whether the challengedPeer field is set.
    */
   public boolean hasChallengedPeer() {
     return challengedPeer_ != null;
   }
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+   * @return The challengedPeer.
    */
   public Catalyst.Protocol.Peer.PeerId getChallengedPeer() {
     return challengedPeer_ == null ? Catalyst.Protocol.Peer.PeerId.getDefaultInstance() : challengedPeer_;
@@ -191,12 +212,14 @@ public  final class BlockChallengeBroadcast extends
   private Catalyst.Protocol.Peer.PeerId challengedBy_;
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+   * @return Whether the challengedBy field is set.
    */
   public boolean hasChallengedBy() {
     return challengedBy_ != null;
   }
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+   * @return The challengedBy.
    */
   public Catalyst.Protocol.Peer.PeerId getChallengedBy() {
     return challengedBy_ == null ? Catalyst.Protocol.Peer.PeerId.getDefaultInstance() : challengedBy_;
@@ -209,6 +232,7 @@ public  final class BlockChallengeBroadcast extends
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -218,6 +242,7 @@ public  final class BlockChallengeBroadcast extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (originalChallenge_ != null) {
@@ -232,8 +257,10 @@ public  final class BlockChallengeBroadcast extends
     if (challengedBy_ != null) {
       output.writeMessage(4, getChallengedBy());
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -254,11 +281,11 @@ public  final class BlockChallengeBroadcast extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getChallengedBy());
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -269,25 +296,25 @@ public  final class BlockChallengeBroadcast extends
     }
     Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast other = (Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast) obj;
 
-    boolean result = true;
-    result = result && (hasOriginalChallenge() == other.hasOriginalChallenge());
+    if (hasOriginalChallenge() != other.hasOriginalChallenge()) return false;
     if (hasOriginalChallenge()) {
-      result = result && getOriginalChallenge()
-          .equals(other.getOriginalChallenge());
+      if (!getOriginalChallenge()
+          .equals(other.getOriginalChallenge())) return false;
     }
-    result = result && getAnswer()
-        .equals(other.getAnswer());
-    result = result && (hasChallengedPeer() == other.hasChallengedPeer());
+    if (!getAnswer()
+        .equals(other.getAnswer())) return false;
+    if (hasChallengedPeer() != other.hasChallengedPeer()) return false;
     if (hasChallengedPeer()) {
-      result = result && getChallengedPeer()
-          .equals(other.getChallengedPeer());
+      if (!getChallengedPeer()
+          .equals(other.getChallengedPeer())) return false;
     }
-    result = result && (hasChallengedBy() == other.hasChallengedBy());
+    if (hasChallengedBy() != other.hasChallengedBy()) return false;
     if (hasChallengedBy()) {
-      result = result && getChallengedBy()
-          .equals(other.getChallengedBy());
+      if (!getChallengedBy()
+          .equals(other.getChallengedBy())) return false;
     }
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -316,6 +343,17 @@ public  final class BlockChallengeBroadcast extends
     return hash;
   }
 
+  public static Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -375,6 +413,7 @@ public  final class BlockChallengeBroadcast extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -382,6 +421,7 @@ public  final class BlockChallengeBroadcast extends
   public static Builder newBuilder(Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -405,6 +445,7 @@ public  final class BlockChallengeBroadcast extends
       return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeBroadcast_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeBroadcast_fieldAccessorTable
@@ -427,6 +468,7 @@ public  final class BlockChallengeBroadcast extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (originalChallengeBuilder_ == null) {
@@ -452,15 +494,18 @@ public  final class BlockChallengeBroadcast extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeBroadcast_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast getDefaultInstanceForType() {
       return Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast build() {
       Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast result = buildPartial();
       if (!result.isInitialized()) {
@@ -469,6 +514,7 @@ public  final class BlockChallengeBroadcast extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast buildPartial() {
       Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast result = new Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast(this);
       if (originalChallengeBuilder_ == null) {
@@ -491,32 +537,39 @@ public  final class BlockChallengeBroadcast extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast) {
         return mergeFrom((Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast)other);
@@ -541,14 +594,17 @@ public  final class BlockChallengeBroadcast extends
       if (other.hasChallengedBy()) {
         mergeChallengedBy(other.getChallengedBy());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -567,17 +623,19 @@ public  final class BlockChallengeBroadcast extends
       return this;
     }
 
-    private Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest originalChallenge_ = null;
+    private Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest originalChallenge_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest, Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest.Builder, Catalyst.Protocol.DfsMarketplace.BlockChallengeRequestOrBuilder> originalChallengeBuilder_;
     /**
      * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * @return Whether the originalChallenge field is set.
      */
     public boolean hasOriginalChallenge() {
       return originalChallengeBuilder_ != null || originalChallenge_ != null;
     }
     /**
      * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+     * @return The originalChallenge.
      */
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest getOriginalChallenge() {
       if (originalChallengeBuilder_ == null) {
@@ -687,6 +745,7 @@ public  final class BlockChallengeBroadcast extends
     private java.lang.Object answer_ = "";
     /**
      * <code>string answer = 2;</code>
+     * @return The answer.
      */
     public java.lang.String getAnswer() {
       java.lang.Object ref = answer_;
@@ -702,6 +761,7 @@ public  final class BlockChallengeBroadcast extends
     }
     /**
      * <code>string answer = 2;</code>
+     * @return The bytes for answer.
      */
     public com.google.protobuf.ByteString
         getAnswerBytes() {
@@ -718,6 +778,8 @@ public  final class BlockChallengeBroadcast extends
     }
     /**
      * <code>string answer = 2;</code>
+     * @param value The answer to set.
+     * @return This builder for chaining.
      */
     public Builder setAnswer(
         java.lang.String value) {
@@ -731,6 +793,7 @@ public  final class BlockChallengeBroadcast extends
     }
     /**
      * <code>string answer = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAnswer() {
       
@@ -740,6 +803,8 @@ public  final class BlockChallengeBroadcast extends
     }
     /**
      * <code>string answer = 2;</code>
+     * @param value The bytes for answer to set.
+     * @return This builder for chaining.
      */
     public Builder setAnswerBytes(
         com.google.protobuf.ByteString value) {
@@ -753,17 +818,19 @@ public  final class BlockChallengeBroadcast extends
       return this;
     }
 
-    private Catalyst.Protocol.Peer.PeerId challengedPeer_ = null;
+    private Catalyst.Protocol.Peer.PeerId challengedPeer_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Peer.PeerId, Catalyst.Protocol.Peer.PeerId.Builder, Catalyst.Protocol.Peer.PeerIdOrBuilder> challengedPeerBuilder_;
     /**
      * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * @return Whether the challengedPeer field is set.
      */
     public boolean hasChallengedPeer() {
       return challengedPeerBuilder_ != null || challengedPeer_ != null;
     }
     /**
      * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+     * @return The challengedPeer.
      */
     public Catalyst.Protocol.Peer.PeerId getChallengedPeer() {
       if (challengedPeerBuilder_ == null) {
@@ -870,17 +937,19 @@ public  final class BlockChallengeBroadcast extends
       return challengedPeerBuilder_;
     }
 
-    private Catalyst.Protocol.Peer.PeerId challengedBy_ = null;
+    private Catalyst.Protocol.Peer.PeerId challengedBy_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Peer.PeerId, Catalyst.Protocol.Peer.PeerId.Builder, Catalyst.Protocol.Peer.PeerIdOrBuilder> challengedByBuilder_;
     /**
      * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * @return Whether the challengedBy field is set.
      */
     public boolean hasChallengedBy() {
       return challengedByBuilder_ != null || challengedBy_ != null;
     }
     /**
      * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+     * @return The challengedBy.
      */
     public Catalyst.Protocol.Peer.PeerId getChallengedBy() {
       if (challengedByBuilder_ == null) {
@@ -986,14 +1055,16 @@ public  final class BlockChallengeBroadcast extends
       }
       return challengedByBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -1012,11 +1083,12 @@ public  final class BlockChallengeBroadcast extends
 
   private static final com.google.protobuf.Parser<BlockChallengeBroadcast>
       PARSER = new com.google.protobuf.AbstractParser<BlockChallengeBroadcast>() {
+    @java.lang.Override
     public BlockChallengeBroadcast parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BlockChallengeBroadcast(input, extensionRegistry);
+      return new BlockChallengeBroadcast(input, extensionRegistry);
     }
   };
 
@@ -1029,6 +1101,7 @@ public  final class BlockChallengeBroadcast extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.DfsMarketplace.BlockChallengeBroadcast getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

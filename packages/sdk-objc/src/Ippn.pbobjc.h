@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers.h>
+ #import <protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -89,13 +89,15 @@ typedef GPB_ENUM(PeerNeighborsResponse_FieldNumber) {
 #pragma mark - LatestDeltaHashResponse
 
 typedef GPB_ENUM(LatestDeltaHashResponse_FieldNumber) {
-  LatestDeltaHashResponse_FieldNumber_DeltaHash = 1,
+  LatestDeltaHashResponse_FieldNumber_Result = 1,
 };
 
 @interface LatestDeltaHashResponse : GPBMessage
 
-/** Rhe cid of a nodes last delta. */
-@property(nonatomic, readwrite, copy, null_resettable) NSData *deltaHash;
+/** K given del */
+@property(nonatomic, readwrite, strong, null_resettable) DeltaIndex *result;
+/** Test to see if @c result has been set. */
+@property(nonatomic, readwrite) BOOL hasResult;
 
 @end
 

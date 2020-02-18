@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers.h>
+ #import <protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -85,7 +85,6 @@ typedef GPB_ENUM(PublicEntry_FieldNumber) {
   PublicEntry_FieldNumber_Timestamp = 5,
   PublicEntry_FieldNumber_GasPrice = 6,
   PublicEntry_FieldNumber_GasLimit = 7,
-  PublicEntry_FieldNumber_TransactionFees = 8,
   PublicEntry_FieldNumber_Nonce = 9,
   PublicEntry_FieldNumber_Signature = 10,
 };
@@ -111,9 +110,6 @@ typedef GPB_ENUM(PublicEntry_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSData *gasPrice;
 
 @property(nonatomic, readwrite) uint64_t gasLimit;
-
-/** 8 bytes, clear text, fees * 10^12 */
-@property(nonatomic, readwrite, copy, null_resettable) NSData *transactionFees;
 
 /** A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction */
 @property(nonatomic, readwrite) uint64_t nonce;

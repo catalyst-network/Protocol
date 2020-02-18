@@ -9,10 +9,12 @@ public interface BlockChallengeBroadcastOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+   * @return Whether the originalChallenge field is set.
    */
   boolean hasOriginalChallenge();
   /**
    * <code>.Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest original_challenge = 1;</code>
+   * @return The originalChallenge.
    */
   Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest getOriginalChallenge();
   /**
@@ -22,20 +24,24 @@ public interface BlockChallengeBroadcastOrBuilder extends
 
   /**
    * <code>string answer = 2;</code>
+   * @return The answer.
    */
   java.lang.String getAnswer();
   /**
    * <code>string answer = 2;</code>
+   * @return The bytes for answer.
    */
   com.google.protobuf.ByteString
       getAnswerBytes();
 
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+   * @return Whether the challengedPeer field is set.
    */
   boolean hasChallengedPeer();
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_peer = 3;</code>
+   * @return The challengedPeer.
    */
   Catalyst.Protocol.Peer.PeerId getChallengedPeer();
   /**
@@ -45,10 +51,12 @@ public interface BlockChallengeBroadcastOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+   * @return Whether the challengedBy field is set.
    */
   boolean hasChallengedBy();
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId challenged_by = 4;</code>
+   * @return The challengedBy.
    */
   Catalyst.Protocol.Peer.PeerId getChallengedBy();
   /**

@@ -9,11 +9,13 @@ public interface GetPeerInfoRequestOrBuilder extends
 
   /**
    * <code>bytes public_key = 1;</code>
+   * @return The publicKey.
    */
   com.google.protobuf.ByteString getPublicKey();
 
   /**
    * <code>bytes ip = 2;</code>
+   * @return The ip.
    */
   com.google.protobuf.ByteString getIp();
 }

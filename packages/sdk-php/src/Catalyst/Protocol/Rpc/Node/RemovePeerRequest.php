@@ -9,26 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.RemovePeerRequest</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.RemovePeerRequest</code>
  */
 class RemovePeerRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes peer_ip = 1;</code>
+     * Generated from protobuf field <code>bytes peer_ip = 1;</code>
      */
-    private $peer_ip = '';
+    protected $peer_ip = '';
     /**
-     * <code>bytes public_key = 2;</code>
+     * Generated from protobuf field <code>bytes public_key = 2;</code>
      */
-    private $public_key = '';
+    protected $public_key = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $peer_ip
+     *     @type string $public_key
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>bytes peer_ip = 1;</code>
+     * Generated from protobuf field <code>bytes peer_ip = 1;</code>
+     * @return string
      */
     public function getPeerIp()
     {
@@ -36,16 +47,21 @@ class RemovePeerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes peer_ip = 1;</code>
+     * Generated from protobuf field <code>bytes peer_ip = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPeerIp($var)
     {
         GPBUtil::checkString($var, False);
         $this->peer_ip = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes public_key = 2;</code>
+     * Generated from protobuf field <code>bytes public_key = 2;</code>
+     * @return string
      */
     public function getPublicKey()
     {
@@ -53,12 +69,16 @@ class RemovePeerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes public_key = 2;</code>
+     * Generated from protobuf field <code>bytes public_key = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->public_key = $var;
+
+        return $this;
     }
 
 }

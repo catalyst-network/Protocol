@@ -68,27 +68,19 @@ public final class IPPN {
       "equest\"F\n\025PeerNeighborsResponse\022-\n\005peers" +
       "\030\001 \003(\0132\036.Catalyst.Protocol.Peer.PeerId\"\r" +
       "\n\013PingRequest\"\016\n\014PingResponse\"\030\n\026LatestD" +
-      "eltaHashRequest\"-\n\027LatestDeltaHashRespon" +
-      "se\022\022\n\ndelta_hash\030\001 \001(\014\"4\n\023DeltaHistoryRe" +
-      "quest\022\r\n\005range\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"L\n\024" +
-      "DeltaHistoryResponse\0224\n\006result\030\001 \003(\0132$.C" +
-      "atalyst.Protocol.Deltas.DeltaIndexB\002P\001b\006",
-      "proto3"
+      "eltaHashRequest\"O\n\027LatestDeltaHashRespon" +
+      "se\0224\n\006result\030\001 \001(\0132$.Catalyst.Protocol.D" +
+      "eltas.DeltaIndex\"4\n\023DeltaHistoryRequest\022" +
+      "\r\n\005range\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"L\n\024DeltaH" +
+      "istoryResponse\0224\n\006result\030\001 \003(\0132$.Catalys" +
+      "t.Protocol.Deltas.DeltaIndexB\002P\001b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Peer.Peer.getDescriptor(),
           Catalyst.Protocol.Deltas.Deltas.getDescriptor(),
-        }, assigner);
+        });
     internal_static_Catalyst_Protocol_IPPN_PeerNeighborsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_IPPN_PeerNeighborsRequest_fieldAccessorTable = new
@@ -124,7 +116,7 @@ public final class IPPN {
     internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_descriptor,
-        new java.lang.String[] { "DeltaHash", });
+        new java.lang.String[] { "Result", });
     internal_static_Catalyst_Protocol_IPPN_DeltaHistoryRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_Catalyst_Protocol_IPPN_DeltaHistoryRequest_fieldAccessorTable = new

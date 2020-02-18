@@ -9,52 +9,57 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  **
  * Aggregated size of the fields in PeerId should be 42 bytes as specified in
  * https://github.com/catalyst-network/protocol-blueprint/blob/master/PeerProtocol.md
- * </pre>
  *
- * Protobuf type <code>Catalyst.Protocol.Peer.PeerId</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Peer.PeerId</code>
  */
 class PeerId extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * 16 bytes
-     * </pre>
      *
-     * <code>bytes ip = 1;</code>
+     * Generated from protobuf field <code>bytes ip = 1;</code>
      */
-    private $ip = '';
+    protected $ip = '';
     /**
-     * <pre>
      * 2 bytes
-     * </pre>
      *
-     * <code>uint32 port = 2;</code>
+     * Generated from protobuf field <code>uint32 port = 2;</code>
      */
-    private $port = 0;
+    protected $port = 0;
     /**
-     * <pre>
      * Peers public key, node operators are encouraged to use the same, public key across all their nodes.
-     * </pre>
      *
-     * <code>bytes public_key = 3;</code>
+     * Generated from protobuf field <code>bytes public_key = 3;</code>
      */
-    private $public_key = '';
+    protected $public_key = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $ip
+     *           16 bytes
+     *     @type int $port
+     *           2 bytes
+     *     @type string $public_key
+     *           Peers public key, node operators are encouraged to use the same, public key across all their nodes.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Peer::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <pre>
      * 16 bytes
-     * </pre>
      *
-     * <code>bytes ip = 1;</code>
+     * Generated from protobuf field <code>bytes ip = 1;</code>
+     * @return string
      */
     public function getIp()
     {
@@ -62,24 +67,25 @@ class PeerId extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 16 bytes
-     * </pre>
      *
-     * <code>bytes ip = 1;</code>
+     * Generated from protobuf field <code>bytes ip = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setIp($var)
     {
         GPBUtil::checkString($var, False);
         $this->ip = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * 2 bytes
-     * </pre>
      *
-     * <code>uint32 port = 2;</code>
+     * Generated from protobuf field <code>uint32 port = 2;</code>
+     * @return int
      */
     public function getPort()
     {
@@ -87,24 +93,25 @@ class PeerId extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * 2 bytes
-     * </pre>
      *
-     * <code>uint32 port = 2;</code>
+     * Generated from protobuf field <code>uint32 port = 2;</code>
+     * @param int $var
+     * @return $this
      */
     public function setPort($var)
     {
         GPBUtil::checkUint32($var);
         $this->port = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Peers public key, node operators are encouraged to use the same, public key across all their nodes.
-     * </pre>
      *
-     * <code>bytes public_key = 3;</code>
+     * Generated from protobuf field <code>bytes public_key = 3;</code>
+     * @return string
      */
     public function getPublicKey()
     {
@@ -112,16 +119,18 @@ class PeerId extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Peers public key, node operators are encouraged to use the same, public key across all their nodes.
-     * </pre>
      *
-     * <code>bytes public_key = 3;</code>
+     * Generated from protobuf field <code>bytes public_key = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->public_key = $var;
+
+        return $this;
     }
 
 }

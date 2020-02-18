@@ -10,27 +10,38 @@ public  final class AddFileToDfsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest)
     AddFileToDfsRequestOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use AddFileToDfsRequest.newBuilder() to construct.
   private AddFileToDfsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private AddFileToDfsRequest() {
-    fileSize_ = 0L;
     fileName_ = "";
     node_ = "";
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AddFileToDfsRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private AddFileToDfsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -39,12 +50,6 @@ public  final class AddFileToDfsRequest extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
 
             fileSize_ = input.readUInt64();
@@ -62,6 +67,13 @@ public  final class AddFileToDfsRequest extends
             node_ = s;
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -70,6 +82,7 @@ public  final class AddFileToDfsRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -78,6 +91,7 @@ public  final class AddFileToDfsRequest extends
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_AddFileToDfsRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_AddFileToDfsRequest_fieldAccessorTable
@@ -89,6 +103,7 @@ public  final class AddFileToDfsRequest extends
   private long fileSize_;
   /**
    * <code>uint64 file_size = 1;</code>
+   * @return The fileSize.
    */
   public long getFileSize() {
     return fileSize_;
@@ -98,6 +113,7 @@ public  final class AddFileToDfsRequest extends
   private volatile java.lang.Object fileName_;
   /**
    * <code>string file_name = 2;</code>
+   * @return The fileName.
    */
   public java.lang.String getFileName() {
     java.lang.Object ref = fileName_;
@@ -113,6 +129,7 @@ public  final class AddFileToDfsRequest extends
   }
   /**
    * <code>string file_name = 2;</code>
+   * @return The bytes for fileName.
    */
   public com.google.protobuf.ByteString
       getFileNameBytes() {
@@ -132,6 +149,7 @@ public  final class AddFileToDfsRequest extends
   private volatile java.lang.Object node_;
   /**
    * <code>string node = 3;</code>
+   * @return The node.
    */
   public java.lang.String getNode() {
     java.lang.Object ref = node_;
@@ -147,6 +165,7 @@ public  final class AddFileToDfsRequest extends
   }
   /**
    * <code>string node = 3;</code>
+   * @return The bytes for node.
    */
   public com.google.protobuf.ByteString
       getNodeBytes() {
@@ -163,6 +182,7 @@ public  final class AddFileToDfsRequest extends
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -172,6 +192,7 @@ public  final class AddFileToDfsRequest extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (fileSize_ != 0L) {
@@ -183,8 +204,10 @@ public  final class AddFileToDfsRequest extends
     if (!getNodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, node_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -200,11 +223,11 @@ public  final class AddFileToDfsRequest extends
     if (!getNodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, node_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -215,14 +238,14 @@ public  final class AddFileToDfsRequest extends
     }
     Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest other = (Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest) obj;
 
-    boolean result = true;
-    result = result && (getFileSize()
-        == other.getFileSize());
-    result = result && getFileName()
-        .equals(other.getFileName());
-    result = result && getNode()
-        .equals(other.getNode());
-    return result;
+    if (getFileSize()
+        != other.getFileSize()) return false;
+    if (!getFileName()
+        .equals(other.getFileName())) return false;
+    if (!getNode()
+        .equals(other.getNode())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -244,6 +267,17 @@ public  final class AddFileToDfsRequest extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -303,6 +337,7 @@ public  final class AddFileToDfsRequest extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -310,6 +345,7 @@ public  final class AddFileToDfsRequest extends
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -333,6 +369,7 @@ public  final class AddFileToDfsRequest extends
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_AddFileToDfsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_AddFileToDfsRequest_fieldAccessorTable
@@ -355,6 +392,7 @@ public  final class AddFileToDfsRequest extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       fileSize_ = 0L;
@@ -366,15 +404,18 @@ public  final class AddFileToDfsRequest extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_AddFileToDfsRequest_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest build() {
       Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -383,6 +424,7 @@ public  final class AddFileToDfsRequest extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest buildPartial() {
       Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest result = new Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest(this);
       result.fileSize_ = fileSize_;
@@ -392,32 +434,39 @@ public  final class AddFileToDfsRequest extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest)other);
@@ -440,14 +489,17 @@ public  final class AddFileToDfsRequest extends
         node_ = other.node_;
         onChanged();
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -469,12 +521,15 @@ public  final class AddFileToDfsRequest extends
     private long fileSize_ ;
     /**
      * <code>uint64 file_size = 1;</code>
+     * @return The fileSize.
      */
     public long getFileSize() {
       return fileSize_;
     }
     /**
      * <code>uint64 file_size = 1;</code>
+     * @param value The fileSize to set.
+     * @return This builder for chaining.
      */
     public Builder setFileSize(long value) {
       
@@ -484,6 +539,7 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>uint64 file_size = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFileSize() {
       
@@ -495,6 +551,7 @@ public  final class AddFileToDfsRequest extends
     private java.lang.Object fileName_ = "";
     /**
      * <code>string file_name = 2;</code>
+     * @return The fileName.
      */
     public java.lang.String getFileName() {
       java.lang.Object ref = fileName_;
@@ -510,6 +567,7 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string file_name = 2;</code>
+     * @return The bytes for fileName.
      */
     public com.google.protobuf.ByteString
         getFileNameBytes() {
@@ -526,6 +584,8 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string file_name = 2;</code>
+     * @param value The fileName to set.
+     * @return This builder for chaining.
      */
     public Builder setFileName(
         java.lang.String value) {
@@ -539,6 +599,7 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string file_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFileName() {
       
@@ -548,6 +609,8 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string file_name = 2;</code>
+     * @param value The bytes for fileName to set.
+     * @return This builder for chaining.
      */
     public Builder setFileNameBytes(
         com.google.protobuf.ByteString value) {
@@ -564,6 +627,7 @@ public  final class AddFileToDfsRequest extends
     private java.lang.Object node_ = "";
     /**
      * <code>string node = 3;</code>
+     * @return The node.
      */
     public java.lang.String getNode() {
       java.lang.Object ref = node_;
@@ -579,6 +643,7 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string node = 3;</code>
+     * @return The bytes for node.
      */
     public com.google.protobuf.ByteString
         getNodeBytes() {
@@ -595,6 +660,8 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string node = 3;</code>
+     * @param value The node to set.
+     * @return This builder for chaining.
      */
     public Builder setNode(
         java.lang.String value) {
@@ -608,6 +675,7 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string node = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNode() {
       
@@ -617,6 +685,8 @@ public  final class AddFileToDfsRequest extends
     }
     /**
      * <code>string node = 3;</code>
+     * @param value The bytes for node to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeBytes(
         com.google.protobuf.ByteString value) {
@@ -629,14 +699,16 @@ public  final class AddFileToDfsRequest extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -655,11 +727,12 @@ public  final class AddFileToDfsRequest extends
 
   private static final com.google.protobuf.Parser<AddFileToDfsRequest>
       PARSER = new com.google.protobuf.AbstractParser<AddFileToDfsRequest>() {
+    @java.lang.Override
     public AddFileToDfsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddFileToDfsRequest(input, extensionRegistry);
+      return new AddFileToDfsRequest(input, extensionRegistry);
     }
   };
 
@@ -672,6 +745,7 @@ public  final class AddFileToDfsRequest extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.AddFileToDfsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

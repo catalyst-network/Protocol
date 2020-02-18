@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers.h>
+ #import <protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -75,6 +75,7 @@ typedef GPB_ENUM(Delta_FieldNumber) {
   Delta_FieldNumber_ConfidentialEntriesArray = 6,
   Delta_FieldNumber_CoinbaseEntriesArray = 7,
   Delta_FieldNumber_StateRoot = 8,
+  Delta_FieldNumber_DeltaNumber = 9,
 };
 
 @interface Delta : GPBMessage
@@ -106,6 +107,9 @@ typedef GPB_ENUM(Delta_FieldNumber) {
 
 /** the hash of the state root */
 @property(nonatomic, readwrite, copy, null_resettable) NSData *stateRoot;
+
+/** the consecutive delta number */
+@property(nonatomic, readwrite) int64_t deltaNumber;
 
 @end
 

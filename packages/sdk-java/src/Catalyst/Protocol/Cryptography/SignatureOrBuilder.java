@@ -13,6 +13,7 @@ public interface SignatureOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
+   * @return Whether the signingContext field is set.
    */
   boolean hasSigningContext();
   /**
@@ -21,6 +22,7 @@ public interface SignatureOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 1;</code>
+   * @return The signingContext.
    */
   Catalyst.Protocol.Cryptography.SigningContext getSigningContext();
   /**
@@ -38,6 +40,7 @@ public interface SignatureOrBuilder extends
    * </pre>
    *
    * <code>bytes raw_bytes = 2;</code>
+   * @return The rawBytes.
    */
   com.google.protobuf.ByteString getRawBytes();
 }

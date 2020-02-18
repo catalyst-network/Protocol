@@ -9,26 +9,37 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetPeerInfoRequest</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetPeerInfoRequest</code>
  */
 class GetPeerInfoRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes public_key = 1;</code>
+     * Generated from protobuf field <code>bytes public_key = 1;</code>
      */
-    private $public_key = '';
+    protected $public_key = '';
     /**
-     * <code>bytes ip = 2;</code>
+     * Generated from protobuf field <code>bytes ip = 2;</code>
      */
-    private $ip = '';
+    protected $ip = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $public_key
+     *     @type string $ip
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>bytes public_key = 1;</code>
+     * Generated from protobuf field <code>bytes public_key = 1;</code>
+     * @return string
      */
     public function getPublicKey()
     {
@@ -36,16 +47,21 @@ class GetPeerInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes public_key = 1;</code>
+     * Generated from protobuf field <code>bytes public_key = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPublicKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->public_key = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes ip = 2;</code>
+     * Generated from protobuf field <code>bytes ip = 2;</code>
+     * @return string
      */
     public function getIp()
     {
@@ -53,12 +69,16 @@ class GetPeerInfoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes ip = 2;</code>
+     * Generated from protobuf field <code>bytes ip = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setIp($var)
     {
         GPBUtil::checkString($var, False);
         $this->ip = $var;
+
+        return $this;
     }
 
 }

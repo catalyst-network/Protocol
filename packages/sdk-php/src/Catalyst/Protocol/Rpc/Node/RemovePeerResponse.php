@@ -9,22 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.RemovePeerResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.RemovePeerResponse</code>
  */
 class RemovePeerResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 deleted_count = 1;</code>
+     * Generated from protobuf field <code>uint32 deleted_count = 1;</code>
      */
-    private $deleted_count = 0;
+    protected $deleted_count = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $deleted_count
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>uint32 deleted_count = 1;</code>
+     * Generated from protobuf field <code>uint32 deleted_count = 1;</code>
+     * @return int
      */
     public function getDeletedCount()
     {
@@ -32,12 +42,16 @@ class RemovePeerResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 deleted_count = 1;</code>
+     * Generated from protobuf field <code>uint32 deleted_count = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setDeletedCount($var)
     {
         GPBUtil::checkUint32($var);
         $this->deleted_count = $var;
+
+        return $this;
     }
 
 }

@@ -9,6 +9,7 @@ public interface SignRawTransactionRequestOrBuilder extends
 
   /**
    * <code>bool query = 1;</code>
+   * @return The query.
    */
   boolean getQuery();
 }

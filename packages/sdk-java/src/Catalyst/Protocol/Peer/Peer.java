@@ -42,25 +42,17 @@ public final class Peer {
       "\026\n\016is_blacklisted\030\003 \001(\010\022\026\n\016is_unreachabl" +
       "e\030\004 \001(\010\022/\n\014inactive_for\030\005 \001(\0132\031.google.p" +
       "rotobuf.Duration\022-\n\tlast_seen\030\006 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022,\n\010modified\030\007 \001(",
+      "ogle.protobuf.Timestamp\022,\n\010modified\030\007 \001(" +
       "\0132\032.google.protobuf.Timestamp\022+\n\007created" +
       "\030\010 \001(\0132\032.google.protobuf.TimestampB\002P\001b\006" +
       "proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_Catalyst_Protocol_Peer_PeerId_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_Peer_PeerId_fieldAccessorTable = new

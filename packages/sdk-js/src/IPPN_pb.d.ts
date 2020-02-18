@@ -92,10 +92,10 @@ export namespace LatestDeltaHashRequest {
 }
 
 export class LatestDeltaHashResponse extends jspb.Message {
-  getDeltaHash(): Uint8Array | string;
-  getDeltaHash_asU8(): Uint8Array;
-  getDeltaHash_asB64(): string;
-  setDeltaHash(value: Uint8Array | string): void;
+  hasResult(): boolean;
+  clearResult(): void;
+  getResult(): Deltas_pb.DeltaIndex | undefined;
+  setResult(value?: Deltas_pb.DeltaIndex): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LatestDeltaHashResponse.AsObject;
@@ -109,7 +109,7 @@ export class LatestDeltaHashResponse extends jspb.Message {
 
 export namespace LatestDeltaHashResponse {
   export type AsObject = {
-    deltaHash: Uint8Array | string,
+    result?: Deltas_pb.DeltaIndex.AsObject,
   }
 }
 
