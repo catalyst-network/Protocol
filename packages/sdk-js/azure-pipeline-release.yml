@@ -5,5 +5,6 @@ pool:
     vmImage: 'ubuntu-latest'
 
 steps:
-  - script: ./packages/sdk-js/publish.sh
+  - script: |
+      cd packages/sdk-js && ./publish.sh
     displayName: 'Publish NPM package to npmjs.org'
