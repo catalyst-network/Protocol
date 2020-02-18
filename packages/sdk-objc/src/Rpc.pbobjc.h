@@ -570,15 +570,15 @@ typedef GPB_ENUM(GetPeerReputationResponse_FieldNumber) {
 
 @end
 
-#pragma mark - SetPeerBlacklistRequest
+#pragma mark - SetPeerBlackListRequest
 
-typedef GPB_ENUM(SetPeerBlacklistRequest_FieldNumber) {
-  SetPeerBlacklistRequest_FieldNumber_PublicKey = 1,
-  SetPeerBlacklistRequest_FieldNumber_Ip = 2,
-  SetPeerBlacklistRequest_FieldNumber_Blacklist = 3,
+typedef GPB_ENUM(SetPeerBlackListRequest_FieldNumber) {
+  SetPeerBlackListRequest_FieldNumber_PublicKey = 1,
+  SetPeerBlackListRequest_FieldNumber_Ip = 2,
+  SetPeerBlackListRequest_FieldNumber_Blacklist = 3,
 };
 
-@interface SetPeerBlacklistRequest : GPBMessage
+@interface SetPeerBlackListRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSData *publicKey;
 
@@ -588,15 +588,15 @@ typedef GPB_ENUM(SetPeerBlacklistRequest_FieldNumber) {
 
 @end
 
-#pragma mark - SetPeerBlacklistResponse
+#pragma mark - SetPeerBlackListResponse
 
-typedef GPB_ENUM(SetPeerBlacklistResponse_FieldNumber) {
-  SetPeerBlacklistResponse_FieldNumber_PublicKey = 1,
-  SetPeerBlacklistResponse_FieldNumber_Ip = 2,
-  SetPeerBlacklistResponse_FieldNumber_Blacklist = 3,
+typedef GPB_ENUM(SetPeerBlackListResponse_FieldNumber) {
+  SetPeerBlackListResponse_FieldNumber_PublicKey = 1,
+  SetPeerBlackListResponse_FieldNumber_Ip = 2,
+  SetPeerBlackListResponse_FieldNumber_Blacklist = 3,
 };
 
-@interface SetPeerBlacklistResponse : GPBMessage
+@interface SetPeerBlackListResponse : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSData *publicKey;
 

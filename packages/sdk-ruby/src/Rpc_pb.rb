@@ -130,12 +130,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "Catalyst.Protocol.Rpc.Node.GetPeerReputationResponse" do
       optional :reputation, :int32, 1
     end
-    add_message "Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest" do
+    add_message "Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest" do
       optional :public_key, :bytes, 1
       optional :ip, :bytes, 2
       optional :blacklist, :bool, 3
     end
-    add_message "Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse" do
+    add_message "Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse" do
       optional :public_key, :bytes, 1
       optional :ip, :bytes, 2
       optional :blacklist, :bool, 3
@@ -288,8 +288,8 @@ module Catalyst
         GetPeerListResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.GetPeerListResponse").msgclass
         GetPeerReputationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.GetPeerReputationRequest").msgclass
         GetPeerReputationResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.GetPeerReputationResponse").msgclass
-        SetPeerBlacklistRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest").msgclass
-        SetPeerBlacklistResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse").msgclass
+        SetPeerBlackListRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest").msgclass
+        SetPeerBlackListResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse").msgclass
         GetPeerInfoRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.GetPeerInfoRequest").msgclass
         GetPeerInfoResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse").msgclass
         GetConnectionCountRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Rpc.Node.GetConnectionCountRequest").msgclass

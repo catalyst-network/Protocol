@@ -220,12 +220,12 @@ extern ServiceStatusRequestDefaultTypeInternal _ServiceStatusRequest_default_ins
 class ServiceStatusResponse;
 class ServiceStatusResponseDefaultTypeInternal;
 extern ServiceStatusResponseDefaultTypeInternal _ServiceStatusResponse_default_instance_;
-class SetPeerBlacklistRequest;
-class SetPeerBlacklistRequestDefaultTypeInternal;
-extern SetPeerBlacklistRequestDefaultTypeInternal _SetPeerBlacklistRequest_default_instance_;
-class SetPeerBlacklistResponse;
-class SetPeerBlacklistResponseDefaultTypeInternal;
-extern SetPeerBlacklistResponseDefaultTypeInternal _SetPeerBlacklistResponse_default_instance_;
+class SetPeerBlackListRequest;
+class SetPeerBlackListRequestDefaultTypeInternal;
+extern SetPeerBlackListRequestDefaultTypeInternal _SetPeerBlackListRequest_default_instance_;
+class SetPeerBlackListResponse;
+class SetPeerBlackListResponseDefaultTypeInternal;
+extern SetPeerBlackListResponseDefaultTypeInternal _SetPeerBlackListResponse_default_instance_;
 class SetPeerDataFolderRequest;
 class SetPeerDataFolderRequestDefaultTypeInternal;
 extern SetPeerDataFolderRequestDefaultTypeInternal _SetPeerDataFolderRequest_default_instance_;
@@ -325,8 +325,8 @@ template<> ::Catalyst::Protocol::Rpc::Node::SendToRequest* Arena::CreateMaybeMes
 template<> ::Catalyst::Protocol::Rpc::Node::SendToResponse* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SendToResponse>(Arena*);
 template<> ::Catalyst::Protocol::Rpc::Node::ServiceStatusRequest* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::ServiceStatusRequest>(Arena*);
 template<> ::Catalyst::Protocol::Rpc::Node::ServiceStatusResponse* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::ServiceStatusResponse>(Arena*);
-template<> ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest>(Arena*);
-template<> ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse>(Arena*);
+template<> ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest>(Arena*);
+template<> ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse>(Arena*);
 template<> ::Catalyst::Protocol::Rpc::Node::SetPeerDataFolderRequest* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SetPeerDataFolderRequest>(Arena*);
 template<> ::Catalyst::Protocol::Rpc::Node::SetPeerDataFolderResponse* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SetPeerDataFolderResponse>(Arena*);
 template<> ::Catalyst::Protocol::Rpc::Node::SignMessageRequest* Arena::CreateMaybeMessage<::Catalyst::Protocol::Rpc::Node::SignMessageRequest>(Arena*);
@@ -5645,23 +5645,23 @@ class GetPeerReputationResponse :
 };
 // -------------------------------------------------------------------
 
-class SetPeerBlacklistRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest) */ {
+class SetPeerBlackListRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest) */ {
  public:
-  SetPeerBlacklistRequest();
-  virtual ~SetPeerBlacklistRequest();
+  SetPeerBlackListRequest();
+  virtual ~SetPeerBlackListRequest();
 
-  SetPeerBlacklistRequest(const SetPeerBlacklistRequest& from);
-  SetPeerBlacklistRequest(SetPeerBlacklistRequest&& from) noexcept
-    : SetPeerBlacklistRequest() {
+  SetPeerBlackListRequest(const SetPeerBlackListRequest& from);
+  SetPeerBlackListRequest(SetPeerBlackListRequest&& from) noexcept
+    : SetPeerBlackListRequest() {
     *this = ::std::move(from);
   }
 
-  inline SetPeerBlacklistRequest& operator=(const SetPeerBlacklistRequest& from) {
+  inline SetPeerBlackListRequest& operator=(const SetPeerBlackListRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline SetPeerBlacklistRequest& operator=(SetPeerBlacklistRequest&& from) noexcept {
+  inline SetPeerBlackListRequest& operator=(SetPeerBlackListRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -5679,37 +5679,37 @@ class SetPeerBlacklistRequest :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const SetPeerBlacklistRequest& default_instance();
+  static const SetPeerBlackListRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SetPeerBlacklistRequest* internal_default_instance() {
-    return reinterpret_cast<const SetPeerBlacklistRequest*>(
-               &_SetPeerBlacklistRequest_default_instance_);
+  static inline const SetPeerBlackListRequest* internal_default_instance() {
+    return reinterpret_cast<const SetPeerBlackListRequest*>(
+               &_SetPeerBlackListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     40;
 
-  friend void swap(SetPeerBlacklistRequest& a, SetPeerBlacklistRequest& b) {
+  friend void swap(SetPeerBlackListRequest& a, SetPeerBlackListRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(SetPeerBlacklistRequest* other) {
+  inline void Swap(SetPeerBlackListRequest* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline SetPeerBlacklistRequest* New() const final {
-    return CreateMaybeMessage<SetPeerBlacklistRequest>(nullptr);
+  inline SetPeerBlackListRequest* New() const final {
+    return CreateMaybeMessage<SetPeerBlackListRequest>(nullptr);
   }
 
-  SetPeerBlacklistRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<SetPeerBlacklistRequest>(arena);
+  SetPeerBlackListRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SetPeerBlackListRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const SetPeerBlacklistRequest& from);
-  void MergeFrom(const SetPeerBlacklistRequest& from);
+  void CopyFrom(const SetPeerBlackListRequest& from);
+  void MergeFrom(const SetPeerBlackListRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -5723,10 +5723,10 @@ class SetPeerBlacklistRequest :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SetPeerBlacklistRequest* other);
+  void InternalSwap(SetPeerBlackListRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest";
+    return "Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -5796,7 +5796,7 @@ class SetPeerBlacklistRequest :
   void _internal_set_blacklist(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
  private:
   class _Internal;
 
@@ -5809,23 +5809,23 @@ class SetPeerBlacklistRequest :
 };
 // -------------------------------------------------------------------
 
-class SetPeerBlacklistResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse) */ {
+class SetPeerBlackListResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse) */ {
  public:
-  SetPeerBlacklistResponse();
-  virtual ~SetPeerBlacklistResponse();
+  SetPeerBlackListResponse();
+  virtual ~SetPeerBlackListResponse();
 
-  SetPeerBlacklistResponse(const SetPeerBlacklistResponse& from);
-  SetPeerBlacklistResponse(SetPeerBlacklistResponse&& from) noexcept
-    : SetPeerBlacklistResponse() {
+  SetPeerBlackListResponse(const SetPeerBlackListResponse& from);
+  SetPeerBlackListResponse(SetPeerBlackListResponse&& from) noexcept
+    : SetPeerBlackListResponse() {
     *this = ::std::move(from);
   }
 
-  inline SetPeerBlacklistResponse& operator=(const SetPeerBlacklistResponse& from) {
+  inline SetPeerBlackListResponse& operator=(const SetPeerBlackListResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline SetPeerBlacklistResponse& operator=(SetPeerBlacklistResponse&& from) noexcept {
+  inline SetPeerBlackListResponse& operator=(SetPeerBlackListResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -5843,37 +5843,37 @@ class SetPeerBlacklistResponse :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const SetPeerBlacklistResponse& default_instance();
+  static const SetPeerBlackListResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SetPeerBlacklistResponse* internal_default_instance() {
-    return reinterpret_cast<const SetPeerBlacklistResponse*>(
-               &_SetPeerBlacklistResponse_default_instance_);
+  static inline const SetPeerBlackListResponse* internal_default_instance() {
+    return reinterpret_cast<const SetPeerBlackListResponse*>(
+               &_SetPeerBlackListResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     41;
 
-  friend void swap(SetPeerBlacklistResponse& a, SetPeerBlacklistResponse& b) {
+  friend void swap(SetPeerBlackListResponse& a, SetPeerBlackListResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(SetPeerBlacklistResponse* other) {
+  inline void Swap(SetPeerBlackListResponse* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline SetPeerBlacklistResponse* New() const final {
-    return CreateMaybeMessage<SetPeerBlacklistResponse>(nullptr);
+  inline SetPeerBlackListResponse* New() const final {
+    return CreateMaybeMessage<SetPeerBlackListResponse>(nullptr);
   }
 
-  SetPeerBlacklistResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<SetPeerBlacklistResponse>(arena);
+  SetPeerBlackListResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SetPeerBlackListResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const SetPeerBlacklistResponse& from);
-  void MergeFrom(const SetPeerBlacklistResponse& from);
+  void CopyFrom(const SetPeerBlackListResponse& from);
+  void MergeFrom(const SetPeerBlackListResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -5887,10 +5887,10 @@ class SetPeerBlacklistResponse :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SetPeerBlacklistResponse* other);
+  void InternalSwap(SetPeerBlackListResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse";
+    return "Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -5960,7 +5960,7 @@ class SetPeerBlacklistResponse :
   void _internal_set_blacklist(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
  private:
   class _Internal;
 
@@ -11441,290 +11441,290 @@ inline void GetPeerReputationResponse::set_reputation(::PROTOBUF_NAMESPACE_ID::i
 
 // -------------------------------------------------------------------
 
-// SetPeerBlacklistRequest
+// SetPeerBlackListRequest
 
 // bytes public_key = 1;
-inline void SetPeerBlacklistRequest::clear_public_key() {
+inline void SetPeerBlackListRequest::clear_public_key() {
   public_key_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& SetPeerBlacklistRequest::public_key() const {
-  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+inline const std::string& SetPeerBlackListRequest::public_key() const {
+  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
   return _internal_public_key();
 }
-inline void SetPeerBlacklistRequest::set_public_key(const std::string& value) {
+inline void SetPeerBlackListRequest::set_public_key(const std::string& value) {
   _internal_set_public_key(value);
-  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
 }
-inline std::string* SetPeerBlacklistRequest::mutable_public_key() {
-  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+inline std::string* SetPeerBlackListRequest::mutable_public_key() {
+  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
   return _internal_mutable_public_key();
 }
-inline const std::string& SetPeerBlacklistRequest::_internal_public_key() const {
+inline const std::string& SetPeerBlackListRequest::_internal_public_key() const {
   return public_key_.GetNoArena();
 }
-inline void SetPeerBlacklistRequest::_internal_set_public_key(const std::string& value) {
+inline void SetPeerBlackListRequest::_internal_set_public_key(const std::string& value) {
   
   public_key_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void SetPeerBlacklistRequest::set_public_key(std::string&& value) {
+inline void SetPeerBlackListRequest::set_public_key(std::string&& value) {
   
   public_key_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
 }
-inline void SetPeerBlacklistRequest::set_public_key(const char* value) {
+inline void SetPeerBlackListRequest::set_public_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   public_key_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
 }
-inline void SetPeerBlacklistRequest::set_public_key(const void* value, size_t size) {
+inline void SetPeerBlackListRequest::set_public_key(const void* value, size_t size) {
   
   public_key_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
 }
-inline std::string* SetPeerBlacklistRequest::_internal_mutable_public_key() {
+inline std::string* SetPeerBlackListRequest::_internal_mutable_public_key() {
   
   return public_key_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* SetPeerBlacklistRequest::release_public_key() {
-  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+inline std::string* SetPeerBlackListRequest::release_public_key() {
+  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
   
   return public_key_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void SetPeerBlacklistRequest::set_allocated_public_key(std::string* public_key) {
+inline void SetPeerBlackListRequest::set_allocated_public_key(std::string* public_key) {
   if (public_key != nullptr) {
     
   } else {
     
   }
   public_key_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), public_key);
-  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key)
+  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key)
 }
 
 // bytes ip = 2;
-inline void SetPeerBlacklistRequest::clear_ip() {
+inline void SetPeerBlackListRequest::clear_ip() {
   ip_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& SetPeerBlacklistRequest::ip() const {
-  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+inline const std::string& SetPeerBlackListRequest::ip() const {
+  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
   return _internal_ip();
 }
-inline void SetPeerBlacklistRequest::set_ip(const std::string& value) {
+inline void SetPeerBlackListRequest::set_ip(const std::string& value) {
   _internal_set_ip(value);
-  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
 }
-inline std::string* SetPeerBlacklistRequest::mutable_ip() {
-  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+inline std::string* SetPeerBlackListRequest::mutable_ip() {
+  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
   return _internal_mutable_ip();
 }
-inline const std::string& SetPeerBlacklistRequest::_internal_ip() const {
+inline const std::string& SetPeerBlackListRequest::_internal_ip() const {
   return ip_.GetNoArena();
 }
-inline void SetPeerBlacklistRequest::_internal_set_ip(const std::string& value) {
+inline void SetPeerBlackListRequest::_internal_set_ip(const std::string& value) {
   
   ip_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void SetPeerBlacklistRequest::set_ip(std::string&& value) {
+inline void SetPeerBlackListRequest::set_ip(std::string&& value) {
   
   ip_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
 }
-inline void SetPeerBlacklistRequest::set_ip(const char* value) {
+inline void SetPeerBlackListRequest::set_ip(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   ip_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
 }
-inline void SetPeerBlacklistRequest::set_ip(const void* value, size_t size) {
+inline void SetPeerBlackListRequest::set_ip(const void* value, size_t size) {
   
   ip_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
 }
-inline std::string* SetPeerBlacklistRequest::_internal_mutable_ip() {
+inline std::string* SetPeerBlackListRequest::_internal_mutable_ip() {
   
   return ip_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* SetPeerBlacklistRequest::release_ip() {
-  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+inline std::string* SetPeerBlackListRequest::release_ip() {
+  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
   
   return ip_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void SetPeerBlacklistRequest::set_allocated_ip(std::string* ip) {
+inline void SetPeerBlackListRequest::set_allocated_ip(std::string* ip) {
   if (ip != nullptr) {
     
   } else {
     
   }
   ip_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ip);
-  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip)
+  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip)
 }
 
 // bool blacklist = 3;
-inline void SetPeerBlacklistRequest::clear_blacklist() {
+inline void SetPeerBlackListRequest::clear_blacklist() {
   blacklist_ = false;
 }
-inline bool SetPeerBlacklistRequest::_internal_blacklist() const {
+inline bool SetPeerBlackListRequest::_internal_blacklist() const {
   return blacklist_;
 }
-inline bool SetPeerBlacklistRequest::blacklist() const {
-  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.blacklist)
+inline bool SetPeerBlackListRequest::blacklist() const {
+  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.blacklist)
   return _internal_blacklist();
 }
-inline void SetPeerBlacklistRequest::_internal_set_blacklist(bool value) {
+inline void SetPeerBlackListRequest::_internal_set_blacklist(bool value) {
   
   blacklist_ = value;
 }
-inline void SetPeerBlacklistRequest::set_blacklist(bool value) {
+inline void SetPeerBlackListRequest::set_blacklist(bool value) {
   _internal_set_blacklist(value);
-  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.blacklist)
+  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.blacklist)
 }
 
 // -------------------------------------------------------------------
 
-// SetPeerBlacklistResponse
+// SetPeerBlackListResponse
 
 // bytes public_key = 1;
-inline void SetPeerBlacklistResponse::clear_public_key() {
+inline void SetPeerBlackListResponse::clear_public_key() {
   public_key_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& SetPeerBlacklistResponse::public_key() const {
-  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+inline const std::string& SetPeerBlackListResponse::public_key() const {
+  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
   return _internal_public_key();
 }
-inline void SetPeerBlacklistResponse::set_public_key(const std::string& value) {
+inline void SetPeerBlackListResponse::set_public_key(const std::string& value) {
   _internal_set_public_key(value);
-  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
 }
-inline std::string* SetPeerBlacklistResponse::mutable_public_key() {
-  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+inline std::string* SetPeerBlackListResponse::mutable_public_key() {
+  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
   return _internal_mutable_public_key();
 }
-inline const std::string& SetPeerBlacklistResponse::_internal_public_key() const {
+inline const std::string& SetPeerBlackListResponse::_internal_public_key() const {
   return public_key_.GetNoArena();
 }
-inline void SetPeerBlacklistResponse::_internal_set_public_key(const std::string& value) {
+inline void SetPeerBlackListResponse::_internal_set_public_key(const std::string& value) {
   
   public_key_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void SetPeerBlacklistResponse::set_public_key(std::string&& value) {
+inline void SetPeerBlackListResponse::set_public_key(std::string&& value) {
   
   public_key_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
 }
-inline void SetPeerBlacklistResponse::set_public_key(const char* value) {
+inline void SetPeerBlackListResponse::set_public_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   public_key_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
 }
-inline void SetPeerBlacklistResponse::set_public_key(const void* value, size_t size) {
+inline void SetPeerBlackListResponse::set_public_key(const void* value, size_t size) {
   
   public_key_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
 }
-inline std::string* SetPeerBlacklistResponse::_internal_mutable_public_key() {
+inline std::string* SetPeerBlackListResponse::_internal_mutable_public_key() {
   
   return public_key_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* SetPeerBlacklistResponse::release_public_key() {
-  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+inline std::string* SetPeerBlackListResponse::release_public_key() {
+  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
   
   return public_key_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void SetPeerBlacklistResponse::set_allocated_public_key(std::string* public_key) {
+inline void SetPeerBlackListResponse::set_allocated_public_key(std::string* public_key) {
   if (public_key != nullptr) {
     
   } else {
     
   }
   public_key_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), public_key);
-  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key)
+  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key)
 }
 
 // bytes ip = 2;
-inline void SetPeerBlacklistResponse::clear_ip() {
+inline void SetPeerBlackListResponse::clear_ip() {
   ip_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& SetPeerBlacklistResponse::ip() const {
-  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+inline const std::string& SetPeerBlackListResponse::ip() const {
+  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
   return _internal_ip();
 }
-inline void SetPeerBlacklistResponse::set_ip(const std::string& value) {
+inline void SetPeerBlackListResponse::set_ip(const std::string& value) {
   _internal_set_ip(value);
-  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
 }
-inline std::string* SetPeerBlacklistResponse::mutable_ip() {
-  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+inline std::string* SetPeerBlackListResponse::mutable_ip() {
+  // @@protoc_insertion_point(field_mutable:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
   return _internal_mutable_ip();
 }
-inline const std::string& SetPeerBlacklistResponse::_internal_ip() const {
+inline const std::string& SetPeerBlackListResponse::_internal_ip() const {
   return ip_.GetNoArena();
 }
-inline void SetPeerBlacklistResponse::_internal_set_ip(const std::string& value) {
+inline void SetPeerBlackListResponse::_internal_set_ip(const std::string& value) {
   
   ip_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void SetPeerBlacklistResponse::set_ip(std::string&& value) {
+inline void SetPeerBlackListResponse::set_ip(std::string&& value) {
   
   ip_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+  // @@protoc_insertion_point(field_set_rvalue:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
 }
-inline void SetPeerBlacklistResponse::set_ip(const char* value) {
+inline void SetPeerBlackListResponse::set_ip(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   ip_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+  // @@protoc_insertion_point(field_set_char:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
 }
-inline void SetPeerBlacklistResponse::set_ip(const void* value, size_t size) {
+inline void SetPeerBlackListResponse::set_ip(const void* value, size_t size) {
   
   ip_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+  // @@protoc_insertion_point(field_set_pointer:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
 }
-inline std::string* SetPeerBlacklistResponse::_internal_mutable_ip() {
+inline std::string* SetPeerBlackListResponse::_internal_mutable_ip() {
   
   return ip_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* SetPeerBlacklistResponse::release_ip() {
-  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+inline std::string* SetPeerBlackListResponse::release_ip() {
+  // @@protoc_insertion_point(field_release:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
   
   return ip_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void SetPeerBlacklistResponse::set_allocated_ip(std::string* ip) {
+inline void SetPeerBlackListResponse::set_allocated_ip(std::string* ip) {
   if (ip != nullptr) {
     
   } else {
     
   }
   ip_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ip);
-  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip)
+  // @@protoc_insertion_point(field_set_allocated:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip)
 }
 
 // bool blacklist = 3;
-inline void SetPeerBlacklistResponse::clear_blacklist() {
+inline void SetPeerBlackListResponse::clear_blacklist() {
   blacklist_ = false;
 }
-inline bool SetPeerBlacklistResponse::_internal_blacklist() const {
+inline bool SetPeerBlackListResponse::_internal_blacklist() const {
   return blacklist_;
 }
-inline bool SetPeerBlacklistResponse::blacklist() const {
-  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.blacklist)
+inline bool SetPeerBlackListResponse::blacklist() const {
+  // @@protoc_insertion_point(field_get:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.blacklist)
   return _internal_blacklist();
 }
-inline void SetPeerBlacklistResponse::_internal_set_blacklist(bool value) {
+inline void SetPeerBlackListResponse::_internal_set_blacklist(bool value) {
   
   blacklist_ = value;
 }
-inline void SetPeerBlacklistResponse::set_blacklist(bool value) {
+inline void SetPeerBlackListResponse::set_blacklist(bool value) {
   _internal_set_blacklist(value);
-  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.blacklist)
+  // @@protoc_insertion_point(field_set:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.blacklist)
 }
 
 // -------------------------------------------------------------------

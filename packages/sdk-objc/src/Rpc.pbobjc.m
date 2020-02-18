@@ -1888,19 +1888,19 @@ typedef struct GetPeerReputationResponse__storage_ {
 
 @end
 
-#pragma mark - SetPeerBlacklistRequest
+#pragma mark - SetPeerBlackListRequest
 
-@implementation SetPeerBlacklistRequest
+@implementation SetPeerBlackListRequest
 
 @dynamic publicKey;
 @dynamic ip;
 @dynamic blacklist;
 
-typedef struct SetPeerBlacklistRequest__storage_ {
+typedef struct SetPeerBlackListRequest__storage_ {
   uint32_t _has_storage_[1];
   NSData *publicKey;
   NSData *ip;
-} SetPeerBlacklistRequest__storage_;
+} SetPeerBlackListRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -1911,25 +1911,25 @@ typedef struct SetPeerBlacklistRequest__storage_ {
       {
         .name = "publicKey",
         .dataTypeSpecific.className = NULL,
-        .number = SetPeerBlacklistRequest_FieldNumber_PublicKey,
+        .number = SetPeerBlackListRequest_FieldNumber_PublicKey,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SetPeerBlacklistRequest__storage_, publicKey),
+        .offset = (uint32_t)offsetof(SetPeerBlackListRequest__storage_, publicKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "ip",
         .dataTypeSpecific.className = NULL,
-        .number = SetPeerBlacklistRequest_FieldNumber_Ip,
+        .number = SetPeerBlackListRequest_FieldNumber_Ip,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(SetPeerBlacklistRequest__storage_, ip),
+        .offset = (uint32_t)offsetof(SetPeerBlackListRequest__storage_, ip),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "blacklist",
         .dataTypeSpecific.className = NULL,
-        .number = SetPeerBlacklistRequest_FieldNumber_Blacklist,
+        .number = SetPeerBlackListRequest_FieldNumber_Blacklist,
         .hasIndex = 2,
         .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -1937,12 +1937,12 @@ typedef struct SetPeerBlacklistRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[SetPeerBlacklistRequest class]
+        [GPBDescriptor allocDescriptorForClass:[SetPeerBlackListRequest class]
                                      rootClass:[RpcRoot class]
                                           file:RpcRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(SetPeerBlacklistRequest__storage_)
+                                   storageSize:sizeof(SetPeerBlackListRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     #if defined(DEBUG) && DEBUG
       NSAssert(descriptor == nil, @"Startup recursed!");
@@ -1954,19 +1954,19 @@ typedef struct SetPeerBlacklistRequest__storage_ {
 
 @end
 
-#pragma mark - SetPeerBlacklistResponse
+#pragma mark - SetPeerBlackListResponse
 
-@implementation SetPeerBlacklistResponse
+@implementation SetPeerBlackListResponse
 
 @dynamic publicKey;
 @dynamic ip;
 @dynamic blacklist;
 
-typedef struct SetPeerBlacklistResponse__storage_ {
+typedef struct SetPeerBlackListResponse__storage_ {
   uint32_t _has_storage_[1];
   NSData *publicKey;
   NSData *ip;
-} SetPeerBlacklistResponse__storage_;
+} SetPeerBlackListResponse__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -1977,25 +1977,25 @@ typedef struct SetPeerBlacklistResponse__storage_ {
       {
         .name = "publicKey",
         .dataTypeSpecific.className = NULL,
-        .number = SetPeerBlacklistResponse_FieldNumber_PublicKey,
+        .number = SetPeerBlackListResponse_FieldNumber_PublicKey,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SetPeerBlacklistResponse__storage_, publicKey),
+        .offset = (uint32_t)offsetof(SetPeerBlackListResponse__storage_, publicKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "ip",
         .dataTypeSpecific.className = NULL,
-        .number = SetPeerBlacklistResponse_FieldNumber_Ip,
+        .number = SetPeerBlackListResponse_FieldNumber_Ip,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(SetPeerBlacklistResponse__storage_, ip),
+        .offset = (uint32_t)offsetof(SetPeerBlackListResponse__storage_, ip),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBytes,
       },
       {
         .name = "blacklist",
         .dataTypeSpecific.className = NULL,
-        .number = SetPeerBlacklistResponse_FieldNumber_Blacklist,
+        .number = SetPeerBlackListResponse_FieldNumber_Blacklist,
         .hasIndex = 2,
         .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -2003,12 +2003,12 @@ typedef struct SetPeerBlacklistResponse__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[SetPeerBlacklistResponse class]
+        [GPBDescriptor allocDescriptorForClass:[SetPeerBlackListResponse class]
                                      rootClass:[RpcRoot class]
                                           file:RpcRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(SetPeerBlacklistResponse__storage_)
+                                   storageSize:sizeof(SetPeerBlackListResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     #if defined(DEBUG) && DEBUG
       NSAssert(descriptor == nil, @"Startup recursed!");

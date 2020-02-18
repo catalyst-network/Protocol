@@ -184,14 +184,14 @@ class GetPeerReputationResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetPeerReputationResponse> _instance;
 } _GetPeerReputationResponse_default_instance_;
-class SetPeerBlacklistRequestDefaultTypeInternal {
+class SetPeerBlackListRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetPeerBlacklistRequest> _instance;
-} _SetPeerBlacklistRequest_default_instance_;
-class SetPeerBlacklistResponseDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetPeerBlackListRequest> _instance;
+} _SetPeerBlackListRequest_default_instance_;
+class SetPeerBlackListResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetPeerBlacklistResponse> _instance;
-} _SetPeerBlacklistResponse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetPeerBlackListResponse> _instance;
+} _SetPeerBlackListResponse_default_instance_;
 class GetPeerInfoRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetPeerInfoRequest> _instance;
@@ -1033,33 +1033,33 @@ static void InitDefaultsscc_info_ServiceStatusResponse_Rpc_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServiceStatusResponse_Rpc_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ServiceStatusResponse_Rpc_2eproto}, {}};
 
-static void InitDefaultsscc_info_SetPeerBlacklistRequest_Rpc_2eproto() {
+static void InitDefaultsscc_info_SetPeerBlackListRequest_Rpc_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::Catalyst::Protocol::Rpc::Node::_SetPeerBlacklistRequest_default_instance_;
-    new (ptr) ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest();
+    void* ptr = &::Catalyst::Protocol::Rpc::Node::_SetPeerBlackListRequest_default_instance_;
+    new (ptr) ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest::InitAsDefaultInstance();
+  ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetPeerBlacklistRequest_Rpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetPeerBlacklistRequest_Rpc_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetPeerBlackListRequest_Rpc_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetPeerBlackListRequest_Rpc_2eproto}, {}};
 
-static void InitDefaultsscc_info_SetPeerBlacklistResponse_Rpc_2eproto() {
+static void InitDefaultsscc_info_SetPeerBlackListResponse_Rpc_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::Catalyst::Protocol::Rpc::Node::_SetPeerBlacklistResponse_default_instance_;
-    new (ptr) ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse();
+    void* ptr = &::Catalyst::Protocol::Rpc::Node::_SetPeerBlackListResponse_default_instance_;
+    new (ptr) ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse::InitAsDefaultInstance();
+  ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetPeerBlacklistResponse_Rpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetPeerBlacklistResponse_Rpc_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetPeerBlackListResponse_Rpc_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetPeerBlackListResponse_Rpc_2eproto}, {}};
 
 static void InitDefaultsscc_info_SetPeerDataFolderRequest_Rpc_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1505,21 +1505,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Rpc_2eproto::offsets[] PROTOBU
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::GetPeerReputationResponse, reputation_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest, public_key_),
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest, ip_),
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest, blacklist_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest, public_key_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest, ip_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest, blacklist_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse, public_key_),
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse, ip_),
-  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse, blacklist_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse, public_key_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse, ip_),
+  PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse, blacklist_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::Catalyst::Protocol::Rpc::Node::GetPeerInfoRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1732,8 +1732,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 221, -1, sizeof(::Catalyst::Protocol::Rpc::Node::GetPeerListResponse)},
   { 227, -1, sizeof(::Catalyst::Protocol::Rpc::Node::GetPeerReputationRequest)},
   { 234, -1, sizeof(::Catalyst::Protocol::Rpc::Node::GetPeerReputationResponse)},
-  { 240, -1, sizeof(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest)},
-  { 248, -1, sizeof(::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse)},
+  { 240, -1, sizeof(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest)},
+  { 248, -1, sizeof(::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse)},
   { 256, -1, sizeof(::Catalyst::Protocol::Rpc::Node::GetPeerInfoRequest)},
   { 263, -1, sizeof(::Catalyst::Protocol::Rpc::Node::GetPeerInfoResponse)},
   { 269, -1, sizeof(::Catalyst::Protocol::Rpc::Node::GetConnectionCountRequest)},
@@ -1803,8 +1803,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_GetPeerListResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_GetPeerReputationRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_GetPeerReputationResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_SetPeerBlacklistRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_SetPeerBlacklistResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_SetPeerBlackListRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_SetPeerBlackListResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_GetPeerInfoRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_GetPeerInfoResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::Catalyst::Protocol::Rpc::Node::_GetConnectionCountRequest_default_instance_),
@@ -1879,9 +1879,9 @@ const char descriptor_table_protodef_Rpc_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "yst.Protocol.Peer.PeerId\":\n\030GetPeerReput"
   "ationRequest\022\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002"
   " \001(\014\"/\n\031GetPeerReputationResponse\022\022\n\nrep"
-  "utation\030\001 \001(\005\"L\n\027SetPeerBlacklistRequest"
+  "utation\030\001 \001(\005\"L\n\027SetPeerBlackListRequest"
   "\022\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\022\021\n\tblac"
-  "klist\030\003 \001(\010\"M\n\030SetPeerBlacklistResponse\022"
+  "klist\030\003 \001(\010\"M\n\030SetPeerBlackListResponse\022"
   "\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\022\021\n\tblack"
   "list\030\003 \001(\010\"4\n\022GetPeerInfoRequest\022\022\n\npubl"
   "ic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\"J\n\023GetPeerInfoR"
@@ -1988,8 +1988,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Rpc
   &scc_info_SendToResponse_Rpc_2eproto.base,
   &scc_info_ServiceStatusRequest_Rpc_2eproto.base,
   &scc_info_ServiceStatusResponse_Rpc_2eproto.base,
-  &scc_info_SetPeerBlacklistRequest_Rpc_2eproto.base,
-  &scc_info_SetPeerBlacklistResponse_Rpc_2eproto.base,
+  &scc_info_SetPeerBlackListRequest_Rpc_2eproto.base,
+  &scc_info_SetPeerBlackListResponse_Rpc_2eproto.base,
   &scc_info_SetPeerDataFolderRequest_Rpc_2eproto.base,
   &scc_info_SetPeerDataFolderResponse_Rpc_2eproto.base,
   &scc_info_SignMessageRequest_Rpc_2eproto.base,
@@ -9712,18 +9712,18 @@ void GetPeerReputationResponse::InternalSwap(GetPeerReputationResponse* other) {
 
 // ===================================================================
 
-void SetPeerBlacklistRequest::InitAsDefaultInstance() {
+void SetPeerBlackListRequest::InitAsDefaultInstance() {
 }
-class SetPeerBlacklistRequest::_Internal {
+class SetPeerBlackListRequest::_Internal {
  public:
 };
 
-SetPeerBlacklistRequest::SetPeerBlacklistRequest()
+SetPeerBlackListRequest::SetPeerBlackListRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
 }
-SetPeerBlacklistRequest::SetPeerBlacklistRequest(const SetPeerBlacklistRequest& from)
+SetPeerBlackListRequest::SetPeerBlackListRequest(const SetPeerBlackListRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -9736,37 +9736,37 @@ SetPeerBlacklistRequest::SetPeerBlacklistRequest(const SetPeerBlacklistRequest& 
     ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
   }
   blacklist_ = from.blacklist_;
-  // @@protoc_insertion_point(copy_constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(copy_constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
 }
 
-void SetPeerBlacklistRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SetPeerBlacklistRequest_Rpc_2eproto.base);
+void SetPeerBlackListRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SetPeerBlackListRequest_Rpc_2eproto.base);
   public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   blacklist_ = false;
 }
 
-SetPeerBlacklistRequest::~SetPeerBlacklistRequest() {
-  // @@protoc_insertion_point(destructor:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+SetPeerBlackListRequest::~SetPeerBlackListRequest() {
+  // @@protoc_insertion_point(destructor:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   SharedDtor();
 }
 
-void SetPeerBlacklistRequest::SharedDtor() {
+void SetPeerBlackListRequest::SharedDtor() {
   public_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void SetPeerBlacklistRequest::SetCachedSize(int size) const {
+void SetPeerBlackListRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SetPeerBlacklistRequest& SetPeerBlacklistRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetPeerBlacklistRequest_Rpc_2eproto.base);
+const SetPeerBlackListRequest& SetPeerBlackListRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetPeerBlackListRequest_Rpc_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void SetPeerBlacklistRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+void SetPeerBlackListRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -9777,7 +9777,7 @@ void SetPeerBlacklistRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* SetPeerBlacklistRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* SetPeerBlackListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -9827,9 +9827,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SetPeerBlacklistRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* SetPeerBlackListRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9855,12 +9855,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   return target;
 }
 
-size_t SetPeerBlacklistRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+size_t SetPeerBlackListRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9895,23 +9895,23 @@ size_t SetPeerBlacklistRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void SetPeerBlacklistRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+void SetPeerBlackListRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const SetPeerBlacklistRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SetPeerBlacklistRequest>(
+  const SetPeerBlackListRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SetPeerBlackListRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
     MergeFrom(*source);
   }
 }
 
-void SetPeerBlacklistRequest::MergeFrom(const SetPeerBlacklistRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+void SetPeerBlackListRequest::MergeFrom(const SetPeerBlackListRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9930,25 +9930,25 @@ void SetPeerBlacklistRequest::MergeFrom(const SetPeerBlacklistRequest& from) {
   }
 }
 
-void SetPeerBlacklistRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+void SetPeerBlackListRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SetPeerBlacklistRequest::CopyFrom(const SetPeerBlacklistRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+void SetPeerBlackListRequest::CopyFrom(const SetPeerBlackListRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SetPeerBlacklistRequest::IsInitialized() const {
+bool SetPeerBlackListRequest::IsInitialized() const {
   return true;
 }
 
-void SetPeerBlacklistRequest::InternalSwap(SetPeerBlacklistRequest* other) {
+void SetPeerBlackListRequest::InternalSwap(SetPeerBlackListRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   public_key_.Swap(&other->public_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -9958,25 +9958,25 @@ void SetPeerBlacklistRequest::InternalSwap(SetPeerBlacklistRequest* other) {
   swap(blacklist_, other->blacklist_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetPeerBlacklistRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetPeerBlackListRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void SetPeerBlacklistResponse::InitAsDefaultInstance() {
+void SetPeerBlackListResponse::InitAsDefaultInstance() {
 }
-class SetPeerBlacklistResponse::_Internal {
+class SetPeerBlackListResponse::_Internal {
  public:
 };
 
-SetPeerBlacklistResponse::SetPeerBlacklistResponse()
+SetPeerBlackListResponse::SetPeerBlackListResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
 }
-SetPeerBlacklistResponse::SetPeerBlacklistResponse(const SetPeerBlacklistResponse& from)
+SetPeerBlackListResponse::SetPeerBlackListResponse(const SetPeerBlackListResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -9989,37 +9989,37 @@ SetPeerBlacklistResponse::SetPeerBlacklistResponse(const SetPeerBlacklistRespons
     ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
   }
   blacklist_ = from.blacklist_;
-  // @@protoc_insertion_point(copy_constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(copy_constructor:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
 }
 
-void SetPeerBlacklistResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SetPeerBlacklistResponse_Rpc_2eproto.base);
+void SetPeerBlackListResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SetPeerBlackListResponse_Rpc_2eproto.base);
   public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   blacklist_ = false;
 }
 
-SetPeerBlacklistResponse::~SetPeerBlacklistResponse() {
-  // @@protoc_insertion_point(destructor:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+SetPeerBlackListResponse::~SetPeerBlackListResponse() {
+  // @@protoc_insertion_point(destructor:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   SharedDtor();
 }
 
-void SetPeerBlacklistResponse::SharedDtor() {
+void SetPeerBlackListResponse::SharedDtor() {
   public_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void SetPeerBlacklistResponse::SetCachedSize(int size) const {
+void SetPeerBlackListResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SetPeerBlacklistResponse& SetPeerBlacklistResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetPeerBlacklistResponse_Rpc_2eproto.base);
+const SetPeerBlackListResponse& SetPeerBlackListResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetPeerBlackListResponse_Rpc_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void SetPeerBlacklistResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+void SetPeerBlackListResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10030,7 +10030,7 @@ void SetPeerBlacklistResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* SetPeerBlacklistResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* SetPeerBlackListResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -10080,9 +10080,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SetPeerBlacklistResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* SetPeerBlackListResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10108,12 +10108,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   return target;
 }
 
-size_t SetPeerBlacklistResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+size_t SetPeerBlackListResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10148,23 +10148,23 @@ size_t SetPeerBlacklistResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void SetPeerBlacklistResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+void SetPeerBlackListResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const SetPeerBlacklistResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SetPeerBlacklistResponse>(
+  const SetPeerBlackListResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SetPeerBlackListResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
     MergeFrom(*source);
   }
 }
 
-void SetPeerBlacklistResponse::MergeFrom(const SetPeerBlacklistResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+void SetPeerBlackListResponse::MergeFrom(const SetPeerBlackListResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10183,25 +10183,25 @@ void SetPeerBlacklistResponse::MergeFrom(const SetPeerBlacklistResponse& from) {
   }
 }
 
-void SetPeerBlacklistResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+void SetPeerBlackListResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SetPeerBlacklistResponse::CopyFrom(const SetPeerBlacklistResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+void SetPeerBlackListResponse::CopyFrom(const SetPeerBlackListResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SetPeerBlacklistResponse::IsInitialized() const {
+bool SetPeerBlackListResponse::IsInitialized() const {
   return true;
 }
 
-void SetPeerBlacklistResponse::InternalSwap(SetPeerBlacklistResponse* other) {
+void SetPeerBlackListResponse::InternalSwap(SetPeerBlackListResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   public_key_.Swap(&other->public_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -10211,7 +10211,7 @@ void SetPeerBlacklistResponse::InternalSwap(SetPeerBlacklistResponse* other) {
   swap(blacklist_, other->blacklist_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetPeerBlacklistResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetPeerBlackListResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -15857,11 +15857,11 @@ template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::GetPeerReputationR
 template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::GetPeerReputationResponse* Arena::CreateMaybeMessage< ::Catalyst::Protocol::Rpc::Node::GetPeerReputationResponse >(Arena* arena) {
   return Arena::CreateInternal< ::Catalyst::Protocol::Rpc::Node::GetPeerReputationResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest* Arena::CreateMaybeMessage< ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistRequest >(arena);
+template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest* Arena::CreateMaybeMessage< ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse* Arena::CreateMaybeMessage< ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::Catalyst::Protocol::Rpc::Node::SetPeerBlacklistResponse >(arena);
+template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse* Arena::CreateMaybeMessage< ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::Catalyst::Protocol::Rpc::Node::SetPeerBlackListResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::Catalyst::Protocol::Rpc::Node::GetPeerInfoRequest* Arena::CreateMaybeMessage< ::Catalyst::Protocol::Rpc::Node::GetPeerInfoRequest >(Arena* arena) {
   return Arena::CreateInternal< ::Catalyst::Protocol::Rpc::Node::GetPeerInfoRequest >(arena);

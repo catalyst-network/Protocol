@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='Catalyst.Protocol.Rpc.Node',
   syntax='proto3',
   serialized_options=b'P\001',
-  serialized_pb=b'\n\tRpc.proto\x12\x1a\x43\x61talyst.Protocol.Rpc.Node\x1a\nPeer.proto\x1a\x12\x43ryptography.proto\x1a\x0c\x44\x65ltas.proto\x1a\nWire.proto\x1a\x11Transaction.proto\"\x1f\n\x0eVersionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"\"\n\x0fVersionResponse\x12\x0f\n\x07version\x18\x01 \x01(\t\"\x1f\n\x0eGetInfoRequest\x12\r\n\x05query\x18\x01 \x01(\x08\" \n\x0fGetInfoResponse\x12\r\n\x05query\x18\x01 \x01(\t\"$\n\x13\x43reateWalletRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"%\n\x14\x43reateWalletResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11ListWalletRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12ListWalletResponse\x12\r\n\x05query\x18\x01 \x01(\t\"%\n\x14\x43reateAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"&\n\x15\x43reateAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11GetAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12GetAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"#\n\x12ListAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"$\n\x13ListAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\'\n\x16ValidateAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"(\n\x17ValidateAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11GetBalanceRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12GetBalanceResponse\x12\r\n\x05query\x18\x01 \x01(\t\",\n\x1b\x43reateRawTransactionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"-\n\x1c\x43reateRawTransactionResponse\x12\r\n\x05query\x18\x01 \x01(\t\"*\n\x19SignRawTransactionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"+\n\x1aSignRawTransactionResponse\x12\r\n\x05query\x18\x01 \x01(\t\",\n\x1b\x44\x65\x63odeRawTransactionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"-\n\x1c\x44\x65\x63odeRawTransactionResponse\x12\r\n\x05query\x18\x01 \x01(\t\"c\n\x1e\x42roadcastRawTransactionRequest\x12\x41\n\x0btransaction\x18\x01 \x01(\x0b\x32,.Catalyst.Protocol.Wire.TransactionBroadcast\"b\n\x1f\x42roadcastRawTransactionResponse\x12?\n\rresponse_code\x18\x01 \x01(\x0e\x32(.Catalyst.Protocol.Rpc.Node.ResponseCode\"\x1e\n\rSendToRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"\x1f\n\x0eSendToResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11SendToFromRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12SendToFromResponse\x12\r\n\x05query\x18\x01 \x01(\t\" \n\x0fSendManyRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"!\n\x10SendManyResponse\x12\r\n\x05query\x18\x01 \x01(\t\"$\n\x13SendFromManyRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"%\n\x14SendFromManyResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\x1f\n\x0e\x41\x64\x64NodeRequest\x12\r\n\x05query\x18\x01 \x01(\x08\" \n\x0f\x41\x64\x64NodeResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\x14\n\x12GetPeerListRequest\"D\n\x13GetPeerListResponse\x12-\n\x05peers\x18\x01 \x03(\x0b\x32\x1e.Catalyst.Protocol.Peer.PeerId\":\n\x18GetPeerReputationRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\"/\n\x19GetPeerReputationResponse\x12\x12\n\nreputation\x18\x01 \x01(\x05\"L\n\x17SetPeerBlacklistRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\x12\x11\n\tblacklist\x18\x03 \x01(\x08\"M\n\x18SetPeerBlacklistResponse\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\x12\x11\n\tblacklist\x18\x03 \x01(\x08\"4\n\x12GetPeerInfoRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\"J\n\x13GetPeerInfoResponse\x12\x33\n\tpeer_info\x18\x01 \x03(\x0b\x32 .Catalyst.Protocol.Peer.PeerInfo\"*\n\x19GetConnectionCountRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"+\n\x1aGetConnectionCountResponse\x12\r\n\x05query\x18\x01 \x01(\t\")\n\x0fGetDeltaRequest\x12\x16\n\x0e\x64\x65lta_dfs_hash\x18\x01 \x01(\x0c\"B\n\x10GetDeltaResponse\x12.\n\x05\x64\x65lta\x18\x01 \x01(\x0b\x32\x1f.Catalyst.Protocol.Deltas.Delta\"\"\n\x11GetMempoolRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"V\n\x12GetMempoolResponse\x12@\n\x0ctransactions\x18\x01 \x03(\x0b\x32*.Catalyst.Protocol.Transaction.PublicEntry\"~\n\x12SignMessageRequest\x12\x0f\n\x07message\x18\x01 \x01(\x0c\x12\x0e\n\x06key_id\x18\x02 \x01(\t\x12G\n\x0fsigning_context\x18\x03 \x01(\x0b\x32..Catalyst.Protocol.Cryptography.SigningContext\"V\n\x13SignMessageResponse\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x12\n\npublic_key\x18\x02 \x01(\x0c\x12\x18\n\x10original_message\x18\x03 \x01(\x0c\"\x97\x01\n\x14VerifyMessageRequest\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x12\n\npublic_key\x18\x02 \x01(\x0c\x12\x0f\n\x07message\x18\x03 \x01(\x0c\x12G\n\x0fsigning_context\x18\x04 \x01(\x0b\x32..Catalyst.Protocol.Cryptography.SigningContext\"1\n\x15VerifyMessageResponse\x12\x18\n\x10is_signed_by_key\x18\x01 \x01(\x08\"%\n\x14ServiceStatusRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"&\n\x15ServiceStatusResponse\x12\r\n\x05query\x18\x01 \x01(\t\"I\n\x13\x41\x64\x64\x46ileToDfsRequest\x12\x11\n\tfile_size\x18\x01 \x01(\x04\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\x0c\n\x04node\x18\x03 \x01(\t\"?\n\x14\x41\x64\x64\x46ileToDfsResponse\x12\x15\n\rresponse_code\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x66s_hash\x18\x02 \x01(\t\"`\n\x18TransferFileBytesRequest\x12\x10\n\x08\x63hunk_id\x18\x01 \x01(\r\x12\x13\n\x0b\x63hunk_bytes\x18\x02 \x01(\x0c\x12\x1d\n\x15\x63orrelation_file_name\x18\x03 \x01(\x0c\"2\n\x19TransferFileBytesResponse\x12\x15\n\rresponse_code\x18\x01 \x01(\x0c\"8\n\x11RemovePeerRequest\x12\x0f\n\x07peer_ip\x18\x01 \x01(\x0c\x12\x12\n\npublic_key\x18\x02 \x01(\x0c\"+\n\x12RemovePeerResponse\x12\x15\n\rdeleted_count\x18\x01 \x01(\r\"\x15\n\x13GetPeerCountRequest\"*\n\x14GetPeerCountResponse\x12\x12\n\npeer_count\x18\x01 \x01(\x05\")\n\x15GetFileFromDfsRequest\x12\x10\n\x08\x64\x66s_hash\x18\x01 \x01(\t\"B\n\x16GetFileFromDfsResponse\x12\x11\n\tfile_size\x18\x01 \x01(\x04\x12\x15\n\rresponse_code\x18\x02 \x01(\x0c\"/\n\x18SetPeerDataFolderRequest\x12\x13\n\x0b\x64\x61ta_folder\x18\x01 \x01(\t\"*\n\x19SetPeerDataFolderResponse\x12\r\n\x05query\x18\x01 \x01(\x08*i\n\x0cResponseCode\x12\x0b\n\x07PENDING\x10\x00\x12\x0e\n\nSUCCESSFUL\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\n\n\x06\x45XISTS\x10\x06\x42\x02P\x01\x62\x06proto3'
+  serialized_pb=b'\n\tRpc.proto\x12\x1a\x43\x61talyst.Protocol.Rpc.Node\x1a\nPeer.proto\x1a\x12\x43ryptography.proto\x1a\x0c\x44\x65ltas.proto\x1a\nWire.proto\x1a\x11Transaction.proto\"\x1f\n\x0eVersionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"\"\n\x0fVersionResponse\x12\x0f\n\x07version\x18\x01 \x01(\t\"\x1f\n\x0eGetInfoRequest\x12\r\n\x05query\x18\x01 \x01(\x08\" \n\x0fGetInfoResponse\x12\r\n\x05query\x18\x01 \x01(\t\"$\n\x13\x43reateWalletRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"%\n\x14\x43reateWalletResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11ListWalletRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12ListWalletResponse\x12\r\n\x05query\x18\x01 \x01(\t\"%\n\x14\x43reateAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"&\n\x15\x43reateAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11GetAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12GetAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"#\n\x12ListAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"$\n\x13ListAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\'\n\x16ValidateAddressRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"(\n\x17ValidateAddressResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11GetBalanceRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12GetBalanceResponse\x12\r\n\x05query\x18\x01 \x01(\t\",\n\x1b\x43reateRawTransactionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"-\n\x1c\x43reateRawTransactionResponse\x12\r\n\x05query\x18\x01 \x01(\t\"*\n\x19SignRawTransactionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"+\n\x1aSignRawTransactionResponse\x12\r\n\x05query\x18\x01 \x01(\t\",\n\x1b\x44\x65\x63odeRawTransactionRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"-\n\x1c\x44\x65\x63odeRawTransactionResponse\x12\r\n\x05query\x18\x01 \x01(\t\"c\n\x1e\x42roadcastRawTransactionRequest\x12\x41\n\x0btransaction\x18\x01 \x01(\x0b\x32,.Catalyst.Protocol.Wire.TransactionBroadcast\"b\n\x1f\x42roadcastRawTransactionResponse\x12?\n\rresponse_code\x18\x01 \x01(\x0e\x32(.Catalyst.Protocol.Rpc.Node.ResponseCode\"\x1e\n\rSendToRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"\x1f\n\x0eSendToResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\"\n\x11SendToFromRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"#\n\x12SendToFromResponse\x12\r\n\x05query\x18\x01 \x01(\t\" \n\x0fSendManyRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"!\n\x10SendManyResponse\x12\r\n\x05query\x18\x01 \x01(\t\"$\n\x13SendFromManyRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"%\n\x14SendFromManyResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\x1f\n\x0e\x41\x64\x64NodeRequest\x12\r\n\x05query\x18\x01 \x01(\x08\" \n\x0f\x41\x64\x64NodeResponse\x12\r\n\x05query\x18\x01 \x01(\t\"\x14\n\x12GetPeerListRequest\"D\n\x13GetPeerListResponse\x12-\n\x05peers\x18\x01 \x03(\x0b\x32\x1e.Catalyst.Protocol.Peer.PeerId\":\n\x18GetPeerReputationRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\"/\n\x19GetPeerReputationResponse\x12\x12\n\nreputation\x18\x01 \x01(\x05\"L\n\x17SetPeerBlackListRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\x12\x11\n\tblacklist\x18\x03 \x01(\x08\"M\n\x18SetPeerBlackListResponse\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\x12\x11\n\tblacklist\x18\x03 \x01(\x08\"4\n\x12GetPeerInfoRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\n\n\x02ip\x18\x02 \x01(\x0c\"J\n\x13GetPeerInfoResponse\x12\x33\n\tpeer_info\x18\x01 \x03(\x0b\x32 .Catalyst.Protocol.Peer.PeerInfo\"*\n\x19GetConnectionCountRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"+\n\x1aGetConnectionCountResponse\x12\r\n\x05query\x18\x01 \x01(\t\")\n\x0fGetDeltaRequest\x12\x16\n\x0e\x64\x65lta_dfs_hash\x18\x01 \x01(\x0c\"B\n\x10GetDeltaResponse\x12.\n\x05\x64\x65lta\x18\x01 \x01(\x0b\x32\x1f.Catalyst.Protocol.Deltas.Delta\"\"\n\x11GetMempoolRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"V\n\x12GetMempoolResponse\x12@\n\x0ctransactions\x18\x01 \x03(\x0b\x32*.Catalyst.Protocol.Transaction.PublicEntry\"~\n\x12SignMessageRequest\x12\x0f\n\x07message\x18\x01 \x01(\x0c\x12\x0e\n\x06key_id\x18\x02 \x01(\t\x12G\n\x0fsigning_context\x18\x03 \x01(\x0b\x32..Catalyst.Protocol.Cryptography.SigningContext\"V\n\x13SignMessageResponse\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x12\n\npublic_key\x18\x02 \x01(\x0c\x12\x18\n\x10original_message\x18\x03 \x01(\x0c\"\x97\x01\n\x14VerifyMessageRequest\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x12\n\npublic_key\x18\x02 \x01(\x0c\x12\x0f\n\x07message\x18\x03 \x01(\x0c\x12G\n\x0fsigning_context\x18\x04 \x01(\x0b\x32..Catalyst.Protocol.Cryptography.SigningContext\"1\n\x15VerifyMessageResponse\x12\x18\n\x10is_signed_by_key\x18\x01 \x01(\x08\"%\n\x14ServiceStatusRequest\x12\r\n\x05query\x18\x01 \x01(\x08\"&\n\x15ServiceStatusResponse\x12\r\n\x05query\x18\x01 \x01(\t\"I\n\x13\x41\x64\x64\x46ileToDfsRequest\x12\x11\n\tfile_size\x18\x01 \x01(\x04\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\x0c\n\x04node\x18\x03 \x01(\t\"?\n\x14\x41\x64\x64\x46ileToDfsResponse\x12\x15\n\rresponse_code\x18\x01 \x01(\x0c\x12\x10\n\x08\x64\x66s_hash\x18\x02 \x01(\t\"`\n\x18TransferFileBytesRequest\x12\x10\n\x08\x63hunk_id\x18\x01 \x01(\r\x12\x13\n\x0b\x63hunk_bytes\x18\x02 \x01(\x0c\x12\x1d\n\x15\x63orrelation_file_name\x18\x03 \x01(\x0c\"2\n\x19TransferFileBytesResponse\x12\x15\n\rresponse_code\x18\x01 \x01(\x0c\"8\n\x11RemovePeerRequest\x12\x0f\n\x07peer_ip\x18\x01 \x01(\x0c\x12\x12\n\npublic_key\x18\x02 \x01(\x0c\"+\n\x12RemovePeerResponse\x12\x15\n\rdeleted_count\x18\x01 \x01(\r\"\x15\n\x13GetPeerCountRequest\"*\n\x14GetPeerCountResponse\x12\x12\n\npeer_count\x18\x01 \x01(\x05\")\n\x15GetFileFromDfsRequest\x12\x10\n\x08\x64\x66s_hash\x18\x01 \x01(\t\"B\n\x16GetFileFromDfsResponse\x12\x11\n\tfile_size\x18\x01 \x01(\x04\x12\x15\n\rresponse_code\x18\x02 \x01(\x0c\"/\n\x18SetPeerDataFolderRequest\x12\x13\n\x0b\x64\x61ta_folder\x18\x01 \x01(\t\"*\n\x19SetPeerDataFolderResponse\x12\r\n\x05query\x18\x01 \x01(\x08*i\n\x0cResponseCode\x12\x0b\n\x07PENDING\x10\x00\x12\x0e\n\nSUCCESSFUL\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\n\n\x06\x45XISTS\x10\x06\x42\x02P\x01\x62\x06proto3'
   ,
   dependencies=[Peer__pb2.DESCRIPTOR,Cryptography__pb2.DESCRIPTOR,Deltas__pb2.DESCRIPTOR,Wire__pb2.DESCRIPTOR,Transaction__pb2.DESCRIPTOR,])
 
@@ -1322,28 +1322,28 @@ _GETPEERREPUTATIONRESPONSE = _descriptor.Descriptor(
 
 
 _SETPEERBLACKLISTREQUEST = _descriptor.Descriptor(
-  name='SetPeerBlacklistRequest',
-  full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest',
+  name='SetPeerBlackListRequest',
+  full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='public_key', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.public_key', index=0,
+      name='public_key', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.public_key', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.ip', index=1,
+      name='ip', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.ip', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='blacklist', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest.blacklist', index=2,
+      name='blacklist', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest.blacklist', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1367,28 +1367,28 @@ _SETPEERBLACKLISTREQUEST = _descriptor.Descriptor(
 
 
 _SETPEERBLACKLISTRESPONSE = _descriptor.Descriptor(
-  name='SetPeerBlacklistResponse',
-  full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse',
+  name='SetPeerBlackListResponse',
+  full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='public_key', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.public_key', index=0,
+      name='public_key', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.public_key', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.ip', index=1,
+      name='ip', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.ip', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='blacklist', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.blacklist', index=2,
+      name='blacklist', full_name='Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.blacklist', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -2362,8 +2362,8 @@ DESCRIPTOR.message_types_by_name['GetPeerListRequest'] = _GETPEERLISTREQUEST
 DESCRIPTOR.message_types_by_name['GetPeerListResponse'] = _GETPEERLISTRESPONSE
 DESCRIPTOR.message_types_by_name['GetPeerReputationRequest'] = _GETPEERREPUTATIONREQUEST
 DESCRIPTOR.message_types_by_name['GetPeerReputationResponse'] = _GETPEERREPUTATIONRESPONSE
-DESCRIPTOR.message_types_by_name['SetPeerBlacklistRequest'] = _SETPEERBLACKLISTREQUEST
-DESCRIPTOR.message_types_by_name['SetPeerBlacklistResponse'] = _SETPEERBLACKLISTRESPONSE
+DESCRIPTOR.message_types_by_name['SetPeerBlackListRequest'] = _SETPEERBLACKLISTREQUEST
+DESCRIPTOR.message_types_by_name['SetPeerBlackListResponse'] = _SETPEERBLACKLISTRESPONSE
 DESCRIPTOR.message_types_by_name['GetPeerInfoRequest'] = _GETPEERINFOREQUEST
 DESCRIPTOR.message_types_by_name['GetPeerInfoResponse'] = _GETPEERINFORESPONSE
 DESCRIPTOR.message_types_by_name['GetConnectionCountRequest'] = _GETCONNECTIONCOUNTREQUEST
@@ -2673,19 +2673,19 @@ GetPeerReputationResponse = _reflection.GeneratedProtocolMessageType('GetPeerRep
   })
 _sym_db.RegisterMessage(GetPeerReputationResponse)
 
-SetPeerBlacklistRequest = _reflection.GeneratedProtocolMessageType('SetPeerBlacklistRequest', (_message.Message,), {
+SetPeerBlackListRequest = _reflection.GeneratedProtocolMessageType('SetPeerBlackListRequest', (_message.Message,), {
   'DESCRIPTOR' : _SETPEERBLACKLISTREQUEST,
   '__module__' : 'Rpc_pb2'
-  # @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+  # @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
   })
-_sym_db.RegisterMessage(SetPeerBlacklistRequest)
+_sym_db.RegisterMessage(SetPeerBlackListRequest)
 
-SetPeerBlacklistResponse = _reflection.GeneratedProtocolMessageType('SetPeerBlacklistResponse', (_message.Message,), {
+SetPeerBlackListResponse = _reflection.GeneratedProtocolMessageType('SetPeerBlackListResponse', (_message.Message,), {
   'DESCRIPTOR' : _SETPEERBLACKLISTRESPONSE,
   '__module__' : 'Rpc_pb2'
-  # @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+  # @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   })
-_sym_db.RegisterMessage(SetPeerBlacklistResponse)
+_sym_db.RegisterMessage(SetPeerBlackListResponse)
 
 GetPeerInfoRequest = _reflection.GeneratedProtocolMessageType('GetPeerInfoRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETPEERINFOREQUEST,

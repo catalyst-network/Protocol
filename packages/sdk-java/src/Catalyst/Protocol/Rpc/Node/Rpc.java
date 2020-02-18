@@ -215,15 +215,15 @@ public final class Rpc {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Catalyst_Protocol_Rpc_Node_GetPeerReputationResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_descriptor;
+    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_fieldAccessorTable;
+      internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_descriptor;
+    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_fieldAccessorTable;
+      internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoRequest_descriptor;
   static final 
@@ -408,9 +408,9 @@ public final class Rpc {
       "yst.Protocol.Peer.PeerId\":\n\030GetPeerReput" +
       "ationRequest\022\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002" +
       " \001(\014\"/\n\031GetPeerReputationResponse\022\022\n\nrep" +
-      "utation\030\001 \001(\005\"L\n\027SetPeerBlacklistRequest" +
+      "utation\030\001 \001(\005\"L\n\027SetPeerBlackListRequest" +
       "\022\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\022\021\n\tblac" +
-      "klist\030\003 \001(\010\"M\n\030SetPeerBlacklistResponse\022" +
+      "klist\030\003 \001(\010\"M\n\030SetPeerBlackListResponse\022" +
       "\022\n\npublic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\022\021\n\tblack" +
       "list\030\003 \001(\010\"4\n\022GetPeerInfoRequest\022\022\n\npubl" +
       "ic_key\030\001 \001(\014\022\n\n\002ip\030\002 \001(\014\"J\n\023GetPeerInfoR" +
@@ -706,17 +706,17 @@ public final class Rpc {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Catalyst_Protocol_Rpc_Node_GetPeerReputationResponse_descriptor,
         new java.lang.String[] { "Reputation", });
-    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_descriptor =
+    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_descriptor =
       getDescriptor().getMessageTypes().get(40);
-    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_fieldAccessorTable = new
+    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistRequest_descriptor,
+        internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListRequest_descriptor,
         new java.lang.String[] { "PublicKey", "Ip", "Blacklist", });
-    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_descriptor =
+    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_descriptor =
       getDescriptor().getMessageTypes().get(41);
-    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_fieldAccessorTable = new
+    internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_descriptor,
+        internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_descriptor,
         new java.lang.String[] { "PublicKey", "Ip", "Blacklist", });
     internal_static_Catalyst_Protocol_Rpc_Node_GetPeerInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(42);

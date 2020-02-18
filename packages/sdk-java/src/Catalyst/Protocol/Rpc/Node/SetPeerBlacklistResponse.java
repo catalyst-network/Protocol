@@ -4,18 +4,18 @@
 package Catalyst.Protocol.Rpc.Node;
 
 /**
- * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse}
+ * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse}
  */
-public  final class SetPeerBlacklistResponse extends
+public  final class SetPeerBlackListResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
-    SetPeerBlacklistResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
+    SetPeerBlackListResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SetPeerBlacklistResponse.newBuilder() to construct.
-  private SetPeerBlacklistResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SetPeerBlackListResponse.newBuilder() to construct.
+  private SetPeerBlackListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SetPeerBlacklistResponse() {
+  private SetPeerBlackListResponse() {
     publicKey_ = com.google.protobuf.ByteString.EMPTY;
     ip_ = com.google.protobuf.ByteString.EMPTY;
   }
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SetPeerBlacklistResponse();
+    return new SetPeerBlackListResponse();
   }
 
   @java.lang.Override
@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SetPeerBlacklistResponse(
+  private SetPeerBlackListResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -86,15 +86,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_descriptor;
+    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_fieldAccessorTable
+    return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.class, Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.Builder.class);
+            Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.class, Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.Builder.class);
   }
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 1;
@@ -181,10 +181,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)) {
+    if (!(obj instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)) {
       return super.equals(obj);
     }
-    Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse other = (Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse) obj;
+    Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse other = (Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse) obj;
 
     if (!getPublicKey()
         .equals(other.getPublicKey())) return false;
@@ -215,69 +215,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(byte[] data)
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(java.io.InputStream input)
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseDelimitedFrom(java.io.InputStream input)
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseDelimitedFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parseFrom(
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse prototype) {
+  public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -306,26 +306,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse}
+   * Protobuf type {@code Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_descriptor;
+      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_fieldAccessorTable
+      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.class, Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.Builder.class);
+              Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.class, Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.Builder.class);
     }
 
-    // Construct using Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.newBuilder()
+    // Construct using Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -355,17 +355,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlacklistResponse_descriptor;
+      return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_SetPeerBlackListResponse_descriptor;
     }
 
     @java.lang.Override
-    public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse getDefaultInstanceForType() {
-      return Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.getDefaultInstance();
+    public Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse getDefaultInstanceForType() {
+      return Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse build() {
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse result = buildPartial();
+    public Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse build() {
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -373,8 +373,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse buildPartial() {
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse result = new Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse(this);
+    public Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse buildPartial() {
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse result = new Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse(this);
       result.publicKey_ = publicKey_;
       result.ip_ = ip_;
       result.blacklist_ = blacklist_;
@@ -416,16 +416,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse) {
-        return mergeFrom((Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)other);
+      if (other instanceof Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse) {
+        return mergeFrom((Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse other) {
-      if (other == Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse other) {
+      if (other == Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse.getDefaultInstance()) return this;
       if (other.getPublicKey() != com.google.protobuf.ByteString.EMPTY) {
         setPublicKey(other.getPublicKey());
       }
@@ -450,11 +450,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse parsedMessage = null;
+      Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse) e.getUnfinishedMessage();
+        parsedMessage = (Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -572,41 +572,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
+    // @@protoc_insertion_point(builder_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse)
-  private static final Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse)
+  private static final Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse();
+    DEFAULT_INSTANCE = new Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse();
   }
 
-  public static Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse getDefaultInstance() {
+  public static Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SetPeerBlacklistResponse>
-      PARSER = new com.google.protobuf.AbstractParser<SetPeerBlacklistResponse>() {
+  private static final com.google.protobuf.Parser<SetPeerBlackListResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SetPeerBlackListResponse>() {
     @java.lang.Override
-    public SetPeerBlacklistResponse parsePartialFrom(
+    public SetPeerBlackListResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SetPeerBlacklistResponse(input, extensionRegistry);
+      return new SetPeerBlackListResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SetPeerBlacklistResponse> parser() {
+  public static com.google.protobuf.Parser<SetPeerBlackListResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SetPeerBlacklistResponse> getParserForType() {
+  public com.google.protobuf.Parser<SetPeerBlackListResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public Catalyst.Protocol.Rpc.Node.SetPeerBlacklistResponse getDefaultInstanceForType() {
+  public Catalyst.Protocol.Rpc.Node.SetPeerBlackListResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

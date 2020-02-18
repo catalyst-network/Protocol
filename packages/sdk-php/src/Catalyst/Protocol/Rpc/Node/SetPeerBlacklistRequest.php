@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest</code>
  */
-class SetPeerBlacklistRequest extends \Google\Protobuf\Internal\Message
+class SetPeerBlackListRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>bytes public_key = 1;</code>

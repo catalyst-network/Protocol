@@ -3,8 +3,8 @@
 
 package Catalyst.Protocol.Rpc.Node;
 
-public interface SetPeerBlacklistRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Catalyst.Protocol.Rpc.Node.SetPeerBlacklistRequest)
+public interface SetPeerBlackListRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:Catalyst.Protocol.Rpc.Node.SetPeerBlackListRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

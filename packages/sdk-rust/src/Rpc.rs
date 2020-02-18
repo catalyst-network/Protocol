@@ -6671,7 +6671,7 @@ impl ::protobuf::reflect::ProtobufValue for GetPeerReputationResponse {
 }
 
 #[derive(PartialEq,Clone,Default)]
-pub struct SetPeerBlacklistRequest {
+pub struct SetPeerBlackListRequest {
     // message fields
     pub public_key: ::std::vec::Vec<u8>,
     pub ip: ::std::vec::Vec<u8>,
@@ -6681,14 +6681,14 @@ pub struct SetPeerBlacklistRequest {
     pub cached_size: ::protobuf::CachedSize,
 }
 
-impl<'a> ::std::default::Default for &'a SetPeerBlacklistRequest {
-    fn default() -> &'a SetPeerBlacklistRequest {
-        <SetPeerBlacklistRequest as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a SetPeerBlackListRequest {
+    fn default() -> &'a SetPeerBlackListRequest {
+        <SetPeerBlackListRequest as ::protobuf::Message>::default_instance()
     }
 }
 
-impl SetPeerBlacklistRequest {
-    pub fn new() -> SetPeerBlacklistRequest {
+impl SetPeerBlackListRequest {
+    pub fn new() -> SetPeerBlackListRequest {
         ::std::default::Default::default()
     }
 
@@ -6760,7 +6760,7 @@ impl SetPeerBlacklistRequest {
     }
 }
 
-impl ::protobuf::Message for SetPeerBlacklistRequest {
+impl ::protobuf::Message for SetPeerBlackListRequest {
     fn is_initialized(&self) -> bool {
         true
     }
@@ -6848,8 +6848,8 @@ impl ::protobuf::Message for SetPeerBlacklistRequest {
         Self::descriptor_static()
     }
 
-    fn new() -> SetPeerBlacklistRequest {
-        SetPeerBlacklistRequest::new()
+    fn new() -> SetPeerBlackListRequest {
+        SetPeerBlackListRequest::new()
     }
 
     fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
@@ -6862,21 +6862,21 @@ impl ::protobuf::Message for SetPeerBlacklistRequest {
                 let mut fields = ::std::vec::Vec::new();
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBytes>(
                     "public_key",
-                    |m: &SetPeerBlacklistRequest| { &m.public_key },
-                    |m: &mut SetPeerBlacklistRequest| { &mut m.public_key },
+                    |m: &SetPeerBlackListRequest| { &m.public_key },
+                    |m: &mut SetPeerBlackListRequest| { &mut m.public_key },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBytes>(
                     "ip",
-                    |m: &SetPeerBlacklistRequest| { &m.ip },
-                    |m: &mut SetPeerBlacklistRequest| { &mut m.ip },
+                    |m: &SetPeerBlackListRequest| { &m.ip },
+                    |m: &mut SetPeerBlackListRequest| { &mut m.ip },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBool>(
                     "blacklist",
-                    |m: &SetPeerBlacklistRequest| { &m.blacklist },
-                    |m: &mut SetPeerBlacklistRequest| { &mut m.blacklist },
+                    |m: &SetPeerBlackListRequest| { &m.blacklist },
+                    |m: &mut SetPeerBlackListRequest| { &mut m.blacklist },
                 ));
-                ::protobuf::reflect::MessageDescriptor::new::<SetPeerBlacklistRequest>(
-                    "SetPeerBlacklistRequest",
+                ::protobuf::reflect::MessageDescriptor::new::<SetPeerBlackListRequest>(
+                    "SetPeerBlackListRequest",
                     fields,
                     file_descriptor_proto()
                 )
@@ -6884,18 +6884,18 @@ impl ::protobuf::Message for SetPeerBlacklistRequest {
         }
     }
 
-    fn default_instance() -> &'static SetPeerBlacklistRequest {
-        static mut instance: ::protobuf::lazy::Lazy<SetPeerBlacklistRequest> = ::protobuf::lazy::Lazy {
+    fn default_instance() -> &'static SetPeerBlackListRequest {
+        static mut instance: ::protobuf::lazy::Lazy<SetPeerBlackListRequest> = ::protobuf::lazy::Lazy {
             lock: ::protobuf::lazy::ONCE_INIT,
-            ptr: 0 as *const SetPeerBlacklistRequest,
+            ptr: 0 as *const SetPeerBlackListRequest,
         };
         unsafe {
-            instance.get(SetPeerBlacklistRequest::new)
+            instance.get(SetPeerBlackListRequest::new)
         }
     }
 }
 
-impl ::protobuf::Clear for SetPeerBlacklistRequest {
+impl ::protobuf::Clear for SetPeerBlackListRequest {
     fn clear(&mut self) {
         self.public_key.clear();
         self.ip.clear();
@@ -6904,20 +6904,20 @@ impl ::protobuf::Clear for SetPeerBlacklistRequest {
     }
 }
 
-impl ::std::fmt::Debug for SetPeerBlacklistRequest {
+impl ::std::fmt::Debug for SetPeerBlackListRequest {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for SetPeerBlacklistRequest {
+impl ::protobuf::reflect::ProtobufValue for SetPeerBlackListRequest {
     fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
 }
 
 #[derive(PartialEq,Clone,Default)]
-pub struct SetPeerBlacklistResponse {
+pub struct SetPeerBlackListResponse {
     // message fields
     pub public_key: ::std::vec::Vec<u8>,
     pub ip: ::std::vec::Vec<u8>,
@@ -6927,14 +6927,14 @@ pub struct SetPeerBlacklistResponse {
     pub cached_size: ::protobuf::CachedSize,
 }
 
-impl<'a> ::std::default::Default for &'a SetPeerBlacklistResponse {
-    fn default() -> &'a SetPeerBlacklistResponse {
-        <SetPeerBlacklistResponse as ::protobuf::Message>::default_instance()
+impl<'a> ::std::default::Default for &'a SetPeerBlackListResponse {
+    fn default() -> &'a SetPeerBlackListResponse {
+        <SetPeerBlackListResponse as ::protobuf::Message>::default_instance()
     }
 }
 
-impl SetPeerBlacklistResponse {
-    pub fn new() -> SetPeerBlacklistResponse {
+impl SetPeerBlackListResponse {
+    pub fn new() -> SetPeerBlackListResponse {
         ::std::default::Default::default()
     }
 
@@ -7006,7 +7006,7 @@ impl SetPeerBlacklistResponse {
     }
 }
 
-impl ::protobuf::Message for SetPeerBlacklistResponse {
+impl ::protobuf::Message for SetPeerBlackListResponse {
     fn is_initialized(&self) -> bool {
         true
     }
@@ -7094,8 +7094,8 @@ impl ::protobuf::Message for SetPeerBlacklistResponse {
         Self::descriptor_static()
     }
 
-    fn new() -> SetPeerBlacklistResponse {
-        SetPeerBlacklistResponse::new()
+    fn new() -> SetPeerBlackListResponse {
+        SetPeerBlackListResponse::new()
     }
 
     fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
@@ -7108,21 +7108,21 @@ impl ::protobuf::Message for SetPeerBlacklistResponse {
                 let mut fields = ::std::vec::Vec::new();
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBytes>(
                     "public_key",
-                    |m: &SetPeerBlacklistResponse| { &m.public_key },
-                    |m: &mut SetPeerBlacklistResponse| { &mut m.public_key },
+                    |m: &SetPeerBlackListResponse| { &m.public_key },
+                    |m: &mut SetPeerBlackListResponse| { &mut m.public_key },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBytes>(
                     "ip",
-                    |m: &SetPeerBlacklistResponse| { &m.ip },
-                    |m: &mut SetPeerBlacklistResponse| { &mut m.ip },
+                    |m: &SetPeerBlackListResponse| { &m.ip },
+                    |m: &mut SetPeerBlackListResponse| { &mut m.ip },
                 ));
                 fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBool>(
                     "blacklist",
-                    |m: &SetPeerBlacklistResponse| { &m.blacklist },
-                    |m: &mut SetPeerBlacklistResponse| { &mut m.blacklist },
+                    |m: &SetPeerBlackListResponse| { &m.blacklist },
+                    |m: &mut SetPeerBlackListResponse| { &mut m.blacklist },
                 ));
-                ::protobuf::reflect::MessageDescriptor::new::<SetPeerBlacklistResponse>(
-                    "SetPeerBlacklistResponse",
+                ::protobuf::reflect::MessageDescriptor::new::<SetPeerBlackListResponse>(
+                    "SetPeerBlackListResponse",
                     fields,
                     file_descriptor_proto()
                 )
@@ -7130,18 +7130,18 @@ impl ::protobuf::Message for SetPeerBlacklistResponse {
         }
     }
 
-    fn default_instance() -> &'static SetPeerBlacklistResponse {
-        static mut instance: ::protobuf::lazy::Lazy<SetPeerBlacklistResponse> = ::protobuf::lazy::Lazy {
+    fn default_instance() -> &'static SetPeerBlackListResponse {
+        static mut instance: ::protobuf::lazy::Lazy<SetPeerBlackListResponse> = ::protobuf::lazy::Lazy {
             lock: ::protobuf::lazy::ONCE_INIT,
-            ptr: 0 as *const SetPeerBlacklistResponse,
+            ptr: 0 as *const SetPeerBlackListResponse,
         };
         unsafe {
-            instance.get(SetPeerBlacklistResponse::new)
+            instance.get(SetPeerBlackListResponse::new)
         }
     }
 }
 
-impl ::protobuf::Clear for SetPeerBlacklistResponse {
+impl ::protobuf::Clear for SetPeerBlackListResponse {
     fn clear(&mut self) {
         self.public_key.clear();
         self.ip.clear();
@@ -7150,13 +7150,13 @@ impl ::protobuf::Clear for SetPeerBlacklistResponse {
     }
 }
 
-impl ::std::fmt::Debug for SetPeerBlacklistResponse {
+impl ::std::fmt::Debug for SetPeerBlackListResponse {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::protobuf::text_format::fmt(self, f)
     }
 }
 
-impl ::protobuf::reflect::ProtobufValue for SetPeerBlacklistResponse {
+impl ::protobuf::reflect::ProtobufValue for SetPeerBlackListResponse {
     fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
         ::protobuf::reflect::ProtobufValueRef::Message(self)
     }
@@ -12251,9 +12251,9 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     etPeerReputationRequest\x12\x1d\n\npublic_key\x18\x01\x20\x01(\x0cR\tpub\
     licKey\x12\x0e\n\x02ip\x18\x02\x20\x01(\x0cR\x02ip\";\n\x19GetPeerReputa\
     tionResponse\x12\x1e\n\nreputation\x18\x01\x20\x01(\x05R\nreputation\"f\
-    \n\x17SetPeerBlacklistRequest\x12\x1d\n\npublic_key\x18\x01\x20\x01(\x0c\
+    \n\x17SetPeerBlackListRequest\x12\x1d\n\npublic_key\x18\x01\x20\x01(\x0c\
     R\tpublicKey\x12\x0e\n\x02ip\x18\x02\x20\x01(\x0cR\x02ip\x12\x1c\n\tblac\
-    klist\x18\x03\x20\x01(\x08R\tblacklist\"g\n\x18SetPeerBlacklistResponse\
+    klist\x18\x03\x20\x01(\x08R\tblacklist\"g\n\x18SetPeerBlackListResponse\
     \x12\x1d\n\npublic_key\x18\x01\x20\x01(\x0cR\tpublicKey\x12\x0e\n\x02ip\
     \x18\x02\x20\x01(\x0cR\x02ip\x12\x1c\n\tblacklist\x18\x03\x20\x01(\x08R\
     \tblacklist\"C\n\x12GetPeerInfoRequest\x12\x1d\n\npublic_key\x18\x01\x20\
