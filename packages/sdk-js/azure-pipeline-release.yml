@@ -6,7 +6,7 @@ pool:
 
 steps:
   - script: |
-      echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+      echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
 
       cd packages/sdk-js && npm install --unsafe-perm --no-optional \
       && npm publish --access public
