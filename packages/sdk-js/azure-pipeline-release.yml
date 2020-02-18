@@ -6,5 +6,8 @@ pool:
 
 steps:
   - script: |
-      cd packages/sdk-js && ./publish.sh
+      echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+      npm install --unsafe-perm --no-optional \
+      && npm publish --access public
     displayName: 'Publish NPM package to npmjs.org'
