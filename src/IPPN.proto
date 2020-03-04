@@ -34,7 +34,10 @@ message PeerNeighborsResponse {
 
 message PingRequest { }
 
-message PingResponse { }
+message PingResponse { 
+	bool isSync = 1;
+	uint64 Height = 2;
+}
 
 message LatestDeltaHashRequest { }
 
