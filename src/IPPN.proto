@@ -32,11 +32,12 @@ message PeerNeighborsResponse {
     repeated Peer.PeerId peers = 1; // Random subset of a nodes peer db.
 }
 
-message PingRequest { }
-
-message PingResponse { 
+message PingRequest { 
 	bool isSync = 1;
 	uint64 Height = 2;
+}
+
+message PingResponse { 
 }
 
 message LatestDeltaHashRequest { }
