@@ -33,8 +33,6 @@ message PeerNeighborsResponse {
 }
 
 message PingRequest { 
-	bool isSync = 1;
-	uint64 Height = 2;
 }
 
 message PingResponse { 
