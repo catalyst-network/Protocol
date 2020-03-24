@@ -41,4 +41,5 @@ message Delta {
 	repeated Transaction.CoinbaseEntry coinbase_entries = 7; // one per active worker
 	bytes state_root = 8; // the hash of the state root
 	int64 delta_number = 9; // the consecutive delta number
+	int64 gas_used = 10; // the gas used in the delta
 }
