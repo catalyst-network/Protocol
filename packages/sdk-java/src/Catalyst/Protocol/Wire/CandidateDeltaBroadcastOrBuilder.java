@@ -13,6 +13,7 @@ public interface CandidateDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>bytes hash = 1;</code>
+   * @return The hash.
    */
   com.google.protobuf.ByteString getHash();
 
@@ -22,6 +23,7 @@ public interface CandidateDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+   * @return Whether the producerId field is set.
    */
   boolean hasProducerId();
   /**
@@ -30,6 +32,7 @@ public interface CandidateDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId producer_id = 2;</code>
+   * @return The producerId.
    */
   Catalyst.Protocol.Peer.PeerId getProducerId();
   /**
@@ -47,6 +50,7 @@ public interface CandidateDeltaBroadcastOrBuilder extends
    * </pre>
    *
    * <code>bytes previous_delta_dfs_hash = 3;</code>
+   * @return The previousDeltaDfsHash.
    */
   com.google.protobuf.ByteString getPreviousDeltaDfsHash();
 }

@@ -198,13 +198,13 @@ message GetPeerReputationResponse {
    int32 reputation = 1;
 }
 
-message SetPeerBlacklistRequest {
+message SetPeerBlackListRequest {
     bytes public_key = 1;
     bytes ip = 2;
     bool blacklist = 3;
 }
 
-message SetPeerBlacklistResponse{
+message SetPeerBlackListResponse{
     bytes public_key = 1;
     bytes ip = 2;
     bool blacklist = 3;

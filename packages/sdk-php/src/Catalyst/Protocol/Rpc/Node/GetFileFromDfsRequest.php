@@ -9,22 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetFileFromDfsRequest</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetFileFromDfsRequest</code>
  */
 class GetFileFromDfsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string dfs_hash = 1;</code>
+     * Generated from protobuf field <code>string dfs_hash = 1;</code>
      */
-    private $dfs_hash = '';
+    protected $dfs_hash = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $dfs_hash
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>string dfs_hash = 1;</code>
+     * Generated from protobuf field <code>string dfs_hash = 1;</code>
+     * @return string
      */
     public function getDfsHash()
     {
@@ -32,12 +42,16 @@ class GetFileFromDfsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dfs_hash = 1;</code>
+     * Generated from protobuf field <code>string dfs_hash = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDfsHash($var)
     {
         GPBUtil::checkString($var, True);
         $this->dfs_hash = $var;
+
+        return $this;
     }
 
 }

@@ -9,47 +9,56 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.IPPN.LatestDeltaHashResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.IPPN.LatestDeltaHashResponse</code>
  */
 class LatestDeltaHashResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
-     * Rhe cid of a nodes last delta.
-     * </pre>
+     * K given del
      *
-     * <code>bytes delta_hash = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
      */
-    private $delta_hash = '';
+    protected $result = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Catalyst\Protocol\Deltas\DeltaIndex $result
+     *           K given del
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <pre>
-     * Rhe cid of a nodes last delta.
-     * </pre>
+     * K given del
      *
-     * <code>bytes delta_hash = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * @return \Catalyst\Protocol\Deltas\DeltaIndex
      */
-    public function getDeltaHash()
+    public function getResult()
     {
-        return $this->delta_hash;
+        return $this->result;
     }
 
     /**
-     * <pre>
-     * Rhe cid of a nodes last delta.
-     * </pre>
+     * K given del
      *
-     * <code>bytes delta_hash = 1;</code>
+     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * @param \Catalyst\Protocol\Deltas\DeltaIndex $var
+     * @return $this
      */
-    public function setDeltaHash($var)
+    public function setResult($var)
     {
-        GPBUtil::checkString($var, False);
-        $this->delta_hash = $var;
+        GPBUtil::checkMessage($var, \Catalyst\Protocol\Deltas\DeltaIndex::class);
+        $this->result = $var;
+
+        return $this;
     }
 
 }

@@ -10,6 +10,7 @@ public  final class SigningContext extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Cryptography.SigningContext)
     SigningContextOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use SigningContext.newBuilder() to construct.
   private SigningContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -20,16 +21,27 @@ public  final class SigningContext extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SigningContext();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private SigningContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -38,12 +50,6 @@ public  final class SigningContext extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
             int rawValue = input.readEnum();
 
@@ -56,6 +62,13 @@ public  final class SigningContext extends
             signatureType_ = rawValue;
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -64,6 +77,7 @@ public  final class SigningContext extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -72,6 +86,7 @@ public  final class SigningContext extends
     return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_SigningContext_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_SigningContext_fieldAccessorTable
@@ -87,6 +102,7 @@ public  final class SigningContext extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+   * @return The enum numeric value on the wire for networkType.
    */
   public int getNetworkTypeValue() {
     return networkType_;
@@ -97,8 +113,10 @@ public  final class SigningContext extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+   * @return The networkType.
    */
   public Catalyst.Protocol.Network.NetworkType getNetworkType() {
+    @SuppressWarnings("deprecation")
     Catalyst.Protocol.Network.NetworkType result = Catalyst.Protocol.Network.NetworkType.valueOf(networkType_);
     return result == null ? Catalyst.Protocol.Network.NetworkType.UNRECOGNIZED : result;
   }
@@ -111,6 +129,7 @@ public  final class SigningContext extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+   * @return The enum numeric value on the wire for signatureType.
    */
   public int getSignatureTypeValue() {
     return signatureType_;
@@ -121,13 +140,16 @@ public  final class SigningContext extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+   * @return The signatureType.
    */
   public Catalyst.Protocol.Cryptography.SignatureType getSignatureType() {
+    @SuppressWarnings("deprecation")
     Catalyst.Protocol.Cryptography.SignatureType result = Catalyst.Protocol.Cryptography.SignatureType.valueOf(signatureType_);
     return result == null ? Catalyst.Protocol.Cryptography.SignatureType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -137,6 +159,7 @@ public  final class SigningContext extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (networkType_ != Catalyst.Protocol.Network.NetworkType.NETWORK_TYPE_UNKNOWN.getNumber()) {
@@ -145,8 +168,10 @@ public  final class SigningContext extends
     if (signatureType_ != Catalyst.Protocol.Cryptography.SignatureType.SIGNATURE_TYPE_UNKNOWN.getNumber()) {
       output.writeEnum(2, signatureType_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -160,11 +185,11 @@ public  final class SigningContext extends
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, signatureType_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -175,10 +200,10 @@ public  final class SigningContext extends
     }
     Catalyst.Protocol.Cryptography.SigningContext other = (Catalyst.Protocol.Cryptography.SigningContext) obj;
 
-    boolean result = true;
-    result = result && networkType_ == other.networkType_;
-    result = result && signatureType_ == other.signatureType_;
-    return result;
+    if (networkType_ != other.networkType_) return false;
+    if (signatureType_ != other.signatureType_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -197,6 +222,17 @@ public  final class SigningContext extends
     return hash;
   }
 
+  public static Catalyst.Protocol.Cryptography.SigningContext parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.Cryptography.SigningContext parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.Cryptography.SigningContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -256,6 +292,7 @@ public  final class SigningContext extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -263,6 +300,7 @@ public  final class SigningContext extends
   public static Builder newBuilder(Catalyst.Protocol.Cryptography.SigningContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -286,6 +324,7 @@ public  final class SigningContext extends
       return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_SigningContext_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_SigningContext_fieldAccessorTable
@@ -308,6 +347,7 @@ public  final class SigningContext extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       networkType_ = 0;
@@ -317,15 +357,18 @@ public  final class SigningContext extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Cryptography.Cryptography.internal_static_Catalyst_Protocol_Cryptography_SigningContext_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Cryptography.SigningContext getDefaultInstanceForType() {
       return Catalyst.Protocol.Cryptography.SigningContext.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Cryptography.SigningContext build() {
       Catalyst.Protocol.Cryptography.SigningContext result = buildPartial();
       if (!result.isInitialized()) {
@@ -334,6 +377,7 @@ public  final class SigningContext extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.Cryptography.SigningContext buildPartial() {
       Catalyst.Protocol.Cryptography.SigningContext result = new Catalyst.Protocol.Cryptography.SigningContext(this);
       result.networkType_ = networkType_;
@@ -342,32 +386,39 @@ public  final class SigningContext extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Cryptography.SigningContext) {
         return mergeFrom((Catalyst.Protocol.Cryptography.SigningContext)other);
@@ -385,14 +436,17 @@ public  final class SigningContext extends
       if (other.signatureType_ != 0) {
         setSignatureTypeValue(other.getSignatureTypeValue());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -418,6 +472,7 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @return The enum numeric value on the wire for networkType.
      */
     public int getNetworkTypeValue() {
       return networkType_;
@@ -428,6 +483,8 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @param value The enum numeric value on the wire for networkType to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
@@ -440,8 +497,10 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @return The networkType.
      */
     public Catalyst.Protocol.Network.NetworkType getNetworkType() {
+      @SuppressWarnings("deprecation")
       Catalyst.Protocol.Network.NetworkType result = Catalyst.Protocol.Network.NetworkType.valueOf(networkType_);
       return result == null ? Catalyst.Protocol.Network.NetworkType.UNRECOGNIZED : result;
     }
@@ -451,6 +510,8 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @param value The networkType to set.
+     * @return This builder for chaining.
      */
     public Builder setNetworkType(Catalyst.Protocol.Network.NetworkType value) {
       if (value == null) {
@@ -467,6 +528,7 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
       
@@ -482,6 +544,7 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+     * @return The enum numeric value on the wire for signatureType.
      */
     public int getSignatureTypeValue() {
       return signatureType_;
@@ -492,6 +555,8 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+     * @param value The enum numeric value on the wire for signatureType to set.
+     * @return This builder for chaining.
      */
     public Builder setSignatureTypeValue(int value) {
       signatureType_ = value;
@@ -504,8 +569,10 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+     * @return The signatureType.
      */
     public Catalyst.Protocol.Cryptography.SignatureType getSignatureType() {
+      @SuppressWarnings("deprecation")
       Catalyst.Protocol.Cryptography.SignatureType result = Catalyst.Protocol.Cryptography.SignatureType.valueOf(signatureType_);
       return result == null ? Catalyst.Protocol.Cryptography.SignatureType.UNRECOGNIZED : result;
     }
@@ -515,6 +582,8 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+     * @param value The signatureType to set.
+     * @return This builder for chaining.
      */
     public Builder setSignatureType(Catalyst.Protocol.Cryptography.SignatureType value) {
       if (value == null) {
@@ -531,6 +600,7 @@ public  final class SigningContext extends
      * </pre>
      *
      * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSignatureType() {
       
@@ -538,14 +608,16 @@ public  final class SigningContext extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -564,11 +636,12 @@ public  final class SigningContext extends
 
   private static final com.google.protobuf.Parser<SigningContext>
       PARSER = new com.google.protobuf.AbstractParser<SigningContext>() {
+    @java.lang.Override
     public SigningContext parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SigningContext(input, extensionRegistry);
+      return new SigningContext(input, extensionRegistry);
     }
   };
 
@@ -581,6 +654,7 @@ public  final class SigningContext extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.Cryptography.SigningContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

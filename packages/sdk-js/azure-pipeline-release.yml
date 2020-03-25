@@ -5,13 +5,9 @@ pool:
     vmImage: 'ubuntu-latest'
 
 steps:
-    - task: Npm@1
-      displayName: 'Install NPM'
-      inputs:
-          command: 'install'
+  - script: |
+      echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
 
-    - task: Npm@1
-      inputs:
-          customCommand: publish --access public
-          publishEndpoint: 'npm'
-          workingDir: 'packages/sdk-js'
+      cd packages/sdk-js && npm install --unsafe-perm --no-optional \
+      && npm publish --access public
+    displayName: 'Publish NPM package to npmjs.org'

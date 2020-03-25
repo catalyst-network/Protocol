@@ -108,6 +108,7 @@ export interface SignatureTypeMap {
   TRANSACTION_CONFIDENTIAL: 2;
   PROTOCOL_RPC: 3;
   PROTOCOL_PEER: 4;
+  WEB3_MESSAGE: 5;
 }
 
 export const SignatureType: SignatureTypeMap;

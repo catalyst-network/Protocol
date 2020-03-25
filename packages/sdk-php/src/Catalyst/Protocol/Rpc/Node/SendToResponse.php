@@ -9,22 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.SendToResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SendToResponse</code>
  */
 class SendToResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 1;</code>
      */
-    private $query = '';
+    protected $query = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $query
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 1;</code>
+     * @return string
      */
     public function getQuery()
     {
@@ -32,12 +42,16 @@ class SendToResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setQuery($var)
     {
         GPBUtil::checkString($var, True);
         $this->query = $var;
+
+        return $this;
     }
 
 }

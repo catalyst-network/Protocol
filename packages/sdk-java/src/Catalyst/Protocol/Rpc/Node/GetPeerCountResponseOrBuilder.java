@@ -9,6 +9,7 @@ public interface GetPeerCountResponseOrBuilder extends
 
   /**
    * <code>int32 peer_count = 1;</code>
+   * @return The peerCount.
    */
   int getPeerCount();
 }

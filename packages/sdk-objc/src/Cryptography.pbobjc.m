@@ -8,13 +8,15 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers_RuntimeSupport.h>
+ #import <protobuf/GPBProtocolBuffers_RuntimeSupport.h>
 #else
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
- #import "Cryptography.pbobjc.h"
- #import "Network.pbobjc.h"
+#import <stdatomic.h>
+
+#import "Cryptography.pbobjc.h"
+#import "Network.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -46,18 +48,19 @@ static GPBFileDescriptor *CryptographyRoot_FileDescriptor(void) {
 #pragma mark - Enum SignatureType
 
 GPBEnumDescriptor *SignatureType_EnumDescriptor(void) {
-  static GPBEnumDescriptor *descriptor = NULL;
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
         "SignatureTypeUnknown\000TransactionPublic\000T"
         "ransactionConfidential\000ProtocolRpc\000Proto"
-        "colPeer\000";
+        "colPeer\000Web3Message\000";
     static const int32_t values[] = {
         SignatureType_SignatureTypeUnknown,
         SignatureType_TransactionPublic,
         SignatureType_TransactionConfidential,
         SignatureType_ProtocolRpc,
         SignatureType_ProtocolPeer,
+        SignatureType_Web3Message,
     };
     GPBEnumDescriptor *worker =
         [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(SignatureType)
@@ -65,7 +68,8 @@ GPBEnumDescriptor *SignatureType_EnumDescriptor(void) {
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
                                      enumVerifier:SignatureType_IsValidValue];
-    if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
       [worker release];
     }
   }
@@ -79,6 +83,7 @@ BOOL SignatureType_IsValidValue(int32_t value__) {
     case SignatureType_TransactionConfidential:
     case SignatureType_ProtocolRpc:
     case SignatureType_ProtocolPeer:
+    case SignatureType_Web3Message:
       return YES;
     default:
       return NO;
@@ -88,7 +93,7 @@ BOOL SignatureType_IsValidValue(int32_t value__) {
 #pragma mark - Enum ErrorCode
 
 GPBEnumDescriptor *ErrorCode_EnumDescriptor(void) {
-  static GPBEnumDescriptor *descriptor = NULL;
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
         "ErrorCodeUnknown\000InvalidSignature\000Invali"
@@ -114,7 +119,8 @@ GPBEnumDescriptor *ErrorCode_EnumDescriptor(void) {
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
                                      enumVerifier:ErrorCode_IsValidValue];
-    if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
       [worker release];
     }
   }
@@ -185,7 +191,9 @@ typedef struct Signature__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Signature__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -239,7 +247,9 @@ typedef struct SigningContext__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(SigningContext__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -339,7 +349,9 @@ typedef struct SignatureBatch__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(SignatureBatch__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;

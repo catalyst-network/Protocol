@@ -9,10 +9,12 @@ public interface VersionResponseOrBuilder extends
 
   /**
    * <code>string version = 1;</code>
+   * @return The version.
    */
   java.lang.String getVersion();
   /**
    * <code>string version = 1;</code>
+   * @return The bytes for version.
    */
   com.google.protobuf.ByteString
       getVersionBytes();

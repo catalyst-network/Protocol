@@ -9,10 +9,28 @@ public interface LatestDeltaHashResponseOrBuilder extends
 
   /**
    * <pre>
-   * Rhe cid of a nodes last delta.
+   * K given del
    * </pre>
    *
-   * <code>bytes delta_hash = 1;</code>
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * @return Whether the result field is set.
    */
-  com.google.protobuf.ByteString getDeltaHash();
+  boolean hasResult();
+  /**
+   * <pre>
+   * K given del
+   * </pre>
+   *
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * @return The result.
+   */
+  Catalyst.Protocol.Deltas.DeltaIndex getResult();
+  /**
+   * <pre>
+   * K given del
+   * </pre>
+   *
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   */
+  Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder();
 }

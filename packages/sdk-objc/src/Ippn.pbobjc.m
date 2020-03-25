@@ -8,14 +8,14 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/GPBProtocolBuffers_RuntimeSupport.h>
+ #import <protobuf/GPBProtocolBuffers_RuntimeSupport.h>
 #else
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
- #import "Ippn.pbobjc.h"
- #import "Peer.pbobjc.h"
- #import "Deltas.pbobjc.h"
+#import "Ippn.pbobjc.h"
+#import "Peer.pbobjc.h"
+#import "Deltas.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -66,7 +66,9 @@ typedef struct PeerNeighborsRequest__storage_ {
                                     fieldCount:0
                                    storageSize:sizeof(PeerNeighborsRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -109,7 +111,9 @@ typedef struct PeerNeighborsResponse__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(PeerNeighborsResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -139,7 +143,9 @@ typedef struct PingRequest__storage_ {
                                     fieldCount:0
                                    storageSize:sizeof(PingRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -169,7 +175,9 @@ typedef struct PingResponse__storage_ {
                                     fieldCount:0
                                    storageSize:sizeof(PingResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -199,7 +207,9 @@ typedef struct LatestDeltaHashRequest__storage_ {
                                     fieldCount:0
                                    storageSize:sizeof(LatestDeltaHashRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -211,11 +221,11 @@ typedef struct LatestDeltaHashRequest__storage_ {
 
 @implementation LatestDeltaHashResponse
 
-@dynamic deltaHash;
+@dynamic hasResult, result;
 
 typedef struct LatestDeltaHashResponse__storage_ {
   uint32_t _has_storage_[1];
-  NSData *deltaHash;
+  DeltaIndex *result;
 } LatestDeltaHashResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -225,13 +235,13 @@ typedef struct LatestDeltaHashResponse__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "deltaHash",
-        .dataTypeSpecific.className = NULL,
-        .number = LatestDeltaHashResponse_FieldNumber_DeltaHash,
+        .name = "result",
+        .dataTypeSpecific.className = GPBStringifySymbol(DeltaIndex),
+        .number = LatestDeltaHashResponse_FieldNumber_Result,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(LatestDeltaHashResponse__storage_, deltaHash),
+        .offset = (uint32_t)offsetof(LatestDeltaHashResponse__storage_, result),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBytes,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -242,7 +252,9 @@ typedef struct LatestDeltaHashResponse__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(LatestDeltaHashResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -296,7 +308,9 @@ typedef struct DeltaHistoryRequest__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(DeltaHistoryRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -339,7 +353,9 @@ typedef struct DeltaHistoryResponse__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(DeltaHistoryResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
+    #if defined(DEBUG) && DEBUG
+      NSAssert(descriptor == nil, @"Startup recursed!");
+    #endif  // DEBUG
     descriptor = localDescriptor;
   }
   return descriptor;

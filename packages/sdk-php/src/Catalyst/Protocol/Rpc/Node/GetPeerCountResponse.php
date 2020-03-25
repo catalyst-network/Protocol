@@ -9,22 +9,32 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetPeerCountResponse</code>
+ * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetPeerCountResponse</code>
  */
 class GetPeerCountResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>int32 peer_count = 1;</code>
+     * Generated from protobuf field <code>int32 peer_count = 1;</code>
      */
-    private $peer_count = 0;
+    protected $peer_count = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $peer_count
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * <code>int32 peer_count = 1;</code>
+     * Generated from protobuf field <code>int32 peer_count = 1;</code>
+     * @return int
      */
     public function getPeerCount()
     {
@@ -32,12 +42,16 @@ class GetPeerCountResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 peer_count = 1;</code>
+     * Generated from protobuf field <code>int32 peer_count = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setPeerCount($var)
     {
         GPBUtil::checkInt32($var);
         $this->peer_count = $var;
+
+        return $this;
     }
 
 }

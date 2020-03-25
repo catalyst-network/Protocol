@@ -10,25 +10,36 @@ public  final class LatestDeltaHashResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.IPPN.LatestDeltaHashResponse)
     LatestDeltaHashResponseOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use LatestDeltaHashResponse.newBuilder() to construct.
   private LatestDeltaHashResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private LatestDeltaHashResponse() {
-    deltaHash_ = com.google.protobuf.ByteString.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LatestDeltaHashResponse();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private LatestDeltaHashResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -37,15 +48,24 @@ public  final class LatestDeltaHashResponse extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
+          case 10: {
+            Catalyst.Protocol.Deltas.DeltaIndex.Builder subBuilder = null;
+            if (result_ != null) {
+              subBuilder = result_.toBuilder();
             }
+            result_ = input.readMessage(Catalyst.Protocol.Deltas.DeltaIndex.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(result_);
+              result_ = subBuilder.buildPartial();
+            }
+
             break;
           }
-          case 10: {
-
-            deltaHash_ = input.readBytes();
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -56,6 +76,7 @@ public  final class LatestDeltaHashResponse extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -64,6 +85,7 @@ public  final class LatestDeltaHashResponse extends
     return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_fieldAccessorTable
@@ -71,20 +93,43 @@ public  final class LatestDeltaHashResponse extends
             Catalyst.Protocol.IPPN.LatestDeltaHashResponse.class, Catalyst.Protocol.IPPN.LatestDeltaHashResponse.Builder.class);
   }
 
-  public static final int DELTA_HASH_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString deltaHash_;
+  public static final int RESULT_FIELD_NUMBER = 1;
+  private Catalyst.Protocol.Deltas.DeltaIndex result_;
   /**
    * <pre>
-   * Rhe cid of a nodes last delta.
+   * K given del
    * </pre>
    *
-   * <code>bytes delta_hash = 1;</code>
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * @return Whether the result field is set.
    */
-  public com.google.protobuf.ByteString getDeltaHash() {
-    return deltaHash_;
+  public boolean hasResult() {
+    return result_ != null;
+  }
+  /**
+   * <pre>
+   * K given del
+   * </pre>
+   *
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * @return The result.
+   */
+  public Catalyst.Protocol.Deltas.DeltaIndex getResult() {
+    return result_ == null ? Catalyst.Protocol.Deltas.DeltaIndex.getDefaultInstance() : result_;
+  }
+  /**
+   * <pre>
+   * K given del
+   * </pre>
+   *
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   */
+  public Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder() {
+    return getResult();
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -94,27 +139,30 @@ public  final class LatestDeltaHashResponse extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!deltaHash_.isEmpty()) {
-      output.writeBytes(1, deltaHash_);
+    if (result_ != null) {
+      output.writeMessage(1, getResult());
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (!deltaHash_.isEmpty()) {
+    if (result_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(1, deltaHash_);
+        .computeMessageSize(1, getResult());
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -125,10 +173,13 @@ public  final class LatestDeltaHashResponse extends
     }
     Catalyst.Protocol.IPPN.LatestDeltaHashResponse other = (Catalyst.Protocol.IPPN.LatestDeltaHashResponse) obj;
 
-    boolean result = true;
-    result = result && getDeltaHash()
-        .equals(other.getDeltaHash());
-    return result;
+    if (hasResult() != other.hasResult()) return false;
+    if (hasResult()) {
+      if (!getResult()
+          .equals(other.getResult())) return false;
+    }
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -138,13 +189,26 @@ public  final class LatestDeltaHashResponse extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DELTA_HASH_FIELD_NUMBER;
-    hash = (53 * hash) + getDeltaHash().hashCode();
+    if (hasResult()) {
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
+  public static Catalyst.Protocol.IPPN.LatestDeltaHashResponse parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static Catalyst.Protocol.IPPN.LatestDeltaHashResponse parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static Catalyst.Protocol.IPPN.LatestDeltaHashResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -204,6 +268,7 @@ public  final class LatestDeltaHashResponse extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -211,6 +276,7 @@ public  final class LatestDeltaHashResponse extends
   public static Builder newBuilder(Catalyst.Protocol.IPPN.LatestDeltaHashResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -234,6 +300,7 @@ public  final class LatestDeltaHashResponse extends
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_fieldAccessorTable
@@ -256,22 +323,30 @@ public  final class LatestDeltaHashResponse extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
-      deltaHash_ = com.google.protobuf.ByteString.EMPTY;
-
+      if (resultBuilder_ == null) {
+        result_ = null;
+      } else {
+        result_ = null;
+        resultBuilder_ = null;
+      }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_descriptor;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.IPPN.LatestDeltaHashResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.IPPN.LatestDeltaHashResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.IPPN.LatestDeltaHashResponse build() {
       Catalyst.Protocol.IPPN.LatestDeltaHashResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -280,39 +355,51 @@ public  final class LatestDeltaHashResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Catalyst.Protocol.IPPN.LatestDeltaHashResponse buildPartial() {
       Catalyst.Protocol.IPPN.LatestDeltaHashResponse result = new Catalyst.Protocol.IPPN.LatestDeltaHashResponse(this);
-      result.deltaHash_ = deltaHash_;
+      if (resultBuilder_ == null) {
+        result.result_ = result_;
+      } else {
+        result.result_ = resultBuilder_.build();
+      }
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.IPPN.LatestDeltaHashResponse) {
         return mergeFrom((Catalyst.Protocol.IPPN.LatestDeltaHashResponse)other);
@@ -324,17 +411,20 @@ public  final class LatestDeltaHashResponse extends
 
     public Builder mergeFrom(Catalyst.Protocol.IPPN.LatestDeltaHashResponse other) {
       if (other == Catalyst.Protocol.IPPN.LatestDeltaHashResponse.getDefaultInstance()) return this;
-      if (other.getDeltaHash() != com.google.protobuf.ByteString.EMPTY) {
-        setDeltaHash(other.getDeltaHash());
+      if (other.hasResult()) {
+        mergeResult(other.getResult());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -353,54 +443,170 @@ public  final class LatestDeltaHashResponse extends
       return this;
     }
 
-    private com.google.protobuf.ByteString deltaHash_ = com.google.protobuf.ByteString.EMPTY;
+    private Catalyst.Protocol.Deltas.DeltaIndex result_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> resultBuilder_;
     /**
      * <pre>
-     * Rhe cid of a nodes last delta.
+     * K given del
      * </pre>
      *
-     * <code>bytes delta_hash = 1;</code>
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * @return Whether the result field is set.
      */
-    public com.google.protobuf.ByteString getDeltaHash() {
-      return deltaHash_;
+    public boolean hasResult() {
+      return resultBuilder_ != null || result_ != null;
     }
     /**
      * <pre>
-     * Rhe cid of a nodes last delta.
+     * K given del
      * </pre>
      *
-     * <code>bytes delta_hash = 1;</code>
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * @return The result.
      */
-    public Builder setDeltaHash(com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      deltaHash_ = value;
-      onChanged();
+    public Catalyst.Protocol.Deltas.DeltaIndex getResult() {
+      if (resultBuilder_ == null) {
+        return result_ == null ? Catalyst.Protocol.Deltas.DeltaIndex.getDefaultInstance() : result_;
+      } else {
+        return resultBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     */
+    public Builder setResult(Catalyst.Protocol.Deltas.DeltaIndex value) {
+      if (resultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        resultBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
      * <pre>
-     * Rhe cid of a nodes last delta.
+     * K given del
      * </pre>
      *
-     * <code>bytes delta_hash = 1;</code>
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
      */
-    public Builder clearDeltaHash() {
+    public Builder setResult(
+        Catalyst.Protocol.Deltas.DeltaIndex.Builder builderForValue) {
+      if (resultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        resultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     */
+    public Builder mergeResult(Catalyst.Protocol.Deltas.DeltaIndex value) {
+      if (resultBuilder_ == null) {
+        if (result_ != null) {
+          result_ =
+            Catalyst.Protocol.Deltas.DeltaIndex.newBuilder(result_).mergeFrom(value).buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        resultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     */
+    public Builder clearResult() {
+      if (resultBuilder_ == null) {
+        result_ = null;
+        onChanged();
+      } else {
+        result_ = null;
+        resultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     */
+    public Catalyst.Protocol.Deltas.DeltaIndex.Builder getResultBuilder() {
       
-      deltaHash_ = getDefaultInstance().getDeltaHash();
       onChanged();
-      return this;
+      return getResultFieldBuilder().getBuilder();
     }
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     */
+    public Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder() {
+      if (resultBuilder_ != null) {
+        return resultBuilder_.getMessageOrBuilder();
+      } else {
+        return result_ == null ?
+            Catalyst.Protocol.Deltas.DeltaIndex.getDefaultInstance() : result_;
+      }
+    }
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> 
+        getResultFieldBuilder() {
+      if (resultBuilder_ == null) {
+        resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder>(
+                getResult(),
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      return resultBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -419,11 +625,12 @@ public  final class LatestDeltaHashResponse extends
 
   private static final com.google.protobuf.Parser<LatestDeltaHashResponse>
       PARSER = new com.google.protobuf.AbstractParser<LatestDeltaHashResponse>() {
+    @java.lang.Override
     public LatestDeltaHashResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LatestDeltaHashResponse(input, extensionRegistry);
+      return new LatestDeltaHashResponse(input, extensionRegistry);
     }
   };
 
@@ -436,6 +643,7 @@ public  final class LatestDeltaHashResponse extends
     return PARSER;
   }
 
+  @java.lang.Override
   public Catalyst.Protocol.IPPN.LatestDeltaHashResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

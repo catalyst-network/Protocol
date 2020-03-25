@@ -9,26 +9,31 @@ public interface BlockChallengeRequestOrBuilder extends
 
   /**
    * <code>string challenge_salt = 1;</code>
+   * @return The challengeSalt.
    */
   java.lang.String getChallengeSalt();
   /**
    * <code>string challenge_salt = 1;</code>
+   * @return The bytes for challengeSalt.
    */
   com.google.protobuf.ByteString
       getChallengeSaltBytes();
 
   /**
    * <code>string main_file_cid = 2;</code>
+   * @return The mainFileCid.
    */
   java.lang.String getMainFileCid();
   /**
    * <code>string main_file_cid = 2;</code>
+   * @return The bytes for mainFileCid.
    */
   com.google.protobuf.ByteString
       getMainFileCidBytes();
 
   /**
    * <code>bytes block_idx_random_guid = 3;</code>
+   * @return The blockIdxRandomGuid.
    */
   com.google.protobuf.ByteString getBlockIdxRandomGuid();
 }
