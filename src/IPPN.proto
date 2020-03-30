@@ -32,14 +32,17 @@ message PeerNeighborsResponse {
     repeated Peer.PeerId peers = 1; // Random subset of a nodes peer db.
 }
 
-message PingRequest { }
+message PingRequest { 
+}
 
-message PingResponse { }
+message PingResponse { 
+}
 
 message LatestDeltaHashRequest { }
 
 message LatestDeltaHashResponse {
-	Deltas.DeltaIndex result = 1; // K given del
+	bool isSync = 1;
+	Deltas.DeltaIndex deltaIndex = 2; // K given del
 }
 
 message DeltaHistoryRequest {
@@ -48,5 +51,5 @@ message DeltaHistoryRequest {
 }
 
 message DeltaHistoryResponse {
-    repeated Deltas.DeltaIndex result = 1; // K given del
+    repeated Deltas.DeltaIndex deltaIndex = 1; // K given del
 }
