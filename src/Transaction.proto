@@ -37,11 +37,10 @@ message PublicEntry {
 	bytes sender_address = 2;// Address of sender.
   bytes amount = 3; // uint256 amount
   bytes data = 4; // Smart contract data.
-	google.protobuf.Timestamp timestamp = 5; 
-	bytes gas_price = 6;
-	uint64 gas_limit = 7;
-	uint64 nonce = 9; // A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
-	Cryptography.Signature signature = 10; // is the ed25519ph context signature
+	bytes gas_price = 5;
+	uint64 gas_limit = 6;
+	uint64 nonce = 7; // A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
+	Cryptography.Signature signature = 8; // is the ed25519ph context signature
 }
 
 message ConfidentialEntry {
