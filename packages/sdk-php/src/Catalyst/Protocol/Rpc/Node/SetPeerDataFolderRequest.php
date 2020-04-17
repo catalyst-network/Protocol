@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.SetPeerDataFolderRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.SetPeerDataFolderRequest</code>
  */
 class SetPeerDataFolderRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string data_folder = 1;</code>
+     * <code>string data_folder = 1;</code>
      */
-    protected $data_folder = '';
+    private $data_folder = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $data_folder
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>string data_folder = 1;</code>
-     * @return string
+     * <code>string data_folder = 1;</code>
      */
     public function getDataFolder()
     {
@@ -42,16 +32,12 @@ class SetPeerDataFolderRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string data_folder = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>string data_folder = 1;</code>
      */
     public function setDataFolder($var)
     {
         GPBUtil::checkString($var, True);
         $this->data_folder = $var;
-
-        return $this;
     }
 
 }

@@ -9,30 +9,25 @@ public interface VerifyMessageRequestOrBuilder extends
 
   /**
    * <code>bytes signature = 1;</code>
-   * @return The signature.
    */
   com.google.protobuf.ByteString getSignature();
 
   /**
    * <code>bytes public_key = 2;</code>
-   * @return The publicKey.
    */
   com.google.protobuf.ByteString getPublicKey();
 
   /**
    * <code>bytes message = 3;</code>
-   * @return The message.
    */
   com.google.protobuf.ByteString getMessage();
 
   /**
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 4;</code>
-   * @return Whether the signingContext field is set.
    */
   boolean hasSigningContext();
   /**
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 4;</code>
-   * @return The signingContext.
    */
   Catalyst.Protocol.Cryptography.SigningContext getSigningContext();
   /**

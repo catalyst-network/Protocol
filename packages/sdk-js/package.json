@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/catalyst-network/protocol.git"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Catalyst Protocol SDK-JS",
   "main": "src/index.js",
   "scripts": {

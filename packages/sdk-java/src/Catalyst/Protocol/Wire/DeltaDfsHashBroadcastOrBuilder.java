@@ -13,7 +13,6 @@ public interface DeltaDfsHashBroadcastOrBuilder extends
    * </pre>
    *
    * <code>bytes delta_dfs_hash = 1;</code>
-   * @return The deltaDfsHash.
    */
   com.google.protobuf.ByteString getDeltaDfsHash();
 
@@ -23,7 +22,6 @@ public interface DeltaDfsHashBroadcastOrBuilder extends
    * </pre>
    *
    * <code>bytes previous_delta_dfs_hash = 2;</code>
-   * @return The previousDeltaDfsHash.
    */
   com.google.protobuf.ByteString getPreviousDeltaDfsHash();
 }

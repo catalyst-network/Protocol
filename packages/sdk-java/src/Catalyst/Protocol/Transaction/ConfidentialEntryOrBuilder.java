@@ -13,7 +13,6 @@ public interface ConfidentialEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes receiver_public_key = 1;</code>
-   * @return The receiverPublicKey.
    */
   com.google.protobuf.ByteString getReceiverPublicKey();
 
@@ -23,7 +22,6 @@ public interface ConfidentialEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes sender_public_key = 2;</code>
-   * @return The senderPublicKey.
    */
   com.google.protobuf.ByteString getSenderPublicKey();
 
@@ -33,18 +31,15 @@ public interface ConfidentialEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes pedersen_commitment = 3;</code>
-   * @return The pedersenCommitment.
    */
   com.google.protobuf.ByteString getPedersenCommitment();
 
   /**
    * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
-   * @return Whether the rangeProof field is set.
    */
   boolean hasRangeProof();
   /**
    * <code>.Catalyst.Protocol.Transaction.RangeProof range_proof = 4;</code>
-   * @return The rangeProof.
    */
   Catalyst.Protocol.Transaction.RangeProof getRangeProof();
   /**
@@ -58,7 +53,6 @@ public interface ConfidentialEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes transaction_fees = 5;</code>
-   * @return The transactionFees.
    */
   com.google.protobuf.ByteString getTransactionFees();
 
@@ -68,7 +62,6 @@ public interface ConfidentialEntryOrBuilder extends
    * </pre>
    *
    * <code>uint64 nonce = 6;</code>
-   * @return The nonce.
    */
   long getNonce();
 }

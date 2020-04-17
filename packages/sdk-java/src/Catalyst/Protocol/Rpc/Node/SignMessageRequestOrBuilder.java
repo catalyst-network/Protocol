@@ -9,30 +9,25 @@ public interface SignMessageRequestOrBuilder extends
 
   /**
    * <code>bytes message = 1;</code>
-   * @return The message.
    */
   com.google.protobuf.ByteString getMessage();
 
   /**
    * <code>string key_id = 2;</code>
-   * @return The keyId.
    */
   java.lang.String getKeyId();
   /**
    * <code>string key_id = 2;</code>
-   * @return The bytes for keyId.
    */
   com.google.protobuf.ByteString
       getKeyIdBytes();
 
   /**
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
-   * @return Whether the signingContext field is set.
    */
   boolean hasSigningContext();
   /**
    * <code>.Catalyst.Protocol.Cryptography.SigningContext signing_context = 3;</code>
-   * @return The signingContext.
    */
   Catalyst.Protocol.Cryptography.SigningContext getSigningContext();
   /**

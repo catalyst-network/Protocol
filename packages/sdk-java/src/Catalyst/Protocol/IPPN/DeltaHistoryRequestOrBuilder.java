@@ -13,7 +13,6 @@ public interface DeltaHistoryRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 range = 1;</code>
-   * @return The range.
    */
   int getRange();
 
@@ -23,7 +22,6 @@ public interface DeltaHistoryRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 height = 2;</code>
-   * @return The height.
    */
   int getHeight();
 }

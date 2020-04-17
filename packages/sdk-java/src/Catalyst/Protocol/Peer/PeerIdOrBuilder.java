@@ -13,7 +13,6 @@ public interface PeerIdOrBuilder extends
    * </pre>
    *
    * <code>bytes ip = 1;</code>
-   * @return The ip.
    */
   com.google.protobuf.ByteString getIp();
 
@@ -23,7 +22,6 @@ public interface PeerIdOrBuilder extends
    * </pre>
    *
    * <code>uint32 port = 2;</code>
-   * @return The port.
    */
   int getPort();
 
@@ -33,7 +31,6 @@ public interface PeerIdOrBuilder extends
    * </pre>
    *
    * <code>bytes public_key = 3;</code>
-   * @return The publicKey.
    */
   com.google.protobuf.ByteString getPublicKey();
 }

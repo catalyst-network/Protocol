@@ -13,7 +13,6 @@ public interface TransactionBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
-   * @return Whether the publicEntry field is set.
    */
   boolean hasPublicEntry();
   /**
@@ -22,7 +21,6 @@ public interface TransactionBroadcastOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Transaction.PublicEntry public_entry = 1;</code>
-   * @return The publicEntry.
    */
   Catalyst.Protocol.Transaction.PublicEntry getPublicEntry();
   /**

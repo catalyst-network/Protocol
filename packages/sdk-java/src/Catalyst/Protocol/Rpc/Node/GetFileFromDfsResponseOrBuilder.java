@@ -9,13 +9,11 @@ public interface GetFileFromDfsResponseOrBuilder extends
 
   /**
    * <code>uint64 file_size = 1;</code>
-   * @return The fileSize.
    */
   long getFileSize();
 
   /**
    * <code>bytes response_code = 2;</code>
-   * @return The responseCode.
    */
   com.google.protobuf.ByteString getResponseCode();
 }

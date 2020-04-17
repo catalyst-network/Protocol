@@ -9,12 +9,10 @@ public interface GetDeltaResponseOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
-   * @return Whether the delta field is set.
    */
   boolean hasDelta();
   /**
    * <code>.Catalyst.Protocol.Deltas.Delta delta = 1;</code>
-   * @return The delta.
    */
   Catalyst.Protocol.Deltas.Delta getDelta();
   /**

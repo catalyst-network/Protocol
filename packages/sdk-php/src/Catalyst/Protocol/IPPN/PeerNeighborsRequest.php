@@ -9,22 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.IPPN.PeerNeighborsRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.IPPN.PeerNeighborsRequest</code>
  */
 class PeerNeighborsRequest extends \Google\Protobuf\Internal\Message
 {
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
 }

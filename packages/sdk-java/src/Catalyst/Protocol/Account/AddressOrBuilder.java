@@ -13,7 +13,6 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
-   * @return The enum numeric value on the wire for networkType.
    */
   int getNetworkTypeValue();
   /**
@@ -22,7 +21,6 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
-   * @return The networkType.
    */
   Catalyst.Protocol.Network.NetworkType getNetworkType();
 
@@ -32,7 +30,6 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
-   * @return The enum numeric value on the wire for accountType.
    */
   int getAccountTypeValue();
   /**
@@ -41,7 +38,6 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
-   * @return The accountType.
    */
   Catalyst.Protocol.Account.AccountType getAccountType();
 
@@ -51,7 +47,6 @@ public interface AddressOrBuilder extends
    * </pre>
    *
    * <code>bytes public_key_hash = 3;</code>
-   * @return The publicKeyHash.
    */
   com.google.protobuf.ByteString getPublicKeyHash();
 }

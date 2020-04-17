@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetPeerReputationResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetPeerReputationResponse</code>
  */
 class GetPeerReputationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 reputation = 1;</code>
+     * <code>int32 reputation = 1;</code>
      */
-    protected $reputation = 0;
+    private $reputation = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $reputation
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>int32 reputation = 1;</code>
-     * @return int
+     * <code>int32 reputation = 1;</code>
      */
     public function getReputation()
     {
@@ -42,16 +32,12 @@ class GetPeerReputationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 reputation = 1;</code>
-     * @param int $var
-     * @return $this
+     * <code>int32 reputation = 1;</code>
      */
     public function setReputation($var)
     {
         GPBUtil::checkInt32($var);
         $this->reputation = $var;
-
-        return $this;
     }
 
 }

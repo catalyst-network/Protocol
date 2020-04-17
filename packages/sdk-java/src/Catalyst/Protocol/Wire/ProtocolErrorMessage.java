@@ -15,37 +15,26 @@ public  final class ProtocolErrorMessage extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Wire.ProtocolErrorMessage)
     ProtocolErrorMessageOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use ProtocolErrorMessage.newBuilder() to construct.
   private ProtocolErrorMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private ProtocolErrorMessage() {
     correlationId_ = com.google.protobuf.ByteString.EMPTY;
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new ProtocolErrorMessage();
+    code_ = 0;
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private ProtocolErrorMessage(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -54,6 +43,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
             Catalyst.Protocol.Cryptography.Signature.Builder subBuilder = null;
             if (signature_ != null) {
@@ -90,13 +85,6 @@ private static final long serialVersionUID = 0L;
             code_ = input.readInt32();
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -105,7 +93,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -114,7 +101,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_fieldAccessorTable
@@ -126,14 +112,12 @@ private static final long serialVersionUID = 0L;
   private Catalyst.Protocol.Cryptography.Signature signature_;
   /**
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-   * @return Whether the signature field is set.
    */
   public boolean hasSignature() {
     return signature_ != null;
   }
   /**
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-   * @return The signature.
    */
   public Catalyst.Protocol.Cryptography.Signature getSignature() {
     return signature_ == null ? Catalyst.Protocol.Cryptography.Signature.getDefaultInstance() : signature_;
@@ -149,14 +133,12 @@ private static final long serialVersionUID = 0L;
   private Catalyst.Protocol.Peer.PeerId peerId_;
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-   * @return Whether the peerId field is set.
    */
   public boolean hasPeerId() {
     return peerId_ != null;
   }
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-   * @return The peerId.
    */
   public Catalyst.Protocol.Peer.PeerId getPeerId() {
     return peerId_ == null ? Catalyst.Protocol.Peer.PeerId.getDefaultInstance() : peerId_;
@@ -172,7 +154,6 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString correlationId_;
   /**
    * <code>bytes correlation_id = 3;</code>
-   * @return The correlationId.
    */
   public com.google.protobuf.ByteString getCorrelationId() {
     return correlationId_;
@@ -182,14 +163,12 @@ private static final long serialVersionUID = 0L;
   private int code_;
   /**
    * <code>int32 code = 4;</code>
-   * @return The code.
    */
   public int getCode() {
     return code_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -199,7 +178,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (signature_ != null) {
@@ -214,10 +192,8 @@ private static final long serialVersionUID = 0L;
     if (code_ != 0) {
       output.writeInt32(4, code_);
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -239,11 +215,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, code_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -254,22 +230,22 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Wire.ProtocolErrorMessage other = (Catalyst.Protocol.Wire.ProtocolErrorMessage) obj;
 
-    if (hasSignature() != other.hasSignature()) return false;
+    boolean result = true;
+    result = result && (hasSignature() == other.hasSignature());
     if (hasSignature()) {
-      if (!getSignature()
-          .equals(other.getSignature())) return false;
+      result = result && getSignature()
+          .equals(other.getSignature());
     }
-    if (hasPeerId() != other.hasPeerId()) return false;
+    result = result && (hasPeerId() == other.hasPeerId());
     if (hasPeerId()) {
-      if (!getPeerId()
-          .equals(other.getPeerId())) return false;
+      result = result && getPeerId()
+          .equals(other.getPeerId());
     }
-    if (!getCorrelationId()
-        .equals(other.getCorrelationId())) return false;
-    if (getCode()
-        != other.getCode()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    result = result && getCorrelationId()
+        .equals(other.getCorrelationId());
+    result = result && (getCode()
+        == other.getCode());
+    return result;
   }
 
   @java.lang.Override
@@ -296,17 +272,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Wire.ProtocolErrorMessage parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Wire.ProtocolErrorMessage parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Wire.ProtocolErrorMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -366,7 +331,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -374,7 +338,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Wire.ProtocolErrorMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -403,7 +366,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_fieldAccessorTable
@@ -426,7 +388,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (signatureBuilder_ == null) {
@@ -448,18 +409,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_ProtocolErrorMessage_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Wire.ProtocolErrorMessage getDefaultInstanceForType() {
       return Catalyst.Protocol.Wire.ProtocolErrorMessage.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Wire.ProtocolErrorMessage build() {
       Catalyst.Protocol.Wire.ProtocolErrorMessage result = buildPartial();
       if (!result.isInitialized()) {
@@ -468,7 +426,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Wire.ProtocolErrorMessage buildPartial() {
       Catalyst.Protocol.Wire.ProtocolErrorMessage result = new Catalyst.Protocol.Wire.ProtocolErrorMessage(this);
       if (signatureBuilder_ == null) {
@@ -487,39 +444,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Wire.ProtocolErrorMessage) {
         return mergeFrom((Catalyst.Protocol.Wire.ProtocolErrorMessage)other);
@@ -543,17 +493,14 @@ private static final long serialVersionUID = 0L;
       if (other.getCode() != 0) {
         setCode(other.getCode());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -572,19 +519,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Catalyst.Protocol.Cryptography.Signature signature_;
+    private Catalyst.Protocol.Cryptography.Signature signature_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Cryptography.Signature, Catalyst.Protocol.Cryptography.Signature.Builder, Catalyst.Protocol.Cryptography.SignatureOrBuilder> signatureBuilder_;
     /**
      * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-     * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
       return signatureBuilder_ != null || signature_ != null;
     }
     /**
      * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-     * @return The signature.
      */
     public Catalyst.Protocol.Cryptography.Signature getSignature() {
       if (signatureBuilder_ == null) {
@@ -691,19 +636,17 @@ private static final long serialVersionUID = 0L;
       return signatureBuilder_;
     }
 
-    private Catalyst.Protocol.Peer.PeerId peerId_;
+    private Catalyst.Protocol.Peer.PeerId peerId_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Peer.PeerId, Catalyst.Protocol.Peer.PeerId.Builder, Catalyst.Protocol.Peer.PeerIdOrBuilder> peerIdBuilder_;
     /**
      * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-     * @return Whether the peerId field is set.
      */
     public boolean hasPeerId() {
       return peerIdBuilder_ != null || peerId_ != null;
     }
     /**
      * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-     * @return The peerId.
      */
     public Catalyst.Protocol.Peer.PeerId getPeerId() {
       if (peerIdBuilder_ == null) {
@@ -813,15 +756,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString correlationId_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes correlation_id = 3;</code>
-     * @return The correlationId.
      */
     public com.google.protobuf.ByteString getCorrelationId() {
       return correlationId_;
     }
     /**
      * <code>bytes correlation_id = 3;</code>
-     * @param value The correlationId to set.
-     * @return This builder for chaining.
      */
     public Builder setCorrelationId(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -834,7 +774,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes correlation_id = 3;</code>
-     * @return This builder for chaining.
      */
     public Builder clearCorrelationId() {
       
@@ -846,15 +785,12 @@ private static final long serialVersionUID = 0L;
     private int code_ ;
     /**
      * <code>int32 code = 4;</code>
-     * @return The code.
      */
     public int getCode() {
       return code_;
     }
     /**
      * <code>int32 code = 4;</code>
-     * @param value The code to set.
-     * @return This builder for chaining.
      */
     public Builder setCode(int value) {
       
@@ -864,7 +800,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>int32 code = 4;</code>
-     * @return This builder for chaining.
      */
     public Builder clearCode() {
       
@@ -872,16 +807,14 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -900,12 +833,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ProtocolErrorMessage>
       PARSER = new com.google.protobuf.AbstractParser<ProtocolErrorMessage>() {
-    @java.lang.Override
     public ProtocolErrorMessage parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ProtocolErrorMessage(input, extensionRegistry);
+        return new ProtocolErrorMessage(input, extensionRegistry);
     }
   };
 
@@ -918,7 +850,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Wire.ProtocolErrorMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

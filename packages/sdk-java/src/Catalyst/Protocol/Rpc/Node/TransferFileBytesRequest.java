@@ -10,38 +10,27 @@ public  final class TransferFileBytesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest)
     TransferFileBytesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use TransferFileBytesRequest.newBuilder() to construct.
   private TransferFileBytesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private TransferFileBytesRequest() {
+    chunkId_ = 0;
     chunkBytes_ = com.google.protobuf.ByteString.EMPTY;
     correlationFileName_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new TransferFileBytesRequest();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private TransferFileBytesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -50,6 +39,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 8: {
 
             chunkId_ = input.readUInt32();
@@ -65,13 +60,6 @@ private static final long serialVersionUID = 0L;
             correlationFileName_ = input.readBytes();
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -80,7 +68,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -89,7 +76,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesRequest_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesRequest_fieldAccessorTable
@@ -101,7 +87,6 @@ private static final long serialVersionUID = 0L;
   private int chunkId_;
   /**
    * <code>uint32 chunk_id = 1;</code>
-   * @return The chunkId.
    */
   public int getChunkId() {
     return chunkId_;
@@ -111,7 +96,6 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString chunkBytes_;
   /**
    * <code>bytes chunk_bytes = 2;</code>
-   * @return The chunkBytes.
    */
   public com.google.protobuf.ByteString getChunkBytes() {
     return chunkBytes_;
@@ -121,14 +105,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString correlationFileName_;
   /**
    * <code>bytes correlation_file_name = 3;</code>
-   * @return The correlationFileName.
    */
   public com.google.protobuf.ByteString getCorrelationFileName() {
     return correlationFileName_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -138,7 +120,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (chunkId_ != 0) {
@@ -150,10 +131,8 @@ private static final long serialVersionUID = 0L;
     if (!correlationFileName_.isEmpty()) {
       output.writeBytes(3, correlationFileName_);
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -171,11 +150,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(3, correlationFileName_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -186,14 +165,14 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest other = (Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest) obj;
 
-    if (getChunkId()
-        != other.getChunkId()) return false;
-    if (!getChunkBytes()
-        .equals(other.getChunkBytes())) return false;
-    if (!getCorrelationFileName()
-        .equals(other.getCorrelationFileName())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && (getChunkId()
+        == other.getChunkId());
+    result = result && getChunkBytes()
+        .equals(other.getChunkBytes());
+    result = result && getCorrelationFileName()
+        .equals(other.getCorrelationFileName());
+    return result;
   }
 
   @java.lang.Override
@@ -214,17 +193,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -284,7 +252,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -292,7 +259,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -316,7 +282,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesRequest_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesRequest_fieldAccessorTable
@@ -339,7 +304,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       chunkId_ = 0;
@@ -351,18 +315,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_TransferFileBytesRequest_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest build() {
       Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -371,7 +332,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest buildPartial() {
       Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest result = new Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest(this);
       result.chunkId_ = chunkId_;
@@ -381,39 +341,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest)other);
@@ -434,17 +387,14 @@ private static final long serialVersionUID = 0L;
       if (other.getCorrelationFileName() != com.google.protobuf.ByteString.EMPTY) {
         setCorrelationFileName(other.getCorrelationFileName());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -466,15 +416,12 @@ private static final long serialVersionUID = 0L;
     private int chunkId_ ;
     /**
      * <code>uint32 chunk_id = 1;</code>
-     * @return The chunkId.
      */
     public int getChunkId() {
       return chunkId_;
     }
     /**
      * <code>uint32 chunk_id = 1;</code>
-     * @param value The chunkId to set.
-     * @return This builder for chaining.
      */
     public Builder setChunkId(int value) {
       
@@ -484,7 +431,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 chunk_id = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearChunkId() {
       
@@ -496,15 +442,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString chunkBytes_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes chunk_bytes = 2;</code>
-     * @return The chunkBytes.
      */
     public com.google.protobuf.ByteString getChunkBytes() {
       return chunkBytes_;
     }
     /**
      * <code>bytes chunk_bytes = 2;</code>
-     * @param value The chunkBytes to set.
-     * @return This builder for chaining.
      */
     public Builder setChunkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -517,7 +460,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes chunk_bytes = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearChunkBytes() {
       
@@ -529,15 +471,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString correlationFileName_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes correlation_file_name = 3;</code>
-     * @return The correlationFileName.
      */
     public com.google.protobuf.ByteString getCorrelationFileName() {
       return correlationFileName_;
     }
     /**
      * <code>bytes correlation_file_name = 3;</code>
-     * @param value The correlationFileName to set.
-     * @return This builder for chaining.
      */
     public Builder setCorrelationFileName(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -550,7 +489,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes correlation_file_name = 3;</code>
-     * @return This builder for chaining.
      */
     public Builder clearCorrelationFileName() {
       
@@ -558,16 +496,14 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -586,12 +522,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<TransferFileBytesRequest>
       PARSER = new com.google.protobuf.AbstractParser<TransferFileBytesRequest>() {
-    @java.lang.Override
     public TransferFileBytesRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TransferFileBytesRequest(input, extensionRegistry);
+        return new TransferFileBytesRequest(input, extensionRegistry);
     }
   };
 
@@ -604,7 +539,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.TransferFileBytesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
