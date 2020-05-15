@@ -39,6 +39,6 @@ message BlockChallengeResponse {
 message BlockChallengeBroadcast {
 	BlockChallengeRequest original_challenge = 1;	
 	string answer = 2;
-	Peer.PeerId challenged_peer = 3;
-	Peer.PeerId challenged_by = 4;
+	string challenged_peer = 3;
+	string challenged_by = 4;
 }

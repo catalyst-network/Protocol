@@ -186,12 +186,11 @@ message AddNodeResponse {
 message GetPeerListRequest { }
 
 message GetPeerListResponse {
-    repeated Peer.PeerId peers = 1;
+    repeated string peers = 1;
 }
 
 message GetPeerReputationRequest {
-    bytes public_key = 1;
-    bytes ip = 2;
+    string peer_id = 1;
 }
 
 message GetPeerReputationResponse {
@@ -199,20 +198,17 @@ message GetPeerReputationResponse {
 }
 
 message SetPeerBlackListRequest {
-    bytes public_key = 1;
-    bytes ip = 2;
-    bool blacklist = 3;
+    string peer_id = 1;
+    bool blacklist = 2;
 }
 
 message SetPeerBlackListResponse{
-    bytes public_key = 1;
-    bytes ip = 2;
-    bool blacklist = 3;
+    string peer_id = 1;
+    bool blacklist = 2;
 }
 
 message GetPeerInfoRequest {
-    bytes public_key = 1;
-    bytes ip = 2;
+    string peer_id = 1;
 }
 
 message GetPeerInfoResponse {
@@ -296,8 +292,7 @@ message TransferFileBytesResponse {
 }
 
 message RemovePeerRequest {
-	bytes peer_ip = 1;
-	bytes public_key = 2;
+	string peer_id = 1;
 }
 
 message RemovePeerResponse {

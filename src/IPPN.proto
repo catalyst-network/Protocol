@@ -29,7 +29,7 @@ import "Deltas.proto";
 message PeerNeighborsRequest { }
 
 message PeerNeighborsResponse {
-    repeated Peer.PeerId peers = 1; // Random subset of a nodes peer db.
+    repeated string peers = 1; // Random subset of a nodes peer db.
 }
 
 message PingRequest { 
