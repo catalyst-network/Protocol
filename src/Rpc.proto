@@ -190,7 +190,7 @@ message GetPeerListResponse {
 }
 
 message GetPeerReputationRequest {
-    string peer_id = 1;
+    string address = 1;
 }
 
 message GetPeerReputationResponse {
@@ -198,17 +198,17 @@ message GetPeerReputationResponse {
 }
 
 message SetPeerBlackListRequest {
-    string peer_id = 1;
+    string address = 1;
     bool blacklist = 2;
 }
 
 message SetPeerBlackListResponse{
-    string peer_id = 1;
+    string address = 1;
     bool blacklist = 2;
 }
 
 message GetPeerInfoRequest {
-    string peer_id = 1;
+    string address = 1;
 }
 
 message GetPeerInfoResponse {
@@ -292,7 +292,7 @@ message TransferFileBytesResponse {
 }
 
 message RemovePeerRequest {
-	string peer_id = 1;
+	string address = 1;
 }
 
 message RemovePeerResponse {
