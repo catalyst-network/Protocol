@@ -1,5 +1,5 @@
 steps:
-- script: cargo install protobuf-codegen
+- script: cargo install protobuf-codegen --version 2.14.0
   displayName: 'Install Rust protobuff-codegen'
 
 - script: cd packages/sdk-rust && make build
