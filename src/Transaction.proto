@@ -22,7 +22,6 @@ syntax = "proto3";
 option java_multiple_files = true;
 
 import "Cryptography.proto";
-import "google/protobuf/timestamp.proto";
 
 package Catalyst.Protocol.Transaction;
 

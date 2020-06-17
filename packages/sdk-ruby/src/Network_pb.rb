@@ -4,20 +4,18 @@
 require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_file("Network.proto", :syntax => :proto3) do
-    add_enum "Catalyst.Protocol.Network.NetworkType" do
-      value :NETWORK_TYPE_UNKNOWN, 0
-      value :MAINNET, 1
-      value :DEVNET, 2
-      value :TESTNET, 3
-    end
+  add_enum "Catalyst.Protocol.Network.NetworkType" do
+    value :NETWORK_TYPE_UNKNOWN, 0
+    value :MAINNET, 1
+    value :DEVNET, 2
+    value :TESTNET, 3
   end
 end
 
 module Catalyst
   module Protocol
     module Network
-      NetworkType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Network.NetworkType").enummodule
+      NetworkType = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Network.NetworkType").enummodule
     end
   end
 end

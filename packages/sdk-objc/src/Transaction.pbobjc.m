@@ -8,15 +8,13 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <protobuf/GPBProtocolBuffers_RuntimeSupport.h>
+ #import <Protobuf/GPBProtocolBuffers_RuntimeSupport.h>
 #else
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
-#import <stdatomic.h>
-
-#import "Transaction.pbobjc.h"
-#import "Cryptography.pbobjc.h"
+ #import "Transaction.pbobjc.h"
+ #import "Cryptography.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -48,7 +46,7 @@ static GPBFileDescriptor *TransactionRoot_FileDescriptor(void) {
 #pragma mark - Enum TransactionType
 
 GPBEnumDescriptor *TransactionType_EnumDescriptor(void) {
-  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  static GPBEnumDescriptor *descriptor = NULL;
   if (!descriptor) {
     static const char *valueNames =
         "TransactionTypeUnknown\000Public\000Confidenti"
@@ -64,8 +62,7 @@ GPBEnumDescriptor *TransactionType_EnumDescriptor(void) {
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
                                      enumVerifier:TransactionType_IsValidValue];
-    GPBEnumDescriptor *expected = nil;
-    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+    if (!OSAtomicCompareAndSwapPtrBarrier(nil, worker, (void * volatile *)&descriptor)) {
       [worker release];
     }
   }
@@ -91,7 +88,6 @@ BOOL TransactionType_IsValidValue(int32_t value__) {
 @dynamic senderAddress;
 @dynamic amount;
 @dynamic data_p;
-@dynamic hasTimestamp, timestamp;
 @dynamic gasPrice;
 @dynamic gasLimit;
 @dynamic nonce;
@@ -103,7 +99,6 @@ typedef struct PublicEntry__storage_ {
   NSData *senderAddress;
   NSData *amount;
   NSData *data_p;
-  GPBTimestamp *timestamp;
   NSData *gasPrice;
   Signature *signature;
   uint64_t gasLimit;
@@ -153,19 +148,10 @@ typedef struct PublicEntry__storage_ {
         .dataType = GPBDataTypeBytes,
       },
       {
-        .name = "timestamp",
-        .dataTypeSpecific.className = GPBStringifySymbol(GPBTimestamp),
-        .number = PublicEntry_FieldNumber_Timestamp,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(PublicEntry__storage_, timestamp),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
         .name = "gasPrice",
         .dataTypeSpecific.className = NULL,
         .number = PublicEntry_FieldNumber_GasPrice,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(PublicEntry__storage_, gasPrice),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBytes,
@@ -174,7 +160,7 @@ typedef struct PublicEntry__storage_ {
         .name = "gasLimit",
         .dataTypeSpecific.className = NULL,
         .number = PublicEntry_FieldNumber_GasLimit,
-        .hasIndex = 6,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(PublicEntry__storage_, gasLimit),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeUInt64,
@@ -183,7 +169,7 @@ typedef struct PublicEntry__storage_ {
         .name = "nonce",
         .dataTypeSpecific.className = NULL,
         .number = PublicEntry_FieldNumber_Nonce,
-        .hasIndex = 7,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(PublicEntry__storage_, nonce),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeUInt64,
@@ -192,7 +178,7 @@ typedef struct PublicEntry__storage_ {
         .name = "signature",
         .dataTypeSpecific.className = GPBStringifySymbol(Signature),
         .number = PublicEntry_FieldNumber_Signature,
-        .hasIndex = 8,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(PublicEntry__storage_, signature),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -206,9 +192,7 @@ typedef struct PublicEntry__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(PublicEntry__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -306,9 +290,7 @@ typedef struct ConfidentialEntry__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(ConfidentialEntry__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -362,9 +344,7 @@ typedef struct CoinbaseEntry__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(CoinbaseEntry__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -533,9 +513,7 @@ typedef struct RangeProof__storage_ {
         "\002\n\001\245\201\000\013\001\245\201\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;

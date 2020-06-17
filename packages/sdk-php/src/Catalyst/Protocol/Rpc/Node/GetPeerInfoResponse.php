@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetPeerInfoResponse</code>
  */
 class GetPeerInfoResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Peer.PeerInfo peer_info = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Peer.PeerInfo peer_info = 1;</code>
      */
     private $peer_info;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Peer\PeerInfo[]|\Google\Protobuf\Internal\RepeatedField $peer_info
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Peer.PeerInfo peer_info = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * <code>repeated .Catalyst.Protocol.Peer.PeerInfo peer_info = 1;</code>
      */
     public function getPeerInfo()
     {
@@ -42,16 +32,12 @@ class GetPeerInfoResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Peer.PeerInfo peer_info = 1;</code>
-     * @param \Catalyst\Protocol\Peer\PeerInfo[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
+     * <code>repeated .Catalyst.Protocol.Peer.PeerInfo peer_info = 1;</code>
      */
-    public function setPeerInfo($var)
+    public function setPeerInfo(&$var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Peer\PeerInfo::class);
-        $this->peer_info = $arr;
-
-        return $this;
+        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Peer\PeerInfo::class);
+        $this->peer_info = $var;
     }
 
 }

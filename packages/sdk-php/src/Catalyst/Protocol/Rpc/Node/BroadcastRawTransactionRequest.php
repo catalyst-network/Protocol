@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.BroadcastRawTransactionRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.BroadcastRawTransactionRequest</code>
  */
 class BroadcastRawTransactionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
+     * <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
      */
-    protected $transaction = null;
+    private $transaction = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Wire\TransactionBroadcast $transaction
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
-     * @return \Catalyst\Protocol\Wire\TransactionBroadcast
+     * <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
      */
     public function getTransaction()
     {
@@ -42,16 +32,12 @@ class BroadcastRawTransactionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
-     * @param \Catalyst\Protocol\Wire\TransactionBroadcast $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
      */
-    public function setTransaction($var)
+    public function setTransaction(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Wire\TransactionBroadcast::class);
         $this->transaction = $var;
-
-        return $this;
     }
 
 }

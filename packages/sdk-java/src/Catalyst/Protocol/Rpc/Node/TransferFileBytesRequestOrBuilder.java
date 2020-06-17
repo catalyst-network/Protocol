@@ -9,19 +9,16 @@ public interface TransferFileBytesRequestOrBuilder extends
 
   /**
    * <code>uint32 chunk_id = 1;</code>
-   * @return The chunkId.
    */
   int getChunkId();
 
   /**
    * <code>bytes chunk_bytes = 2;</code>
-   * @return The chunkBytes.
    */
   com.google.protobuf.ByteString getChunkBytes();
 
   /**
    * <code>bytes correlation_file_name = 3;</code>
-   * @return The correlationFileName.
    */
   com.google.protobuf.ByteString getCorrelationFileName();
 }

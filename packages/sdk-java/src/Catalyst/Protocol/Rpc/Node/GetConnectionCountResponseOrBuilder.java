@@ -9,12 +9,10 @@ public interface GetConnectionCountResponseOrBuilder extends
 
   /**
    * <code>string query = 1;</code>
-   * @return The query.
    */
   java.lang.String getQuery();
   /**
    * <code>string query = 1;</code>
-   * @return The bytes for query.
    */
   com.google.protobuf.ByteString
       getQueryBytes();

@@ -8,12 +8,20 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <protobuf/GPBProtocolBuffers_RuntimeSupport.h>
+ #import <Protobuf/GPBProtocolBuffers_RuntimeSupport.h>
 #else
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
-#import "Peer.pbobjc.h"
+#if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
+ #import <Protobuf/Timestamp.pbobjc.h>
+ #import <Protobuf/Duration.pbobjc.h>
+#else
+ #import "google/protobuf/Timestamp.pbobjc.h"
+ #import "google/protobuf/Duration.pbobjc.h"
+#endif
+
+ #import "Peer.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -99,9 +107,7 @@ typedef struct PeerId__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(PeerId__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -219,9 +225,7 @@ typedef struct PeerInfo__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(PeerInfo__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;

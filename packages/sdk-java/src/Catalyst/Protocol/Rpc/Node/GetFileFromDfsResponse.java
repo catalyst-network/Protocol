@@ -10,37 +10,26 @@ public  final class GetFileFromDfsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse)
     GetFileFromDfsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use GetFileFromDfsResponse.newBuilder() to construct.
   private GetFileFromDfsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private GetFileFromDfsResponse() {
+    fileSize_ = 0L;
     responseCode_ = com.google.protobuf.ByteString.EMPTY;
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new GetFileFromDfsResponse();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private GetFileFromDfsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -49,6 +38,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 8: {
 
             fileSize_ = input.readUInt64();
@@ -59,13 +54,6 @@ private static final long serialVersionUID = 0L;
             responseCode_ = input.readBytes();
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -74,7 +62,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -83,7 +70,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_fieldAccessorTable
@@ -95,7 +81,6 @@ private static final long serialVersionUID = 0L;
   private long fileSize_;
   /**
    * <code>uint64 file_size = 1;</code>
-   * @return The fileSize.
    */
   public long getFileSize() {
     return fileSize_;
@@ -105,14 +90,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString responseCode_;
   /**
    * <code>bytes response_code = 2;</code>
-   * @return The responseCode.
    */
   public com.google.protobuf.ByteString getResponseCode() {
     return responseCode_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -122,7 +105,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (fileSize_ != 0L) {
@@ -131,10 +113,8 @@ private static final long serialVersionUID = 0L;
     if (!responseCode_.isEmpty()) {
       output.writeBytes(2, responseCode_);
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -148,11 +128,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, responseCode_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -163,12 +143,12 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse other = (Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse) obj;
 
-    if (getFileSize()
-        != other.getFileSize()) return false;
-    if (!getResponseCode()
-        .equals(other.getResponseCode())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && (getFileSize()
+        == other.getFileSize());
+    result = result && getResponseCode()
+        .equals(other.getResponseCode());
+    return result;
   }
 
   @java.lang.Override
@@ -188,17 +168,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -258,7 +227,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -266,7 +234,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -290,7 +257,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_fieldAccessorTable
@@ -313,7 +279,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       fileSize_ = 0L;
@@ -323,18 +288,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Rpc.Node.Rpc.internal_static_Catalyst_Protocol_Rpc_Node_GetFileFromDfsResponse_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse build() {
       Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -343,7 +305,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse buildPartial() {
       Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse result = new Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse(this);
       result.fileSize_ = fileSize_;
@@ -352,39 +313,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse) {
         return mergeFrom((Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse)other);
@@ -402,17 +356,14 @@ private static final long serialVersionUID = 0L;
       if (other.getResponseCode() != com.google.protobuf.ByteString.EMPTY) {
         setResponseCode(other.getResponseCode());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -434,15 +385,12 @@ private static final long serialVersionUID = 0L;
     private long fileSize_ ;
     /**
      * <code>uint64 file_size = 1;</code>
-     * @return The fileSize.
      */
     public long getFileSize() {
       return fileSize_;
     }
     /**
      * <code>uint64 file_size = 1;</code>
-     * @param value The fileSize to set.
-     * @return This builder for chaining.
      */
     public Builder setFileSize(long value) {
       
@@ -452,7 +400,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint64 file_size = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearFileSize() {
       
@@ -464,15 +411,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString responseCode_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes response_code = 2;</code>
-     * @return The responseCode.
      */
     public com.google.protobuf.ByteString getResponseCode() {
       return responseCode_;
     }
     /**
      * <code>bytes response_code = 2;</code>
-     * @param value The responseCode to set.
-     * @return This builder for chaining.
      */
     public Builder setResponseCode(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -485,7 +429,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes response_code = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearResponseCode() {
       
@@ -493,16 +436,14 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -521,12 +462,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<GetFileFromDfsResponse>
       PARSER = new com.google.protobuf.AbstractParser<GetFileFromDfsResponse>() {
-    @java.lang.Override
     public GetFileFromDfsResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetFileFromDfsResponse(input, extensionRegistry);
+        return new GetFileFromDfsResponse(input, extensionRegistry);
     }
   };
 
@@ -539,7 +479,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Rpc.Node.GetFileFromDfsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

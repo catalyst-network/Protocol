@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.VerifyMessageResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.VerifyMessageResponse</code>
  */
 class VerifyMessageResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool is_signed_by_key = 1;</code>
+     * <code>bool is_signed_by_key = 1;</code>
      */
-    protected $is_signed_by_key = false;
+    private $is_signed_by_key = false;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type bool $is_signed_by_key
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>bool is_signed_by_key = 1;</code>
-     * @return bool
+     * <code>bool is_signed_by_key = 1;</code>
      */
     public function getIsSignedByKey()
     {
@@ -42,16 +32,12 @@ class VerifyMessageResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_signed_by_key = 1;</code>
-     * @param bool $var
-     * @return $this
+     * <code>bool is_signed_by_key = 1;</code>
      */
     public function setIsSignedByKey($var)
     {
         GPBUtil::checkBool($var);
         $this->is_signed_by_key = $var;
-
-        return $this;
     }
 
 }

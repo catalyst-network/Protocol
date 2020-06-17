@@ -9,7 +9,6 @@ public interface GetConnectionCountRequestOrBuilder extends
 
   /**
    * <code>bool query = 1;</code>
-   * @return The query.
    */
   boolean getQuery();
 }

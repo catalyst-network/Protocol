@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.GetDeltaRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.GetDeltaRequest</code>
  */
 class GetDeltaRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes delta_dfs_hash = 1;</code>
+     * <code>bytes delta_dfs_hash = 1;</code>
      */
-    protected $delta_dfs_hash = '';
+    private $delta_dfs_hash = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $delta_dfs_hash
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>bytes delta_dfs_hash = 1;</code>
-     * @return string
+     * <code>bytes delta_dfs_hash = 1;</code>
      */
     public function getDeltaDfsHash()
     {
@@ -42,16 +32,12 @@ class GetDeltaRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes delta_dfs_hash = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes delta_dfs_hash = 1;</code>
      */
     public function setDeltaDfsHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->delta_dfs_hash = $var;
-
-        return $this;
     }
 
 }

@@ -10,7 +10,6 @@ public  final class Delta extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Deltas.Delta)
     DeltaOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use Delta.newBuilder() to construct.
   private Delta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -23,31 +22,21 @@ private static final long serialVersionUID = 0L;
     confidentialEntries_ = java.util.Collections.emptyList();
     coinbaseEntries_ = java.util.Collections.emptyList();
     stateRoot_ = com.google.protobuf.ByteString.EMPTY;
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new Delta();
+    deltaNumber_ = 0L;
+    gasUsed_ = 0L;
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private Delta(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -56,6 +45,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
 
             previousDeltaDfsHash_ = input.readBytes();
@@ -85,27 +80,27 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
               publicEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.PublicEntry>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000010;
             }
             publicEntries_.add(
                 input.readMessage(Catalyst.Protocol.Transaction.PublicEntry.parser(), extensionRegistry));
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               confidentialEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.ConfidentialEntry>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000020;
             }
             confidentialEntries_.add(
                 input.readMessage(Catalyst.Protocol.Transaction.ConfidentialEntry.parser(), extensionRegistry));
             break;
           }
           case 58: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
               coinbaseEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.CoinbaseEntry>();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000040;
             }
             coinbaseEntries_.add(
                 input.readMessage(Catalyst.Protocol.Transaction.CoinbaseEntry.parser(), extensionRegistry));
@@ -121,11 +116,9 @@ private static final long serialVersionUID = 0L;
             deltaNumber_ = input.readInt64();
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
+          case 80: {
+
+            gasUsed_ = input.readInt64();
             break;
           }
         }
@@ -136,16 +129,15 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         publicEntries_ = java.util.Collections.unmodifiableList(publicEntries_);
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         confidentialEntries_ = java.util.Collections.unmodifiableList(confidentialEntries_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         coinbaseEntries_ = java.util.Collections.unmodifiableList(coinbaseEntries_);
       }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -154,7 +146,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_fieldAccessorTable
@@ -162,6 +153,7 @@ private static final long serialVersionUID = 0L;
             Catalyst.Protocol.Deltas.Delta.class, Catalyst.Protocol.Deltas.Delta.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PREVIOUS_DELTA_DFS_HASH_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString previousDeltaDfsHash_;
   /**
@@ -170,7 +162,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes previous_delta_dfs_hash = 1;</code>
-   * @return The previousDeltaDfsHash.
    */
   public com.google.protobuf.ByteString getPreviousDeltaDfsHash() {
     return previousDeltaDfsHash_;
@@ -180,7 +171,6 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString merkleRoot_;
   /**
    * <code>bytes merkle_root = 2;</code>
-   * @return The merkleRoot.
    */
   public com.google.protobuf.ByteString getMerkleRoot() {
     return merkleRoot_;
@@ -194,7 +184,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes merkle_poda = 3;</code>
-   * @return The merklePoda.
    */
   public com.google.protobuf.ByteString getMerklePoda() {
     return merklePoda_;
@@ -204,14 +193,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp timeStamp_;
   /**
    * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
-   * @return Whether the timeStamp field is set.
    */
   public boolean hasTimeStamp() {
     return timeStamp_ != null;
   }
   /**
    * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
-   * @return The timeStamp.
    */
   public com.google.protobuf.Timestamp getTimeStamp() {
     return timeStamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timeStamp_;
@@ -356,7 +343,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes state_root = 8;</code>
-   * @return The stateRoot.
    */
   public com.google.protobuf.ByteString getStateRoot() {
     return stateRoot_;
@@ -370,14 +356,25 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 delta_number = 9;</code>
-   * @return The deltaNumber.
    */
   public long getDeltaNumber() {
     return deltaNumber_;
   }
 
+  public static final int GAS_USED_FIELD_NUMBER = 10;
+  private long gasUsed_;
+  /**
+   * <pre>
+   * the gas used in the delta
+   * </pre>
+   *
+   * <code>int64 gas_used = 10;</code>
+   */
+  public long getGasUsed() {
+    return gasUsed_;
+  }
+
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -387,7 +384,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!previousDeltaDfsHash_.isEmpty()) {
@@ -417,10 +413,11 @@ private static final long serialVersionUID = 0L;
     if (deltaNumber_ != 0L) {
       output.writeInt64(9, deltaNumber_);
     }
-    unknownFields.writeTo(output);
+    if (gasUsed_ != 0L) {
+      output.writeInt64(10, gasUsed_);
+    }
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -462,11 +459,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(9, deltaNumber_);
     }
-    size += unknownFields.getSerializedSize();
+    if (gasUsed_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, gasUsed_);
+    }
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -477,29 +478,31 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Deltas.Delta other = (Catalyst.Protocol.Deltas.Delta) obj;
 
-    if (!getPreviousDeltaDfsHash()
-        .equals(other.getPreviousDeltaDfsHash())) return false;
-    if (!getMerkleRoot()
-        .equals(other.getMerkleRoot())) return false;
-    if (!getMerklePoda()
-        .equals(other.getMerklePoda())) return false;
-    if (hasTimeStamp() != other.hasTimeStamp()) return false;
+    boolean result = true;
+    result = result && getPreviousDeltaDfsHash()
+        .equals(other.getPreviousDeltaDfsHash());
+    result = result && getMerkleRoot()
+        .equals(other.getMerkleRoot());
+    result = result && getMerklePoda()
+        .equals(other.getMerklePoda());
+    result = result && (hasTimeStamp() == other.hasTimeStamp());
     if (hasTimeStamp()) {
-      if (!getTimeStamp()
-          .equals(other.getTimeStamp())) return false;
+      result = result && getTimeStamp()
+          .equals(other.getTimeStamp());
     }
-    if (!getPublicEntriesList()
-        .equals(other.getPublicEntriesList())) return false;
-    if (!getConfidentialEntriesList()
-        .equals(other.getConfidentialEntriesList())) return false;
-    if (!getCoinbaseEntriesList()
-        .equals(other.getCoinbaseEntriesList())) return false;
-    if (!getStateRoot()
-        .equals(other.getStateRoot())) return false;
-    if (getDeltaNumber()
-        != other.getDeltaNumber()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    result = result && getPublicEntriesList()
+        .equals(other.getPublicEntriesList());
+    result = result && getConfidentialEntriesList()
+        .equals(other.getConfidentialEntriesList());
+    result = result && getCoinbaseEntriesList()
+        .equals(other.getCoinbaseEntriesList());
+    result = result && getStateRoot()
+        .equals(other.getStateRoot());
+    result = result && (getDeltaNumber()
+        == other.getDeltaNumber());
+    result = result && (getGasUsed()
+        == other.getGasUsed());
+    return result;
   }
 
   @java.lang.Override
@@ -536,22 +539,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DELTA_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getDeltaNumber());
+    hash = (37 * hash) + GAS_USED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getGasUsed());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static Catalyst.Protocol.Deltas.Delta parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Deltas.Delta parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Deltas.Delta parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -611,7 +606,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -619,7 +613,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Deltas.Delta prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -643,7 +636,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_fieldAccessorTable
@@ -669,7 +661,6 @@ private static final long serialVersionUID = 0L;
         getCoinbaseEntriesFieldBuilder();
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       previousDeltaDfsHash_ = com.google.protobuf.ByteString.EMPTY;
@@ -686,19 +677,19 @@ private static final long serialVersionUID = 0L;
       }
       if (publicEntriesBuilder_ == null) {
         publicEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         publicEntriesBuilder_.clear();
       }
       if (confidentialEntriesBuilder_ == null) {
         confidentialEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         confidentialEntriesBuilder_.clear();
       }
       if (coinbaseEntriesBuilder_ == null) {
         coinbaseEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         coinbaseEntriesBuilder_.clear();
       }
@@ -706,21 +697,20 @@ private static final long serialVersionUID = 0L;
 
       deltaNumber_ = 0L;
 
+      gasUsed_ = 0L;
+
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Deltas.Deltas.internal_static_Catalyst_Protocol_Deltas_Delta_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Deltas.Delta getDefaultInstanceForType() {
       return Catalyst.Protocol.Deltas.Delta.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Deltas.Delta build() {
       Catalyst.Protocol.Deltas.Delta result = buildPartial();
       if (!result.isInitialized()) {
@@ -729,10 +719,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Deltas.Delta buildPartial() {
       Catalyst.Protocol.Deltas.Delta result = new Catalyst.Protocol.Deltas.Delta(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.previousDeltaDfsHash_ = previousDeltaDfsHash_;
       result.merkleRoot_ = merkleRoot_;
       result.merklePoda_ = merklePoda_;
@@ -742,27 +732,27 @@ private static final long serialVersionUID = 0L;
         result.timeStamp_ = timeStampBuilder_.build();
       }
       if (publicEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           publicEntries_ = java.util.Collections.unmodifiableList(publicEntries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.publicEntries_ = publicEntries_;
       } else {
         result.publicEntries_ = publicEntriesBuilder_.build();
       }
       if (confidentialEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           confidentialEntries_ = java.util.Collections.unmodifiableList(confidentialEntries_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.confidentialEntries_ = confidentialEntries_;
       } else {
         result.confidentialEntries_ = confidentialEntriesBuilder_.build();
       }
       if (coinbaseEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
           coinbaseEntries_ = java.util.Collections.unmodifiableList(coinbaseEntries_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.coinbaseEntries_ = coinbaseEntries_;
       } else {
@@ -770,43 +760,38 @@ private static final long serialVersionUID = 0L;
       }
       result.stateRoot_ = stateRoot_;
       result.deltaNumber_ = deltaNumber_;
+      result.gasUsed_ = gasUsed_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Deltas.Delta) {
         return mergeFrom((Catalyst.Protocol.Deltas.Delta)other);
@@ -834,7 +819,7 @@ private static final long serialVersionUID = 0L;
         if (!other.publicEntries_.isEmpty()) {
           if (publicEntries_.isEmpty()) {
             publicEntries_ = other.publicEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePublicEntriesIsMutable();
             publicEntries_.addAll(other.publicEntries_);
@@ -847,7 +832,7 @@ private static final long serialVersionUID = 0L;
             publicEntriesBuilder_.dispose();
             publicEntriesBuilder_ = null;
             publicEntries_ = other.publicEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             publicEntriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPublicEntriesFieldBuilder() : null;
@@ -860,7 +845,7 @@ private static final long serialVersionUID = 0L;
         if (!other.confidentialEntries_.isEmpty()) {
           if (confidentialEntries_.isEmpty()) {
             confidentialEntries_ = other.confidentialEntries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureConfidentialEntriesIsMutable();
             confidentialEntries_.addAll(other.confidentialEntries_);
@@ -873,7 +858,7 @@ private static final long serialVersionUID = 0L;
             confidentialEntriesBuilder_.dispose();
             confidentialEntriesBuilder_ = null;
             confidentialEntries_ = other.confidentialEntries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
             confidentialEntriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getConfidentialEntriesFieldBuilder() : null;
@@ -886,7 +871,7 @@ private static final long serialVersionUID = 0L;
         if (!other.coinbaseEntries_.isEmpty()) {
           if (coinbaseEntries_.isEmpty()) {
             coinbaseEntries_ = other.coinbaseEntries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureCoinbaseEntriesIsMutable();
             coinbaseEntries_.addAll(other.coinbaseEntries_);
@@ -899,7 +884,7 @@ private static final long serialVersionUID = 0L;
             coinbaseEntriesBuilder_.dispose();
             coinbaseEntriesBuilder_ = null;
             coinbaseEntries_ = other.coinbaseEntries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
             coinbaseEntriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCoinbaseEntriesFieldBuilder() : null;
@@ -914,17 +899,17 @@ private static final long serialVersionUID = 0L;
       if (other.getDeltaNumber() != 0L) {
         setDeltaNumber(other.getDeltaNumber());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (other.getGasUsed() != 0L) {
+        setGasUsed(other.getGasUsed());
+      }
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -951,7 +936,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 1;</code>
-     * @return The previousDeltaDfsHash.
      */
     public com.google.protobuf.ByteString getPreviousDeltaDfsHash() {
       return previousDeltaDfsHash_;
@@ -962,8 +946,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 1;</code>
-     * @param value The previousDeltaDfsHash to set.
-     * @return This builder for chaining.
      */
     public Builder setPreviousDeltaDfsHash(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -980,7 +962,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes previous_delta_dfs_hash = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearPreviousDeltaDfsHash() {
       
@@ -992,15 +973,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString merkleRoot_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes merkle_root = 2;</code>
-     * @return The merkleRoot.
      */
     public com.google.protobuf.ByteString getMerkleRoot() {
       return merkleRoot_;
     }
     /**
      * <code>bytes merkle_root = 2;</code>
-     * @param value The merkleRoot to set.
-     * @return This builder for chaining.
      */
     public Builder setMerkleRoot(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1013,7 +991,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes merkle_root = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearMerkleRoot() {
       
@@ -1029,7 +1006,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes merkle_poda = 3;</code>
-     * @return The merklePoda.
      */
     public com.google.protobuf.ByteString getMerklePoda() {
       return merklePoda_;
@@ -1040,8 +1016,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes merkle_poda = 3;</code>
-     * @param value The merklePoda to set.
-     * @return This builder for chaining.
      */
     public Builder setMerklePoda(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1058,7 +1032,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes merkle_poda = 3;</code>
-     * @return This builder for chaining.
      */
     public Builder clearMerklePoda() {
       
@@ -1067,19 +1040,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Timestamp timeStamp_;
+    private com.google.protobuf.Timestamp timeStamp_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeStampBuilder_;
     /**
      * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
-     * @return Whether the timeStamp field is set.
      */
     public boolean hasTimeStamp() {
       return timeStampBuilder_ != null || timeStamp_ != null;
     }
     /**
      * <code>.google.protobuf.Timestamp time_stamp = 4;</code>
-     * @return The timeStamp.
      */
     public com.google.protobuf.Timestamp getTimeStamp() {
       if (timeStampBuilder_ == null) {
@@ -1189,9 +1160,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<Catalyst.Protocol.Transaction.PublicEntry> publicEntries_ =
       java.util.Collections.emptyList();
     private void ensurePublicEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         publicEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.PublicEntry>(publicEntries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -1341,7 +1312,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPublicEntries() {
       if (publicEntriesBuilder_ == null) {
         publicEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         publicEntriesBuilder_.clear();
@@ -1418,7 +1389,7 @@ private static final long serialVersionUID = 0L;
         publicEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Transaction.PublicEntry, Catalyst.Protocol.Transaction.PublicEntry.Builder, Catalyst.Protocol.Transaction.PublicEntryOrBuilder>(
                 publicEntries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
                 isClean());
         publicEntries_ = null;
@@ -1429,9 +1400,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<Catalyst.Protocol.Transaction.ConfidentialEntry> confidentialEntries_ =
       java.util.Collections.emptyList();
     private void ensureConfidentialEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         confidentialEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.ConfidentialEntry>(confidentialEntries_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
        }
     }
 
@@ -1581,7 +1552,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearConfidentialEntries() {
       if (confidentialEntriesBuilder_ == null) {
         confidentialEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         confidentialEntriesBuilder_.clear();
@@ -1658,7 +1629,7 @@ private static final long serialVersionUID = 0L;
         confidentialEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Transaction.ConfidentialEntry, Catalyst.Protocol.Transaction.ConfidentialEntry.Builder, Catalyst.Protocol.Transaction.ConfidentialEntryOrBuilder>(
                 confidentialEntries_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
                 isClean());
         confidentialEntries_ = null;
@@ -1669,9 +1640,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<Catalyst.Protocol.Transaction.CoinbaseEntry> coinbaseEntries_ =
       java.util.Collections.emptyList();
     private void ensureCoinbaseEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
         coinbaseEntries_ = new java.util.ArrayList<Catalyst.Protocol.Transaction.CoinbaseEntry>(coinbaseEntries_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000040;
        }
     }
 
@@ -1865,7 +1836,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearCoinbaseEntries() {
       if (coinbaseEntriesBuilder_ == null) {
         coinbaseEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         coinbaseEntriesBuilder_.clear();
@@ -1970,7 +1941,7 @@ private static final long serialVersionUID = 0L;
         coinbaseEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Transaction.CoinbaseEntry, Catalyst.Protocol.Transaction.CoinbaseEntry.Builder, Catalyst.Protocol.Transaction.CoinbaseEntryOrBuilder>(
                 coinbaseEntries_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000040) == 0x00000040),
                 getParentForChildren(),
                 isClean());
         coinbaseEntries_ = null;
@@ -1985,7 +1956,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes state_root = 8;</code>
-     * @return The stateRoot.
      */
     public com.google.protobuf.ByteString getStateRoot() {
       return stateRoot_;
@@ -1996,8 +1966,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes state_root = 8;</code>
-     * @param value The stateRoot to set.
-     * @return This builder for chaining.
      */
     public Builder setStateRoot(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2014,7 +1982,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes state_root = 8;</code>
-     * @return This builder for chaining.
      */
     public Builder clearStateRoot() {
       
@@ -2030,7 +1997,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 delta_number = 9;</code>
-     * @return The deltaNumber.
      */
     public long getDeltaNumber() {
       return deltaNumber_;
@@ -2041,8 +2007,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 delta_number = 9;</code>
-     * @param value The deltaNumber to set.
-     * @return This builder for chaining.
      */
     public Builder setDeltaNumber(long value) {
       
@@ -2056,7 +2020,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 delta_number = 9;</code>
-     * @return This builder for chaining.
      */
     public Builder clearDeltaNumber() {
       
@@ -2064,16 +2027,52 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+
+    private long gasUsed_ ;
+    /**
+     * <pre>
+     * the gas used in the delta
+     * </pre>
+     *
+     * <code>int64 gas_used = 10;</code>
+     */
+    public long getGasUsed() {
+      return gasUsed_;
+    }
+    /**
+     * <pre>
+     * the gas used in the delta
+     * </pre>
+     *
+     * <code>int64 gas_used = 10;</code>
+     */
+    public Builder setGasUsed(long value) {
+      
+      gasUsed_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * the gas used in the delta
+     * </pre>
+     *
+     * <code>int64 gas_used = 10;</code>
+     */
+    public Builder clearGasUsed() {
+      
+      gasUsed_ = 0L;
+      onChanged();
+      return this;
+    }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -2092,12 +2091,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Delta>
       PARSER = new com.google.protobuf.AbstractParser<Delta>() {
-    @java.lang.Override
     public Delta parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Delta(input, extensionRegistry);
+        return new Delta(input, extensionRegistry);
     }
   };
 
@@ -2110,7 +2108,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Deltas.Delta getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

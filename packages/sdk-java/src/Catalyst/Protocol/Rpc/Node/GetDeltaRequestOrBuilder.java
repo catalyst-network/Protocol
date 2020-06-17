@@ -9,7 +9,6 @@ public interface GetDeltaRequestOrBuilder extends
 
   /**
    * <code>bytes delta_dfs_hash = 1;</code>
-   * @return The deltaDfsHash.
    */
   com.google.protobuf.ByteString getDeltaDfsHash();
 }

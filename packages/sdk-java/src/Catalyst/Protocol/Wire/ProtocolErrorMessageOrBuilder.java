@@ -9,12 +9,10 @@ public interface ProtocolErrorMessageOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-   * @return Whether the signature field is set.
    */
   boolean hasSignature();
   /**
    * <code>.Catalyst.Protocol.Cryptography.Signature signature = 1;</code>
-   * @return The signature.
    */
   Catalyst.Protocol.Cryptography.Signature getSignature();
   /**
@@ -24,12 +22,10 @@ public interface ProtocolErrorMessageOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-   * @return Whether the peerId field is set.
    */
   boolean hasPeerId();
   /**
    * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 2;</code>
-   * @return The peerId.
    */
   Catalyst.Protocol.Peer.PeerId getPeerId();
   /**
@@ -39,13 +35,11 @@ public interface ProtocolErrorMessageOrBuilder extends
 
   /**
    * <code>bytes correlation_id = 3;</code>
-   * @return The correlationId.
    */
   com.google.protobuf.ByteString getCorrelationId();
 
   /**
    * <code>int32 code = 4;</code>
-   * @return The code.
    */
   int getCode();
 }

@@ -9,45 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Cryptography.SigningContext</code>
+ * Protobuf type <code>Catalyst.Protocol.Cryptography.SigningContext</code>
  */
 class SigningContext extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * is the network enum (mainet / devnet etc).
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
      */
-    protected $network_type = 0;
+    private $network_type = 0;
     /**
+     * <pre>
      * contains info on whether the signature is for a protocol message or a transaction.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
+     * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
      */
-    protected $signature_type = 0;
+    private $signature_type = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $network_type
-     *           is the network enum (mainet / devnet etc).
-     *     @type int $signature_type
-     *           contains info on whether the signature is for a protocol message or a transaction.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Cryptography::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * is the network enum (mainet / devnet etc).
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
-     * @return int
+     * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
      */
     public function getNetworkType()
     {
@@ -55,25 +48,24 @@ class SigningContext extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is the network enum (mainet / devnet etc).
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
-     * @param int $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
      */
     public function setNetworkType($var)
     {
         GPBUtil::checkEnum($var, \Catalyst\Protocol\Network\NetworkType::class);
         $this->network_type = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * contains info on whether the signature is for a protocol message or a transaction.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
-     * @return int
+     * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
      */
     public function getSignatureType()
     {
@@ -81,18 +73,16 @@ class SigningContext extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * contains info on whether the signature is for a protocol message or a transaction.
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
-     * @param int $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Cryptography.SignatureType signature_type = 2;</code>
      */
     public function setSignatureType($var)
     {
         GPBUtil::checkEnum($var, \Catalyst\Protocol\Cryptography\SignatureType::class);
         $this->signature_type = $var;
-
-        return $this;
     }
 
 }

@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <protobuf/GPBProtocolBuffers.h>
+ #import <Protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -89,15 +89,18 @@ typedef GPB_ENUM(PeerNeighborsResponse_FieldNumber) {
 #pragma mark - LatestDeltaHashResponse
 
 typedef GPB_ENUM(LatestDeltaHashResponse_FieldNumber) {
-  LatestDeltaHashResponse_FieldNumber_Result = 1,
+  LatestDeltaHashResponse_FieldNumber_IsSync = 1,
+  LatestDeltaHashResponse_FieldNumber_DeltaIndex = 2,
 };
 
 @interface LatestDeltaHashResponse : GPBMessage
 
+@property(nonatomic, readwrite) BOOL isSync;
+
 /** K given del */
-@property(nonatomic, readwrite, strong, null_resettable) DeltaIndex *result;
-/** Test to see if @c result has been set. */
-@property(nonatomic, readwrite) BOOL hasResult;
+@property(nonatomic, readwrite, strong, null_resettable) DeltaIndex *deltaIndex;
+/** Test to see if @c deltaIndex has been set. */
+@property(nonatomic, readwrite) BOOL hasDeltaIndex;
 
 @end
 
@@ -121,15 +124,15 @@ typedef GPB_ENUM(DeltaHistoryRequest_FieldNumber) {
 #pragma mark - DeltaHistoryResponse
 
 typedef GPB_ENUM(DeltaHistoryResponse_FieldNumber) {
-  DeltaHistoryResponse_FieldNumber_ResultArray = 1,
+  DeltaHistoryResponse_FieldNumber_DeltaIndexArray = 1,
 };
 
 @interface DeltaHistoryResponse : GPBMessage
 
 /** K given del */
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<DeltaIndex*> *resultArray;
-/** The number of items in @c resultArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger resultArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<DeltaIndex*> *deltaIndexArray;
+/** The number of items in @c deltaIndexArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger deltaIndexArray_Count;
 
 @end
 
