@@ -1,6 +1,6 @@
 [package]
 name = "catalyst-protocol-sdk-rust"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Fran <fran.sl@atlascity.io>", "Catalyst Network <info@catalystnet.org>"]
 homepage = "https://atlascity.io"
 edition = "2018"
