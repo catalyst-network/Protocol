@@ -55,13 +55,13 @@ message TransactionBroadcast {
 
  message CandidateDeltaBroadcast {
 	bytes hash = 1; // The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
-	string producer = 2;  // Identifier of the producer of the candidate.
+	bytes producer = 2;  // Identifier of the producer of the candidate.
 	bytes previous_delta_dfs_hash = 3; // The DFS address for the content of the delta preceding this candidate.
 }
 
 message FavouriteDeltaBroadcast {
 	CandidateDeltaBroadcast candidate = 1; // The candidate favoured by the voter broadcasting this message.
-	string voter = 2; // The address of the participant submitting its vote to the network.
+	bytes voter = 2; // The address of the participant submitting its vote to the network.
 }
 
  message DeltaDfsHashBroadcast {
