@@ -8,29 +8,32 @@ public interface LatestDeltaHashResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * K given del
-   * </pre>
-   *
-   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
-   * @return Whether the result field is set.
+   * <code>bool isSync = 1;</code>
    */
-  boolean hasResult();
+  boolean getIsSync();
+
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
-   * @return The result.
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 2;</code>
    */
-  Catalyst.Protocol.Deltas.DeltaIndex getResult();
+  boolean hasDeltaIndex();
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 2;</code>
    */
-  Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder();
+  Catalyst.Protocol.Deltas.DeltaIndex getDeltaIndex();
+  /**
+   * <pre>
+   * K given del
+   * </pre>
+   *
+   * <code>.Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 2;</code>
+   */
+  Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getDeltaIndexOrBuilder();
 }

@@ -9,72 +9,67 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * <pre>
  **
  * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
+ * </pre>
  *
- * Generated from protobuf message <code>Catalyst.Protocol.Wire.ProtocolMessage</code>
+ * Protobuf type <code>Catalyst.Protocol.Wire.ProtocolMessage</code>
  */
 class ProtocolMessage extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * is the sender's peerId
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
      */
-    protected $peer_id = null;
+    private $peer_id = null;
     /**
+     * <pre>
      * is a 16 bytes guid used to match responses to their original requests
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes correlation_id = 2;</code>
+     * <code>bytes correlation_id = 2;</code>
      */
-    protected $correlation_id = '';
+    private $correlation_id = '';
     /**
+     * <pre>
      * is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+     * </pre>
      *
-     * Generated from protobuf field <code>string type_url = 3;</code>
+     * <code>string type_url = 3;</code>
      */
-    protected $type_url = '';
+    private $type_url = '';
     /**
+     * <pre>
      * is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes value = 4;</code>
+     * <code>bytes value = 4;</code>
      */
-    protected $value = '';
+    private $value = '';
     /**
+     * <pre>
      * is the ed25519ph context signature
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
      */
-    protected $signature = null;
+    private $signature = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Peer\PeerId $peer_id
-     *           is the sender's peerId
-     *     @type string $correlation_id
-     *           is a 16 bytes guid used to match responses to their original requests
-     *     @type string $type_url
-     *           is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
-     *     @type string $value
-     *           is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
-     *     @type \Catalyst\Protocol\Cryptography\Signature $signature
-     *           is the ed25519ph context signature
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Wire::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * is the sender's peerId
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
-     * @return \Catalyst\Protocol\Peer\PeerId
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
      */
     public function getPeerId()
     {
@@ -82,25 +77,24 @@ class ProtocolMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is the sender's peerId
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
-     * @param \Catalyst\Protocol\Peer\PeerId $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Peer.PeerId peer_id = 1;</code>
      */
-    public function setPeerId($var)
+    public function setPeerId(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Peer\PeerId::class);
         $this->peer_id = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is a 16 bytes guid used to match responses to their original requests
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes correlation_id = 2;</code>
-     * @return string
+     * <code>bytes correlation_id = 2;</code>
      */
     public function getCorrelationId()
     {
@@ -108,25 +102,24 @@ class ProtocolMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is a 16 bytes guid used to match responses to their original requests
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes correlation_id = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes correlation_id = 2;</code>
      */
     public function setCorrelationId($var)
     {
         GPBUtil::checkString($var, False);
         $this->correlation_id = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+     * </pre>
      *
-     * Generated from protobuf field <code>string type_url = 3;</code>
-     * @return string
+     * <code>string type_url = 3;</code>
      */
     public function getTypeUrl()
     {
@@ -134,25 +127,24 @@ class ProtocolMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
+     * </pre>
      *
-     * Generated from protobuf field <code>string type_url = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>string type_url = 3;</code>
      */
     public function setTypeUrl($var)
     {
         GPBUtil::checkString($var, True);
         $this->type_url = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes value = 4;</code>
-     * @return string
+     * <code>bytes value = 4;</code>
      */
     public function getValue()
     {
@@ -160,25 +152,24 @@ class ProtocolMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes value = 4;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes value = 4;</code>
      */
     public function setValue($var)
     {
         GPBUtil::checkString($var, False);
         $this->value = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * is the ed25519ph context signature
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
-     * @return \Catalyst\Protocol\Cryptography\Signature
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
      */
     public function getSignature()
     {
@@ -186,18 +177,16 @@ class ProtocolMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * is the ed25519ph context signature
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
-     * @param \Catalyst\Protocol\Cryptography\Signature $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 5;</code>
      */
-    public function setSignature($var)
+    public function setSignature(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Cryptography\Signature::class);
         $this->signature = $var;
-
-        return $this;
     }
 
 }

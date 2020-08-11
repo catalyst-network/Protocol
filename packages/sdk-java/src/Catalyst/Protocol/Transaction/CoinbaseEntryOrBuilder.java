@@ -13,7 +13,6 @@ public interface CoinbaseEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes receiver_public_key = 1;</code>
-   * @return The receiverPublicKey.
    */
   com.google.protobuf.ByteString getReceiverPublicKey();
 
@@ -23,7 +22,6 @@ public interface CoinbaseEntryOrBuilder extends
    * </pre>
    *
    * <code>bytes amount = 2;</code>
-   * @return The amount.
    */
   com.google.protobuf.ByteString getAmount();
 }

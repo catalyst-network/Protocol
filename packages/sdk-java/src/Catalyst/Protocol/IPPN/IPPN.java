@@ -68,19 +68,28 @@ public final class IPPN {
       "equest\"F\n\025PeerNeighborsResponse\022-\n\005peers" +
       "\030\001 \003(\0132\036.Catalyst.Protocol.Peer.PeerId\"\r" +
       "\n\013PingRequest\"\016\n\014PingResponse\"\030\n\026LatestD" +
-      "eltaHashRequest\"O\n\027LatestDeltaHashRespon" +
-      "se\0224\n\006result\030\001 \001(\0132$.Catalyst.Protocol.D" +
-      "eltas.DeltaIndex\"4\n\023DeltaHistoryRequest\022" +
-      "\r\n\005range\030\001 \001(\r\022\016\n\006height\030\002 \001(\r\"L\n\024DeltaH" +
-      "istoryResponse\0224\n\006result\030\001 \003(\0132$.Catalys" +
-      "t.Protocol.Deltas.DeltaIndexB\002P\001b\006proto3"
+      "eltaHashRequest\"c\n\027LatestDeltaHashRespon" +
+      "se\022\016\n\006isSync\030\001 \001(\010\0228\n\ndeltaIndex\030\002 \001(\0132$" +
+      ".Catalyst.Protocol.Deltas.DeltaIndex\"4\n\023" +
+      "DeltaHistoryRequest\022\r\n\005range\030\001 \001(\r\022\016\n\006he" +
+      "ight\030\002 \001(\r\"P\n\024DeltaHistoryResponse\0228\n\nde",
+      "ltaIndex\030\001 \003(\0132$.Catalyst.Protocol.Delta" +
+      "s.DeltaIndexB\002P\001b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Catalyst.Protocol.Peer.Peer.getDescriptor(),
           Catalyst.Protocol.Deltas.Deltas.getDescriptor(),
-        });
+        }, assigner);
     internal_static_Catalyst_Protocol_IPPN_PeerNeighborsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Catalyst_Protocol_IPPN_PeerNeighborsRequest_fieldAccessorTable = new
@@ -116,7 +125,7 @@ public final class IPPN {
     internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Catalyst_Protocol_IPPN_LatestDeltaHashResponse_descriptor,
-        new java.lang.String[] { "Result", });
+        new java.lang.String[] { "IsSync", "DeltaIndex", });
     internal_static_Catalyst_Protocol_IPPN_DeltaHistoryRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_Catalyst_Protocol_IPPN_DeltaHistoryRequest_fieldAccessorTable = new
@@ -128,7 +137,7 @@ public final class IPPN {
     internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor,
-        new java.lang.String[] { "Result", });
+        new java.lang.String[] { "DeltaIndex", });
     Catalyst.Protocol.Peer.Peer.getDescriptor();
     Catalyst.Protocol.Deltas.Deltas.getDescriptor();
   }

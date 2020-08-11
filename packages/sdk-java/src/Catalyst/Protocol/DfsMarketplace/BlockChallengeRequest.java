@@ -10,7 +10,6 @@ public  final class BlockChallengeRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest)
     BlockChallengeRequestOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use BlockChallengeRequest.newBuilder() to construct.
   private BlockChallengeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -22,27 +21,16 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new BlockChallengeRequest();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private BlockChallengeRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -51,6 +39,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -68,13 +62,6 @@ private static final long serialVersionUID = 0L;
             blockIdxRandomGuid_ = input.readBytes();
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -83,7 +70,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -92,7 +78,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_fieldAccessorTable
@@ -104,7 +89,6 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object challengeSalt_;
   /**
    * <code>string challenge_salt = 1;</code>
-   * @return The challengeSalt.
    */
   public java.lang.String getChallengeSalt() {
     java.lang.Object ref = challengeSalt_;
@@ -120,7 +104,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string challenge_salt = 1;</code>
-   * @return The bytes for challengeSalt.
    */
   public com.google.protobuf.ByteString
       getChallengeSaltBytes() {
@@ -140,7 +123,6 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object mainFileCid_;
   /**
    * <code>string main_file_cid = 2;</code>
-   * @return The mainFileCid.
    */
   public java.lang.String getMainFileCid() {
     java.lang.Object ref = mainFileCid_;
@@ -156,7 +138,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string main_file_cid = 2;</code>
-   * @return The bytes for mainFileCid.
    */
   public com.google.protobuf.ByteString
       getMainFileCidBytes() {
@@ -176,14 +157,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString blockIdxRandomGuid_;
   /**
    * <code>bytes block_idx_random_guid = 3;</code>
-   * @return The blockIdxRandomGuid.
    */
   public com.google.protobuf.ByteString getBlockIdxRandomGuid() {
     return blockIdxRandomGuid_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -193,7 +172,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getChallengeSaltBytes().isEmpty()) {
@@ -205,10 +183,8 @@ private static final long serialVersionUID = 0L;
     if (!blockIdxRandomGuid_.isEmpty()) {
       output.writeBytes(3, blockIdxRandomGuid_);
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -224,11 +200,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(3, blockIdxRandomGuid_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -239,14 +215,14 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest other = (Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest) obj;
 
-    if (!getChallengeSalt()
-        .equals(other.getChallengeSalt())) return false;
-    if (!getMainFileCid()
-        .equals(other.getMainFileCid())) return false;
-    if (!getBlockIdxRandomGuid()
-        .equals(other.getBlockIdxRandomGuid())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && getChallengeSalt()
+        .equals(other.getChallengeSalt());
+    result = result && getMainFileCid()
+        .equals(other.getMainFileCid());
+    result = result && getBlockIdxRandomGuid()
+        .equals(other.getBlockIdxRandomGuid());
+    return result;
   }
 
   @java.lang.Override
@@ -267,17 +243,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -337,7 +302,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -345,7 +309,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -369,7 +332,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_fieldAccessorTable
@@ -392,7 +354,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       challengeSalt_ = "";
@@ -404,18 +365,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.DfsMarketplace.DfsMarketplace.internal_static_Catalyst_Protocol_DfsMarketplace_BlockChallengeRequest_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest getDefaultInstanceForType() {
       return Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest build() {
       Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -424,7 +382,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest buildPartial() {
       Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest result = new Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest(this);
       result.challengeSalt_ = challengeSalt_;
@@ -434,39 +391,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest) {
         return mergeFrom((Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest)other);
@@ -489,17 +439,14 @@ private static final long serialVersionUID = 0L;
       if (other.getBlockIdxRandomGuid() != com.google.protobuf.ByteString.EMPTY) {
         setBlockIdxRandomGuid(other.getBlockIdxRandomGuid());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -521,7 +468,6 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object challengeSalt_ = "";
     /**
      * <code>string challenge_salt = 1;</code>
-     * @return The challengeSalt.
      */
     public java.lang.String getChallengeSalt() {
       java.lang.Object ref = challengeSalt_;
@@ -537,7 +483,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string challenge_salt = 1;</code>
-     * @return The bytes for challengeSalt.
      */
     public com.google.protobuf.ByteString
         getChallengeSaltBytes() {
@@ -554,8 +499,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string challenge_salt = 1;</code>
-     * @param value The challengeSalt to set.
-     * @return This builder for chaining.
      */
     public Builder setChallengeSalt(
         java.lang.String value) {
@@ -569,7 +512,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string challenge_salt = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearChallengeSalt() {
       
@@ -579,8 +521,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string challenge_salt = 1;</code>
-     * @param value The bytes for challengeSalt to set.
-     * @return This builder for chaining.
      */
     public Builder setChallengeSaltBytes(
         com.google.protobuf.ByteString value) {
@@ -597,7 +537,6 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object mainFileCid_ = "";
     /**
      * <code>string main_file_cid = 2;</code>
-     * @return The mainFileCid.
      */
     public java.lang.String getMainFileCid() {
       java.lang.Object ref = mainFileCid_;
@@ -613,7 +552,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string main_file_cid = 2;</code>
-     * @return The bytes for mainFileCid.
      */
     public com.google.protobuf.ByteString
         getMainFileCidBytes() {
@@ -630,8 +568,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string main_file_cid = 2;</code>
-     * @param value The mainFileCid to set.
-     * @return This builder for chaining.
      */
     public Builder setMainFileCid(
         java.lang.String value) {
@@ -645,7 +581,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string main_file_cid = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearMainFileCid() {
       
@@ -655,8 +590,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string main_file_cid = 2;</code>
-     * @param value The bytes for mainFileCid to set.
-     * @return This builder for chaining.
      */
     public Builder setMainFileCidBytes(
         com.google.protobuf.ByteString value) {
@@ -673,15 +606,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString blockIdxRandomGuid_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes block_idx_random_guid = 3;</code>
-     * @return The blockIdxRandomGuid.
      */
     public com.google.protobuf.ByteString getBlockIdxRandomGuid() {
       return blockIdxRandomGuid_;
     }
     /**
      * <code>bytes block_idx_random_guid = 3;</code>
-     * @param value The blockIdxRandomGuid to set.
-     * @return This builder for chaining.
      */
     public Builder setBlockIdxRandomGuid(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -694,7 +624,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes block_idx_random_guid = 3;</code>
-     * @return This builder for chaining.
      */
     public Builder clearBlockIdxRandomGuid() {
       
@@ -702,16 +631,14 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -730,12 +657,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<BlockChallengeRequest>
       PARSER = new com.google.protobuf.AbstractParser<BlockChallengeRequest>() {
-    @java.lang.Override
     public BlockChallengeRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BlockChallengeRequest(input, extensionRegistry);
+        return new BlockChallengeRequest(input, extensionRegistry);
     }
   };
 
@@ -748,7 +674,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.DfsMarketplace.BlockChallengeRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

@@ -3,7 +3,6 @@
 
 import * as jspb from "google-protobuf";
 import * as Cryptography_pb from "./Cryptography_pb";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class PublicEntry extends jspb.Message {
   getReceiverAddress(): Uint8Array | string;
@@ -25,11 +24,6 @@ export class PublicEntry extends jspb.Message {
   getData_asU8(): Uint8Array;
   getData_asB64(): string;
   setData(value: Uint8Array | string): void;
-
-  hasTimestamp(): boolean;
-  clearTimestamp(): void;
-  getTimestamp(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setTimestamp(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   getGasPrice(): Uint8Array | string;
   getGasPrice_asU8(): Uint8Array;
@@ -63,7 +57,6 @@ export namespace PublicEntry {
     senderAddress: Uint8Array | string,
     amount: Uint8Array | string,
     data: Uint8Array | string,
-    timestamp?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     gasPrice: Uint8Array | string,
     gasLimit: number,
     nonce: number,

@@ -92,10 +92,13 @@ export namespace LatestDeltaHashRequest {
 }
 
 export class LatestDeltaHashResponse extends jspb.Message {
-  hasResult(): boolean;
-  clearResult(): void;
-  getResult(): Deltas_pb.DeltaIndex | undefined;
-  setResult(value?: Deltas_pb.DeltaIndex): void;
+  getIssync(): boolean;
+  setIssync(value: boolean): void;
+
+  hasDeltaindex(): boolean;
+  clearDeltaindex(): void;
+  getDeltaindex(): Deltas_pb.DeltaIndex | undefined;
+  setDeltaindex(value?: Deltas_pb.DeltaIndex): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LatestDeltaHashResponse.AsObject;
@@ -109,7 +112,8 @@ export class LatestDeltaHashResponse extends jspb.Message {
 
 export namespace LatestDeltaHashResponse {
   export type AsObject = {
-    result?: Deltas_pb.DeltaIndex.AsObject,
+    issync: boolean,
+    deltaindex?: Deltas_pb.DeltaIndex.AsObject,
   }
 }
 
@@ -138,10 +142,10 @@ export namespace DeltaHistoryRequest {
 }
 
 export class DeltaHistoryResponse extends jspb.Message {
-  clearResultList(): void;
-  getResultList(): Array<Deltas_pb.DeltaIndex>;
-  setResultList(value: Array<Deltas_pb.DeltaIndex>): void;
-  addResult(value?: Deltas_pb.DeltaIndex, index?: number): Deltas_pb.DeltaIndex;
+  clearDeltaindexList(): void;
+  getDeltaindexList(): Array<Deltas_pb.DeltaIndex>;
+  setDeltaindexList(value: Array<Deltas_pb.DeltaIndex>): void;
+  addDeltaindex(value?: Deltas_pb.DeltaIndex, index?: number): Deltas_pb.DeltaIndex;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeltaHistoryResponse.AsObject;
@@ -155,7 +159,7 @@ export class DeltaHistoryResponse extends jspb.Message {
 
 export namespace DeltaHistoryResponse {
   export type AsObject = {
-    resultList: Array<Deltas_pb.DeltaIndex.AsObject>,
+    deltaindexList: Array<Deltas_pb.DeltaIndex.AsObject>,
   }
 }
 

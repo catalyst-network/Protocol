@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <protobuf/GPBProtocolBuffers.h>
+ #import <Protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -27,7 +27,6 @@
 
 CF_EXTERN_C_BEGIN
 
-@class GPBTimestamp;
 @class RangeProof;
 @class Signature;
 
@@ -82,11 +81,10 @@ typedef GPB_ENUM(PublicEntry_FieldNumber) {
   PublicEntry_FieldNumber_SenderAddress = 2,
   PublicEntry_FieldNumber_Amount = 3,
   PublicEntry_FieldNumber_Data_p = 4,
-  PublicEntry_FieldNumber_Timestamp = 5,
-  PublicEntry_FieldNumber_GasPrice = 6,
-  PublicEntry_FieldNumber_GasLimit = 7,
-  PublicEntry_FieldNumber_Nonce = 9,
-  PublicEntry_FieldNumber_Signature = 10,
+  PublicEntry_FieldNumber_GasPrice = 5,
+  PublicEntry_FieldNumber_GasLimit = 6,
+  PublicEntry_FieldNumber_Nonce = 7,
+  PublicEntry_FieldNumber_Signature = 8,
 };
 
 @interface PublicEntry : GPBMessage
@@ -102,10 +100,6 @@ typedef GPB_ENUM(PublicEntry_FieldNumber) {
 
 /** Smart contract data. */
 @property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) GPBTimestamp *timestamp;
-/** Test to see if @c timestamp has been set. */
-@property(nonatomic, readwrite) BOOL hasTimestamp;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSData *gasPrice;
 

@@ -75,6 +75,9 @@ export class Delta extends jspb.Message {
   getDeltaNumber(): number;
   setDeltaNumber(value: number): void;
 
+  getGasUsed(): number;
+  setGasUsed(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Delta.AsObject;
   static toObject(includeInstance: boolean, msg: Delta): Delta.AsObject;
@@ -96,6 +99,7 @@ export namespace Delta {
     coinbaseEntriesList: Array<Transaction_pb.CoinbaseEntry.AsObject>,
     stateRoot: Uint8Array | string,
     deltaNumber: number,
+    gasUsed: number,
   }
 }
 

@@ -9,32 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.Rpc.Node.TransferFileBytesResponse</code>
  */
 class TransferFileBytesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes response_code = 1;</code>
+     * <code>bytes response_code = 1;</code>
      */
-    protected $response_code = '';
+    private $response_code = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $response_code
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Rpc::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * Generated from protobuf field <code>bytes response_code = 1;</code>
-     * @return string
+     * <code>bytes response_code = 1;</code>
      */
     public function getResponseCode()
     {
@@ -42,16 +32,12 @@ class TransferFileBytesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes response_code = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes response_code = 1;</code>
      */
     public function setResponseCode($var)
     {
         GPBUtil::checkString($var, False);
         $this->response_code = $var;
-
-        return $this;
     }
 
 }

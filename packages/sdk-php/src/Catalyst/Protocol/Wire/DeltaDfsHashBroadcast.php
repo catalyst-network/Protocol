@@ -9,45 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Wire.DeltaDfsHashBroadcast</code>
+ * Protobuf type <code>Catalyst.Protocol.Wire.DeltaDfsHashBroadcast</code>
  */
 class DeltaDfsHashBroadcast extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * The DFS address at which the full content of the delta can be retrieved.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes delta_dfs_hash = 1;</code>
+     * <code>bytes delta_dfs_hash = 1;</code>
      */
-    protected $delta_dfs_hash = '';
+    private $delta_dfs_hash = '';
     /**
+     * <pre>
      * The DFS address for the content of the delta preceding this candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 2;</code>
+     * <code>bytes previous_delta_dfs_hash = 2;</code>
      */
-    protected $previous_delta_dfs_hash = '';
+    private $previous_delta_dfs_hash = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $delta_dfs_hash
-     *           The DFS address at which the full content of the delta can be retrieved.
-     *     @type string $previous_delta_dfs_hash
-     *           The DFS address for the content of the delta preceding this candidate.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Wire::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * The DFS address at which the full content of the delta can be retrieved.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes delta_dfs_hash = 1;</code>
-     * @return string
+     * <code>bytes delta_dfs_hash = 1;</code>
      */
     public function getDeltaDfsHash()
     {
@@ -55,25 +48,24 @@ class DeltaDfsHashBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The DFS address at which the full content of the delta can be retrieved.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes delta_dfs_hash = 1;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes delta_dfs_hash = 1;</code>
      */
     public function setDeltaDfsHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->delta_dfs_hash = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * The DFS address for the content of the delta preceding this candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 2;</code>
-     * @return string
+     * <code>bytes previous_delta_dfs_hash = 2;</code>
      */
     public function getPreviousDeltaDfsHash()
     {
@@ -81,18 +73,16 @@ class DeltaDfsHashBroadcast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The DFS address for the content of the delta preceding this candidate.
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes previous_delta_dfs_hash = 2;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes previous_delta_dfs_hash = 2;</code>
      */
     public function setPreviousDeltaDfsHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->previous_delta_dfs_hash = $var;
-
-        return $this;
     }
 
 }

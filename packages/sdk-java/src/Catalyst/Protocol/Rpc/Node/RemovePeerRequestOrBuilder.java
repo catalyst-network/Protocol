@@ -9,13 +9,11 @@ public interface RemovePeerRequestOrBuilder extends
 
   /**
    * <code>bytes peer_ip = 1;</code>
-   * @return The peerIp.
    */
   com.google.protobuf.ByteString getPeerIp();
 
   /**
    * <code>bytes public_key = 2;</code>
-   * @return The publicKey.
    */
   com.google.protobuf.ByteString getPublicKey();
 }

@@ -9,58 +9,45 @@ public interface SignatureBatchOrBuilder extends
 
   /**
    * <code>repeated bytes signatures = 1;</code>
-   * @return A list containing the signatures.
    */
   java.util.List<com.google.protobuf.ByteString> getSignaturesList();
   /**
    * <code>repeated bytes signatures = 1;</code>
-   * @return The count of signatures.
    */
   int getSignaturesCount();
   /**
    * <code>repeated bytes signatures = 1;</code>
-   * @param index The index of the element to return.
-   * @return The signatures at the given index.
    */
   com.google.protobuf.ByteString getSignatures(int index);
 
   /**
    * <code>repeated bytes public_keys = 2;</code>
-   * @return A list containing the publicKeys.
    */
   java.util.List<com.google.protobuf.ByteString> getPublicKeysList();
   /**
    * <code>repeated bytes public_keys = 2;</code>
-   * @return The count of publicKeys.
    */
   int getPublicKeysCount();
   /**
    * <code>repeated bytes public_keys = 2;</code>
-   * @param index The index of the element to return.
-   * @return The publicKeys at the given index.
    */
   com.google.protobuf.ByteString getPublicKeys(int index);
 
   /**
    * <code>repeated bytes messages = 3;</code>
-   * @return A list containing the messages.
    */
   java.util.List<com.google.protobuf.ByteString> getMessagesList();
   /**
    * <code>repeated bytes messages = 3;</code>
-   * @return The count of messages.
    */
   int getMessagesCount();
   /**
    * <code>repeated bytes messages = 3;</code>
-   * @param index The index of the element to return.
-   * @return The messages at the given index.
    */
   com.google.protobuf.ByteString getMessages(int index);
 
   /**
    * <code>bytes context = 4;</code>
-   * @return The context.
    */
   com.google.protobuf.ByteString getContext();
 }

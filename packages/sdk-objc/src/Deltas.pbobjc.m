@@ -8,13 +8,19 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <protobuf/GPBProtocolBuffers_RuntimeSupport.h>
+ #import <Protobuf/GPBProtocolBuffers_RuntimeSupport.h>
 #else
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
-#import "Deltas.pbobjc.h"
-#import "Transaction.pbobjc.h"
+#if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
+ #import <Protobuf/Timestamp.pbobjc.h>
+#else
+ #import "google/protobuf/Timestamp.pbobjc.h"
+#endif
+
+ #import "Deltas.pbobjc.h"
+ #import "Transaction.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -89,9 +95,7 @@ typedef struct DeltaIndex__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(DeltaIndex__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;
@@ -112,6 +116,7 @@ typedef struct DeltaIndex__storage_ {
 @dynamic coinbaseEntriesArray, coinbaseEntriesArray_Count;
 @dynamic stateRoot;
 @dynamic deltaNumber;
+@dynamic gasUsed;
 
 typedef struct Delta__storage_ {
   uint32_t _has_storage_[1];
@@ -124,6 +129,7 @@ typedef struct Delta__storage_ {
   NSMutableArray *coinbaseEntriesArray;
   NSData *stateRoot;
   int64_t deltaNumber;
+  int64_t gasUsed;
 } Delta__storage_;
 
 // This method is threadsafe because it is initially called
@@ -213,6 +219,15 @@ typedef struct Delta__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
+      {
+        .name = "gasUsed",
+        .dataTypeSpecific.className = NULL,
+        .number = Delta_FieldNumber_GasUsed,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(Delta__storage_, gasUsed),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[Delta class]
@@ -222,9 +237,7 @@ typedef struct Delta__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Delta__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-    #if defined(DEBUG) && DEBUG
-      NSAssert(descriptor == nil, @"Startup recursed!");
-    #endif  // DEBUG
+    NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
   return descriptor;
