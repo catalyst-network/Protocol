@@ -9,13 +9,11 @@ public interface DeltaIndexOrBuilder extends
 
   /**
    * <code>uint32 height = 1;</code>
-   * @return The height.
    */
   int getHeight();
 
   /**
    * <code>bytes cid = 2;</code>
-   * @return The cid.
    */
   com.google.protobuf.ByteString getCid();
 }

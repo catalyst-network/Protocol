@@ -9,56 +9,68 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.IPPN.LatestDeltaHashResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.IPPN.LatestDeltaHashResponse</code>
  */
 class LatestDeltaHashResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * K given del
-     *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>bool isSync = 1;</code>
      */
-    protected $result = null;
-
+    private $isSync = false;
     /**
-     * Constructor.
+     * <pre>
+     * K given del
+     * </pre>
      *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Deltas\DeltaIndex $result
-     *           K given del
-     * }
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 2;</code>
      */
-    public function __construct($data = NULL) {
+    private $deltaIndex = null;
+
+    public function __construct() {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
-     * K given del
-     *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
-     * @return \Catalyst\Protocol\Deltas\DeltaIndex
+     * <code>bool isSync = 1;</code>
      */
-    public function getResult()
+    public function getIsSync()
     {
-        return $this->result;
+        return $this->isSync;
     }
 
     /**
-     * K given del
-     *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
-     * @param \Catalyst\Protocol\Deltas\DeltaIndex $var
-     * @return $this
+     * <code>bool isSync = 1;</code>
      */
-    public function setResult($var)
+    public function setIsSync($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->isSync = $var;
+    }
+
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 2;</code>
+     */
+    public function getDeltaIndex()
+    {
+        return $this->deltaIndex;
+    }
+
+    /**
+     * <pre>
+     * K given del
+     * </pre>
+     *
+     * <code>.Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 2;</code>
+     */
+    public function setDeltaIndex(&$var)
     {
         GPBUtil::checkMessage($var, \Catalyst\Protocol\Deltas\DeltaIndex::class);
-        $this->result = $var;
-
-        return $this;
+        $this->deltaIndex = $var;
     }
 
 }

@@ -9,56 +9,47 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.IPPN.DeltaHistoryResponse</code>
+ * Protobuf type <code>Catalyst.Protocol.IPPN.DeltaHistoryResponse</code>
  */
 class DeltaHistoryResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * K given del
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    private $result;
+    private $deltaIndex;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Catalyst\Protocol\Deltas\DeltaIndex[]|\Google\Protobuf\Internal\RepeatedField $result
-     *           K given del
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * K given del
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public function getResult()
+    public function getDeltaIndex()
     {
-        return $this->result;
+        return $this->deltaIndex;
     }
 
     /**
+     * <pre>
      * K given del
+     * </pre>
      *
-     * Generated from protobuf field <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
-     * @param \Catalyst\Protocol\Deltas\DeltaIndex[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public function setResult($var)
+    public function setDeltaIndex(&$var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Deltas\DeltaIndex::class);
-        $this->result = $arr;
-
-        return $this;
+        GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Catalyst\Protocol\Deltas\DeltaIndex::class);
+        $this->deltaIndex = $var;
     }
 
 }

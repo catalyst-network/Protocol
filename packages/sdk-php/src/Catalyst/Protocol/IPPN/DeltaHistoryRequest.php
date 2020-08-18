@@ -9,45 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.IPPN.DeltaHistoryRequest</code>
+ * Protobuf type <code>Catalyst.Protocol.IPPN.DeltaHistoryRequest</code>
  */
 class DeltaHistoryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * The number of deltas CIDs a node requests.
+     * </pre>
      *
-     * Generated from protobuf field <code>uint32 range = 1;</code>
+     * <code>uint32 range = 1;</code>
      */
-    protected $range = 0;
+    private $range = 0;
     /**
+     * <pre>
      * The given height the node wants the range from.
+     * </pre>
      *
-     * Generated from protobuf field <code>uint32 height = 2;</code>
+     * <code>uint32 height = 2;</code>
      */
-    protected $height = 0;
+    private $height = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $range
-     *           The number of deltas CIDs a node requests.
-     *     @type int $height
-     *           The given height the node wants the range from.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\IPPN::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * The number of deltas CIDs a node requests.
+     * </pre>
      *
-     * Generated from protobuf field <code>uint32 range = 1;</code>
-     * @return int
+     * <code>uint32 range = 1;</code>
      */
     public function getRange()
     {
@@ -55,25 +48,24 @@ class DeltaHistoryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The number of deltas CIDs a node requests.
+     * </pre>
      *
-     * Generated from protobuf field <code>uint32 range = 1;</code>
-     * @param int $var
-     * @return $this
+     * <code>uint32 range = 1;</code>
      */
     public function setRange($var)
     {
         GPBUtil::checkUint32($var);
         $this->range = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * The given height the node wants the range from.
+     * </pre>
      *
-     * Generated from protobuf field <code>uint32 height = 2;</code>
-     * @return int
+     * <code>uint32 height = 2;</code>
      */
     public function getHeight()
     {
@@ -81,18 +73,16 @@ class DeltaHistoryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * The given height the node wants the range from.
+     * </pre>
      *
-     * Generated from protobuf field <code>uint32 height = 2;</code>
-     * @param int $var
-     * @return $this
+     * <code>uint32 height = 2;</code>
      */
     public function setHeight($var)
     {
         GPBUtil::checkUint32($var);
         $this->height = $var;
-
-        return $this;
     }
 
 }

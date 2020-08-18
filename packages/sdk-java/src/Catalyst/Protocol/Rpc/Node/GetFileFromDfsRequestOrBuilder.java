@@ -9,12 +9,10 @@ public interface GetFileFromDfsRequestOrBuilder extends
 
   /**
    * <code>string dfs_hash = 1;</code>
-   * @return The dfsHash.
    */
   java.lang.String getDfsHash();
   /**
    * <code>string dfs_hash = 1;</code>
-   * @return The bytes for dfsHash.
    */
   com.google.protobuf.ByteString
       getDfsHashBytes();

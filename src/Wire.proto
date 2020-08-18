@@ -33,7 +33,7 @@ package Catalyst.Protocol.Wire;
 */
 message ProtocolErrorMessage {
 	Cryptography.Signature signature = 1;
-    Peer.PeerId peer_id = 2;
+    string address = 2;
     bytes correlation_id = 3;
     int32 code = 4;
 }
@@ -42,7 +42,7 @@ message ProtocolErrorMessage {
 * A wrapper around the service message, the contents of service message should be signed by the sender to avoid tampering mid-transit.
 */
 message ProtocolMessage {
-    Peer.PeerId peer_id = 1; // is the sender's peerId
+    string address = 1; // is the sender's address
     bytes correlation_id = 2; // is a 16 bytes guid used to match responses to their original requests
     string type_url = 3; // is the shortened protocol name of the message type being encoded in the value field (cf Any from protobuf WellKnownTypes)
     bytes value = 4; // is the actual value of the message being wrapped (cf Any from protobuf WellKnownTypes)
@@ -55,13 +55,13 @@ message TransactionBroadcast {
 
  message CandidateDeltaBroadcast {
 	bytes hash = 1; // The hash computed for the current delta produced by ProducerId. This is meant to be used when voting for most popular hashes.
-	Peer.PeerId producer_id = 2;  // Identifier of the producer of the candidate.
+	bytes producer = 2;  // Identifier of the producer of the candidate.
 	bytes previous_delta_dfs_hash = 3; // The DFS address for the content of the delta preceding this candidate.
 }
 
 message FavouriteDeltaBroadcast {
 	CandidateDeltaBroadcast candidate = 1; // The candidate favoured by the voter broadcasting this message.
-	Peer.PeerId voter_id = 2; // The PeerId of the participant submitting its vote to the network.
+	bytes voter = 2; // The address of the participant submitting its vote to the network.
 }
 
  message DeltaDfsHashBroadcast {

@@ -9,24 +9,20 @@ public interface BlockChallengeResponseOrBuilder extends
 
   /**
    * <code>string answer = 1;</code>
-   * @return The answer.
    */
   java.lang.String getAnswer();
   /**
    * <code>string answer = 1;</code>
-   * @return The bytes for answer.
    */
   com.google.protobuf.ByteString
       getAnswerBytes();
 
   /**
    * <code>string block_challenge_request_hash = 2;</code>
-   * @return The blockChallengeRequestHash.
    */
   java.lang.String getBlockChallengeRequestHash();
   /**
    * <code>string block_challenge_request_hash = 2;</code>
-   * @return The bytes for blockChallengeRequestHash.
    */
   com.google.protobuf.ByteString
       getBlockChallengeRequestHashBytes();

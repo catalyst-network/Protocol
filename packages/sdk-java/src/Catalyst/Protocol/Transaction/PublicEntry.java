@@ -10,7 +10,6 @@ public  final class PublicEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Transaction.PublicEntry)
     PublicEntryOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use PublicEntry.newBuilder() to construct.
   private PublicEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -21,30 +20,21 @@ private static final long serialVersionUID = 0L;
     amount_ = com.google.protobuf.ByteString.EMPTY;
     data_ = com.google.protobuf.ByteString.EMPTY;
     gasPrice_ = com.google.protobuf.ByteString.EMPTY;
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new PublicEntry();
+    gasLimit_ = 0L;
+    nonce_ = 0L;
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private PublicEntry(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -53,6 +43,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
 
             receiverAddress_ = input.readBytes();
@@ -74,34 +70,21 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (timestamp_ != null) {
-              subBuilder = timestamp_.toBuilder();
-            }
-            timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timestamp_);
-              timestamp_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 50: {
 
             gasPrice_ = input.readBytes();
             break;
           }
-          case 56: {
+          case 48: {
 
             gasLimit_ = input.readUInt64();
             break;
           }
-          case 72: {
+          case 56: {
 
             nonce_ = input.readUInt64();
             break;
           }
-          case 82: {
+          case 66: {
             Catalyst.Protocol.Cryptography.Signature.Builder subBuilder = null;
             if (signature_ != null) {
               subBuilder = signature_.toBuilder();
@@ -114,13 +97,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -129,7 +105,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -138,7 +113,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_fieldAccessorTable
@@ -154,7 +128,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes receiver_address = 1;</code>
-   * @return The receiverAddress.
    */
   public com.google.protobuf.ByteString getReceiverAddress() {
     return receiverAddress_;
@@ -168,7 +141,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes sender_address = 2;</code>
-   * @return The senderAddress.
    */
   public com.google.protobuf.ByteString getSenderAddress() {
     return senderAddress_;
@@ -182,7 +154,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes amount = 3;</code>
-   * @return The amount.
    */
   public com.google.protobuf.ByteString getAmount() {
     return amount_;
@@ -196,78 +167,50 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes data = 4;</code>
-   * @return The data.
    */
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
 
-  public static final int TIMESTAMP_FIELD_NUMBER = 5;
-  private com.google.protobuf.Timestamp timestamp_;
-  /**
-   * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-   * @return Whether the timestamp field is set.
-   */
-  public boolean hasTimestamp() {
-    return timestamp_ != null;
-  }
-  /**
-   * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-   * @return The timestamp.
-   */
-  public com.google.protobuf.Timestamp getTimestamp() {
-    return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
-  }
-  /**
-   * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-   */
-  public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-    return getTimestamp();
-  }
-
-  public static final int GAS_PRICE_FIELD_NUMBER = 6;
+  public static final int GAS_PRICE_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString gasPrice_;
   /**
-   * <code>bytes gas_price = 6;</code>
-   * @return The gasPrice.
+   * <code>bytes gas_price = 5;</code>
    */
   public com.google.protobuf.ByteString getGasPrice() {
     return gasPrice_;
   }
 
-  public static final int GAS_LIMIT_FIELD_NUMBER = 7;
+  public static final int GAS_LIMIT_FIELD_NUMBER = 6;
   private long gasLimit_;
   /**
-   * <code>uint64 gas_limit = 7;</code>
-   * @return The gasLimit.
+   * <code>uint64 gas_limit = 6;</code>
    */
   public long getGasLimit() {
     return gasLimit_;
   }
 
-  public static final int NONCE_FIELD_NUMBER = 9;
+  public static final int NONCE_FIELD_NUMBER = 7;
   private long nonce_;
   /**
    * <pre>
    * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
    * </pre>
    *
-   * <code>uint64 nonce = 9;</code>
-   * @return The nonce.
+   * <code>uint64 nonce = 7;</code>
    */
   public long getNonce() {
     return nonce_;
   }
 
-  public static final int SIGNATURE_FIELD_NUMBER = 10;
+  public static final int SIGNATURE_FIELD_NUMBER = 8;
   private Catalyst.Protocol.Cryptography.Signature signature_;
   /**
    * <pre>
    * is the ed25519ph context signature
    * </pre>
    *
-   * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
-   * @return Whether the signature field is set.
+   * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
    */
   public boolean hasSignature() {
     return signature_ != null;
@@ -277,8 +220,7 @@ private static final long serialVersionUID = 0L;
    * is the ed25519ph context signature
    * </pre>
    *
-   * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
-   * @return The signature.
+   * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
    */
   public Catalyst.Protocol.Cryptography.Signature getSignature() {
     return signature_ == null ? Catalyst.Protocol.Cryptography.Signature.getDefaultInstance() : signature_;
@@ -288,14 +230,13 @@ private static final long serialVersionUID = 0L;
    * is the ed25519ph context signature
    * </pre>
    *
-   * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+   * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
    */
   public Catalyst.Protocol.Cryptography.SignatureOrBuilder getSignatureOrBuilder() {
     return getSignature();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -305,7 +246,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!receiverAddress_.isEmpty()) {
@@ -320,25 +260,20 @@ private static final long serialVersionUID = 0L;
     if (!data_.isEmpty()) {
       output.writeBytes(4, data_);
     }
-    if (timestamp_ != null) {
-      output.writeMessage(5, getTimestamp());
-    }
     if (!gasPrice_.isEmpty()) {
-      output.writeBytes(6, gasPrice_);
+      output.writeBytes(5, gasPrice_);
     }
     if (gasLimit_ != 0L) {
-      output.writeUInt64(7, gasLimit_);
+      output.writeUInt64(6, gasLimit_);
     }
     if (nonce_ != 0L) {
-      output.writeUInt64(9, nonce_);
+      output.writeUInt64(7, nonce_);
     }
     if (signature_ != null) {
-      output.writeMessage(10, getSignature());
+      output.writeMessage(8, getSignature());
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -360,31 +295,27 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(4, data_);
     }
-    if (timestamp_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getTimestamp());
-    }
     if (!gasPrice_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(6, gasPrice_);
+        .computeBytesSize(5, gasPrice_);
     }
     if (gasLimit_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(7, gasLimit_);
+        .computeUInt64Size(6, gasLimit_);
     }
     if (nonce_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(9, nonce_);
+        .computeUInt64Size(7, nonce_);
     }
     if (signature_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getSignature());
+        .computeMessageSize(8, getSignature());
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -395,32 +326,27 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Transaction.PublicEntry other = (Catalyst.Protocol.Transaction.PublicEntry) obj;
 
-    if (!getReceiverAddress()
-        .equals(other.getReceiverAddress())) return false;
-    if (!getSenderAddress()
-        .equals(other.getSenderAddress())) return false;
-    if (!getAmount()
-        .equals(other.getAmount())) return false;
-    if (!getData()
-        .equals(other.getData())) return false;
-    if (hasTimestamp() != other.hasTimestamp()) return false;
-    if (hasTimestamp()) {
-      if (!getTimestamp()
-          .equals(other.getTimestamp())) return false;
-    }
-    if (!getGasPrice()
-        .equals(other.getGasPrice())) return false;
-    if (getGasLimit()
-        != other.getGasLimit()) return false;
-    if (getNonce()
-        != other.getNonce()) return false;
-    if (hasSignature() != other.hasSignature()) return false;
+    boolean result = true;
+    result = result && getReceiverAddress()
+        .equals(other.getReceiverAddress());
+    result = result && getSenderAddress()
+        .equals(other.getSenderAddress());
+    result = result && getAmount()
+        .equals(other.getAmount());
+    result = result && getData()
+        .equals(other.getData());
+    result = result && getGasPrice()
+        .equals(other.getGasPrice());
+    result = result && (getGasLimit()
+        == other.getGasLimit());
+    result = result && (getNonce()
+        == other.getNonce());
+    result = result && (hasSignature() == other.hasSignature());
     if (hasSignature()) {
-      if (!getSignature()
-          .equals(other.getSignature())) return false;
+      result = result && getSignature()
+          .equals(other.getSignature());
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    return result;
   }
 
   @java.lang.Override
@@ -438,10 +364,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAmount().hashCode();
     hash = (37 * hash) + DATA_FIELD_NUMBER;
     hash = (53 * hash) + getData().hashCode();
-    if (hasTimestamp()) {
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getTimestamp().hashCode();
-    }
     hash = (37 * hash) + GAS_PRICE_FIELD_NUMBER;
     hash = (53 * hash) + getGasPrice().hashCode();
     hash = (37 * hash) + GAS_LIMIT_FIELD_NUMBER;
@@ -459,17 +381,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Transaction.PublicEntry parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Transaction.PublicEntry parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Transaction.PublicEntry parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -529,7 +440,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -537,7 +447,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Transaction.PublicEntry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -561,7 +470,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_fieldAccessorTable
@@ -584,7 +492,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       receiverAddress_ = com.google.protobuf.ByteString.EMPTY;
@@ -595,12 +502,6 @@ private static final long serialVersionUID = 0L;
 
       data_ = com.google.protobuf.ByteString.EMPTY;
 
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-      } else {
-        timestamp_ = null;
-        timestampBuilder_ = null;
-      }
       gasPrice_ = com.google.protobuf.ByteString.EMPTY;
 
       gasLimit_ = 0L;
@@ -616,18 +517,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Transaction.Transaction.internal_static_Catalyst_Protocol_Transaction_PublicEntry_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Transaction.PublicEntry getDefaultInstanceForType() {
       return Catalyst.Protocol.Transaction.PublicEntry.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Transaction.PublicEntry build() {
       Catalyst.Protocol.Transaction.PublicEntry result = buildPartial();
       if (!result.isInitialized()) {
@@ -636,18 +534,12 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Transaction.PublicEntry buildPartial() {
       Catalyst.Protocol.Transaction.PublicEntry result = new Catalyst.Protocol.Transaction.PublicEntry(this);
       result.receiverAddress_ = receiverAddress_;
       result.senderAddress_ = senderAddress_;
       result.amount_ = amount_;
       result.data_ = data_;
-      if (timestampBuilder_ == null) {
-        result.timestamp_ = timestamp_;
-      } else {
-        result.timestamp_ = timestampBuilder_.build();
-      }
       result.gasPrice_ = gasPrice_;
       result.gasLimit_ = gasLimit_;
       result.nonce_ = nonce_;
@@ -660,39 +552,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Transaction.PublicEntry) {
         return mergeFrom((Catalyst.Protocol.Transaction.PublicEntry)other);
@@ -716,9 +601,6 @@ private static final long serialVersionUID = 0L;
       if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
         setData(other.getData());
       }
-      if (other.hasTimestamp()) {
-        mergeTimestamp(other.getTimestamp());
-      }
       if (other.getGasPrice() != com.google.protobuf.ByteString.EMPTY) {
         setGasPrice(other.getGasPrice());
       }
@@ -731,17 +613,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasSignature()) {
         mergeSignature(other.getSignature());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -767,7 +646,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes receiver_address = 1;</code>
-     * @return The receiverAddress.
      */
     public com.google.protobuf.ByteString getReceiverAddress() {
       return receiverAddress_;
@@ -778,8 +656,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes receiver_address = 1;</code>
-     * @param value The receiverAddress to set.
-     * @return This builder for chaining.
      */
     public Builder setReceiverAddress(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -796,7 +672,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes receiver_address = 1;</code>
-     * @return This builder for chaining.
      */
     public Builder clearReceiverAddress() {
       
@@ -812,7 +687,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes sender_address = 2;</code>
-     * @return The senderAddress.
      */
     public com.google.protobuf.ByteString getSenderAddress() {
       return senderAddress_;
@@ -823,8 +697,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes sender_address = 2;</code>
-     * @param value The senderAddress to set.
-     * @return This builder for chaining.
      */
     public Builder setSenderAddress(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -841,7 +713,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes sender_address = 2;</code>
-     * @return This builder for chaining.
      */
     public Builder clearSenderAddress() {
       
@@ -857,7 +728,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes amount = 3;</code>
-     * @return The amount.
      */
     public com.google.protobuf.ByteString getAmount() {
       return amount_;
@@ -868,8 +738,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes amount = 3;</code>
-     * @param value The amount to set.
-     * @return This builder for chaining.
      */
     public Builder setAmount(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -886,7 +754,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes amount = 3;</code>
-     * @return This builder for chaining.
      */
     public Builder clearAmount() {
       
@@ -902,7 +769,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 4;</code>
-     * @return The data.
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -913,8 +779,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 4;</code>
-     * @param value The data to set.
-     * @return This builder for chaining.
      */
     public Builder setData(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -931,7 +795,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes data = 4;</code>
-     * @return This builder for chaining.
      */
     public Builder clearData() {
       
@@ -940,137 +803,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Timestamp timestamp_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     * @return Whether the timestamp field is set.
-     */
-    public boolean hasTimestamp() {
-      return timestampBuilder_ != null || timestamp_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     * @return The timestamp.
-     */
-    public com.google.protobuf.Timestamp getTimestamp() {
-      if (timestampBuilder_ == null) {
-        return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
-      } else {
-        return timestampBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    public Builder setTimestamp(com.google.protobuf.Timestamp value) {
-      if (timestampBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        timestamp_ = value;
-        onChanged();
-      } else {
-        timestampBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    public Builder setTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (timestampBuilder_ == null) {
-        timestamp_ = builderForValue.build();
-        onChanged();
-      } else {
-        timestampBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
-      if (timestampBuilder_ == null) {
-        if (timestamp_ != null) {
-          timestamp_ =
-            com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
-        } else {
-          timestamp_ = value;
-        }
-        onChanged();
-      } else {
-        timestampBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    public Builder clearTimestamp() {
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-        onChanged();
-      } else {
-        timestamp_ = null;
-        timestampBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-      
-      onChanged();
-      return getTimestampFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-      if (timestampBuilder_ != null) {
-        return timestampBuilder_.getMessageOrBuilder();
-      } else {
-        return timestamp_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.Timestamp timestamp = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getTimestampFieldBuilder() {
-      if (timestampBuilder_ == null) {
-        timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getTimestamp(),
-                getParentForChildren(),
-                isClean());
-        timestamp_ = null;
-      }
-      return timestampBuilder_;
-    }
-
     private com.google.protobuf.ByteString gasPrice_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes gas_price = 6;</code>
-     * @return The gasPrice.
+     * <code>bytes gas_price = 5;</code>
      */
     public com.google.protobuf.ByteString getGasPrice() {
       return gasPrice_;
     }
     /**
-     * <code>bytes gas_price = 6;</code>
-     * @param value The gasPrice to set.
-     * @return This builder for chaining.
+     * <code>bytes gas_price = 5;</code>
      */
     public Builder setGasPrice(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1082,8 +823,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes gas_price = 6;</code>
-     * @return This builder for chaining.
+     * <code>bytes gas_price = 5;</code>
      */
     public Builder clearGasPrice() {
       
@@ -1094,16 +834,13 @@ private static final long serialVersionUID = 0L;
 
     private long gasLimit_ ;
     /**
-     * <code>uint64 gas_limit = 7;</code>
-     * @return The gasLimit.
+     * <code>uint64 gas_limit = 6;</code>
      */
     public long getGasLimit() {
       return gasLimit_;
     }
     /**
-     * <code>uint64 gas_limit = 7;</code>
-     * @param value The gasLimit to set.
-     * @return This builder for chaining.
+     * <code>uint64 gas_limit = 6;</code>
      */
     public Builder setGasLimit(long value) {
       
@@ -1112,8 +849,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint64 gas_limit = 7;</code>
-     * @return This builder for chaining.
+     * <code>uint64 gas_limit = 6;</code>
      */
     public Builder clearGasLimit() {
       
@@ -1128,8 +864,7 @@ private static final long serialVersionUID = 0L;
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
      * </pre>
      *
-     * <code>uint64 nonce = 9;</code>
-     * @return The nonce.
+     * <code>uint64 nonce = 7;</code>
      */
     public long getNonce() {
       return nonce_;
@@ -1139,9 +874,7 @@ private static final long serialVersionUID = 0L;
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
      * </pre>
      *
-     * <code>uint64 nonce = 9;</code>
-     * @param value The nonce to set.
-     * @return This builder for chaining.
+     * <code>uint64 nonce = 7;</code>
      */
     public Builder setNonce(long value) {
       
@@ -1154,8 +887,7 @@ private static final long serialVersionUID = 0L;
      * A nonce, similar to Ethereum, incremented on each transaction on the account issuing the transaction
      * </pre>
      *
-     * <code>uint64 nonce = 9;</code>
-     * @return This builder for chaining.
+     * <code>uint64 nonce = 7;</code>
      */
     public Builder clearNonce() {
       
@@ -1164,7 +896,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Catalyst.Protocol.Cryptography.Signature signature_;
+    private Catalyst.Protocol.Cryptography.Signature signature_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Cryptography.Signature, Catalyst.Protocol.Cryptography.Signature.Builder, Catalyst.Protocol.Cryptography.SignatureOrBuilder> signatureBuilder_;
     /**
@@ -1172,8 +904,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
-     * @return Whether the signature field is set.
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public boolean hasSignature() {
       return signatureBuilder_ != null || signature_ != null;
@@ -1183,8 +914,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
-     * @return The signature.
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Catalyst.Protocol.Cryptography.Signature getSignature() {
       if (signatureBuilder_ == null) {
@@ -1198,7 +928,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Builder setSignature(Catalyst.Protocol.Cryptography.Signature value) {
       if (signatureBuilder_ == null) {
@@ -1218,7 +948,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Builder setSignature(
         Catalyst.Protocol.Cryptography.Signature.Builder builderForValue) {
@@ -1236,7 +966,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Builder mergeSignature(Catalyst.Protocol.Cryptography.Signature value) {
       if (signatureBuilder_ == null) {
@@ -1258,7 +988,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Builder clearSignature() {
       if (signatureBuilder_ == null) {
@@ -1276,7 +1006,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Catalyst.Protocol.Cryptography.Signature.Builder getSignatureBuilder() {
       
@@ -1288,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     public Catalyst.Protocol.Cryptography.SignatureOrBuilder getSignatureOrBuilder() {
       if (signatureBuilder_ != null) {
@@ -1303,7 +1033,7 @@ private static final long serialVersionUID = 0L;
      * is the ed25519ph context signature
      * </pre>
      *
-     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 10;</code>
+     * <code>.Catalyst.Protocol.Cryptography.Signature signature = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Cryptography.Signature, Catalyst.Protocol.Cryptography.Signature.Builder, Catalyst.Protocol.Cryptography.SignatureOrBuilder> 
@@ -1318,16 +1048,14 @@ private static final long serialVersionUID = 0L;
       }
       return signatureBuilder_;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -1346,12 +1074,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<PublicEntry>
       PARSER = new com.google.protobuf.AbstractParser<PublicEntry>() {
-    @java.lang.Override
     public PublicEntry parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PublicEntry(input, extensionRegistry);
+        return new PublicEntry(input, extensionRegistry);
     }
   };
 
@@ -1364,7 +1091,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Transaction.PublicEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

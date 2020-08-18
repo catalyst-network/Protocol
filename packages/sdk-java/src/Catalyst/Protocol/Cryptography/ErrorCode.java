@@ -182,8 +182,6 @@ public enum ErrorCode
   }
 
   /**
-   * @param value The numeric wire value of the corresponding enum entry.
-   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -191,10 +189,6 @@ public enum ErrorCode
     return forNumber(value);
   }
 
-  /**
-   * @param value The numeric wire value of the corresponding enum entry.
-   * @return The enum associated with the given numeric wire value.
-   */
   public static ErrorCode forNumber(int value) {
     switch (value) {
       case 0: return ERROR_CODE_UNKNOWN;

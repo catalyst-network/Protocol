@@ -9,53 +9,46 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Catalyst.Protocol.Account.Address</code>
+ * Protobuf type <code>Catalyst.Protocol.Account.Address</code>
  */
 class Address extends \Google\Protobuf\Internal\Message
 {
     /**
+     * <pre>
      * bit signalling the network type
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
+     * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
      */
-    protected $network_type = 0;
+    private $network_type = 0;
     /**
+     * <pre>
      * bit signalling the type of account
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
+     * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
      */
-    protected $account_type = 0;
+    private $account_type = 0;
     /**
+     * <pre>
      * multihash of the public key
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes public_key_hash = 3;</code>
+     * <code>bytes public_key_hash = 3;</code>
      */
-    protected $public_key_hash = '';
+    private $public_key_hash = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $network_type
-     *           bit signalling the network type
-     *     @type int $account_type
-     *           bit signalling the type of account
-     *     @type string $public_key_hash
-     *           multihash of the public key
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\Account::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
+     * <pre>
      * bit signalling the network type
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
-     * @return int
+     * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
      */
     public function getNetworkType()
     {
@@ -63,25 +56,24 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * bit signalling the network type
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
-     * @param int $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Network.NetworkType network_type = 1;</code>
      */
     public function setNetworkType($var)
     {
         GPBUtil::checkEnum($var, \Catalyst\Protocol\Network\NetworkType::class);
         $this->network_type = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * bit signalling the type of account
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
-     * @return int
+     * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
      */
     public function getAccountType()
     {
@@ -89,25 +81,24 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * bit signalling the type of account
+     * </pre>
      *
-     * Generated from protobuf field <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
-     * @param int $var
-     * @return $this
+     * <code>.Catalyst.Protocol.Account.AccountType account_type = 2;</code>
      */
     public function setAccountType($var)
     {
         GPBUtil::checkEnum($var, \Catalyst\Protocol\Account\AccountType::class);
         $this->account_type = $var;
-
-        return $this;
     }
 
     /**
+     * <pre>
      * multihash of the public key
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes public_key_hash = 3;</code>
-     * @return string
+     * <code>bytes public_key_hash = 3;</code>
      */
     public function getPublicKeyHash()
     {
@@ -115,18 +106,16 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * <pre>
      * multihash of the public key
+     * </pre>
      *
-     * Generated from protobuf field <code>bytes public_key_hash = 3;</code>
-     * @param string $var
-     * @return $this
+     * <code>bytes public_key_hash = 3;</code>
      */
     public function setPublicKeyHash($var)
     {
         GPBUtil::checkString($var, False);
         $this->public_key_hash = $var;
-
-        return $this;
     }
 
 }

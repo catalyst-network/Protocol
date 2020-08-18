@@ -12,42 +12,42 @@ public interface DeltaHistoryResponseOrBuilder extends
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
   java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> 
-      getResultList();
+      getDeltaIndexList();
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  Catalyst.Protocol.Deltas.DeltaIndex getResult(int index);
+  Catalyst.Protocol.Deltas.DeltaIndex getDeltaIndex(int index);
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  int getResultCount();
+  int getDeltaIndexCount();
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
   java.util.List<? extends Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> 
-      getResultOrBuilderList();
+      getDeltaIndexOrBuilderList();
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder(
+  Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getDeltaIndexOrBuilder(
       int index);
 }

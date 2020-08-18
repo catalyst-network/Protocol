@@ -9,12 +9,10 @@ public interface BroadcastRawTransactionRequestOrBuilder extends
 
   /**
    * <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
-   * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
   /**
    * <code>.Catalyst.Protocol.Wire.TransactionBroadcast transaction = 1;</code>
-   * @return The transaction.
    */
   Catalyst.Protocol.Wire.TransactionBroadcast getTransaction();
   /**

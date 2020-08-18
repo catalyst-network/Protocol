@@ -6,30 +6,29 @@ require 'google/protobuf'
 require 'Transaction_pb'
 require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_file("Deltas.proto", :syntax => :proto3) do
-    add_message "Catalyst.Protocol.Deltas.DeltaIndex" do
-      optional :height, :uint32, 1
-      optional :cid, :bytes, 2
-    end
-    add_message "Catalyst.Protocol.Deltas.Delta" do
-      optional :previous_delta_dfs_hash, :bytes, 1
-      optional :merkle_root, :bytes, 2
-      optional :merkle_poda, :bytes, 3
-      optional :time_stamp, :message, 4, "google.protobuf.Timestamp"
-      repeated :public_entries, :message, 5, "Catalyst.Protocol.Transaction.PublicEntry"
-      repeated :confidential_entries, :message, 6, "Catalyst.Protocol.Transaction.ConfidentialEntry"
-      repeated :coinbase_entries, :message, 7, "Catalyst.Protocol.Transaction.CoinbaseEntry"
-      optional :state_root, :bytes, 8
-      optional :delta_number, :int64, 9
-    end
+  add_message "Catalyst.Protocol.Deltas.DeltaIndex" do
+    optional :height, :uint32, 1
+    optional :cid, :bytes, 2
+  end
+  add_message "Catalyst.Protocol.Deltas.Delta" do
+    optional :previous_delta_dfs_hash, :bytes, 1
+    optional :merkle_root, :bytes, 2
+    optional :merkle_poda, :bytes, 3
+    optional :time_stamp, :message, 4, "google.protobuf.Timestamp"
+    repeated :public_entries, :message, 5, "Catalyst.Protocol.Transaction.PublicEntry"
+    repeated :confidential_entries, :message, 6, "Catalyst.Protocol.Transaction.ConfidentialEntry"
+    repeated :coinbase_entries, :message, 7, "Catalyst.Protocol.Transaction.CoinbaseEntry"
+    optional :state_root, :bytes, 8
+    optional :delta_number, :int64, 9
+    optional :gas_used, :int64, 10
   end
 end
 
 module Catalyst
   module Protocol
     module Deltas
-      DeltaIndex = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Deltas.DeltaIndex").msgclass
-      Delta = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Deltas.Delta").msgclass
+      DeltaIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Deltas.DeltaIndex").msgclass
+      Delta = Google::Protobuf::DescriptorPool.generated_pool.lookup("Catalyst.Protocol.Deltas.Delta").msgclass
     end
   end
 end

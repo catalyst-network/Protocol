@@ -10,38 +10,25 @@ public  final class DeltaHistoryResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.IPPN.DeltaHistoryResponse)
     DeltaHistoryResponseOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use DeltaHistoryResponse.newBuilder() to construct.
   private DeltaHistoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private DeltaHistoryResponse() {
-    result_ = java.util.Collections.emptyList();
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new DeltaHistoryResponse();
+    deltaIndex_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private DeltaHistoryResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -50,20 +37,19 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              result_ = new java.util.ArrayList<Catalyst.Protocol.Deltas.DeltaIndex>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            result_.add(
-                input.readMessage(Catalyst.Protocol.Deltas.DeltaIndex.parser(), extensionRegistry));
-            break;
-          }
           default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
+            break;
+          }
+          case 10: {
+            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              deltaIndex_ = new java.util.ArrayList<Catalyst.Protocol.Deltas.DeltaIndex>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            deltaIndex_.add(
+                input.readMessage(Catalyst.Protocol.Deltas.DeltaIndex.parser(), extensionRegistry));
             break;
           }
         }
@@ -74,10 +60,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        result_ = java.util.Collections.unmodifiableList(result_);
+      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        deltaIndex_ = java.util.Collections.unmodifiableList(deltaIndex_);
       }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -86,7 +71,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_fieldAccessorTable
@@ -94,63 +78,62 @@ private static final long serialVersionUID = 0L;
             Catalyst.Protocol.IPPN.DeltaHistoryResponse.class, Catalyst.Protocol.IPPN.DeltaHistoryResponse.Builder.class);
   }
 
-  public static final int RESULT_FIELD_NUMBER = 1;
-  private java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> result_;
+  public static final int DELTAINDEX_FIELD_NUMBER = 1;
+  private java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> deltaIndex_;
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  public java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> getResultList() {
-    return result_;
+  public java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> getDeltaIndexList() {
+    return deltaIndex_;
   }
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
   public java.util.List<? extends Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> 
-      getResultOrBuilderList() {
-    return result_;
+      getDeltaIndexOrBuilderList() {
+    return deltaIndex_;
   }
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  public int getResultCount() {
-    return result_.size();
+  public int getDeltaIndexCount() {
+    return deltaIndex_.size();
   }
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  public Catalyst.Protocol.Deltas.DeltaIndex getResult(int index) {
-    return result_.get(index);
+  public Catalyst.Protocol.Deltas.DeltaIndex getDeltaIndex(int index) {
+    return deltaIndex_.get(index);
   }
   /**
    * <pre>
    * K given del
    * </pre>
    *
-   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+   * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
    */
-  public Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder(
+  public Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getDeltaIndexOrBuilder(
       int index) {
-    return result_.get(index);
+    return deltaIndex_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -160,30 +143,27 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < result_.size(); i++) {
-      output.writeMessage(1, result_.get(i));
+    for (int i = 0; i < deltaIndex_.size(); i++) {
+      output.writeMessage(1, deltaIndex_.get(i));
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < result_.size(); i++) {
+    for (int i = 0; i < deltaIndex_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, result_.get(i));
+        .computeMessageSize(1, deltaIndex_.get(i));
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -194,10 +174,10 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.IPPN.DeltaHistoryResponse other = (Catalyst.Protocol.IPPN.DeltaHistoryResponse) obj;
 
-    if (!getResultList()
-        .equals(other.getResultList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    boolean result = true;
+    result = result && getDeltaIndexList()
+        .equals(other.getDeltaIndexList());
+    return result;
   }
 
   @java.lang.Override
@@ -207,26 +187,15 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getResultCount() > 0) {
-      hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getResultList().hashCode();
+    if (getDeltaIndexCount() > 0) {
+      hash = (37 * hash) + DELTAINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getDeltaIndexList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static Catalyst.Protocol.IPPN.DeltaHistoryResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.IPPN.DeltaHistoryResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.IPPN.DeltaHistoryResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -286,7 +255,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -294,7 +262,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.IPPN.DeltaHistoryResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -318,7 +285,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_fieldAccessorTable
@@ -339,33 +305,29 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getResultFieldBuilder();
+        getDeltaIndexFieldBuilder();
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resultBuilder_ == null) {
-        result_ = java.util.Collections.emptyList();
+      if (deltaIndexBuilder_ == null) {
+        deltaIndex_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        resultBuilder_.clear();
+        deltaIndexBuilder_.clear();
       }
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.IPPN.IPPN.internal_static_Catalyst_Protocol_IPPN_DeltaHistoryResponse_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.IPPN.DeltaHistoryResponse getDefaultInstanceForType() {
       return Catalyst.Protocol.IPPN.DeltaHistoryResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.IPPN.DeltaHistoryResponse build() {
       Catalyst.Protocol.IPPN.DeltaHistoryResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -374,56 +336,48 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.IPPN.DeltaHistoryResponse buildPartial() {
       Catalyst.Protocol.IPPN.DeltaHistoryResponse result = new Catalyst.Protocol.IPPN.DeltaHistoryResponse(this);
       int from_bitField0_ = bitField0_;
-      if (resultBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          result_ = java.util.Collections.unmodifiableList(result_);
+      if (deltaIndexBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          deltaIndex_ = java.util.Collections.unmodifiableList(deltaIndex_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.result_ = result_;
+        result.deltaIndex_ = deltaIndex_;
       } else {
-        result.result_ = resultBuilder_.build();
+        result.deltaIndex_ = deltaIndexBuilder_.build();
       }
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.IPPN.DeltaHistoryResponse) {
         return mergeFrom((Catalyst.Protocol.IPPN.DeltaHistoryResponse)other);
@@ -435,43 +389,40 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(Catalyst.Protocol.IPPN.DeltaHistoryResponse other) {
       if (other == Catalyst.Protocol.IPPN.DeltaHistoryResponse.getDefaultInstance()) return this;
-      if (resultBuilder_ == null) {
-        if (!other.result_.isEmpty()) {
-          if (result_.isEmpty()) {
-            result_ = other.result_;
+      if (deltaIndexBuilder_ == null) {
+        if (!other.deltaIndex_.isEmpty()) {
+          if (deltaIndex_.isEmpty()) {
+            deltaIndex_ = other.deltaIndex_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureResultIsMutable();
-            result_.addAll(other.result_);
+            ensureDeltaIndexIsMutable();
+            deltaIndex_.addAll(other.deltaIndex_);
           }
           onChanged();
         }
       } else {
-        if (!other.result_.isEmpty()) {
-          if (resultBuilder_.isEmpty()) {
-            resultBuilder_.dispose();
-            resultBuilder_ = null;
-            result_ = other.result_;
+        if (!other.deltaIndex_.isEmpty()) {
+          if (deltaIndexBuilder_.isEmpty()) {
+            deltaIndexBuilder_.dispose();
+            deltaIndexBuilder_ = null;
+            deltaIndex_ = other.deltaIndex_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            resultBuilder_ = 
+            deltaIndexBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getResultFieldBuilder() : null;
+                 getDeltaIndexFieldBuilder() : null;
           } else {
-            resultBuilder_.addAllMessages(other.result_);
+            deltaIndexBuilder_.addAllMessages(other.deltaIndex_);
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -491,30 +442,30 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> result_ =
+    private java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> deltaIndex_ =
       java.util.Collections.emptyList();
-    private void ensureResultIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        result_ = new java.util.ArrayList<Catalyst.Protocol.Deltas.DeltaIndex>(result_);
+    private void ensureDeltaIndexIsMutable() {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        deltaIndex_ = new java.util.ArrayList<Catalyst.Protocol.Deltas.DeltaIndex>(deltaIndex_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> resultBuilder_;
+        Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> deltaIndexBuilder_;
 
     /**
      * <pre>
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> getResultList() {
-      if (resultBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(result_);
+    public java.util.List<Catalyst.Protocol.Deltas.DeltaIndex> getDeltaIndexList() {
+      if (deltaIndexBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(deltaIndex_);
       } else {
-        return resultBuilder_.getMessageList();
+        return deltaIndexBuilder_.getMessageList();
       }
     }
     /**
@@ -522,13 +473,13 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public int getResultCount() {
-      if (resultBuilder_ == null) {
-        return result_.size();
+    public int getDeltaIndexCount() {
+      if (deltaIndexBuilder_ == null) {
+        return deltaIndex_.size();
       } else {
-        return resultBuilder_.getCount();
+        return deltaIndexBuilder_.getCount();
       }
     }
     /**
@@ -536,13 +487,13 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Catalyst.Protocol.Deltas.DeltaIndex getResult(int index) {
-      if (resultBuilder_ == null) {
-        return result_.get(index);
+    public Catalyst.Protocol.Deltas.DeltaIndex getDeltaIndex(int index) {
+      if (deltaIndexBuilder_ == null) {
+        return deltaIndex_.get(index);
       } else {
-        return resultBuilder_.getMessage(index);
+        return deltaIndexBuilder_.getMessage(index);
       }
     }
     /**
@@ -550,19 +501,19 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder setResult(
+    public Builder setDeltaIndex(
         int index, Catalyst.Protocol.Deltas.DeltaIndex value) {
-      if (resultBuilder_ == null) {
+      if (deltaIndexBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureResultIsMutable();
-        result_.set(index, value);
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.set(index, value);
         onChanged();
       } else {
-        resultBuilder_.setMessage(index, value);
+        deltaIndexBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -571,16 +522,16 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder setResult(
+    public Builder setDeltaIndex(
         int index, Catalyst.Protocol.Deltas.DeltaIndex.Builder builderForValue) {
-      if (resultBuilder_ == null) {
-        ensureResultIsMutable();
-        result_.set(index, builderForValue.build());
+      if (deltaIndexBuilder_ == null) {
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.set(index, builderForValue.build());
         onChanged();
       } else {
-        resultBuilder_.setMessage(index, builderForValue.build());
+        deltaIndexBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -589,18 +540,18 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder addResult(Catalyst.Protocol.Deltas.DeltaIndex value) {
-      if (resultBuilder_ == null) {
+    public Builder addDeltaIndex(Catalyst.Protocol.Deltas.DeltaIndex value) {
+      if (deltaIndexBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureResultIsMutable();
-        result_.add(value);
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.add(value);
         onChanged();
       } else {
-        resultBuilder_.addMessage(value);
+        deltaIndexBuilder_.addMessage(value);
       }
       return this;
     }
@@ -609,19 +560,19 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder addResult(
+    public Builder addDeltaIndex(
         int index, Catalyst.Protocol.Deltas.DeltaIndex value) {
-      if (resultBuilder_ == null) {
+      if (deltaIndexBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureResultIsMutable();
-        result_.add(index, value);
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.add(index, value);
         onChanged();
       } else {
-        resultBuilder_.addMessage(index, value);
+        deltaIndexBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -630,16 +581,16 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder addResult(
+    public Builder addDeltaIndex(
         Catalyst.Protocol.Deltas.DeltaIndex.Builder builderForValue) {
-      if (resultBuilder_ == null) {
-        ensureResultIsMutable();
-        result_.add(builderForValue.build());
+      if (deltaIndexBuilder_ == null) {
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.add(builderForValue.build());
         onChanged();
       } else {
-        resultBuilder_.addMessage(builderForValue.build());
+        deltaIndexBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -648,16 +599,16 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder addResult(
+    public Builder addDeltaIndex(
         int index, Catalyst.Protocol.Deltas.DeltaIndex.Builder builderForValue) {
-      if (resultBuilder_ == null) {
-        ensureResultIsMutable();
-        result_.add(index, builderForValue.build());
+      if (deltaIndexBuilder_ == null) {
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.add(index, builderForValue.build());
         onChanged();
       } else {
-        resultBuilder_.addMessage(index, builderForValue.build());
+        deltaIndexBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -666,17 +617,17 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder addAllResult(
+    public Builder addAllDeltaIndex(
         java.lang.Iterable<? extends Catalyst.Protocol.Deltas.DeltaIndex> values) {
-      if (resultBuilder_ == null) {
-        ensureResultIsMutable();
+      if (deltaIndexBuilder_ == null) {
+        ensureDeltaIndexIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, result_);
+            values, deltaIndex_);
         onChanged();
       } else {
-        resultBuilder_.addAllMessages(values);
+        deltaIndexBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -685,15 +636,15 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = java.util.Collections.emptyList();
+    public Builder clearDeltaIndex() {
+      if (deltaIndexBuilder_ == null) {
+        deltaIndex_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        resultBuilder_.clear();
+        deltaIndexBuilder_.clear();
       }
       return this;
     }
@@ -702,15 +653,15 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Builder removeResult(int index) {
-      if (resultBuilder_ == null) {
-        ensureResultIsMutable();
-        result_.remove(index);
+    public Builder removeDeltaIndex(int index) {
+      if (deltaIndexBuilder_ == null) {
+        ensureDeltaIndexIsMutable();
+        deltaIndex_.remove(index);
         onChanged();
       } else {
-        resultBuilder_.remove(index);
+        deltaIndexBuilder_.remove(index);
       }
       return this;
     }
@@ -719,24 +670,24 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Catalyst.Protocol.Deltas.DeltaIndex.Builder getResultBuilder(
+    public Catalyst.Protocol.Deltas.DeltaIndex.Builder getDeltaIndexBuilder(
         int index) {
-      return getResultFieldBuilder().getBuilder(index);
+      return getDeltaIndexFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getResultOrBuilder(
+    public Catalyst.Protocol.Deltas.DeltaIndexOrBuilder getDeltaIndexOrBuilder(
         int index) {
-      if (resultBuilder_ == null) {
-        return result_.get(index);  } else {
-        return resultBuilder_.getMessageOrBuilder(index);
+      if (deltaIndexBuilder_ == null) {
+        return deltaIndex_.get(index);  } else {
+        return deltaIndexBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
@@ -744,14 +695,14 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
     public java.util.List<? extends Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> 
-         getResultOrBuilderList() {
-      if (resultBuilder_ != null) {
-        return resultBuilder_.getMessageOrBuilderList();
+         getDeltaIndexOrBuilderList() {
+      if (deltaIndexBuilder_ != null) {
+        return deltaIndexBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(result_);
+        return java.util.Collections.unmodifiableList(deltaIndex_);
       }
     }
     /**
@@ -759,10 +710,10 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Catalyst.Protocol.Deltas.DeltaIndex.Builder addResultBuilder() {
-      return getResultFieldBuilder().addBuilder(
+    public Catalyst.Protocol.Deltas.DeltaIndex.Builder addDeltaIndexBuilder() {
+      return getDeltaIndexFieldBuilder().addBuilder(
           Catalyst.Protocol.Deltas.DeltaIndex.getDefaultInstance());
     }
     /**
@@ -770,11 +721,11 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
-    public Catalyst.Protocol.Deltas.DeltaIndex.Builder addResultBuilder(
+    public Catalyst.Protocol.Deltas.DeltaIndex.Builder addDeltaIndexBuilder(
         int index) {
-      return getResultFieldBuilder().addBuilder(
+      return getDeltaIndexFieldBuilder().addBuilder(
           index, Catalyst.Protocol.Deltas.DeltaIndex.getDefaultInstance());
     }
     /**
@@ -782,36 +733,34 @@ private static final long serialVersionUID = 0L;
      * K given del
      * </pre>
      *
-     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex result = 1;</code>
+     * <code>repeated .Catalyst.Protocol.Deltas.DeltaIndex deltaIndex = 1;</code>
      */
     public java.util.List<Catalyst.Protocol.Deltas.DeltaIndex.Builder> 
-         getResultBuilderList() {
-      return getResultFieldBuilder().getBuilderList();
+         getDeltaIndexBuilderList() {
+      return getDeltaIndexFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder> 
-        getResultFieldBuilder() {
-      if (resultBuilder_ == null) {
-        resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getDeltaIndexFieldBuilder() {
+      if (deltaIndexBuilder_ == null) {
+        deltaIndexBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Catalyst.Protocol.Deltas.DeltaIndex, Catalyst.Protocol.Deltas.DeltaIndex.Builder, Catalyst.Protocol.Deltas.DeltaIndexOrBuilder>(
-                result_,
-                ((bitField0_ & 0x00000001) != 0),
+                deltaIndex_,
+                ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        result_ = null;
+        deltaIndex_ = null;
       }
-      return resultBuilder_;
+      return deltaIndexBuilder_;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -830,12 +779,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<DeltaHistoryResponse>
       PARSER = new com.google.protobuf.AbstractParser<DeltaHistoryResponse>() {
-    @java.lang.Override
     public DeltaHistoryResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeltaHistoryResponse(input, extensionRegistry);
+        return new DeltaHistoryResponse(input, extensionRegistry);
     }
   };
 
@@ -848,7 +796,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.IPPN.DeltaHistoryResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

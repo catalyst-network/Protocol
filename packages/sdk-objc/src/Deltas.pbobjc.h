@@ -8,7 +8,7 @@
 #endif
 
 #if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <protobuf/GPBProtocolBuffers.h>
+ #import <Protobuf/GPBProtocolBuffers.h>
 #else
  #import "GPBProtocolBuffers.h"
 #endif
@@ -76,6 +76,7 @@ typedef GPB_ENUM(Delta_FieldNumber) {
   Delta_FieldNumber_CoinbaseEntriesArray = 7,
   Delta_FieldNumber_StateRoot = 8,
   Delta_FieldNumber_DeltaNumber = 9,
+  Delta_FieldNumber_GasUsed = 10,
 };
 
 @interface Delta : GPBMessage
@@ -110,6 +111,9 @@ typedef GPB_ENUM(Delta_FieldNumber) {
 
 /** the consecutive delta number */
 @property(nonatomic, readwrite) int64_t deltaNumber;
+
+/** the gas used in the delta */
+@property(nonatomic, readwrite) int64_t gasUsed;
 
 @end
 

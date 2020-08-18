@@ -10,7 +10,6 @@ public  final class FavouriteDeltaBroadcast extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:Catalyst.Protocol.Wire.FavouriteDeltaBroadcast)
     FavouriteDeltaBroadcastOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use FavouriteDeltaBroadcast.newBuilder() to construct.
   private FavouriteDeltaBroadcast(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,27 +18,16 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new FavouriteDeltaBroadcast();
-  }
-
-  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private FavouriteDeltaBroadcast(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
+    int mutable_bitField0_ = 0;
     try {
       boolean done = false;
       while (!done) {
@@ -48,6 +36,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!input.skipField(tag)) {
+              done = true;
+            }
+            break;
+          }
           case 10: {
             Catalyst.Protocol.Wire.CandidateDeltaBroadcast.Builder subBuilder = null;
             if (candidate_ != null) {
@@ -74,13 +68,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -89,7 +76,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -98,7 +84,6 @@ private static final long serialVersionUID = 0L;
     return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_FavouriteDeltaBroadcast_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_FavouriteDeltaBroadcast_fieldAccessorTable
@@ -114,7 +99,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
-   * @return Whether the candidate field is set.
    */
   public boolean hasCandidate() {
     return candidate_ != null;
@@ -125,7 +109,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
-   * @return The candidate.
    */
   public Catalyst.Protocol.Wire.CandidateDeltaBroadcast getCandidate() {
     return candidate_ == null ? Catalyst.Protocol.Wire.CandidateDeltaBroadcast.getDefaultInstance() : candidate_;
@@ -149,7 +132,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
-   * @return Whether the voterId field is set.
    */
   public boolean hasVoterId() {
     return voterId_ != null;
@@ -160,7 +142,6 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
-   * @return The voterId.
    */
   public Catalyst.Protocol.Peer.PeerId getVoterId() {
     return voterId_ == null ? Catalyst.Protocol.Peer.PeerId.getDefaultInstance() : voterId_;
@@ -177,7 +158,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -187,7 +167,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (candidate_ != null) {
@@ -196,10 +175,8 @@ private static final long serialVersionUID = 0L;
     if (voterId_ != null) {
       output.writeMessage(2, getVoterId());
     }
-    unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -213,11 +190,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getVoterId());
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -228,18 +205,18 @@ private static final long serialVersionUID = 0L;
     }
     Catalyst.Protocol.Wire.FavouriteDeltaBroadcast other = (Catalyst.Protocol.Wire.FavouriteDeltaBroadcast) obj;
 
-    if (hasCandidate() != other.hasCandidate()) return false;
+    boolean result = true;
+    result = result && (hasCandidate() == other.hasCandidate());
     if (hasCandidate()) {
-      if (!getCandidate()
-          .equals(other.getCandidate())) return false;
+      result = result && getCandidate()
+          .equals(other.getCandidate());
     }
-    if (hasVoterId() != other.hasVoterId()) return false;
+    result = result && (hasVoterId() == other.hasVoterId());
     if (hasVoterId()) {
-      if (!getVoterId()
-          .equals(other.getVoterId())) return false;
+      result = result && getVoterId()
+          .equals(other.getVoterId());
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    return result;
   }
 
   @java.lang.Override
@@ -262,17 +239,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Catalyst.Protocol.Wire.FavouriteDeltaBroadcast parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static Catalyst.Protocol.Wire.FavouriteDeltaBroadcast parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static Catalyst.Protocol.Wire.FavouriteDeltaBroadcast parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -332,7 +298,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -340,7 +305,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(Catalyst.Protocol.Wire.FavouriteDeltaBroadcast prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -364,7 +328,6 @@ private static final long serialVersionUID = 0L;
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_FavouriteDeltaBroadcast_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_FavouriteDeltaBroadcast_fieldAccessorTable
@@ -387,7 +350,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (candidateBuilder_ == null) {
@@ -405,18 +367,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return Catalyst.Protocol.Wire.Wire.internal_static_Catalyst_Protocol_Wire_FavouriteDeltaBroadcast_descriptor;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Wire.FavouriteDeltaBroadcast getDefaultInstanceForType() {
       return Catalyst.Protocol.Wire.FavouriteDeltaBroadcast.getDefaultInstance();
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Wire.FavouriteDeltaBroadcast build() {
       Catalyst.Protocol.Wire.FavouriteDeltaBroadcast result = buildPartial();
       if (!result.isInitialized()) {
@@ -425,7 +384,6 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Catalyst.Protocol.Wire.FavouriteDeltaBroadcast buildPartial() {
       Catalyst.Protocol.Wire.FavouriteDeltaBroadcast result = new Catalyst.Protocol.Wire.FavouriteDeltaBroadcast(this);
       if (candidateBuilder_ == null) {
@@ -442,39 +400,32 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
+        Object value) {
+      return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+        int index, Object value) {
+      return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+        Object value) {
+      return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof Catalyst.Protocol.Wire.FavouriteDeltaBroadcast) {
         return mergeFrom((Catalyst.Protocol.Wire.FavouriteDeltaBroadcast)other);
@@ -492,17 +443,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasVoterId()) {
         mergeVoterId(other.getVoterId());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -521,7 +469,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate_;
+    private Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Wire.CandidateDeltaBroadcast, Catalyst.Protocol.Wire.CandidateDeltaBroadcast.Builder, Catalyst.Protocol.Wire.CandidateDeltaBroadcastOrBuilder> candidateBuilder_;
     /**
@@ -530,7 +478,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
-     * @return Whether the candidate field is set.
      */
     public boolean hasCandidate() {
       return candidateBuilder_ != null || candidate_ != null;
@@ -541,7 +488,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.Catalyst.Protocol.Wire.CandidateDeltaBroadcast candidate = 1;</code>
-     * @return The candidate.
      */
     public Catalyst.Protocol.Wire.CandidateDeltaBroadcast getCandidate() {
       if (candidateBuilder_ == null) {
@@ -676,7 +622,7 @@ private static final long serialVersionUID = 0L;
       return candidateBuilder_;
     }
 
-    private Catalyst.Protocol.Peer.PeerId voterId_;
+    private Catalyst.Protocol.Peer.PeerId voterId_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         Catalyst.Protocol.Peer.PeerId, Catalyst.Protocol.Peer.PeerId.Builder, Catalyst.Protocol.Peer.PeerIdOrBuilder> voterIdBuilder_;
     /**
@@ -685,7 +631,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
-     * @return Whether the voterId field is set.
      */
     public boolean hasVoterId() {
       return voterIdBuilder_ != null || voterId_ != null;
@@ -696,7 +641,6 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.Catalyst.Protocol.Peer.PeerId voter_id = 2;</code>
-     * @return The voterId.
      */
     public Catalyst.Protocol.Peer.PeerId getVoterId() {
       if (voterIdBuilder_ == null) {
@@ -830,16 +774,14 @@ private static final long serialVersionUID = 0L;
       }
       return voterIdBuilder_;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -858,12 +800,11 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<FavouriteDeltaBroadcast>
       PARSER = new com.google.protobuf.AbstractParser<FavouriteDeltaBroadcast>() {
-    @java.lang.Override
     public FavouriteDeltaBroadcast parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FavouriteDeltaBroadcast(input, extensionRegistry);
+        return new FavouriteDeltaBroadcast(input, extensionRegistry);
     }
   };
 
@@ -876,7 +817,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public Catalyst.Protocol.Wire.FavouriteDeltaBroadcast getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
