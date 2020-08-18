@@ -52,7 +52,7 @@ message ConfidentialEntry {
 }
 
 message CoinbaseEntry {
-    bytes receiver_public_key = 1; // public key behind the address where the Coinbase will be credited
+    bytes receiver_kvm_address = 1; // kvm address behind the address where the Coinbase will be credited
     bytes amount = 2; // uint256 amount
 }
 
